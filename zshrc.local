@@ -1,4 +1,4 @@
-export VISUAL='vim'
+export VISUAL=v
 export EDITOR=$VISUAL
 
 eval "$(/usr/local/bin/hub alias -s)"
