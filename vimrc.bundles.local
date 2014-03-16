@@ -16,6 +16,7 @@ Bundle 'tpope/vim-vinegar'
 Bundle 'tpope/vim-unimpaired'
 
 " Other plugins:
+Bundle 'gregsexton/gitv'
 Bundle 'christoomey/vim-tmux-navigator' 
 Bundle 'ck3g/vim-change-hash-syntax' 
 Bundle 'jgdavey/tslime.vim' 
