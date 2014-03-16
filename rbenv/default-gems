@@ -2,8 +2,12 @@ bundler
 cane
 dotenv-rails
 factory_girl_rails
+foreman
 flog
 gem-ctags
+guard
+guard-bundler
+guard-process
 haml-rails
 nokogiri
 parity
