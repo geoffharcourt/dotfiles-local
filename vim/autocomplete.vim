@@ -34,12 +34,6 @@ endfunction
 " inoremap <expr> <Esc> pumvisible() ? "\<C-y>" : "\<Esc>"
 inoremap <CR> <C-r>=SelectAutoCompleteOrCarriageReturn()<CR>
 
-" Use \ to engage or advance within snippets.
-inoremap <expr>\ neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" : "\\"
-snoremap <expr>\ neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)" : "\\"
-
 autocmd FileType css,sass setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 
