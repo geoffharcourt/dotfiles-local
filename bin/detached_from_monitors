@@ -1,0 +1,5 @@
+rm ~/.iterm.local
+
+ln -s ~/.iterm.mobile ~/.iterm.local
+
+source ~/.iterm.local

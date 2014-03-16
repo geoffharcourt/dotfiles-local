@@ -1,0 +1,79 @@
+AllCops:
+  Excludes:
+    - bin/**
+    - db/schema.rb
+    - config/unicorn.rb
+
+AccessorMethodName:
+  Enabled: false
+
+ActionFilter:
+  EnforcedStyle: filter
+  Enabled: true
+
+AlignParameters:
+  # this is broken in 0.19.0
+  Enabled: false
+  EnforcedStyle: with_fixed_indentation
+
+ClassAndModuleChildren:
+  Enabled: false
+
+# broken in 0.19.0, issues error: 'Prefer inject over inject.'
+CollectionMethods:
+  Enabled: false
+  PreferredMethods:
+    inject: 'inject'
+
+Documentation:
+  Exclude:
+    - config/application.rb
+    - app/decorators/**
+    - db/migrate/**
+    - spec/**
+
+DotPosition:
+  EnforcedStyle: trailing
+
+FileName:
+  Enabled: false
+
+HashSyntax:
+  Exclude:
+    - db/migrate/**
+    - db/schema.rb
+
+LineLength:
+  Exclude:
+    - db/migrate/**
+    - db/schema.rb
+
+MethodLength:
+  Exclude:
+    - db/**
+
+NumericLiterals:
+  Enabled: false
+
+SignalException:
+  Enabled: false
+
+SpaceAfterComma:
+  Exclude:
+    - db/migrate/**
+    - db/schema.rb
+
+SpaceInsideHashLiteralBraces:
+  EnforcedStyle: no_space
+  EnforcedStyleForEmptyBraces: no_space
+  Exclude:
+    - db/migrate/**
+    - db/schema.rb
+
+StringLiterals:
+  Exclude:
+    - db/migrate/**
+    - db/schema.rb
+
+WordArray:
+  Enabled: false

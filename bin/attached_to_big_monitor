@@ -1,0 +1,4 @@
+rm ~/.iterm.local
+ln -s ~/.iterm.attached ~/.iterm.local
+
+source ~/.iterm.local

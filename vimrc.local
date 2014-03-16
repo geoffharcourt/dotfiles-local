@@ -1,0 +1,27 @@
+" Source config files
+source $HOME/.vim/appearance.vim
+source $HOME/.vim/autocomplete.vim
+source $HOME/.vim/clipboard.vim
+source $HOME/.vim/commenting.vim
+source $HOME/.vim/common_files.vim
+source $HOME/.vim/formatting.vim
+source $HOME/.vim/git.vim
+source $HOME/.vim/movement.vim
+source $HOME/.vim/quickfix.vim
+source $HOME/.vim/rename.vim
+source $HOME/.vim/rspec.vim
+source $HOME/.vim/ruby.vim
+source $HOME/.vim/saves_and_quits.vim
+source $HOME/.vim/search.vim
+source $HOME/.vim/tabs.vim
+source $HOME/.vim/tmux.vim
+
+
+" Reload and rebundle
+nnoremap <Leader>bi :source ~/.vimrc<CR>:BundleInstall<CR>
+
+" Time out on key codes but not mappings.
+" Basically this makes terminal Vim work sanely.
+set ttimeout
+set ttimeoutlen=100
+

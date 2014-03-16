@@ -1,0 +1,23 @@
+export VISUAL='vim'
+export EDITOR=$VISUAL
+
+eval "$(/usr/local/bin/hub alias -s)"
+
+# binstubs
+export PATH="./bin:$PATH"
+
+# more history
+setopt extended_history
+HISTFILE=~/.zsh_history
+export HISTSIZE=10000
+export HISTFILESIZE=$HISTSIZE
+export SAVEHIST=$HISTSIZE
+setopt inc_append_history
+setopt hist_ignore_all_dups
+setopt hist_reduce_blanks
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
+    'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+
+[[ -f ~/.iterm.local ]] && source ~/.iterm.local

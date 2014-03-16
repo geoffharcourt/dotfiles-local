@@ -1,0 +1,4 @@
+echo -e "\033]50;SetProfile=Solarized Dark\a"
+
+alias godark='echo -e "\033]50;SetProfile=Solarized Dark\a"'
+alias golight='echo -e "\033]50;SetProfile=Solarized Light\a"'

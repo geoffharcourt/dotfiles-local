@@ -1,0 +1,83 @@
+# Aliases
+alias realias='source ~/.aliases'
+
+# Git
+alias gaa="git add ."
+alias gcm="git commit -m"
+alias gd="git diff"
+alias gl="git log --pretty=colored --abbrev-commit"
+alias gld="git log --pretty=coloredwithrefs --abbrev-commit"
+alias gp="git fetch origin && git rebase origin/master && git push origin master"
+alias gpush="echo 'Use gp!' && gp"
+alias grc="git rebase --continue"
+alias hp="git fetch heroku && git rebase heroku/master && git push heroku master"
+alias hpush="echo 'Use hp!' && hp"
+alias pa='gp && hp'
+alias pushall='echo "Use pa!" && pa'
+
+# Heroku
+alias airbrake='heroku addons:open airbrake'
+alias development='nocorrect development'
+alias heroky='heroku'
+alias hlogs='heroku logs --tail'
+alias heroku='nocorrect /usr/local/bin/heroku'
+alias production='nocorrect production'
+alias staging='nocorrect staging'
+
+# Postgres
+alias pgstart='brew services start postgresql'
+alias pgstop='brew services stop postgresql'
+alias pgre='brew services restart postgresql'
+
+# Ruby
+alias bex='nocorrect bundle exec'
+alias bu='bundle update'
+alias fs='foreman start'
+alias irb='irb --readline -r irb/completion'
+alias respring='spring stop && spring start'
+
+# Rails
+alias cov='open coverage/index.html'
+# m already aliases here, but I don't want to run seeds
+alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
+alias rc='rails console'
+alias tagdeps='bundle show --paths | xargs ctags -R && ctags -R -a *'
+alias taild='tlf log/development.log'
+alias tailt='tlf log/test.log'
+
+# Code Metrics
+alias flogapp='flog app'
+alias rbp='rails_best_practices'
+alias reek='reek -q app'
+
+# Update
+alias goodmorning="brew update && brew upgrade && gem update --system && gem update"
+
+# Folder navigation
+alias cln="cd $HOME/clients"
+alias dotf="cd $HOME/dotfiles"
+alias gh="cd $HOME/github"
+
+# Terminal background
+alias godark='echo -e "\033]50;SetProfile=Solarized Dark\a"'
+alias golight='echo -e "\033]50;SetProfile=Solarized Light\a"'
+
+# Vim
+# disable flow control within vim, gain Ctrl-S mapping
+alias v="stty stop '' -ixoff ; command vim"
+alias vim="echo 'Use v!'"
+# `Frozing' tty, so after any command terminal settings will be restored
+ttyctl -f
+
+# Utility stuff
+# Don't use shell's built-in 'time' command
+alias time='/usr/bin/time'
+alias timestamp="date +%Y%m%d%H%M%S"
+
+# Other apps
+alias marked="open -a Marked.app"
+
+# Notes
+# open notes in vim
+alias sc='vim ~/Dropbox/notes/scatchpad.txt'
+alias scratch="echo 'use sc' && sc"

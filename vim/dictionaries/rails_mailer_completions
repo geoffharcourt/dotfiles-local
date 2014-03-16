@@ -1,0 +1,11 @@
+attachments
+default
+helper
+helper_attr
+helper_method
+logger
+mail
+polymorphic_path
+polymorphic_url
+render
+url_for
