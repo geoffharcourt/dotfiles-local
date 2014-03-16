@@ -51,7 +51,7 @@ alias rbp='rails_best_practices'
 alias reek='reek -q app'
 
 # Update
-alias goodmorning="brew update && brew upgrade && gem update --system && gem update"
+alias goodmorning="brew update && brew upgrade && gem update --system && gem update && rcup"
 
 # Folder navigation
 alias cln="cd $HOME/clients"
