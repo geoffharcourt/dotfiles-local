@@ -1,6 +1,3 @@
-export VISUAL=v
-export EDITOR=$VISUAL
-
 eval "$(/usr/local/bin/hub alias -s)"
 
 export PATH="/usr/local/bin:$PATH"
