@@ -33,6 +33,7 @@ alias pgre='brew services restart postgresql'
 alias bex='nocorrect bundle exec'
 alias bu='bundle update'
 alias fs='foreman start'
+alias gi='nocorrect gem install'
 alias irb='irb --readline -r irb/completion'
 alias respring='spring stop && spring start'
 
