@@ -22,10 +22,12 @@ let g:netrw_liststyle= 4
 let g:airline_powerline_fonts = 1
 let airline#extensions#tmuxline#color_template = 'visual'
 let g:airline#extensions#default#section_truncate_width = {
-    \ 'b': 79,
-    \ 'x': 60,
-    \ 'y': 88,
-    \ 'z': 45,
+    \ 'a': 25,
+    \ 'b': 120,
+    \ 'c': 25,
+    \ 'x': 120,
+    \ 'y': 120,
+    \ 'z': 25,
     \ }
 
 let g:tmuxline_preset = {
