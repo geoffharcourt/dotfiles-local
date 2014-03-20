@@ -11,25 +11,37 @@ ActionFilter:
   EnforcedStyle: filter
   Enabled: true
 
+# Disabled because Rubocop doesn't like this:
+# call(
+#   one,
+#   two,
+#   three
+# )
 AlignParameters:
-  # this is broken in 0.19.0
   Enabled: false
   EnforcedStyle: with_fixed_indentation
+  Exclude:
+    - db/migrate/**
+
+AmbiguousOperator:
+  Enabled: false
+  Exclude:
+    - spec/factories/*.rb
 
 ClassAndModuleChildren:
   Enabled: false
 
-# broken in 0.19.0, issues error: 'Prefer inject over inject.'
 CollectionMethods:
-  Enabled: false
+  Enabled: true
   PreferredMethods:
-    inject: 'inject'
+    reduce: 'inject'
 
 Documentation:
   Exclude:
     - config/application.rb
-    - app/decorators/**
-    - db/migrate/**
+    - app/controllers/**
+    - app/decorators/*.rb
+    - db/migrate/*.rb
     - spec/**
 
 DotPosition:
@@ -41,15 +53,15 @@ FileName:
 HashSyntax:
   Exclude:
     - db/migrate/**
-    - db/schema.rb
 
 LineLength:
   Exclude:
     - db/migrate/**
-    - db/schema.rb
 
 MethodLength:
   Exclude:
+    - spec/controllers/**
+    - spec/models/**
     - db/**
 
 NumericLiterals:
@@ -61,19 +73,16 @@ SignalException:
 SpaceAfterComma:
   Exclude:
     - db/migrate/**
-    - db/schema.rb
 
 SpaceInsideHashLiteralBraces:
   EnforcedStyle: no_space
   EnforcedStyleForEmptyBraces: no_space
   Exclude:
     - db/migrate/**
-    - db/schema.rb
 
 StringLiterals:
   Exclude:
     - db/migrate/**
-    - db/schema.rb
 
 WordArray:
   Enabled: false
