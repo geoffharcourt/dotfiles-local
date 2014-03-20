@@ -1,6 +1,3 @@
-set ttimeout
-set ttimeoutlen=1
-
 " Up and down by visual lines, not literal lines
 nnoremap j gj
 vnoremap j gj

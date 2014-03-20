@@ -16,12 +16,7 @@ source $HOME/.vim/search.vim
 source $HOME/.vim/tabs.vim
 source $HOME/.vim/tmux.vim
 
-
-" Reload and rebundle
-nnoremap <Leader>bi :source ~/.vimrc<CR>:BundleInstall<CR>
-
 " Time out on key codes but not mappings.
 " Basically this makes terminal Vim work sanely.
 set ttimeout
 set ttimeoutlen=100
-
