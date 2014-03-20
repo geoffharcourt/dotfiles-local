@@ -1,5 +1,6 @@
 eval "$(/usr/local/bin/hub alias -s)"
 
+export PATH="/usr/local/share/npm/bin:$PATH"
 export PATH="/usr/local/bin:$PATH"
 # binstubs
 export PATH="./bin:$PATH"
