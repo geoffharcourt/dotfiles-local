@@ -7,7 +7,7 @@ set ignorecase  " searches are case-insensitive
 set smartcase   " searches are case-sensitive if a capital is in term
 
 " toggle search highlighting
-nnoremap <CR> :nohlsearch<CR>
+nnoremap <leader>h :nohlsearch<CR>
 
 " Ctrlp shortcut
 let g:ctrlp_map = '<c-p>'

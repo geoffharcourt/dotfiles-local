@@ -27,4 +27,5 @@ vnoremap <Leader>y "+y
 " here, and I want Ctrlp to work normally for pairing.
 let g:yankring_replace_n_pkey = "<C-y>"
 let g:yankring_replace_n_nkey = "<C-t>"
+let g:yankring_map_dot = 0
 nnoremap ~ :YRShow<CR>

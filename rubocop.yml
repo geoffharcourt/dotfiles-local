@@ -21,7 +21,7 @@ AlignParameters:
   Enabled: false
   EnforcedStyle: with_fixed_indentation
   Exclude:
-    - db/migrate/**
+    # - db/migrate/**
 
 AmbiguousOperator:
   Enabled: false
