@@ -11,11 +11,12 @@ vnoremap gk k
 " Visually select the text that was last edited/pasted
 nnoremap gV `[v`]
 
-" Suddenly arrows stopped working in Insert mode, enough of that bullshit.
-inoremap <ESC>oA <ESC>ki
-inoremap <ESC>oB <ESC>ji
-inoremap <ESC>oC <ESC>li
-inoremap <ESC>oD <ESC>hi
-
 " Get dot command repeatability in visual mode
 xnoremap . :normal.<CR>
+
+" Bubble single lines
+nmap <C-Up> [e
+nmap <C-Down> ]e
+" Bubble multiple lines
+vmap <C-Up> [egv
+vmap <C-Down> ]egv
