@@ -1,5 +1,3 @@
-set -g prefix C-Space
-bind Space send-prefix
 bind Space copy-mode
 bind C-Space copy-mode
 
