@@ -2,7 +2,7 @@
 setopt prompt_subst
 
 _git_prompt_info() {
-  ref=$(git symbolic-ref HEAD 2> /dev/null)
+  ref=$(command git symbolic-ref HEAD 2> /dev/null)
   if [ -n $ref ]; then
     branch_name="${ref#refs/heads/}"
     branch_name_max_length=$(($COLUMNS/5))
@@ -108,7 +108,7 @@ zle -N zle-line-init
 zle -N zle-keymap-select
 
 function precmd {
-  $(git status 2> /dev/null >! "/tmp/git-status-$$")
+  $(command git status 2> /dev/null >! "/tmp/git-status-$$")
 }
 
 _current_ruby() {
