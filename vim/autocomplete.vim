@@ -2,7 +2,7 @@
 " Tab key bullshit
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocomplete config
-set complete=.,b,u,k,]
+set complete=.,w,b,u,t,k,i
 set wildmenu
 set wildmode=longest,list:longest
 set completeopt=menuone,preview
