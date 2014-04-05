@@ -1,19 +1,9 @@
 eval "$(/usr/local/bin/hub alias -s)"
 
-export PATH="/usr/local/share/npm/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
+export PATH="/usr/local/bin:/usr/local/share/npm/bin:$PATH"
+
 # binstubs
 export PATH="./bin:$PATH"
-
-# more history
-setopt extended_history
-HISTFILE=~/.zsh_history
-export HISTSIZE=10000
-export HISTFILESIZE=$HISTSIZE
-export SAVEHIST=$HISTSIZE
-setopt inc_append_history
-setopt hist_ignore_all_dups
-setopt hist_reduce_blanks
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
