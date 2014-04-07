@@ -20,3 +20,5 @@ source $HOME/.vim/tmux.vim
 " Basically this makes terminal Vim work sanely.
 set ttimeout
 set ttimeoutlen=100
+
+set noesckeys
