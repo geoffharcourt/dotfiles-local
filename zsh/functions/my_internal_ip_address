@@ -1,4 +1,4 @@
 my_internal_ip_address() {
-  ifconfig | awk '$1 == "inet" { print $2 }' | tail -1
+  ifconfig | awk '$1 == "inet\s" { print $2 }'
 }
 
