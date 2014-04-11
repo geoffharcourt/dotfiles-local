@@ -2,21 +2,20 @@
 alias realias='source ~/.aliases'
 
 # Git
-alias gaa="git aa"
-alias gcms="git commit -m"
-alias gcm="git commit"
-alias gd="git diff"
-alias gl="git log --pretty=colored --abbrev-commit"
-alias gp="git push"
-alias gra="git rebase --abort"
-alias grc="git rebase --continue"
-alias gri="git rebase -i"
+alias gaa="command git aa"
+alias gcms="command git commit -m"
+alias gcm="command git commit"
+alias gd="command git diff"
+alias gl="command git log --pretty=colored --abbrev-commit"
+alias gp="command git push"
+alias gra="command git rebase --abort"
+alias grc="command git rebase --continue"
+alias gri="command git rebase -i"
+alias gu="command git up -i"
 
 # Heroku
-alias airbrake='heroku addons:open airbrake'
 alias development='nocorrect development'
 alias heroky='heroku'
-alias hlogs='heroku logs --tail'
 alias heroku='nocorrect /usr/local/bin/heroku'
 alias production='nocorrect production'
 alias prodlogs='production logs'
@@ -50,6 +49,7 @@ alias tailt='tlf log/test.log'
 alias flogapp='flog app'
 alias rbp='rails_best_practices'
 alias reek='reek -q'
+alias rubo='rubocop -R'
 
 # Update
 alias goodmorning="brew update && brew upgrade && gem update --system && gem update && rcup"
@@ -57,6 +57,7 @@ alias goodmorning="brew update && brew upgrade && gem update --system && gem upd
 # Folder navigation
 alias cln="cd $HOME/clients"
 alias dotf="cd $HOME/dotfiles-local"
+alias dotu="cd $HOME/dotfiles"
 alias gh="cd $HOME/github"
 
 # Terminal background
@@ -64,7 +65,6 @@ alias godark='echo -e "\033]50;SetProfile=Solarized Dark\a"'
 alias golight='echo -e "\033]50;SetProfile=Solarized Light\a"'
 
 # Vim
-# disable flow control within vim, gain Ctrl-S mapping
 alias v="command vim"
 alias vim="echo 'Use v!'"
 

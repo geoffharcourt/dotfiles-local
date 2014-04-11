@@ -1,9 +1,6 @@
 eval "$(/usr/local/bin/hub alias -s)"
 
-export PATH="/usr/local/bin:/usr/local/share/npm/bin:$PATH"
-
-# binstubs
-export PATH="./bin:$PATH"
+CDPATH=.:$HOME/cortex:$HOME:$HOME/clients:$HOME/Dropbox:$HOME/Downloads:$HOME/github
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
