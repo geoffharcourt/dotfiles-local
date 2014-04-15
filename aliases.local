@@ -64,10 +64,6 @@ alias gh="cd $HOME/github"
 alias godark='echo -e "\033]50;SetProfile=Solarized Dark\a"'
 alias golight='echo -e "\033]50;SetProfile=Solarized Light\a"'
 
-# Vim
-alias v="command vim"
-alias vim="echo 'Use v!'"
-
 # Utility stuff
 # Don't use shell's built-in 'time' command
 alias time='/usr/bin/time'
