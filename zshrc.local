@@ -1,5 +1,7 @@
 eval "$(/usr/local/bin/hub alias -s)"
 
+export PATH=$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH
+
 CDPATH=.:$HOME/cortex:$HOME:$HOME/clients:$HOME/Dropbox:$HOME/Downloads:$HOME/github
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
