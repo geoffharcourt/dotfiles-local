@@ -6,9 +6,10 @@ set background=dark
 
 " Numbering
 set number relativenumber
-set colorcolumn=80
+" set colorcolumn=80
 set scrolloff=5
 set nofoldenable
+set nowrap
 
 " Suppress some messages
 set shortmess=atI
