@@ -2,16 +2,17 @@
 alias realias='source ~/.aliases'
 
 # Git
-alias gaa="command git aa"
-alias gcms="command git commit -m"
-alias gcm="command git commit"
-alias gd="command git diff"
-alias gl="command git log --pretty=colored --abbrev-commit"
-alias gp="command git push"
-alias gra="command git rebase --abort"
-alias grc="command git rebase --continue"
-alias gri="command git rebase -i"
-alias gu="command git up -i"
+alias gaa='command git aa'
+alias gaad='command git add'
+alias gcms='command git commit -m'
+alias gcm='command git commit'
+alias gd='command git diff'
+alias gl='command git log --pretty=colored --abbrev-commit'
+alias gp='command git push'
+alias gra='command git rebase --abort'
+alias grc='command git rebase --continue'
+alias gri='command git rebase -i'
+alias gu='command git up -i'
 
 # Heroku
 alias development='nocorrect development'
@@ -38,7 +39,7 @@ alias respring='spring stop && spring start'
 # Rails
 alias cov='open coverage/index.html'
 # m already aliases here, but I don't want to run seeds
-alias migrate="rake db:migrate db:rollback && rake db:migrate db:test:prepare"
+alias migrate='rake db:migrate db:rollback && rake db:migrate db:test:prepare'
 alias rc='rails console'
 alias resetdb="rake db:schema:load && rake db:test:load && respring"
 alias tagdeps='bundle show --paths | xargs ctags -R && ctags -R -a *'
@@ -52,13 +53,12 @@ alias reek='reek -q'
 alias rubo='rubocop -R'
 
 # Update
-alias goodmorning="brew update && brew upgrade && gem update --system && gem update && rcup"
+alias goodmorning='brew update && brew upgrade && gem update --system && gem update && rcup'
 
 # Folder navigation
-alias cln="cd $HOME/clients"
-alias dotf="cd $HOME/dotfiles-local"
-alias dotu="cd $HOME/dotfiles"
-alias gh="cd $HOME/github"
+alias dotf='cd $HOME/dotfiles-local'
+alias dotu='cd $HOME/dotfiles'
+alias gh='cd $HOME/github'
 
 # Terminal background
 alias godark='echo -e "\033]50;SetProfile=Solarized Dark\a"'
@@ -67,4 +67,4 @@ alias golight='echo -e "\033]50;SetProfile=Solarized Light\a"'
 # Utility stuff
 # Don't use shell's built-in 'time' command
 alias time='/usr/bin/time'
-alias timestamp="date +%Y%m%d%H%M%S"
+alias timestamp='date +%Y%m%d%H%M%S'
