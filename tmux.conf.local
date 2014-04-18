@@ -40,6 +40,9 @@ bind r source-file ~/.tmux.conf \; display "Reloaded!"
 unbind ^A
 bind ^A select-pane -t :.+
 
+# Clear scrollback
+bind C-k clear-history
+
 # Faster response
 set -s escape-time 1
 
