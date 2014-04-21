@@ -1,5 +1,8 @@
 eval "$(/usr/local/bin/hub alias -s)"
 
+# added by travis gem
+[ -f /Users/geoff/.travis/travis.sh ] && source /Users/geoff/.travis/travis.sh
+
 export PATH=$HOME/.bin:/usr/local/bin:/usr/local/sbin:$PATH
 
 CDPATH=.:$HOME/cortex:$HOME:$HOME/clients:$HOME/Dropbox:$HOME/Downloads:$HOME/github
