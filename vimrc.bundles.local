@@ -1,6 +1,7 @@
 " Airline and solarized colors
-Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
+Bundle 'derekprior/vim-colorpack'
+Bundle 'geoffharcourt/vim-colors-solarized'
 Bundle 'kien/rainbow_parentheses.vim'
 
 " Tim Pope for the win
