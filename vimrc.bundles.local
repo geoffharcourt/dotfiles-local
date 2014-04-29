@@ -1,7 +1,6 @@
 " Airline and solarized colors
 Bundle 'bling/vim-airline'
-Bundle 'derekprior/vim-colorpack'
-Bundle 'geoffharcourt/vim-colors-solarized'
+Bundle 'altercation/vim-colors-solarized'
 Bundle 'kien/rainbow_parentheses.vim'
 
 " Tim Pope for the win
@@ -19,13 +18,11 @@ Bundle 'tpope/vim-unimpaired'
 Bundle 'gregsexton/gitv'
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'ck3g/vim-change-hash-syntax'
-Bundle 'jgdavey/tslime.vim'
 Bundle 'jgdavey/vim-blockle'
 Bundle 'kana/vim-textobj-user'
 Bundle 'mtth/scratch.vim'
 Bundle 'nelstrom/vim-textobj-rubyblock'
 Bundle 'nicholaides/words-to-avoid.vim'
-Bundle 'pbrisbin/vim-mkdir'
 Bundle 'rizzatti/dash.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'sjl/vitality.vim'
