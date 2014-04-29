@@ -9,6 +9,7 @@ source $HOME/.vim/git.vim
 source $HOME/.vim/movement.vim
 source $HOME/.vim/quickfix.vim
 source $HOME/.vim/rename.vim
+source $HOME/.vim/rails.vim
 source $HOME/.vim/rspec.vim
 source $HOME/.vim/ruby.vim
 source $HOME/.vim/saves_and_quits.vim

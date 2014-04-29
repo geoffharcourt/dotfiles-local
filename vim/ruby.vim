@@ -14,7 +14,7 @@ nnoremap <Leader>{ :%s/{\([^ ]\)/{ \1/gc<CR>
 nnoremap <Leader>} :%s/\([^ ]\)}/\1 }/gc<CR>
 
 " Promote variable to Rspec let (also thanks Gary Bernhardt)
-noremap <Leader>rp :call PromoteToLet()<CR>
+noremap <Leader>L :call PromoteToLet()<CR>
 
 " Split long line with comma-separated terms into multiple lines, then indent
 " the collection appropriately.
@@ -27,18 +27,13 @@ au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,
 augroup rubywhitespace
   autocmd!
   au BufWritePre *.rb :%s/\s\+$//e
-  au BufWritePre *.haml :%s/\s\+$//e
   au BufWritePre *.erb :%s/\s\+$//e
   au BufWritePre *.feature :%s/\s\+$//e
+  au BufWritePre *.haml :%s/\s\+$//e
+  au BufWritePre *.rake :%s/\s\+$//e
   au BufWritePre Gemfile :%s/\s\+$//e
 augroup END
 
 let g:syntastic_ruby_checkers = ['mri', 'rubylint', 'rubocop']
-
-" Load custom Rails projections
-augroup railsprojections
-  autocmd!
-  autocmd User Rails source ~/.vim/autoload/rails.vim
-augroup END
 
 command! Migrate !rake db:migrate && rake db:rollback && rake db:migrate && rake db:test:load
