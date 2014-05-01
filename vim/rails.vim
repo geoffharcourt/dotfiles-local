@@ -1,15 +1,15 @@
 let g:rails_projections = {
-\ "app/models/*.rb" : {
-\   "related": "spec/factories/%p.rb"
+\ "app/models/*.rb": {
+\   "related": "spec/factories/%p.rb",
 \ },
 \ "spec/factories/*.rb": {
 \   "command": "factory",
-\   "affinity": "model",
+\   "affinity": "collection",
+\   "alternate": "app/models/%i.rb",
+\   "related": "db/schema.rb#%s",
+\   "test": "test/models/%i_test.rb",
 \   "template": "FactoryGirl.define do\n  factory :%i do\n  end\nend",
-\   "related": "app/models/%i.rb",
-\   "test": [
-\     "spec/models/factory_spec.rb"
-\   ]
+\   "keywords": "factory sequence"
 \ },
 \ "app/decorators/*_decorator.rb": {
 \   "command": "decorator",
