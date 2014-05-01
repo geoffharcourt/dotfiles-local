@@ -9,7 +9,7 @@ set number relativenumber
 " set colorcolumn=80
 set scrolloff=5
 set nofoldenable
-set nowrap
+set wrap
 
 " Suppress some messages
 set shortmess=atI
