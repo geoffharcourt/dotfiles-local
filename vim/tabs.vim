@@ -8,8 +8,8 @@ nnoremap <Leader>sh <C-W>t<C-W>K
 
 " split size settings
 set winwidth=84
-set winheight=25
-set winminheight=25
+set winheight=10
+set winminheight=10
 set winheight=999
 
 " Edit another file in the same directory as the current file
