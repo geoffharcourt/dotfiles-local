@@ -1,88 +1,49 @@
-AllCops:
-  Excludes:
-    - bin/**
-    - db/schema.rb
-    - config/unicorn.rb
-
-AccessorMethodName:
+FileName:
   Enabled: false
 
-ActionFilter:
-  EnforcedStyle: filter
-  Enabled: true
-
-# Disabled because Rubocop doesn't like this:
-# call(
-#   one,
-#   two,
-#   three
-# )
-AlignParameters:
-  Enabled: false
-  EnforcedStyle: with_fixed_indentation
-  Exclude:
-    # - db/migrate/**
-
-AmbiguousOperator:
-  Enabled: false
-  Exclude:
-    - spec/factories/*.rb
-
-ClassAndModuleChildren:
+ClassLength:
   Enabled: false
 
-CollectionMethods:
-  Enabled: true
-  PreferredMethods:
-    reduce: 'inject'
+CyclomaticComplexity:
+  Enabled: false
 
 Documentation:
-  Exclude:
-    - config/application.rb
-    - app/controllers/**
-    - app/decorators/*.rb
-    - db/migrate/*.rb
-    - spec/**
+  Enabled: false
+
+Encoding:
+  Enabled: false
+
+MethodLength:
+  Enabled: false
+
+ModuleFunction:
+  Enabled: false
+
+ParameterLists:
+  Enabled: false
+
+Proc:
+  Enabled: false
+
+SingleLineBlockParams:
+  Enabled: false
+
+VariableInterpolation:
+  Enabled: false
+
+LineLength:
+  Max: 80
 
 DotPosition:
   EnforcedStyle: trailing
 
-FileName:
-  Enabled: false
+CollectionMethods:
+  PreferredMethods:
+    find: detect
+    reduce: inject
+    collect: map
+    find_all: select
 
-HashSyntax:
-  Exclude:
-    - db/migrate/**
-
-LineLength:
-  Exclude:
-    - db/migrate/**
-
-MethodLength:
-  Exclude:
-    - spec/controllers/**
-    - spec/models/**
-    - db/**
-
-NumericLiterals:
-  Enabled: false
-
-SignalException:
-  Enabled: false
-
-SpaceAfterComma:
-  Exclude:
-    - db/migrate/**
-
-SpaceInsideHashLiteralBraces:
-  EnforcedStyle: no_space
-  EnforcedStyleForEmptyBraces: no_space
-  Exclude:
-    - db/migrate/**
-
-StringLiterals:
-  Exclude:
-    - db/migrate/**
-
-WordArray:
-  Enabled: false
+PredicateName:
+  NamePrefixBlacklist:
+    - is_
