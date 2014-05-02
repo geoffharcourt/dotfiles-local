@@ -35,5 +35,3 @@ augroup rubywhitespace
 augroup END
 
 let g:syntastic_ruby_checkers = ['mri', 'rubylint', 'rubocop']
-
-command! Migrate !rake db:migrate && rake db:rollback && rake db:migrate && rake db:test:load

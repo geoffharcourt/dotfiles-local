@@ -40,7 +40,7 @@ alias respring='spring stop && spring start'
 # Rails
 alias cov='open coverage/index.html'
 # m already aliases here, but I don't want to run seeds
-alias migrate='rake db:migrate db:rollback && rake db:migrate db:test:prepare'
+alias migrate='rake db:migrate db:rollback && rake db:migrate'
 alias rc='rails console'
 alias resetdb="rake db:schema:load && rake db:test:load && respring"
 alias tagdeps='bundle show --paths | xargs ctags -R && ctags -R -a *'

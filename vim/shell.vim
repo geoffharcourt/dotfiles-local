@@ -1,0 +1,1 @@
+command! Migrate RunInInteractiveShell m
