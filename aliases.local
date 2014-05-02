@@ -4,6 +4,7 @@ alias realias='source ~/.aliases'
 # Git
 alias gaa='command git aa'
 alias gaad='command git add'
+alias gclean='g co master && git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
 alias gcms='command git commit -m'
 alias gcm='command git commit'
 alias gd='command git diff'
