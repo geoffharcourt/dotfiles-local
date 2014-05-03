@@ -51,8 +51,12 @@ set -g status-justify left
 setw -g monitor-activity on
 set -g visual-activity on
 
+set -g status-bg 'colour0'
+
+set -g status-left-length 50
 set -g status-left '#[fg=colour15,bg=colour0] #S '
 
+set -g status-right-length 100
 set -g status-right '#(nice -n 19 ~/.tmux/status) #[default]#h:#(ifconfig | grep "inet " | cut -d " " -f2 | tail -1 )  #[fg=colour1]ruby #(nice -n 19 ~/.tmux/rbenv) '
 
 setw -g window-status-format '#[fg=colour14] #I #W '
@@ -66,5 +70,3 @@ bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim(diff)?$' && tmux send-keys 'C-\\') || tmux select-pane -l"
 
 bind C-l send-keys 'C-l'
-
-if-shell "[ -f ~/.tmuxline.conf ]" 'source ~/.tmuxline.conf'

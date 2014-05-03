@@ -31,7 +31,7 @@ git_branch() {
   else
     color="colour7"
   fi
-  printf "#[fg=$color]in #[fg=$color,bold]$(git rev-parse --abbrev-ref HEAD) "
+  printf "#[fg=$color,bold]$(git rev-parse --abbrev-ref HEAD) "
 }
 
 git_pwd() {
