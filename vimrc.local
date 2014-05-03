@@ -7,6 +7,7 @@ source $HOME/.vim/common_files.vim
 source $HOME/.vim/formatting.vim
 source $HOME/.vim/git.vim
 source $HOME/.vim/movement.vim
+source $HOME/.vim/navigation.vim
 source $HOME/.vim/quickfix.vim
 source $HOME/.vim/rename.vim
 source $HOME/.vim/rails.vim
