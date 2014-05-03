@@ -20,25 +20,27 @@ noremap <Leader>B
   \ :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
 
 let g:netrw_liststyle= 4
+let g:airline_left_sep = ''
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline_right_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#ctrlp#color_tempate = 'normal'
+let g:airline#extensions#syntastic#enabled = 1
+let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
-let airline#extensions#tmuxline#color_template = 'visual'
+let g:airline_section_z = "%4l%#__restore__#:%3c"
+let g:airline#extensions#default#layout = [
+      \ [ 'a', 'c'],
+      \ [ 'x', 'z'],
+      \ ]
 let g:airline#extensions#default#section_truncate_width = {
     \ 'a': 25,
     \ 'b': 120,
     \ 'c': 25,
     \ 'x': 120,
-    \ 'y': 120,
+    \ 'y': 150,
     \ 'z': 25,
     \ }
-
-let g:tmuxline_preset = {
-      \'a'    : '#S',
-      \'b'    : '#W',
-      \'win'  : '#I #W',
-      \'cwin' : '#I #W',
-      \'y'    : '#h:#(ifconfig | grep "inet " | cut -d " " -f2 | tail -1 )',
-      \'z'    : 'ruby #(cd $PWD && rbenv version-name)',
-      \'options' : {'status-justify' : 'left'} }
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound

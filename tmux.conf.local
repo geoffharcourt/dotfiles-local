@@ -46,16 +46,18 @@ bind C-k clear-history
 # Faster response
 set -s escape-time 1
 
-set -g status-bg '#073642'
-set -g status-left-length 30
-set -g status-right-length 90
-set -g status-left "#[bg=black]#S:#W  "
-set -g status-right "#[bg=black] #[fg=white] #h:#(my_internal_ip_address)/#(curl icanhazip.com)  #[fg=#dc322f]ruby:#(cd $PWD && rbenv version-name)"
 set -g status-position bottom
 set -g status-justify left
 setw -g monitor-activity on
 set -g visual-activity on
 
+set -g status-left '#[fg=colour15,bg=colour0] #S '
+
+set -g status-right '#(nice -n 19 ~/.tmux/status) #[default]#h:#(ifconfig | grep "inet " | cut -d " " -f2 | tail -1 )  #[fg=colour1]ruby #(nice -n 19 ~/.tmux/rbenv) '
+
+setw -g window-status-format '#[fg=colour14] #I #W '
+
+setw -g window-status-current-format '#[fg=colour13,bold] #I #W '
 # Smart pane switching with awareness of vim splits
 bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim(diff)?$' && tmux send-keys C-h) || tmux select-pane -L"
 bind -n C-j run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim(diff)?$' && tmux send-keys C-j) || tmux select-pane -D"
