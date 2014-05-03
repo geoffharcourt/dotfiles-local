@@ -24,4 +24,4 @@ source $HOME/.vim/tmux.vim
 set ttimeout
 set ttimeoutlen=100
 
-set noesckeys
+" set noesckeys
