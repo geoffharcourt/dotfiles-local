@@ -62,7 +62,7 @@ if ! (tmux has-session -t "$SESSION" >/dev/null 2>&1); then
     "$PWD"/.tmux "$SESSION"
   else
     tmux new-session -s "$SESSION" -n vim -d
-    tmux send-keys "v ." C-m #':CtrlP' C-m
+    tmux send-keys "spring && v ." C-m #':CtrlP' C-m
     tmux new-window -n foreman -t "$SESSION"
     tmux send-keys "guard" C-m
     tmux split-window -h
