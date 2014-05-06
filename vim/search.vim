@@ -17,7 +17,8 @@ let g:ctrlp_map = '<c-p>'
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " bind \ (backward slash) to grep shortcut
-nnoremap \ :G<SPACE>
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+nnoremap \ :Ag<SPACE>
 
 nmap <silent> <leader>d <Plug>DashGlobalSearch
 nnoremap <leader>D :DashGlobalSearch<space>
