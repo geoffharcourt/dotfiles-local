@@ -20,6 +20,8 @@ alias development='nocorrect development'
 alias heroky='heroku'
 alias heroku='nocorrect heroku'
 alias production='nocorrect production'
+alias push-to-production='gp production && production migrate'
+alias push-to-staging='gp staging && staging migrate'
 alias staging='nocorrect staging'
 
 # Postgres
