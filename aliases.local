@@ -20,8 +20,9 @@ alias development='nocorrect development'
 alias heroky='heroku'
 alias heroku='nocorrect heroku'
 alias production='nocorrect production'
+alias push-to-demo='gp demo --force && demo migrate'
 alias push-to-production='gp production && production migrate'
-alias push-to-staging='gp staging && staging migrate'
+alias push-to-staging='gp staging $(git symbolic-ref --short -q HEAD):master --force && staging migrate'
 alias staging='nocorrect staging'
 
 # Postgres
