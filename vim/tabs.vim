@@ -2,6 +2,9 @@
 " Splits and tabs
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
+" Run commands in an interactive shell
+nnoremap <Leader>r :RunInInteractiveShell<space>
+
 " Turn two horizontal splits into a vertical split
 nnoremap <Leader>sv <C-W>t<C-W>H
 nnoremap <Leader>sh <C-W>t<C-W>K
