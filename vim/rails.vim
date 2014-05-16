@@ -12,6 +12,7 @@ let g:rails_projections = {
 \   "keywords": "factory sequence"
 \ },
 \ "app/decorators/*_decorator.rb": {
+\   "affinity": "model",
 \   "command": "decorator",
 \   "template": "class %SDecorator < Draper::Decorator\nend",
 \   "test": [
@@ -41,12 +42,15 @@ let g:rails_projections = {
 \     "lib/assets/javascripts/%s.js"
 \   ]
 \ },
+\ "spec/requests/*.rb": {
+\   "command": "request",
+\   "alternate": "app/controllers/%s_controller.rb"
+\ },
 \ "config/application.rb": {"command": "application"},
 \ "Gemfile": {"command": "gemfile"},
 \ "config/routes.rb": {"command": "routes"},
 \ "config/locales/en.yml": {"command": "locales"},
 \ "spec/features/*_spec.rb": {"command": "feature"},
-\ "spec/requests/*_spec.rb": {"command": "request"},
 \ "spec/support/*.rb": {"command": "support"},
 \ ".env": {"command": "secrets"},
 \ }
