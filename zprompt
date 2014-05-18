@@ -140,4 +140,4 @@ _hostname() {
 }
 
 PROMPT='$(_bracket_wrap "$(_basic)$(_separate $(_colored_git_branch))$(_separate $(_colored_git_difference))")$(_display_current_vim_mode) '
-RPROMPT='$(_status_result) $(_rprompt)'
+# RPROMPT='$(_status_result) $(_rprompt)'
