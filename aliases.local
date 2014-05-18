@@ -44,7 +44,7 @@ alias cov='open coverage/index.html'
 alias migrate='rake db:migrate db:rollback && rake db:migrate'
 alias rc='rails console'
 alias resetdb="rake db:schema:load && respring"
-alias tagdeps='bundle show --paths | xargs ctags -R && ctags -R -a *'
+alias tagdeps='./git/hooks/ctags'
 alias taild='tlf log/development.log'
 alias tailt='tlf log/test.log'
 
