@@ -20,7 +20,8 @@ function! InsertTabWrapper()
     endif
 endfunction
 
-inoremap <S-Tab> <C-p>
+" Unmapping this combination in favor of snippets
+" inoremap <S-Tab> <C-p>
 
 function! SelectAutoCompleteOrCarriageReturn()
   if pumvisible()
