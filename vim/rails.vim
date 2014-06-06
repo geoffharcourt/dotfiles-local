@@ -21,7 +21,7 @@ let g:rails_projections = {
 \ },
 \ "app/serializers/*_serializer.rb": {
 \   "command": "serializer",
-\   "template": "class %SSerializer < ActiveModel::Serializer\nend",
+\   "template": "class %SSerializer\nend",
 \   "test": [
 \     "spec/serializers/%s_serializer_spec.rb"
 \   ]
