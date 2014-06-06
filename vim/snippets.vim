@@ -1,1 +1,1 @@
-let g:snippetsEmu_key = "<C-\\>"
+let g:snippetsEmu_key = "<S-Tab>"
