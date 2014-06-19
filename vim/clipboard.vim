@@ -20,6 +20,12 @@ nnoremap <Leader>cw mmviw:<c-u>call g:CopyVisualText()<cr><esc>`m
 nnoremap <Leader>p :r!pbpaste<cr>
 nnoremap <Leader>ca :call CopyEntireFile()<cr>
 
+let g:EasyClipUsePasteToggleDefaults = 0
+" nnoremap [y call EasyClip#Paste#SwapPaste(1)
+" nnoremap ]y <plug>EasyClip#Paste#SwapPasteBackwards(1)
+nnoremap <c-y> <plug>EasyClipSwapPasteForward
+nnoremap <c-t> <plug>EasyClipSwapPasteBackwards
+
 vnoremap <Leader>x "+x
 vnoremap <Leader>y "+y
 
