@@ -16,7 +16,7 @@ source $HOME/.vim/ruby.vim
 source $HOME/.vim/saves_and_quits.vim
 source $HOME/.vim/search.vim
 source $HOME/.vim/shell.vim
-source $HOME/.vim/snippets.vim
+" source $HOME/.vim/snippets.vim
 source $HOME/.vim/tabs.vim
 source $HOME/.vim/tmux.vim
 
