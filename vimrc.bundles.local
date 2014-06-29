@@ -31,7 +31,6 @@ Bundle 'rizzatti/dash.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rking/ag.vim'
 Bundle 'sjl/vitality.vim'
-Bundle 'vim-ruby/vim-ruby'
 Bundle 'vim-scripts/YankRing.vim'
 
 Bundle 'Valloric/YouCompleteMe'
