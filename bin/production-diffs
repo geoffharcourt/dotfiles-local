@@ -1,0 +1,4 @@
+git fetch production
+git log production/master..master
+git diff --stat production/master
+
