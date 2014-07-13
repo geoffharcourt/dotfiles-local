@@ -16,8 +16,6 @@ set wrap
 set shortmess=atI
 set visualbell
 
-nnoremap <Leader>G :Goyo<CR>
-
 " Toggle background
 nnoremap <Leader>B
   \ :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
