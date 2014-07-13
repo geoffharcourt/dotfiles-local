@@ -15,10 +15,10 @@ function! CopyEntireFile()
   echohl String | echon "Buffer contents copied!" | echohl None
 endfunction
 
+nnoremap <Leader>ca :call CopyEntireFile()<cr>
 vnoremap <Leader>cp :<c-u>call g:CopyVisualText()<cr>
 nnoremap <Leader>cw mmviw:<c-u>call g:CopyVisualText()<cr><esc>`m
 nnoremap <Leader>p :r!pbpaste<cr>
-nnoremap <Leader>ca :call CopyEntireFile()<cr>
 
 let g:EasyClipUsePasteToggleDefaults = 0
 " nnoremap [y call EasyClip#Paste#SwapPaste(1)
@@ -34,4 +34,4 @@ vnoremap <Leader>y "+y
 let g:yankring_replace_n_pkey = "<C-y>"
 let g:yankring_replace_n_nkey = "<C-t>"
 let g:yankring_map_dot = 0
-nnoremap ~ :YRShow<CR>
+" nnoremap ~ :YRShow<CR>

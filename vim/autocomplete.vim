@@ -4,7 +4,7 @@
 " Autocomplete config
 set complete=.,w,b,u,t,k,i
 set wildmenu
-set wildmode=longest,list:longest
+set wildmode=longest:full,full
 set completeopt=menuone,preview
 set wildignore+=coverage
 set infercase
@@ -21,38 +21,35 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
 " Override thoughtbot tab wrapper to move through autocomplete list
 " in opposite direction
-" function! InsertTabWrapper()
-"     let col = col('.') - 1
-"     if !col || getline('.')[col - 1] !~ '\k'
-"         return "\<tab>"
-"     else
-"         return "\<c-n>"
-"     endif
-" endfunction
+function! InsertTabWrapper()
+    let col = col('.') - 1
+    if !col || getline('.')[col - 1] !~ '\k'
+        return "\<tab>"
+    else
+        return "\<c-n>"
+    endif
+endfunction
 
 " Unmapping this combination in favor of snippets
-" inoremap <S-Tab> <C-p>
+inoremap <S-Tab> <c-p>
 
-" function! SelectAutoCompleteOrCarriageReturn()
-"   if pumvisible()
-"     return "\<C-y>"
-"   else
-"     return "\<CR>"
-"   endif
-" endfunction
-"
+function! SelectAutoCompleteOrCarriageReturn()
+  if pumvisible()
+    return "\<c-y>"
+  else
+    return "\<CR>"
+  endif
+endfunction
+
 " Use escape to kill autocomplete without completion and stay in insert mode
-" inoremap <expr> <Esc> pumvisible() ? "\<C-y>" : "\<Esc>"
-" inoremap <CR> <C-r>=SelectAutoCompleteOrCarriageReturn()<CR>
+inoremap <CR> <C-r>=SelectAutoCompleteOrCarriageReturn()<CR>
 
-autocmd
+" autocmd FileType css,sass setlocal omnifunc=csscomplete#CompleteCSS
+" autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 
-autocmd FileType css,sass setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
-
-" Any autocomplete and Rails.vim do not play well together. Copied completion terms
-" into custom dictionaries which are loaded when files with the right Rails
-" classification (controller, model, template, etc.) are edited.
+" Any autocomplete and Rails.vim do not play well together. Copied completion
+" terms into custom dictionaries which are loaded when files with the right
+" Rails classification (controller, model, template, etc.) are edited.
 "
 " This is a brutal, brutal hack.
 augroup rubydictionaries

@@ -31,14 +31,3 @@ Bundle 'rizzatti/dash.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rking/ag.vim'
 Bundle 'sjl/vitality.vim'
-Bundle 'vim-scripts/YankRing.vim'
-
-Bundle 'Valloric/YouCompleteMe'
-
-" Track the engine.
-Plugin 'SirVer/ultisnips'
-
-" Snippets are separated from the engine. Add this if you want them:
-Plugin 'honza/vim-snippets'
-
-" Plugin 'svermeulen/vim-easyclip'
