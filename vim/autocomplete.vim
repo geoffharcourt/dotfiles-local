@@ -42,7 +42,7 @@ function! SelectAutoCompleteOrCarriageReturn()
 endfunction
 
 " Use escape to kill autocomplete without completion and stay in insert mode
-inoremap <CR> <C-r>=SelectAutoCompleteOrCarriageReturn()<CR>
+inoremap <silent> <CR> <C-r>=SelectAutoCompleteOrCarriageReturn()<CR>
 
 " autocmd FileType css,sass setlocal omnifunc=csscomplete#CompleteCSS
 " autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
