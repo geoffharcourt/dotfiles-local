@@ -43,7 +43,7 @@ endfunction
 
 function! CloseAutocomplionOrEscape()
   if pumvisible()
-    return "\<c-e>"
+    return "\<c-y>"
   else
     return "\<Esc>"
   endif
