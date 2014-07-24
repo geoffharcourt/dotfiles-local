@@ -1,6 +1,8 @@
 " Indentation 
 noremap <Leader>i mmgg=G`m<CR>
 
+nnoremap <Leader>" :normal cs'"<CR>
+
 " don't use Ex mode, use Q for formatting
 map Q gq
 

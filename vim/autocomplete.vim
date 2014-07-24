@@ -41,16 +41,16 @@ function! SelectAutoCompleteOrCarriageReturn()
   endif
 endfunction
 
-function! CloseAutocomplionOrEscape()
-  if pumvisible()
-    return "\<c-y>"
-  else
-    return "\<Esc>"
-  endif
-endfunction
+" function! CloseAutocomplionOrEscape()
+"   if pumvisible()
+"     return "\<c-y>"
+"   else
+"     return "\<Esc>"
+"   endif
+" endfunction
 " Use escape to kill autocomplete without completion and stay in insert mode
 inoremap <silent> <CR> <C-r>=SelectAutoCompleteOrCarriageReturn()<CR>
-inoremap <Esc> <C-r>=CloseAutocomplionOrEscape()<CR>
+" inoremap <Esc> <C-r>=CloseAutocomplionOrEscape()<CR>
 
 autocmd FileType css,sass setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags

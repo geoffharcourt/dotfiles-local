@@ -43,31 +43,28 @@ What's in it?
 
 [vim](http://www.vim.org/) configuration:
 
+* custom configuration broken down by subject area in vim folder
 * solarized color scheme
-* vim-airline for customized status bar
 * rainbow_parentheses to change colors of (), {}, [], <> when editing code
-* YankRing for cycling through yanked segments
 * vim-vinegar for quick jumps through the file system
 * vim-haml, vim-liquid, vim-markdown for editing those file/template types
 * Other awesome @tpope plugins: vim-abolish, vim-dispatch, vim-repeat,
   vim-unimpaired.
-* vim-mkdir to avoid errors when generating a file in a director that doesn't
-  exist yet (thanks to @pbrisbin)
 * dash.vim for searching Dash
 * vim-blockle for toggling between Ruby do-end and {} block styles
 * vim-textobj-rubyblock for getting Ruby method and class text objects (thanks
   to @nelstrom)
+* vim-scrach for top-down visor-like scratchpad
 
 [tmux](http://robots.thoughtbot.com/a-tmux-crash-course)
 configuration:
 
 * @christoomey's vim-tmux-navigator to streamline jumps between vim and tmux
   splits
-* tmuxline to copy vim-airline configuration settings to tmux
 
 [git](http://git-scm.com/) configuration:
 
-* Use the Homebrew shell command hub instead of git (backwards compatible with
+* Use the Github shell command `hub` instead of `git` (backwards compatible with
   git)
 * Pretty logging (courtesy of @croaky)
 
@@ -87,15 +84,12 @@ Shell aliases and scripts:
 * bu for bundle update
 * heroky for heroku, since I can't seem to spell that correctly when typing fast
 
-
 Terminal stuff:
-* corrects terminal font size in response to what machine I'm attached to by
-  swapping iTerm2 profiles.
 * nocorrects on parity commands: development, staging, production
 
 Credits
 -------
-Most of my configuration is just small changes on top of thoughtbot's dotfiles.
+Most of my configuration is small changes on top of thoughtbot's dotfiles.
 They have a great series of blog posts about dotfile configuration at their
 [blog](http://robots.thoughtbot.com).
 

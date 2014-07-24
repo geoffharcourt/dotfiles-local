@@ -3,10 +3,12 @@
 " let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 let g:rspec_command = "Dispatch rspec {spec}"
 
+" Use to reset tslime when specs should be sent to a different window
+nmap <C-c>r <Plug>SetTmuxVars
+
 function! PromoteToLet()
   :normal! dd
   " :exec '?^\sit\>'
   :normal! P
   :.s/\(\w\+\) = \(.*\)$/let(:\1) { \2 }/
 endfunction
-
