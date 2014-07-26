@@ -1,6 +1,8 @@
 #!/bin/sh
 
 brew install hub tmate vim zsh-completions zsh-history-substring-search zsh-syntax-highlighting
+brew install pow jq
+brew install rbenv-aliases rbenv-ctags rbenv-default-gems
 
 brew tap caskroom/cask
 brew install brew-cask
