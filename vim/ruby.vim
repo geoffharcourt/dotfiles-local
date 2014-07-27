@@ -29,4 +29,4 @@ augroup rubywhitespace
   au BufWritePre Gemfile :%s/\s\+$//e
 augroup END
 
-let g:syntastic_ruby_checkers = ['mri', 'rubylint', 'rubocop']
+let g:syntastic_ruby_checkers = ['mri', 'rubylint'] ", 'rubocop']
