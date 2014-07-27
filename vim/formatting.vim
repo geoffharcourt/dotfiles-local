@@ -11,7 +11,7 @@ nnoremap <Leader>" :normal cs'"<CR>
 map Q gq
 
 " Review markdown
-command! Marked Dispatch open -a Marked.app %:p
+command! Marked MarkedOpen!
 
 " Spell check in markdown and text files
 augroup spellingenabled
