@@ -6,7 +6,6 @@ set background=dark
 
 " Numbering
 set number relativenumber
-" set colorcolumn=80
 set scrolloff=5
 set nofoldenable
 set noshowmode

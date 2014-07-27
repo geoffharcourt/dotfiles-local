@@ -20,9 +20,12 @@ source $HOME/.vim/shell.vim
 source $HOME/.vim/tabs.vim
 source $HOME/.vim/tmux.vim
 
+nnoremap <Leader>S :source $MYVIMRC<CR>
+nnoremap <Leader>C :PluginClean<CR>
+nnoremap <Leader>U :PluginUpdate<CR>
+
 " Time out on key codes but not mappings.
 " Basically this makes terminal Vim work sanely.
+set notimeout
 set ttimeout
-set ttimeoutlen=100
-
-" set noesckeys
+set ttimeoutlen=10
