@@ -1,7 +1,7 @@
 # Aliases
 alias realias='source ~/.aliases'
 
-# alias v='nvim'
+alias v='nvim'
 
 # Swap profiles
 alias godark='echo -e "\033]50;SetProfile=Solarized Dark\a"'
