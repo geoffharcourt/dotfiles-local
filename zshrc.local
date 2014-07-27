@@ -12,4 +12,6 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 
+export VIMRUNTIME=/usr/local/share/vim/vim74
+
 source ~/.zprompt
