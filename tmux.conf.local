@@ -71,3 +71,6 @@ bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim(diff)?$' && tmux send-keys 'C-\\') || tmux select-pane -l"
 
 bind C-l send-keys 'C-l'
+
+if-shell "[ -f ~/.tmuxcolors-256.conf ]" 'source ~/.tmuxcolors-256.conf'
+if-shell "[ -f ~/.tmuxcolors-dark.conf ]" 'source ~/.tmuxcolors-dark.conf'
