@@ -87,7 +87,7 @@ _magenta()                { echo "$(_color "$1" magenta)" }
 
 _bracket_wrap()           { echo "$(_grey "[") $1 $(_grey "]") " }
 _basic()                  { echo "$(_user_name)$(_colored_path)" }
-_colored_path()           { echo "$(_grey "%~")" }
+_colored_path()           { echo "$(_grey "%.")" }
 _colored_git_branch()     { echo "$(_git_prompt_color "$(_git_prompt_info)")" }
 _colored_git_difference() { echo "$(_yellow "$(_git_difference_from_track)")" }
 
@@ -111,33 +111,4 @@ function precmd {
   $(command git status 2> /dev/null >! "/tmp/git-status-$$")
 }
 
-_current_ruby() {
-  if [[ -n $rvm_path ]]; then
-    $rvm_path/bin/rvm-prompt
-  fi
-
-  if [[ -n $(rbenv version) ]]; then
-    rbenv version-name
-  fi
-}
-
-_rprompt() {
-  if [ $COLUMNS -gt 80 ]; then
-    echo "%{$fg[white]%}$(_current_ruby)%{$reset_color%}"
-  fi
-}
-
-_status_result() {
-  if [[ $(history | wc -l | xargs) == "1" ]]; then
-    echo "OK"; 
-  else 
-    echo "%(?,$(_green "OK"), $(_red "✘"))"
-  fi
-}
-
-_hostname() {
-  echo "%{$fg[blue]%}%n@%m%{$reset_color%} "
-}
-
 PROMPT='$(_bracket_wrap "$(_basic)$(_separate $(_colored_git_branch))$(_separate $(_colored_git_difference))")$(_display_current_vim_mode) '
-# RPROMPT='$(_status_result) $(_rprompt)'
