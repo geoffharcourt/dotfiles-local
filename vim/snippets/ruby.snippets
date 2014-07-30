@@ -1,5 +1,71 @@
+snippet allow
+	allow(${1:object}).to receive(:${2:method})
+snippet allowr
+	allow(${1:object}).to receive(:${2:method}) { ${3:return_value} }
+snippet bef
+	before(:${1:each}) do
+		${2}
+	end
+snippet bt
+	belongs_to :${1:association}
+snippet cls
+	class ${1:`substitute(substitute(Filename(), '\C\(_\)\=\(.\)','\=submatch(1)==""?tolower(submatch(2)) : toupper(submatch(2))','g'),'^.','\u&','')`}
+	end
+snippet cont
+	context "${1:message}" do
+		${2}
+	end
+snippet descm
+	describe "${1:method_or_behavior}" do
+	  ${2:pending # document the behavior}
+	end
+snippet descc
+	RSpec.describe ${1:`substitute(substitute(strpart(Filename(), 0, strridx(Filename(), "_spec")), '\C\(_\)\=\(.\)','\=submatch(1)==""?tolower(submatch(2)) : toupper(submatch(2))','g'),'^.','\u&','')`} do
+	  ${2:pending # document the behavior}
+	end
+snippet .ead
+	.each do |${1:thing}|
+	  ${2}
+	end
+snippet exp
+	expect(${1:object}).to ${2:matcher}
+snippet expw
+	expect(${1:object}).to have_received(:${2:method}).with(${3:arguments})
+snippet if
+	if ${1:condition}
+		${2}
+	end
+snippet itd
+	it "${1:does that}" do
+	  ${2:pending # document the behavior}
+	end
+snippet its
+	it { should ${1:behave_this_way} }
+snippet itshdb
+	it { should have_db_index(:${1:column})${2} }
+snippet itsv
+	it { should validate_${1:evaluation_aspect}(:${2:thing_to_evaluate})${3} }
+snippet itsvp
+	it { should validate_presence_of(:${1:attribute}) }
+snippet itsbt
+	it { should belong_to(:${1:parent}) }
+snippet itshm
+	it { should have_many(:${1:children}) }
+snippet let
+	let(:${1:object}) ${2}
+snippet .mapd
+	.map do |${1:method}|
+snippet .maps
+	.map(&:${1:method})
+snippet .pluck
+	.pluck(:${1:attribute})
+snippet prt
+	protected
+	
+snippet prv
+	private
+	
+snippet r
+	attr_reader :${1:attribute}
 snippet rsh
 	require "spec_helper"
-
-snippet rdesc
-	RSpec.describe ${1:`substitute(substitute(strpart(Filename(), 0, strridx(Filename(), "_spec")), '\C\(_\)\=\(.\)','\=submatch(1)==""?tolower(submatch(2)) : toupper(submatch(2))','g'),'^.','\u&','')`}
