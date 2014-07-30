@@ -4,12 +4,6 @@ nnoremap J mzJ`z
 " Indentation 
 noremap <Leader>i mmgg=G`m<CR>
 
-" Convert single quotes to doubles
-nnoremap <Leader>" :normal cs'"<CR>
-
-" don't use Ex mode, use Q for formatting
-map Q gq
-
 " Review markdown
 command! Marked MarkedOpen!
 
@@ -22,5 +16,5 @@ augroup spellingenabled
   autocmd FileType text set complete+=kspell
 augroup END
 
-" Don't try to highlight lines longer than 800 characters.
-set synmaxcol=800
+" Don't try to highlight lines longer than 200 characters.
+set synmaxcol=200

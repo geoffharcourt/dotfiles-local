@@ -2,12 +2,11 @@
 " Search
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set hlsearch    " highlight search results
-set incsearch   " highlight result as search term is typed
 set ignorecase  " searches are case-insensitive
 set smartcase   " searches are case-sensitive if a capital is in term
 
 " toggle search highlighting
-nnoremap <leader>h :nohlsearch<CR>
+nnoremap <leader>h coh
 
 " Use tab to jump around matching surrounding chars
 nnoremap <tab> %

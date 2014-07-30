@@ -2,8 +2,6 @@
 " RUBY
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-" additional vim-rspec mapping
-nnoremap <Leader>a :call RunAllSpecs()<CR>
 " Convert vim block format
 let g:blockle_mapping = '<Leader>b'
 

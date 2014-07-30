@@ -1,6 +1,6 @@
 " Copy & Paste
 "------------------------
-"
+
 " For some reason Vim no longer wants to talk to the OS X pasteboard through *
 function! g:CopyVisualText()
   let cur_register_contents = @c
@@ -17,7 +17,7 @@ endfunction
 
 nnoremap <Leader>ca :call CopyEntireFile()<cr>
 vnoremap <Leader>cp :<c-u>call g:CopyVisualText()<cr>
-nnoremap <Leader>cw mmviw:<c-u>call g:CopyVisualText()<cr><esc>`m
+nnoremap <Leader>cv mmviw:<c-u>call g:CopyVisualText()<cr><esc>`m
 nnoremap <Leader>p :r!pbpaste<cr>
 
 vnoremap <Leader>x "+x

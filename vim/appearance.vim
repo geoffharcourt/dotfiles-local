@@ -16,14 +16,12 @@ set shortmess=atI
 set visualbell
 
 " Toggle background
-nnoremap <Leader>B
-  \ :let &background = ( &background == "dark" ? "light" : "dark" )<CR>
+nnoremap <Leader>B cob
 
 let g:netrw_liststyle= 4
 let g:airline_left_sep = ''
 let g:airline_right_sep = ''
 let g:airline#extensions#ctrlp#color_tempate = 'normal'
-let g:airline#extensions#syntastic#enabled = 1
 let g:airline_powerline_fonts = 1
 let g:airline_section_z = "%4l%#__restore__#:%3c"
 let g:airline#extensions#default#layout = [

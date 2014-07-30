@@ -20,9 +20,6 @@ function! InsertTabWrapper()
     endif
 endfunction
 
-" Unmapping this combination in favor of snippets
-inoremap <S-Tab> <c-p>
-
 function! SelectAutoCompleteOrCarriageReturn()
   if pumvisible()
     return "\<c-y>"
@@ -31,20 +28,8 @@ function! SelectAutoCompleteOrCarriageReturn()
   endif
 endfunction
 
-" function! CloseAutocomplionOrEscape()
-"   if pumvisible()
-"     return "\<c-y>"
-"   else
-"     return "\<Esc>"
-"   endif
-" endfunction
-
 " Use escape to kill autocomplete without completion and stay in insert mode
 inoremap <silent> <CR> <C-r>=SelectAutoCompleteOrCarriageReturn()<CR>
-" inoremap <Esc> <C-r>=CloseAutocomplionOrEscape()<CR>
-
-autocmd FileType css,sass setlocal omnifunc=csscomplete#CompleteCSS
-autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 
 " Autocomplete and Rails.vim do not play well together. Copied completion
 " terms into custom dictionaries which are loaded when files with the right

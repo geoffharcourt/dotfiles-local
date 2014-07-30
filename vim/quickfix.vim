@@ -1,9 +1,6 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Quickfix list management (modified from Gary Bernhardt)
+" Quickfix list management (modified from Gary Bernhardt's dotfiles)
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
-"
-" If the tests write a tmp/quickfix file, these mappings will navigate through
-" it
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list= 0
