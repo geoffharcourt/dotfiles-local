@@ -1,0 +1,5 @@
+snippet rsh
+	require "spec_helper"
+
+snippet rdesc
+	RSpec.describe ${1:`substitute(substitute(strpart(Filename(), 0, strridx(Filename(), "_spec")), '\C\(_\)\=\(.\)','\=submatch(1)==""?tolower(submatch(2)) : toupper(submatch(2))','g'),'^.','\u&','')`}

@@ -18,3 +18,5 @@ augroup END
 
 " Don't try to highlight lines longer than 200 characters.
 set synmaxcol=200
+
+autocmd FileType snippets setlocal noexpandtab
