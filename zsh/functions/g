@@ -7,6 +7,3 @@ g() {
     hub status
   fi
 }
-
-# Complete g like git
-compdef g=git

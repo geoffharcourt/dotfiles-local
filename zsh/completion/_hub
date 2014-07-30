@@ -1,0 +1,3 @@
+# Complete g like git
+compdef g=git
+compdef hub=git
