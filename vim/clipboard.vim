@@ -5,7 +5,7 @@
 function! g:CopyVisualText()
   let cur_register_contents = @c
   normal! gv
-  normal! "cy
+  normal! "+y
   normal! gv
   silent call system('pbcopy', @c)
 endfunction
