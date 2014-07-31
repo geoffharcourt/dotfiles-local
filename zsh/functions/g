@@ -7,3 +7,7 @@ g() {
     hub status
   fi
 }
+
+# Looks like this has to be designated after the function is defined rather than
+# in the completions folder.
+compdef g=git
