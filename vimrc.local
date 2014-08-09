@@ -5,6 +5,7 @@ source $HOME/.vim/clipboard.vim
 source $HOME/.vim/commenting.vim
 source $HOME/.vim/formatting.vim
 source $HOME/.vim/git.vim
+source $HOME/.vim/go.vim
 source $HOME/.vim/help.vim
 source $HOME/.vim/movement.vim
 source $HOME/.vim/quickfix.vim
