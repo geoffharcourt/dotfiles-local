@@ -46,7 +46,8 @@ What's in it?
 * custom configuration broken down by subject area in vim folder
 * solarized color scheme
 * rainbow_parentheses to change colors of (), {}, [], <> when editing code
-* vim-vinegar for quick jumps through the file system
+* vim-vinegar for quick jumps through the file system (use `-` to jump to
+  folder view for current file)
 * vim-haml, vim-liquid, vim-markdown for editing those file/template types
 * Other awesome @tpope plugins: vim-abolish, vim-dispatch, vim-repeat,
   vim-unimpaired.
@@ -54,24 +55,19 @@ What's in it?
 * vim-blockle for toggling between Ruby do-end and {} block styles
 * vim-textobj-rubyblock for getting Ruby method and class text objects (thanks
   to @nelstrom)
-* vim-scrach for top-down visor-like scratchpad
+* vim-scratch for top-down visor-like scratchpad
 
 [tmux](http://robots.thoughtbot.com/a-tmux-crash-course)
 configuration:
 
 * @christoomey's vim-tmux-navigator to streamline jumps between vim and tmux
-  splits
+  splits using the same commands at all times
 
 [git](http://git-scm.com/) configuration:
 
-* Use the Github shell command `hub` instead of `git` (backwards compatible with
-  git)
+* Use the Github shell command `gh` instead of `git` (backwards compatible with
+  `git`, go-based replacement for `hub`)
 * Pretty logging (courtesy of @croaky)
-
-[Ruby](https://www.ruby-lang.org/en/) configuration:
-
-* Add trusted binstubs to the `PATH`.
-* Load rbenv into the shell, adding shims onto our `PATH`.
 
 Shell aliases and scripts:
 
