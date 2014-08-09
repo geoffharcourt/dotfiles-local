@@ -3,7 +3,7 @@ eval "$(/usr/local/bin/gh alias -s)"
 # added by travis gem
 [ -f /Users/geoff/.travis/travis.sh ] && source /Users/geoff/.travis/travis.sh
 
-CDPATH=.:$HOME/cortex:$HOME:$HOME/clients:$HOME/Dropbox:$HOME/Downloads:$HOME/github
+CDPATH=.:$HOME/cortex:$HOME/cortex-projects:$HOME:$HOME/clients:$HOME/Dropbox:$HOME/Downloads:$HOME/github
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
