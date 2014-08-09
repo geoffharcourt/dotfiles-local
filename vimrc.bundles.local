@@ -21,7 +21,9 @@ Plugin 'christoomey/vim-conflicted'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'derekprior/vim-leaders'
-Plugin 'ervandew/snipmate.vim'
+Bundle "MarcWeber/vim-addon-mw-utils"
+Bundle "tomtom/tlib_vim"
+Plugin 'garbas/vim-snipmate'
 Plugin 'ervandew/supertab'
 Plugin 'gregsexton/gitv'
 Plugin 'itspriddle/vim-marked'
