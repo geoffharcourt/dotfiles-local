@@ -2,3 +2,4 @@
 --langmap=coffee:.coffee
 --regex-coffee=/^[ \t]*([A-Za-z.]+)[ \t]+=.*->.*$/\1/f,function/
 --regex-coffee=/^[ \t]*([A-Za-z.]+)[ \t]+=[^->\n]*$/\1/v,variable/
+--exclude=spec\/tmp
