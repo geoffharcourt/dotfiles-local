@@ -1,7 +1,7 @@
 # Aliases
 alias realias='source ~/.aliases'
 
-alias v='nvim'
+# alias v='nvim'
 alias lockup='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 
 # Swap profiles
