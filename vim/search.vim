@@ -26,3 +26,5 @@ nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap \ :Ag<SPACE>
 
 nmap <silent> <leader>d <Plug>DashGlobalSearch
+
+nnoremap <Leader>ct :!.git/hooks/ctags<CR>
