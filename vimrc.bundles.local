@@ -18,6 +18,7 @@ Plugin 'tpope/vim-unimpaired'
 
 " Other plugins:
 Plugin 'avakhov/vim-yaml'
+Plugin 'bogado/file-line'
 Plugin 'christoomey/vim-conflicted'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ck3g/vim-change-hash-syntax'
@@ -40,3 +41,4 @@ Plugin 'rizzatti/dash.vim'
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'rking/ag.vim'
 Plugin 'sjl/vitality.vim'
+Plugin 'terryma/vim-multiple-cursors'
