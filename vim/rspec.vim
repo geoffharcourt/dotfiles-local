@@ -3,9 +3,6 @@
 " let g:rspec_command = 'call Send_to_Tmux("rspec {spec}\n")'
 let g:rspec_command = "Dispatch rspec {spec}"
 
-" additional vim-rspec mapping
-nnoremap <Leader>a :call RunAllSpecs()<CR>
-
 " Use to reset tslime when specs should be sent to a different window
 nmap <C-c>r <Plug>SetTmuxVars
 

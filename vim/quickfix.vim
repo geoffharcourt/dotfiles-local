@@ -40,6 +40,3 @@ function! ToggleLocationList()
     lopen
   endif
 endfunction
-
-nnoremap <Leader>q :call ToggleQuickfixList()<CR>
-nnoremap <Leader>o :call ToggleLocationList()<CR>

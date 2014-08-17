@@ -1,6 +1,7 @@
 " Airline and solarized colors
-Plugin 'bling/vim-airline'
+" Plugin 'bling/vim-airline'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'nanotech/jellybeans.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 
 " Tim Pope for the win
@@ -17,28 +18,33 @@ Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-unimpaired'
 
 " Other plugins:
+Plugin 'arecarn/crunch.vim'
 Plugin 'avakhov/vim-yaml'
 Plugin 'bogado/file-line'
 Plugin 'christoomey/vim-conflicted'
+Plugin 'christoomey/vim-system-copy'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'derekprior/vim-leaders'
-Bundle "MarcWeber/vim-addon-mw-utils"
-Bundle "tomtom/tlib_vim"
-Plugin 'garbas/vim-snipmate'
+Plugin 'elzr/vim-json'
 Plugin 'ervandew/supertab'
+Plugin 'garbas/vim-snipmate'
 Plugin 'gregsexton/gitv'
 Plugin 'itspriddle/vim-marked'
-Plugin 'jgdavey/vim-blockle'
 Plugin 'jgdavey/tslime.vim'
+Plugin 'jgdavey/vim-blockle'
 Plugin 'junegunn/goyo.vim'
 Plugin 'kana/vim-textobj-user'
+Bundle "MarcWeber/vim-addon-mw-utils"
 Plugin 'mtth/scratch.vim'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'nicholaides/words-to-avoid.vim'
 Plugin 'pangloss/vim-javascript'
+Plugin 'Raimondi/delimitMate'
 Plugin 'rizzatti/dash.vim'
 Plugin 'rizzatti/funcoo.vim'
 Plugin 'rking/ag.vim'
 Plugin 'sjl/vitality.vim'
 Plugin 'terryma/vim-multiple-cursors'
+Bundle "tomtom/tlib_vim"
+Plugin 'vim-scripts/IndexedSearch'

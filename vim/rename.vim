@@ -13,5 +13,3 @@ function! RenameFile()
     redraw!
   endif
 endfunction
-
-map <Leader>n :call RenameFile()<cr>

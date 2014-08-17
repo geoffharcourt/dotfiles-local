@@ -1,3 +1,6 @@
+" Get dot command repeatability in visual mode
+xnoremap . :normal.<CR>
+
 " Up and down by visual lines, not literal lines
 nnoremap j gj
 vnoremap j gj
@@ -11,9 +14,9 @@ vnoremap gk k
 " Visually select the text that was last edited/pasted
 nnoremap gV `[v`]
 
-" Get dot command repeatability in visual mode
-xnoremap . :normal.<CR>
+" Yank to end of line, like C, D
+nnoremap Y y$
 
-" Bubble single lines
-nmap <C-Up> [e
-nmap <C-Down> ]e
+" Use tab to jump around matching surrounding chars
+nnoremap <tab> %
+vnoremap <tab> %

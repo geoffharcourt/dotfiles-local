@@ -1,41 +1,22 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-colorscheme solarized
-set background=dark
+colorscheme jellybeans
+let g:netrw_liststyle= 4
 
-" Numbering
+set background=dark
+" Don't redraw the screen during macros
+set lazyredraw
+set nofoldenable
+set nowrap
 set number relativenumber
 set scrolloff=5
-set nofoldenable
-set noshowmode
-set wrap
-
 " Suppress some messages
 set shortmess=atI
+set showmode
+" Don't try to highlight lines longer than 200 characters.
+set synmaxcol=200
 set visualbell
-
-" Toggle background
-nnoremap <Leader>B cob
-
-let g:netrw_liststyle= 4
-let g:airline_left_sep = ''
-let g:airline_right_sep = ''
-let g:airline#extensions#ctrlp#color_tempate = 'normal'
-let g:airline_powerline_fonts = 1
-let g:airline_section_z = "%4l%#__restore__#:%3c"
-let g:airline#extensions#default#layout = [
-      \ [ 'a', 'c'],
-      \ [ 'x', 'z'],
-      \ ]
-let g:airline#extensions#default#section_truncate_width = {
-    \ 'a': 25,
-    \ 'b': 120,
-    \ 'c': 25,
-    \ 'x': 120,
-    \ 'y': 150,
-    \ 'z': 25,
-    \ }
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound

@@ -1,17 +1,7 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " RUBY
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" Convert vim block format
-let g:blockle_mapping = '<Leader>b'
-
-" Add whitespace inside braces
-nnoremap <Leader>{ :%s/{\([^ ]\)/{ \1/gc<CR>
-nnoremap <Leader>} :%s/\([^ ]\)}/\1 }/gc<CR>
-
-" Split long line with comma-separated terms into multiple lines, then indent
-" the collection appropriately.
-nnoremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
+let g:syntastic_ruby_checkers = ['mri', 'rubylint']
 
 " Treat files like Ruby
 au BufRead,BufNewFile {Gemfile,Rakefile,Vagrantfile,Thorfile,Procfile,Guardfile,config.ru,*.rake} set ft=ruby
@@ -27,4 +17,20 @@ augroup rubywhitespace
   au BufWritePre Gemfile :%s/\s\+$//e
 augroup END
 
-let g:syntastic_ruby_checkers = ['mri', 'rubylint'] ", 'rubocop']
+" Autocomplete and Rails.vim do not play well together. Copied completion
+" terms into custom dictionaries which are loaded when files with the right
+" Rails classification (controller, model, template, etc.) are edited.
+"
+" This is a brutal, brutal hack.
+augroup rubydictionaries
+  autocmd!
+  autocmd FileType erb,haml setlocal dictionary=~/.vim/dictionaries/ruby_template_completions
+  autocmd BufEnter */controllers/*.rb setlocal dictionary=~/.vim/dictionaries/rails_controller_completions
+  autocmd BufEnter */controllers/*/*.rb setlocal dictionary=~/.vim/dictionaries/rails_controller_completions
+  autocmd BufEnter */db/migrate/*.rb setlocal dictionary=~/.vim/dictionaries/rails_migration_completions
+  autocmd BufEnter */decorators/*.rb setlocal dictionary=~/.vim/dictionaries/ruby_template_completions
+  autocmd BufEnter */helpers/*.rb setlocal dictionary=~/.vim/dictionaries/rails_template_completions
+  autocmd BufEnter */mailers/*.rb setlocal dictionary=~/.vim/dictionaries/rails_mailer_completions
+  autocmd BufEnter */models/*.rb setlocal dictionary=~/.vim/dictionaries/rails_model_completions
+  autocmd BufEnter */spec/*/*.rb setlocal dictionary=~/.vim/dictionaries/rails_spec_completions
+augroup END
