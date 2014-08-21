@@ -51,7 +51,7 @@ set -g status-justify left
 setw -g monitor-activity on
 set -g visual-activity on
 
-set -g status-bg 'colour0'
+set -g status-bg 'colour236'
 
 set -g status-left-length 50
 set -g status-left '#[fg=colour15,bg=colour0] #S '
@@ -59,9 +59,9 @@ set -g status-left '#[fg=colour15,bg=colour0] #S '
 set -g status-right-length 100
 set -g status-right '#(nice -n 19 ~/.tmux/status) #[default]#h:#(ifconfig | grep "inet " | cut -d " " -f2 | tail -1 )  #[fg=colour1]ruby #(nice -n 19 ~/.tmux/rbenv) '
 
-setw -g window-status-format '#[fg=colour14,bg=colour0] #I #W '
+setw -g window-status-format '#[fg=colour14,bg=colour236] #I #W '
 
-setw -g window-status-current-format '#[fg=colour13,bold] #I #W '
+setw -g window-status-current-format '#[fg=colour13,bold,bg=colour236] #I #W '
 
 # Smart pane switching with awareness of vim splits
 bind -n C-h run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim(diff)?$' && tmux send-keys C-h) || tmux select-pane -L"
@@ -71,6 +71,3 @@ bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)vim(diff)?$' && tmux send-keys 'C-\\') || tmux select-pane -l"
 
 bind C-l send-keys 'C-l'
-
-if-shell "[ -f ~/.tmuxcolors-256.conf ]" 'source ~/.tmuxcolors-256.conf'
-if-shell "[ -f ~/.tmuxcolors-dark.conf ]" 'source ~/.tmuxcolors-dark.conf'
