@@ -1,6 +1,11 @@
 #!/bin/sh
+
 set -e
+
 PATH="/usr/local/bin:$PATH"
-trap "rm -f .tags.$$" EXIT
-ctags --tag-relative -Rf./.git/.tags.$$ --exclude=.git --languages=+coffee,javascript,-sql --fields=+l
-mv ./.git/.tags.$$ ./.git/tags
+dir="`git rev-parse --git-dir`"
+trap 'rm -f "$dir/$$.tags"' EXIT
+git ls-files | \
+  "${CTAGS:-ctags}" --tag-relative -L - -f"$dir/$$.tags" |\
+  --languages=+coffeescript,javascript,-sql
+mv "$dir/$$.tags" "$dir/tags"
