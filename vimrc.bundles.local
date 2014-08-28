@@ -13,7 +13,6 @@ Plugin 'tpope/vim-heroku'
 Plugin 'tpope/vim-liquid'
 Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-rbenv'
-Plugin 'tpope/vim-repeat'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-unimpaired'
 
