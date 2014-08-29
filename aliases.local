@@ -3,7 +3,7 @@ alias realias='source ~/.aliases'
 
 alias lockup='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 
-alias v='nvim'
+# alias v='nvim'
 
 # Swap profiles
 alias godark='echo -e "\033]50;SetProfile=Solarized Dark\a"'

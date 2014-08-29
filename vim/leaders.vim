@@ -3,6 +3,7 @@ let g:blockle_mapping = '<Leader>b'
 
 " additional vim-rspec mapping
 nnoremap <Leader>a :call RunAllSpecs()<CR>
+
 nnoremap <Leader>C :PluginClean<CR>
 
 " Split long line with comma-separated terms into multiple lines, then indent
@@ -24,6 +25,9 @@ nnoremap <leader>h :nohlsearch<CR>
 
 " Fix indentation across file
 nnoremap <Leader>i mmgg=G`m<CR>
+
+nnoremap <Leader>j :Dispatch spring teaspoon % <CR>
+nnoremap <Leader>J :Dispatch spring teaspoon <CR>
 
 " http://robots.thoughtbot.com/faster-grepping-in-vim
 " changed from the above blog post to use ag.vim
