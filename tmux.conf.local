@@ -1,6 +1,11 @@
 bind Space copy-mode
 bind C-Space copy-mode
 
+bind z send-keys C-z
+bind C-z last-window
+
+bind -t vi-copy V rectangle-toggle
+
 set-window-option -g xterm-keys on
 
 set-option -g default-command "reattach-to-user-namespace -l zsh"
@@ -57,7 +62,7 @@ set -g status-left-length 50
 set -g status-left '#[fg=colour15,bg=colour0] #S '
 
 set -g status-right-length 100
-set -g status-right '#(nice -n 19 ~/.tmux/status) #[default]#h:#(ifconfig | grep "inet " | cut -d " " -f2 | tail -1 )  #[fg=colour1]ruby #(nice -n 19 ~/.tmux/rbenv) '
+set -g status-right 'Online: #{online_status} #(nice -n 19 ~/.tmux/status) #[default]#(ifconfig | grep "inet " | cut -d " " -f2 | tail -1 )  #[fg=colour1]rb#(nice -n 19 ~/.tmux/rbenv) #[fg=colour3]#{battery_percentage} #{battery_icon}'
 
 setw -g window-status-format '#[fg=colour14,bg=colour236] #I #W '
 
@@ -70,3 +75,15 @@ bind -n C-k run "(tmux display-message -p '#{pane_current_command}' | grep -iqE 
 bind -n C-l run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys C-l) || tmux select-pane -R"
 bind -n C-\ run "(tmux display-message -p '#{pane_current_command}' | grep -iqE '(^|\/)g?(view|n?vim?)(diff)?$' && tmux send-keys 'C-\\') || tmux select-pane -l"
 bind C-l send-keys 'C-l'
+
+# List of plugins
+# Supports `github_username/repo` or full git URLs
+set -g @tpm_plugins "              \
+  tmux-plugins/tpm                 \
+  tmux-plugins/tmux-resurrect   \
+  tmux-plugins/tmux-online-status  \
+  tmux-plugins/tmux-battery-osx  \
+  tmux-plugins/tmux-open  \
+"
+# initializes TMUX plugin manager
+run-shell ~/.tmux/plugins/tpm/tpm
