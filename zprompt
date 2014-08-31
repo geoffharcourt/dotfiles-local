@@ -99,14 +99,6 @@ _display_current_vim_mode() {
   fi
 }
 
-function zle-line-init zle-keymap-select {
-  VIMODE=$KEYMAP
-  zle reset-prompt
-}
-
-zle -N zle-line-init
-zle -N zle-keymap-select
-
 function precmd {
   $(command git status 2> /dev/null >! "/tmp/git-status-$$")
 }
