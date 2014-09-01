@@ -9,6 +9,9 @@ source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
   'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
+# faster mode switching
+export KEYTIMEOUT=1
+
 export GOPATH=$HOME/go
 export PATH=$PATH:$GOPATH/bin
 export GOROOT=`go env GOROOT`
@@ -28,3 +31,4 @@ zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
 
 source ~/.zprompt
+source ~/.zsh/opp.zsh
