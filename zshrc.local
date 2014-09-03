@@ -1,8 +1,5 @@
 eval "$(/usr/local/bin/gh alias -s)"
 
-# added by travis gem
-[ -f /Users/geoff/.travis/travis.sh ] && source /Users/geoff/.travis/travis.sh
-
 CDPATH=.:$HOME/cortex:$HOME/cortex-projects:$HOME:$HOME/clients:$HOME/Dropbox:$HOME/Downloads:$HOME/github
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
