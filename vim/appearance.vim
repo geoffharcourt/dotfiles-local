@@ -19,6 +19,6 @@ set visualbell
 set wrap
 
 au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
+au BufEnter * RainbowParenthesesLoadRound
+au BufEnter * RainbowParenthesesLoadSquare
+au BufEnter * RainbowParenthesesLoadBraces
