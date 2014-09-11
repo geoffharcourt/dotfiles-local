@@ -59,7 +59,7 @@ set -g visual-activity on
 set -g status-bg 'colour236'
 
 set -g status-left-length 50
-set -g status-left '#[fg=colour15,bg=colour0] #S '
+set -g status-left '#[fg=colour15,bg=colour236] #S'
 
 set -g status-right-length 100
 set -g status-right 'Online: #{online_status} #(nice -n 19 ~/.tmux/status) #[default]#(ifconfig | grep "inet " | cut -d " " -f2 | tail -1 )  #[fg=colour1]rb#(nice -n 19 ~/.tmux/rbenv) #[fg=colour3]#{battery_percentage} #{battery_icon}'

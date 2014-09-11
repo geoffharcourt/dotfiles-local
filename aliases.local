@@ -50,6 +50,7 @@ alias respring='spring stop && spring start'
 
 # Rails
 alias cov='open coverage/index.html'
+alias mergeup='rake release && g merge-branch && rake release && gp origin'
 alias rc='spring rails console'
 alias resetdb="rake db:schema:load && respring"
 alias tagdeps='./.git/hooks/ctags'
