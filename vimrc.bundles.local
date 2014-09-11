@@ -7,7 +7,6 @@ Plugin 'kien/rainbow_parentheses.vim'
 " Tim Pope for the win
 Plugin 'tpope/vim-abolish'
 Plugin 'tpope/vim-dispatch'
-Plugin 'tpope/vim-eunuch'
 Plugin 'tpope/vim-haml'
 Plugin 'tpope/vim-heroku'
 Plugin 'tpope/vim-liquid'
