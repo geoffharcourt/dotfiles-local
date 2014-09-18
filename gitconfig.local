@@ -9,22 +9,25 @@
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
   coloredwithrefs = format:%Cred%h%Creset %Cblue%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [alias]
-  # Fancy logging.
-  #   h = head
-  #   hp = head with patch
-  #   r = recent commits, only current branch
-  #   ra = recent commits, all reachable refs
-  #   l = all commits, only current branch
-  #   la = all commits, all reachable refs
-  cf = !git branch | cut -c 3- | selecta | xargs git checkout  
-  head = !git l -1
-  h = !git head
-  hp = "!. ~/.githelpers && show_git_head"
-  r = !git l -30
-  ra = !git r --all
-  l = "!. ~/.githelpers && pretty_git_log"
-  la = !git l --all
-  rem = remote -v
+  aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort"
+  aa = "!git add --all && git status"
+  # show all files unmerged in a merge conflict
+  cnf = "!git ls-files -u | cut -f 2 | sort -u"
+  col = "!select choice in $(git branch | grep -v '*'); do echo checking out $choice; git checkout $choice; break; done"
+  l = log -n25 --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  lb = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  details = log -n1 -p --format=fuller
+  # stashes from Chris Arcand's DC RUG talk:
+  # http://chrisarcand.com/talks/git-unleashed/
+  sls = "!git stash list | cat"
+  ssave = stash save
+  sclear = "stash clear"
+
+  sshow = "!f() { if [ -z "$1" ]; then git stash list | cat; printf \"Index to show: \"; read choice; git stash show -p stash@{$choice}; else git stash show -p stash@{$1}; fi; }; f"
+  spop = "!f() { if [ -z "$1" ]; then git stash list | cat; printf \"Index to pop: \"; read choice; git stash pop stash@{$choice}; else git stash pop stash@{$1}; fi; }; f"
+  sapply = "!f() { if [ -z "$1" ]; then git stash list | cat; printf \"Index to apply: \"; read choice; git stash apply stash@{$choice}; else git stash apply stash@{$1}; fi; }; f"
+  sdrop = "!f() { if [ -z "$1" ]; then git stash list | cat; printf \"Index to drop: \"; read choice; git stash drop stash@{$choice}; else git stash drop stash@{$1}; fi; }; f"
 [commit]
   template = ~/.gitmessage
 [init]
@@ -32,24 +35,5 @@
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
-
-[difftool "Kaleidoscope"]
-  cmd = ksdiff --partial-changeset --relative-path \"$MERGED\" -- \"$LOCAL\" \"$REMOTE\"
-[diff]
-  tool = Kaleidoscope
-[difftool]
-  prompt = false
-
-[mergetool "Kaleidoscope"]
-  cmd = ksdiff --merge --output \"$MERGED\" --base \"$BASE\" -- \"$LOCAL\" --snapshot \"$REMOTE\" --snapshot
-  trustExitCode = true
-[mergetool]
-  prompt = false
-[merge]
-  tool = Kaleidoscope
-[filter "media"]
-  clean = git-media-clean %f
-  smudge = git-media-smudge %f
-[include]
-  path = .gitconfig.private
-
+[help]
+  autocorrect = 1
