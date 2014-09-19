@@ -17,22 +17,22 @@ Set zsh as your login shell:
 Install
 -------
 
-Clone onto your laptop:
+Install Thoughtbot's dotfiles:
 
-    git clone git://github.com/geoffharcourt/dotfiles.git
+    git clone git://github.com/thoughtbot/dotfiles.git
+    env RCRC=$HOME/dotfiles/rcrc rcup
 
-Install [rcm](https://github.com/thoughtbot/rcm):
+Then clone mine:
 
-    brew bundle dotfiles/Brewfile
+    git clone git://github.com/geoffharcourt/dotfiles.git ~/dotfiles-local
 
-Install:
+And re-run rcup to link:
 
-    rcup -d dotfiles -x README.md -x LICENSE -x Brewfile
+    rcup
 
-This will create symlinks for config files in your home directory. The `-x`
-options, which exclude the `README.md`, `LICENSE`, and `Brewfile` files, are
-needed during installation but can be skipped once the `.rcrc` configuration
-file is symlinked in.
+
+This will create symlinks for config files in your home directory from
+Thoughtbot's dotfiles and my local customizations.
 
 You can safely run `rcup` multiple times to update:
 
@@ -44,7 +44,6 @@ What's in it?
 [vim](http://www.vim.org/) configuration:
 
 * custom configuration broken down by subject area in vim folder
-* solarized color scheme
 * rainbow_parentheses to change colors of (), {}, [], <> when editing code
 * vim-vinegar for quick jumps through the file system (use `-` to jump to
   folder view for current file)
