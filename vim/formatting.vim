@@ -3,6 +3,10 @@ set nojoinspaces
 " Keep the cursor in place while joining lines
 nnoremap J mzJ`z
 
+" Rehighlight after moving text in visual mode
+vnoremap < <gv
+vnoremap > >gv
+
 " Spell check in markdown and text files
 augroup spellingenabled
   autocmd!
