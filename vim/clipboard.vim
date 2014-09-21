@@ -20,3 +20,5 @@ vmap <silent> <expr> p <sid>Repl()
 
 " Reselect text that was just pasted
 noremap gV `[v`]
+
+let g:gist_clip_command = 'pbcopy'
