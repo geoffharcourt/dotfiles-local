@@ -1,6 +1,8 @@
 [user]
   name = Geoff Harcourt
   email = geoff.harcourt@gmail.com
+[github]
+	user = geoffharcourt
 [hub]
   protocol = https
 [pull]
