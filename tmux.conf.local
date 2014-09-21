@@ -1,3 +1,6 @@
+# Override thoughtbot convention here, as it disables C-a readline
+bind C-a send-prefix
+
 set -g default-terminal "screen-256color-italic"
 
 set -g mode-mouse on
@@ -28,9 +31,6 @@ bind -r J resize-pane -D 5
 bind -r K resize-pane -U 5
 bind -r L resize-pane -R 5
 
-# move window to front
-bind-key T move-window -t 1
-
 # http://robots.thoughtbot.com/post/55885045171/tmux-copy-paste-on-os-x-a-better-future
 # Use vim keybindings in copy mode
 setw -g mode-keys vi
@@ -47,10 +47,6 @@ bind-key -t vi-copy Enter copy-pipe "reattach-to-user-namespace pbcopy"
 # force a reload of the config file
 unbind r
 bind r source-file ~/.tmux.conf \; display "Reloaded!"
-
-# quick pane cycling
-unbind ^A
-bind ^A select-pane -t :.+
 
 # Clear scrollback
 bind C-k clear-history
