@@ -1,3 +1,5 @@
+set -g default-terminal "screen-256color-italic"
+
 bind Space copy-mode
 bind C-Space copy-mode
 
