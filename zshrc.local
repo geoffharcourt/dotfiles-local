@@ -27,5 +27,9 @@ autoload -U edit-command-line
 zle -N edit-command-line
 bindkey -M vicmd v edit-command-line
 
+# disable flow control
+stty start undef
+stty stop undef
+
 source ~/.zprompt
 source ~/.zsh/opp.zsh
