@@ -10,7 +10,7 @@ nnoremap <Leader>C :PluginClean<CR>
 " the collection appropriately.
 nnoremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
 nnoremap <Leader>ct :!.git/hooks/ctags<CR>
-nnoremap <silent> <leader>d <Plug>DashGlobalSearch
+nnoremap <silent> <Leader>d <Plug>DashGlobalSearch
 nnoremap <Leader>gs :Gstatus<CR>
 vnoremap <Leader>gb :Gblame<CR>
 
@@ -21,7 +21,7 @@ noremap <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 noremap <Leader>SP :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
 " temporarily stop search highlighting after search
-nnoremap <leader>h :nohlsearch<CR>
+nnoremap <Leader>h :nohlsearch<CR>
 
 " Fix indentation across file
 nnoremap <Leader>i mmgg=G`m<CR>
@@ -33,8 +33,9 @@ nnoremap <Leader>J :Dispatch spring teaspoon <CR>
 " changed from the above blog post to use ag.vim
 nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap <Leader>o :call ToggleLocationList()<CR>
-nnoremap <Leader>n :call RenameFile()<cr>
-nnoremap <Leader>N :sp ~/Dropbox/notes/vim-notes.txt<CR>
+nnoremap <Leader>l :call PromoteToLet()<CR>
+nnoremap <Leader>m :Move <C-r>%
+nnoremap <Leader>n :sp ~/Dropbox/notes/vim-notes.txt<CR>
 nnoremap <Leader>p :r!pbpaste<cr>
 nnoremap <Leader>R :call PromoteToLet()
 nnoremap <Leader>q :call ToggleQuickfixList()<CR>
@@ -42,7 +43,7 @@ nnoremap <Leader>S :source $MYVIMRC<CR>
 nnoremap <Leader>U :PluginUpdate<CR>
 
 " Easier linewise reselection of what you just pasted.
-nnoremap <leader>V V`]
+nnoremap <Leader>V V`]
 nnoremap <Leader>w :tabnext<CR>
 vnoremap <Leader>x x:call ClipboardYank()<cr>
 vnoremap <Leader>y y:call ClipboardYank()<cr>
