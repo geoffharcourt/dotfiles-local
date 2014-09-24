@@ -14,9 +14,10 @@
   aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort"
   aa = "!git add --all && git status"
   # show all files unmerged in a merge conflict
+  clear-local-branches = "!git branch | grep -v "master" | xargs git branch -D"
   cnf = "!git ls-files -u | cut -f 2 | sort -u"
   col = "!select choice in $(git branch | grep -v '*'); do echo checking out $choice; git checkout $choice; break; done"
-  l = log -n25 --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  l = log -n25 --color --graph --pretty=format:'%Cred%h%Creset - %Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lb = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   details = log -n1 -p --format=fuller
