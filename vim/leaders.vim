@@ -33,7 +33,7 @@ nnoremap <Leader>J :Dispatch spring teaspoon <CR>
 " changed from the above blog post to use ag.vim
 nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 nnoremap <Leader>o :call ToggleLocationList()<CR>
-nnoremap <Leader>l :call PromoteToLet()<CR>
+nnoremap <Leader>L :call PromoteToLet()<CR>
 nnoremap <Leader>m :Move <C-r>%
 nnoremap <Leader>n :sp ~/Dropbox/notes/vim-notes.txt<CR>
 nnoremap <Leader>p :r!pbpaste<cr>
