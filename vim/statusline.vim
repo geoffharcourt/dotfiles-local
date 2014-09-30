@@ -31,7 +31,7 @@ set stl+=\ \ Line:%l/%L          " Line # / total lines
 set stl+=\ \ %P%{InsertSpace()}  " Single space buffer
 
 " set stl+=%2* 				             " Yello highlight
-set stl+=%{ConflictedVersion()}           " Red show paste
+" set stl+=%{ConflictedVersion()}           " Red show paste
 " set stl+=%*                      " Return to normal stl hilight
 
 
