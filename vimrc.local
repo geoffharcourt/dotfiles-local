@@ -17,3 +17,5 @@ call s:SourceConfigFilesIn('')
 
 " This statement has to come late in order to work
 highlight Comment cterm=italic
+
+nnoremap Q :echoe "Disabled Ex mode"<CR>
