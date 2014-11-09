@@ -1,3 +1,4 @@
+--fields=+l
 --exclude=spec\/tmp
 --langdef=coffee
 --langmap=coffee:.coffee
