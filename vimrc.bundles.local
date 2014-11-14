@@ -32,5 +32,5 @@ Plugin 'vim-scripts/gitignore'
 Plugin 'tejr/vim-tmux'
 
 Plugin 'gorodinskiy/vim-coloresque'
-Plugin 'Valloric/YouCompleteMe'
+" Plugin 'Valloric/YouCompleteMe'
 Plugin 'sirver/ultisnips'
