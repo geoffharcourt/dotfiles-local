@@ -50,6 +50,7 @@ let g:rails_projections = {
 \ "Gemfile": {"command": "gemfile"},
 \ "config/routes.rb": {"command": "routes"},
 \ "config/locales/en.yml": {"command": "locales"},
+\ "lib/clock.rb": {"command": "clock"},
 \ "spec/features/*_spec.rb": {"command": "feature"},
 \ "spec/support/*.rb": {"command": "support"},
 \ ".env": {"command": "secrets"},
