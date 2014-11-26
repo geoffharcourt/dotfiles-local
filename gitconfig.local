@@ -4,7 +4,7 @@
 [github]
 	user = geoffharcourt
 [hub]
-  protocol = https
+  protocol = ssh
 [pull]
   rebase = true
 [pretty]
