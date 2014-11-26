@@ -56,8 +56,8 @@ set -s escape-time 1
 
 set -g status-position bottom
 set -g status-justify left
-setw -g monitor-activity on
-set -g visual-activity on
+# setw -g monitor-activity on
+# set -g visual-activity on
 
 set -g status-bg 'colour236'
 
