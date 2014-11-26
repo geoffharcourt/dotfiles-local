@@ -12,4 +12,6 @@ let g:agprg="ag -S --column"
 let g:ctrlp_map = '<c-p>'
 
 " bind \ (backward slash) to grep shortcut
+command -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
+nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
