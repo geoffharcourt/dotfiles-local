@@ -16,12 +16,12 @@ let g:ycm_min_num_of_chars_for_completion = 4
 " Override thoughtbot tab wrapper to move through autocomplete list
 " in opposite direction
 function! InsertTabWrapper()
-    let col = col('.') - 1
-    if !col || getline('.')[col - 1] !~ '\k'
-        return "\<tab>"
-    else
-        return "\<c-n>"
-    endif
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<tab>"
+  else
+    return "\<c-n>"
+  endif
 endfunction
 
 function! SelectAutoCompleteOrCarriageReturn()

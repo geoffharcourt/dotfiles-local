@@ -14,9 +14,9 @@ set scrolloff=5
 set shortmess=atI
 set showmode
 " Don't try to highlight lines longer than 200 characters.
-set synmaxcol=200
+set synmaxcol=100
 set visualbell
-set wrap
+set nowrap
 
 au VimEnter * RainbowParenthesesToggle
 au BufEnter * RainbowParenthesesLoadRound

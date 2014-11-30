@@ -7,7 +7,6 @@ nnoremap <Leader>a :call RunAllSpecs()<CR>
 " Split long line with comma-separated terms into multiple lines, then indent
 " the collection appropriately.
 nnoremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
-nnoremap <Leader>ct :!.git/hooks/ctags<CR>
 nnoremap <silent> <Leader>d <Plug>DashGlobalSearch
 nnoremap <Leader>gs :Gstatus<CR>
 vnoremap <Leader>gb :Gblame<CR>
@@ -35,6 +34,8 @@ nnoremap <Leader>m :Move <C-r>%
 nnoremap <Leader>n :sp ~/Dropbox/notes/vim-notes.txt<CR>
 nnoremap <Leader>p :r!pbpaste<cr>
 nnoremap <Leader>q :call ToggleQuickfixList()<CR>
+
+nnoremap <Leader>T :!.git/hooks/ctags<CR>
 
 " Easier linewise reselection of what you just pasted.
 nnoremap <Leader>V V`]
