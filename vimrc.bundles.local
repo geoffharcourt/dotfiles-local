@@ -1,4 +1,4 @@
-" Airline and solarized colors
+" Colors
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'kien/rainbow_parentheses.vim'
 
@@ -10,23 +10,19 @@ Plugin 'tpope/vim-markdown'
 Plugin 'tpope/vim-vinegar'
 Plugin 'tpope/vim-unimpaired'
 
-" Other plugins:
-Plugin 'MarcWeber/vim-addon-mw-utils'
+" Other plugins
 Plugin 'bogado/file-line'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'derekprior/vim-leaders'
 Plugin 'derekprior/vim-trimmer'
 Plugin 'gorodinskiy/vim-coloresque'
+Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'jgdavey/vim-blockle'
-Plugin 'kana/vim-textobj-user'
+Plugin 'kana/vim-textobj-user' " needed for textobj-rubyblock
+Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'nelstrom/vim-textobj-rubyblock'
-" Plugin 'nicholaides/words-to-avoid.vim'
 Plugin 'rking/ag.vim'
 Plugin 'skwp/greplace.vim'
-Plugin 'tejr/vim-tmux'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tomtom/tlib_vim'
 Plugin 'vim-scripts/IndexedSearch'
-Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'vim-scripts/ctrlp-py-matcher'

@@ -19,5 +19,3 @@ call s:SourceConfigFilesIn('')
 highlight Comment cterm=italic
 
 nnoremap Q :echoe "Disabled Ex mode"<CR>
-
-set foldmethod=syntax

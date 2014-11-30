@@ -17,6 +17,3 @@ function! s:Repl()
   return "p@=RestoreRegister()\<cr>"
 endfunction
 vmap <silent> <expr> p <sid>Repl()
-
-" Reselect text that was just pasted
-noremap gV `[v`]

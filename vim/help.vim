@@ -15,5 +15,3 @@ function! HelpFileMode()
   nnoremap <buffer>q :q<CR>
   setlocal nonumber
 endfunction
-
-" vim:ft=vim

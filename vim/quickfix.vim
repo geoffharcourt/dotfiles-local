@@ -2,8 +2,6 @@
 " Quickfix list management (modified from Gary Bernhardt's dotfiles)
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list= 0
 
 function! GetBufferList()
   redir =>buflist
@@ -15,9 +13,9 @@ endfunction
 function! BufferIsOpen(bufname)
   let buflist = GetBufferList()
   for bufnum in map(
-        \filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'), 
-        \'str2nr(matchstr(v:val, "\\d\\+"))'
-        \)
+    \filter(split(buflist, '\n'), 'v:val =~ "'.a:bufname.'"'),
+    \'str2nr(matchstr(v:val, "\\d\\+"))'
+    \)
     if bufwinnr(bufnum) != -1
       return 1
     endif
@@ -37,6 +35,6 @@ function! ToggleLocationList()
   if BufferIsOpen("Location List")
     lclose
   else
-    lopen
+    Errors
   endif
 endfunction

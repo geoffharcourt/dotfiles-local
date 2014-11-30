@@ -19,11 +19,11 @@ let g:rails_projections = {
 \     "spec/decorators/%s_decorator_spec.rb"
 \   ]
 \ },
-\ "app/serializers/*_serializer.rb": {
+\ "app/serializers/*.rb": {
 \   "command": "serializer",
-\   "template": "class %SSerializer\nend",
+\   "template": "class %S\nend",
 \   "test": [
-\     "spec/serializers/%s_serializer_spec.rb"
+\     "spec/serializers/%s_spec.rb"
 \   ]
 \ },
 \ "app/workers/*_worker.rb": {

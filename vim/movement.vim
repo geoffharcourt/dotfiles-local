@@ -11,12 +11,5 @@ vnoremap gj j
 nnoremap gk k
 vnoremap gk k
 
-" Visually select the text that was last edited/pasted
-nnoremap gV `[v`]
-
 " Yank to end of line, like C, D
 nnoremap Y y$
-
-" Use tab to jump around matching surrounding chars
-nnoremap <tab> %
-vnoremap <tab> %

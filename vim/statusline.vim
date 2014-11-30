@@ -1,4 +1,4 @@
-"define 3 custom highlight groups
+" "define 3 custom highlight groups
 hi User1 ctermbg=lightgray ctermfg=yellow guifg=orange guibg=#444444 cterm=bold gui=bold
 hi User2 ctermbg=lightgray ctermfg=red guifg=#dc143c guibg=#444444 gui=none
 hi User3 ctermbg=lightgray ctermfg=red guifg=#ffff00 guibg=#444444 gui=bold
@@ -33,7 +33,6 @@ set stl+=\ \ %P%{InsertSpace()}  " Single space buffer
 " set stl+=%2* 				             " Yello highlight
 " set stl+=%{ConflictedVersion()}           " Red show paste
 " set stl+=%*                      " Return to normal stl hilight
-
 
 function! SlSpace()
     if exists("*GetSpaceMovement")
