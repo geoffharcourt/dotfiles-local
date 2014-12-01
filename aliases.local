@@ -1,8 +1,6 @@
 # Aliases
 alias realias='source ~/.aliases'
 
-alias lockup='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
-
 alias v='nvim'
 
 # Git
