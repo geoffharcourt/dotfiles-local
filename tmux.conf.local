@@ -11,9 +11,6 @@ set-option -g mouse-resize-pane on
 bind Space copy-mode
 bind C-Space copy-mode
 
-bind z send-keys C-z
-bind C-z last-window
-
 bind -t vi-copy V rectangle-toggle
 
 set-window-option -g xterm-keys on

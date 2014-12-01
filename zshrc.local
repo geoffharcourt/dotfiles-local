@@ -3,14 +3,9 @@ eval "$(/usr/local/bin/gh alias -s)"
 CDPATH=.:$HOME/cortex:$HOME/cortex-projects:$HOME:$HOME/clients:$HOME/Dropbox:$HOME/Downloads:$HOME/github
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' \
-  'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 
 # faster mode switching
 export KEYTIMEOUT=1
-
-# disable flow control
-stty start undef
-stty stop undef
 
 source ~/.zprompt
