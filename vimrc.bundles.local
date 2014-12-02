@@ -12,6 +12,7 @@ Plugin 'tpope/vim-unimpaired'
 
 " Other plugins
 Plugin 'bogado/file-line'
+Plugin 'christoomey/vim-conflicted'
 Plugin 'christoomey/vim-tmux-navigator'
 Plugin 'ck3g/vim-change-hash-syntax'
 Plugin 'derekprior/vim-leaders'
@@ -21,7 +22,10 @@ Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'kana/vim-textobj-user' " needed for textobj-rubyblock
 Plugin 'kristijanhusak/vim-multiple-cursors'
+Plugin 'mtth/scratch.vim'
 Plugin 'nelstrom/vim-textobj-rubyblock'
+Plugin 'ngmy/vim-rubocop'
+Plugin 'othree/eregex.vim'
 Plugin 'rking/ag.vim'
 Plugin 'skwp/greplace.vim'
 Plugin 'vim-scripts/IndexedSearch'

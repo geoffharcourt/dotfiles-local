@@ -47,3 +47,6 @@ nnoremap <Leader>W :tabnext<CR>
 nnoremap <Leader>w :w<CR>
 
 vnoremap <Leader>y y:call ClipboardYank()<cr>
+
+nnoremap <Leader><Tab> :Scratch<CR>
+nnoremap <Leader>/ :call eregex#toggle()<CR>
