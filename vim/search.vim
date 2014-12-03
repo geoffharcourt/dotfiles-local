@@ -17,3 +17,8 @@ nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 let g:ctrlp_tjump_only_silent = 1
 nnoremap <C-]> :CtrlPtjump<CR>
 vnoremap <C-]> :CtrlPtjumpVisual<CR>
+
+command! TagFiles :call EchoTags()
+function! EchoTags()
+  echo join(split(&tags, ","), "\n")
+endfunction
