@@ -7,6 +7,8 @@ nnoremap <Leader>a :call RunAllSpecs()<CR>
 " " Split long line with comma-separated terms into multiple lines, then indent
 " " the collection appropriately.
 nnoremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
+
+nnoremap <Leader>ct :!./.git/hooks/ctags<CR>
 " nnoremap <Leader>gs :Gstatus<CR>
 " vnoremap <Leader>gb :Gblame<CR>
 "

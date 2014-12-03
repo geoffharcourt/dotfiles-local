@@ -7,5 +7,5 @@ dir="`git rev-parse --git-dir`"
 trap 'rm -f "$dir/$$.tags"' EXIT
 git ls-files | \
   "${CTAGS:-ctags}" --tag-relative --fields=+l -L - -f"$dir/$$.tags" \
-  --languages=+coffee,javascript,ruby,-sql
+  --languages=+ruby,-javascript,sql
 mv "$dir/$$.tags" "$dir/tags"
