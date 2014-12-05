@@ -25,8 +25,11 @@ Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'mtth/scratch.vim'
 Plugin 'nelstrom/vim-textobj-rubyblock'
 Plugin 'ngmy/vim-rubocop'
-Plugin 'othree/eregex.vim'
 Plugin 'rking/ag.vim'
 Plugin 'skwp/greplace.vim'
 Plugin 'vim-scripts/IndexedSearch'
 Plugin 'vim-scripts/ctrlp-py-matcher'
+
+" Experiments
+Plugin 'othree/eregex.vim'
+Plugin 'msanders/cocoa.vim'
