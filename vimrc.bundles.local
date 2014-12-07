@@ -33,3 +33,8 @@ Plugin 'vim-scripts/ctrlp-py-matcher'
 " Experiments
 Plugin 'othree/eregex.vim'
 Plugin 'msanders/cocoa.vim'
+Plugin 'eraserhd/vim-ios'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'rizzatti/dash.vim'
+Plugin 'itspriddle/vim-marked'
+Plugin 'Keithbsmiley/investigate.vim'

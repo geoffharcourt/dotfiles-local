@@ -25,13 +25,24 @@ function! SelectAutoCompleteOrCarriageReturn()
   endif
 endfunction
 
+function! CancelAutoCompleteOrInsertMode()
+  if pumvisible()
+    return "\<c-e>"
+  else
+    return "\<Esc>"
+  endif
+endfunction
+
 " Use escape to kill autocomplete without completion and stay in insert mode
+inoremap <silent> <Esc> <C-r>=CancelAutoCompleteOrInsertMode()<CR>
 inoremap <silent> <CR> <C-r>=SelectAutoCompleteOrCarriageReturn()<CR>
 
-"" YouCompleteMe configuration
+" YouCompleteMe configuration
 let g:ycm_collect_identifiers_from_tags_files=1
 let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_min_num_of_chars_for_completion = 4
+let g:ycm_collect_identifiers_from_tags_files = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " Autocomplete and Rails.vim do not play well together. Copied completion
 " terms into custom dictionaries which are loaded when files with the right

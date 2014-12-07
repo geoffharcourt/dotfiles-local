@@ -6,6 +6,8 @@ set incsearch   " highlight search incrementally
 set ignorecase  " searches are case-insensitive
 set smartcase   " searches are case-sensitive if a capital is in term
 
+let g:eregex_default_enable = 0
+
 " " Default to smart-case searching. Can be disabled with -s
 let g:agprg="ag -S --column"
 
