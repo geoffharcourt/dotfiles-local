@@ -16,6 +16,7 @@ command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 nnoremap \ :Ag<SPACE>
 nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 
+let g:ctrlp_match_window = 'top,order:btt,min:1,max:10,results:10'
 let g:ctrlp_tjump_only_silent = 1
 nnoremap <C-]> :CtrlPtjump<CR>
 vnoremap <C-]> :CtrlPtjumpVisual<CR>
