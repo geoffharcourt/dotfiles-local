@@ -9,7 +9,5 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 
 # faster mode switching
 export KEYTIMEOUT=1
-export EDITOR=nvim
-export VISUAL=nvim
 
 source ~/.zprompt
