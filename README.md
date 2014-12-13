@@ -7,7 +7,7 @@ modifications that build on top of the foundation.
 Requirements
 ------------
 
-These files probably won't work very well without the foundation dotfiles
+These files probably won't work without the foundation dotfiles
 installed. In any event, you'll need zsh as your login shell.
 
 Set zsh as your login shell:
@@ -44,10 +44,10 @@ What's in it?
 [vim](http://www.vim.org/) configuration:
 
 * custom configuration broken down by subject area in vim folder
-* rainbow_parentheses to change colors of (), {}, [], <> when editing code
+* rainbow parentheses to change colors of (), {}, [], <> when editing code
 * vim-vinegar for quick jumps through the file system (use `-` to jump to
   folder view for current file)
-* vim-haml, vim-liquid, vim-markdown for editing those file/template types
+* vim-haml & vim-markdown for editing those file/template types
 * Other awesome @tpope plugins: vim-abolish, vim-dispatch, vim-repeat,
   vim-unimpaired.
 * dash.vim for searching Dash
@@ -70,14 +70,13 @@ configuration:
 
 Shell aliases and scripts:
 
-* v for vim
-* cov to open a browser with current simplecov results
-* rc for rails console
-* taild to tail development log
-* tailt to tail test log
-* bex for bundle exec
-* bu for bundle update
-* heroky for heroku, since I can't seem to spell that correctly when typing fast
+* `v` for neovim
+* `rc` for rails console
+* `taild` to tail development log
+* `tailt` to tail test log
+* `bex` for bundle exec
+* `bu` for bundle update
+* `heroky` for heroku, since I can't seem to spell that correctly when typing fast
 
 Terminal stuff:
 * nocorrects on parity commands: development, staging, production
