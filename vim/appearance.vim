@@ -32,3 +32,6 @@ let g:rainbow_conf = {
 \       'css': 0,
 \   }
 \}
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
