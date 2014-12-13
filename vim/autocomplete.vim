@@ -34,8 +34,8 @@ function! CancelAutoCompleteOrInsertMode()
 endfunction
 
 " Use escape to kill autocomplete without completion and stay in insert mode
-inoremap <silent> <Esc> <C-r>=CancelAutoCompleteOrInsertMode()<CR>
-inoremap <silent> <CR> <C-r>=SelectAutoCompleteOrCarriageReturn()<CR>
+" inoremap <silent> <Esc> <C-r>=CancelAutoCompleteOrInsertMode()<CR>
+" inoremap <silent> <CR> <C-r>=SelectAutoCompleteOrCarriageReturn()<CR>
 
 " YouCompleteMe configuration
 let g:ycm_collect_identifiers_from_tags_files=1

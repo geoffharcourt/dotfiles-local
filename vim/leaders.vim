@@ -43,6 +43,8 @@ nnoremap <Leader>n :sp ~/Dropbox/notes/vim-notes.txt<CR>
 nnoremap <Leader>p :r!pbpaste<cr>
 nnoremap <Leader>q :call ToggleQuickfixList()<CR>
 
+nnoremap <Leader>u :GundoToggle<CR>
+
 nnoremap <Leader>T :!.git/hooks/ctags<CR>
 
 nnoremap R :vs ~/.vimrc.local<CR>
