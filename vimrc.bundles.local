@@ -23,6 +23,7 @@ Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'kana/vim-textobj-user' " needed for textobj-rubyblock
 Plugin 'Keithbsmiley/investigate.vim'
+Bundle 'Keithbsmiley/rspec.vim'
 Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'mtth/scratch.vim'
 Plugin 'nelstrom/vim-textobj-rubyblock'
