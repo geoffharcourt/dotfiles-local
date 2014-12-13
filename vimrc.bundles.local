@@ -39,5 +39,4 @@ Plugin 'vim-scripts/ctrlp-py-matcher'
 Plugin 'vim-scripts/IndexedSearch'
 
 " Experiments
-Plugin 'eraserhd/vim-ios'
 Plugin 'msanders/cocoa.vim'
