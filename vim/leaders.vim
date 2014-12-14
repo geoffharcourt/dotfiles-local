@@ -45,12 +45,11 @@ nnoremap <Leader>q :call ToggleQuickfixList()<CR>
 
 nnoremap <Leader>u :GundoToggle<CR>
 
-nnoremap <Leader>T :!.git/hooks/ctags<CR>
+nnoremap <Leader>T :tabnext<CR>
 
 " Easier linewise reselection of what you just pasted.
 nnoremap <Leader>V V`]
 
-nnoremap <Leader>W :tabnext<CR>
 nnoremap <Leader>w :w<CR>
 
 vnoremap <Leader>y y:call ClipboardYank()<cr>
