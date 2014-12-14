@@ -40,3 +40,4 @@ Plugin 'vim-scripts/IndexedSearch'
 
 " Experiments
 Plugin 'msanders/cocoa.vim'
+Plugin 'AndrewRadev/splitjoin.vim'
