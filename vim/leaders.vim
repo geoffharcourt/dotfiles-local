@@ -47,9 +47,6 @@ nnoremap <Leader>u :GundoToggle<CR>
 
 nnoremap <Leader>T :!.git/hooks/ctags<CR>
 
-nnoremap R :vs ~/.vimrc.local<CR>
-nnoremap B :vs ~/.vimrc.bundles.local<CR>
-
 " Easier linewise reselection of what you just pasted.
 nnoremap <Leader>V V`]
 

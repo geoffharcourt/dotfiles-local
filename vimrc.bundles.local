@@ -1,4 +1,5 @@
 " Colors
+Plugin 'bling/vim-airline'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'luochen1990/rainbow'
 
@@ -27,7 +28,6 @@ Bundle 'Keithbsmiley/rspec.vim'
 Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'mtth/scratch.vim'
 Plugin 'nelstrom/vim-textobj-rubyblock'
-Plugin 'ngmy/vim-rubocop'
 Plugin 'othree/eregex.vim'
 Plugin 'rizzatti/dash.vim'
 Plugin 'rking/ag.vim'
@@ -40,4 +40,6 @@ Plugin 'vim-scripts/IndexedSearch'
 
 " Experiments
 Plugin 'msanders/cocoa.vim'
+Plugin 'airblade/vim-gitgutter'
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'wesQ3/vim-windowswap'
