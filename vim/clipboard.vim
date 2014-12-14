@@ -12,8 +12,9 @@ function! RestoreRegister()
   return ''
 endfunction
 
-function! s:Repl()
+function! s:ReplaceVisualSelectionWithYankRegister()
   let s:restore_reg = @"
   return "p@=RestoreRegister()\<cr>"
 endfunction
-vmap <silent> <expr> p <sid>Repl()
+
+vmap <silent> <expr> p <sid>ReplaceVisualSelectionWithYankRegister()
