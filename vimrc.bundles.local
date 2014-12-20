@@ -1,7 +1,7 @@
 " Colors
 Plugin 'bling/vim-airline'
-Plugin 'nanotech/jellybeans.vim'
 Plugin 'luochen1990/rainbow'
+Plugin 'nanotech/jellybeans.vim'
 
 " Tim Pope for the win
 Plugin 'tpope/vim-abolish'
@@ -39,7 +39,8 @@ Plugin 'vim-scripts/ctrlp-py-matcher'
 Plugin 'vim-scripts/IndexedSearch'
 
 " Experiments
-Plugin 'msanders/cocoa.vim'
-Plugin 'airblade/vim-gitgutter'
 Plugin 'AndrewRadev/splitjoin.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'edkolev/tmuxline.vim'
+Plugin 'msanders/cocoa.vim'
 Plugin 'wesQ3/vim-windowswap'

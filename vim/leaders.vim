@@ -29,8 +29,8 @@ nnoremap <Leader>h :nohlsearch<CR>
 " Fix indentation across file
 nnoremap <Leader>i mmgg=G`m<CR>
 
-" nnoremap <Leader>j :Dispatch spring teaspoon % <CR>
-" nnoremap <Leader>J :Dispatch spring teaspoon <CR>
+nnoremap <Leader>j :Dispatch spring teaspoon % <CR>
+nnoremap <Leader>J :Dispatch spring teaspoon <CR>
 
 nnoremap <Leader>k :call investigate#Investigate()<CR>
 
