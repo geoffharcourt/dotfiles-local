@@ -2,6 +2,7 @@ eval "$(/usr/local/bin/gh alias -s)"
 
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=$HOME/go
+export GIT_PROMPT_EXECUTABLE="haskell"
 
 CDPATH=.:$HOME/cortex:$HOME/cortex-projects:$HOME:$HOME/clients:$HOME/Dropbox:$HOME/Downloads:$HOME/github
 
