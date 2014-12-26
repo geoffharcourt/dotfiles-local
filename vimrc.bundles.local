@@ -23,7 +23,6 @@ Plugin 'itspriddle/vim-marked'
 Plugin 'ivalkeen/vim-ctrlp-tjump'
 Plugin 'jgdavey/vim-blockle'
 Plugin 'kana/vim-textobj-user' " needed for textobj-rubyblock
-Plugin 'Keithbsmiley/investigate.vim'
 Bundle 'Keithbsmiley/rspec.vim'
 Plugin 'kristijanhusak/vim-multiple-cursors'
 Plugin 'mtth/scratch.vim'
@@ -39,8 +38,6 @@ Plugin 'vim-scripts/ctrlp-py-matcher'
 Plugin 'vim-scripts/IndexedSearch'
 
 " Experiments
-Plugin 'AndrewRadev/splitjoin.vim'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'edkolev/tmuxline.vim'
 Plugin 'msanders/cocoa.vim'
-Plugin 'wesQ3/vim-windowswap'
