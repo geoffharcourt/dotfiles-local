@@ -16,6 +16,7 @@ alias gra='command git rebase --abort'
 alias grc='command git rebase --continue'
 alias gu='command git up -i'
 alias hub='gh'
+alias ghub='/usr/local/bin/github'
 
 # Heroku
 alias heroky='heroku'

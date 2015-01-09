@@ -33,7 +33,6 @@ Plugin 'rking/ag.vim'
 Plugin 'SirVer/ultisnips'
 Plugin 'sjl/gundo.vim'
 Plugin 'skwp/greplace.vim'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'vim-scripts/ctrlp-py-matcher'
 Plugin 'vim-scripts/IndexedSearch'
 
