@@ -37,8 +37,8 @@ nnoremap <Leader>k :call investigate#Investigate()<CR>
 " http://robots.thoughtbot.com/faster-grepping-in-vim changed from the above blog post to use ag.vim hello
 nnoremap <Leader>o :call ToggleLocationList()<CR>
 nnoremap <Leader>L :call PromoteToLet()<CR>
-nnoremap <Leader>M :Move <C-r>%
-nnoremap <Leader>m :Gmove <C-r>%
+nnoremap <Leader>M :Gmove <C-r>%
+nnoremap <Leader>m :Move <C-r>%
 nnoremap <Leader>n :sp ~/Dropbox/notes/vim-notes.txt<CR>
 nnoremap <Leader>p :r!pbpaste<cr>
 nnoremap <Leader>q :call ToggleQuickfixList()<CR>
