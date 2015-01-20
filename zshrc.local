@@ -1,17 +1,17 @@
 eval "$(/usr/local/bin/gh alias -s)"
 
-export PATH=$PATH:/usr/local/opt/go/libexec/bin
-export GOPATH=$HOME/go
-export GIT_PROMPT_EXECUTABLE="haskell"
-
-CDPATH=.:$HOME/cortex:$HOME/cortex-projects:$HOME:$HOME/clients:$HOME/Dropbox:$HOME/Downloads:$HOME/github
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-fpath=(/usr/local/share/zsh-completions $fpath)
-source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-# faster mode switching
-export KEYTIMEOUT=1
+# export PATH=$PATH:/usr/local/opt/go/libexec/bin
+# export GOPATH=$HOME/go
+# export GIT_PROMPT_EXECUTABLE="haskell"
+#
+# CDPATH=.:$HOME/cortex:$HOME/cortex-projects:$HOME:$HOME/clients:$HOME/Dropbox:$HOME/Downloads:$HOME/github
+#
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# fpath=(/usr/local/share/zsh-completions $fpath)
+# source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
+# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+#
+# # faster mode switching
+# export KEYTIMEOUT=1
 
 source ~/.zprompt
