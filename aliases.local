@@ -15,7 +15,6 @@ alias gpu='git pull'
 alias gra='command git rebase --abort'
 alias grc='command git rebase --continue'
 alias gu='command git up -i'
-alias hub='gh'
 alias ghub='/usr/local/bin/github'
 
 # Heroku
@@ -25,8 +24,9 @@ alias push-to-production='gp production'
 alias push-to-staging='gp staging $(git symbolic-ref --short -q HEAD):master --force'
 
 # Postgres
-alias pgstart='launchctl load ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
-alias pgstop='launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+alias pgstart='launchctl load -w homebrew.mxcl.postgresql.plist'
+alias pgstop='rm /usr/local/var/postgres/postmaster.pid && launchctl unload homebrew.mxcl.postgresql.plist'
+alias pgrestart='pgstop && pgstart'
 
 # Ruby
 alias bex='nocorrect bundle exec'
@@ -41,12 +41,11 @@ alias tagdeps='./.git/hooks/ctags'
 alias taild='tlf log/development.log'
 alias tailt='tlf log/test.log'
 
-# Code Metrics
-alias flogapp='flog app'
-alias rubo='rake rubocop'
+# Code Cleanup
+alias rubo='rubocop'
 
 # Update
-alias goodmorning='brew update && brew upgrade && gem update --system && gem update && rcup'
+alias goodmorning='brew update && brew upgrade && update-rubies && gem update --system && gem update && rcup'
 
 # Folder navigation
 alias dotf='cd $HOME/dotfiles-local'

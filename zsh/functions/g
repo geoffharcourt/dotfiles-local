@@ -1,0 +1,12 @@
+# Only do this if you use the go-based hub, or this will be very slow
+# No arguments: `git status`
+# With arguments: acts like `git`
+g() {
+  if [[ $# > 0 ]]; then
+    hub $@
+  else
+    hub status
+  fi
+}
+
+compdef g=hub
