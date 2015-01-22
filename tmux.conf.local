@@ -87,3 +87,6 @@ set -g @tpm_plugins "              \
 "
 # initializes TMUX plugin manager
 run-shell ~/.tmux/plugins/tpm/tpm
+
+# Local config
+if-shell "[ -f ~/.tmux.conf.local.snapshot ]" 'source ~/.tmux.conf.local.snapshot'
