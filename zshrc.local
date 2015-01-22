@@ -6,13 +6,10 @@ export GIT_PROMPT_EXECUTABLE="haskell"
 
 CDPATH=.:$HOME/cortex:$HOME/cortex-projects:$HOME:$HOME/clients:$HOME/github:$HOME/Dropbox:$HOME/Downloads:$HOME/github
 
-# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-# fpath=(/usr/local/share/zsh-completions $fpath)
-# source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
-# zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-# # faster mode switching
-# export KEYTIMEOUT=1
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fpath=(/usr/local/share/zsh-completions $fpath)
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # PATH recommended by brew doctor
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
@@ -21,5 +18,26 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="$HOME/.bin:$PATH"
 
 eval "$(gh alias -s)"
+
+# Select "emacs" keymap.
+# This enables:
+# - Ctrl-a: beginning of line
+# - Ctrl-e: end of line
+# - Ctrl-r: incremental history search backward
+# - Ctrl-s: incremental history search forward
+#
+# This is necessary because if the EDITOR environment variable
+# contains "vi" then the default keymap would be "viins" which
+# doesn't map all these goodies by default.
+#
+# See `man zshzle`
+bindkey -e
+
+# C-x C-e to edit command-line in EDITOR
+autoload -U edit-command-line
+zle -N edit-command-line
+bindkey '\C-x\C-e' edit-command-line
+bindkey '^[[A' history-substring-search-up
+bindkey '^[[B' history-substring-search-down
 
 source ~/.zprompt
