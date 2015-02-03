@@ -39,4 +39,3 @@ Plugin 'vim-scripts/IndexedSearch'
 " Experiments
 Plugin 'airblade/vim-gitgutter'
 Plugin 'edkolev/tmuxline.vim'
-Plugin 'msanders/cocoa.vim'
