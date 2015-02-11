@@ -1,2 +1,0 @@
-#!/usr/bin/env zsh
-cd $PWD && printf $(rbenv version-name)
