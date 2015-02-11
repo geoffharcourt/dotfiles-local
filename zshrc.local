@@ -2,7 +2,6 @@
 
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=$HOME/go
-export PATH=$PATH:$GOPATH/bin
 export GIT_PROMPT_EXECUTABLE="haskell"
 
 CDPATH=.:$HOME/cortex:$HOME/cortex-projects:$HOME:$HOME/clients:$HOME/github:$HOME/Dropbox:$HOME/Downloads:$HOME/github
@@ -10,7 +9,6 @@ CDPATH=.:$HOME/cortex:$HOME/cortex-projects:$HOME:$HOME/clients:$HOME/github:$HO
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-source /usr/local/opt/zsh-history-substring-search/zsh-history-substring-search.zsh
 
 # PATH recommended by brew doctor
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
@@ -38,7 +36,7 @@ bindkey -e
 autoload -U edit-command-line
 zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
-bindkey '^[[A' history-substring-search-up
-bindkey '^[[B' history-substring-search-down
 
-source ~/.zprompt
+[ -f ~/.zprompt ] && source ~/.zprompt
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+. `brew --prefix`/etc/profile.d/z.sh
