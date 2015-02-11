@@ -1,6 +1,6 @@
 " Colors
 Plugin 'bling/vim-airline'
-Plugin 'luochen1990/rainbow'
+Plugin 'junegunn/rainbow_parentheses.vim'
 Plugin 'nanotech/jellybeans.vim'
 
 " Tim Pope for the win
@@ -39,3 +39,9 @@ Plugin 'vim-scripts/IndexedSearch'
 " Experiments
 Plugin 'airblade/vim-gitgutter'
 Plugin 'edkolev/tmuxline.vim'
+Plugin 'junegunn/vim-pseudocl'
+Plugin 'junegunn/vim-oblique'
+Plugin 'junegunn/vim-peekaboo'
+Plugin 'tpope/vim-tbone'
+Plugin 'ConradIrwin/vim-bracketed-paste'
+Plugin 'junegunn/fzf'

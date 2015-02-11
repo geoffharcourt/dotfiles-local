@@ -59,3 +59,8 @@ let g:rainbow_conf = {
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+augroup rainbow
+  autocmd BufRead,BufNewFile * RainbowParentheses
+augroup END
+
