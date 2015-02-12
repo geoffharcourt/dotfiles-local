@@ -24,8 +24,8 @@ alias push-to-production='gp production'
 alias push-to-staging='gp staging $(git symbolic-ref --short -q HEAD):master --force'
 
 # Postgres
-alias pgstart='launchctl load -w homebrew.mxcl.postgresql.plist'
-alias pgstop='rm /usr/local/var/postgres/postmaster.pid && launchctl unload homebrew.mxcl.postgresql.plist'
+alias pgstart='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
+alias pgstop='rm /usr/local/var/postgres/postmaster.pid && launchctl unload ~/Library/LaunchAgents/homebrew.mxcl.postgresql.plist'
 alias pgrestart='pgstop && pgstart'
 
 # Ruby
