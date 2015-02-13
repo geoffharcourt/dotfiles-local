@@ -34,6 +34,10 @@ bind -n S-Left resize-pane -L 2
 bind -n S-Right resize-pane -R 2
 bind -n S-Down resize-pane -D 1
 bind -n S-Up resize-pane -U 1
+bind -n C-Left resize-pane -L 10
+bind -n C-Right resize-pane -R 10
+bind -n C-Down resize-pane -D 5
+bind -n C-Up resize-pane -U 5
 
 # Number windows starting at 1, renumber as windows are added / removed
 set-option -g base-index 1
