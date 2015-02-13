@@ -64,3 +64,7 @@ augroup rainbow
   autocmd BufRead,BufNewFile * RainbowParentheses
 augroup END
 
+let g:jellybeans_overrides = {
+      \ 'CursorLine': { 'ctermbg': '292c33', 'ctermfg': '95a2bb', '256ctermfg': '95a2bb', '256ctermbg': 'red'}
+      \ }
+let g:jellybeans_background_color_256="292c33"

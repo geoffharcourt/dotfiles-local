@@ -29,6 +29,9 @@ export PATH="$HOME/.bin:$PATH"
 
 eval "$(gh alias -s)"
 
+# Use haskell-based git prompt code
+export GIT_PROMPT_EXECUTABLE="haskell"
+
 # Select "emacs" keymap.
 # This enables:
 # - Ctrl-a: beginning of line
