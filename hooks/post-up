@@ -1,3 +1,5 @@
 #!/bin/sh
 
-ln -s ~/.vim ~/.nvim
+if [ ! -e $HOME/.nvim ]; then
+  ln -s $HOME/.vim $HOME/.nvim
+fi
