@@ -1,1 +1,12 @@
-/Users/geoff/dotfiles-local/zsh/functions/g
+# No arguments: `git status`
+# With arguments: acts like `git`
+g() {
+  if [[ $# > 0 ]]; then
+    hub $@
+  else
+    git status
+  fi
+}
+
+# Complete g like git
+compdef g=git

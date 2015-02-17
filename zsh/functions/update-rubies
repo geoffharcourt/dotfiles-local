@@ -1,1 +1,5 @@
-/Users/geoff/dotfiles-local/zsh/functions/update-rubies
+function update-rubies() {
+  cd ~/.rbenv/plugins/ruby-build
+  git pull
+  popd
+}

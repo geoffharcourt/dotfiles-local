@@ -1,1 +1,3 @@
-/Users/geoff/dotfiles-local/zsh/functions/my_internal_ip_address
+my_internal_ip_address() {
+  ifconfig | awk '$1 == "inet\s" { print $2 }'
+}
