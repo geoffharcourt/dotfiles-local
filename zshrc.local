@@ -27,7 +27,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 # Scripts from thoughtbot/dotfiles
 export PATH="$HOME/.bin:$PATH"
 
-eval "$(gh alias -s)"
+eval "$(hub alias -s)"
 
 # Use haskell-based git prompt code
 export GIT_PROMPT_EXECUTABLE="haskell"
