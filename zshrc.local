@@ -1,7 +1,9 @@
 #!/usr/bin/env zsh
 
 # Add this to your zshrc or bzshrc file
-_not_inside_tmux() { [[ -z "$TMUX" ]] }
+_not_inside_tmux() {
+  [[ -z "$TMUX" ]]
+}
 
 ensure_tmux_is_running() {
   if _not_inside_tmux; then
@@ -53,4 +55,4 @@ bindkey '\C-x\C-e' edit-command-line
 
 [ -f ~/.zprompt ] && source ~/.zprompt
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-. `brew --prefix`/etc/profile.d/z.sh
+source "$(brew --prefix)/etc/profile.d/z.sh"
