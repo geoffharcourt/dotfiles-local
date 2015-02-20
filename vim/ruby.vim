@@ -17,6 +17,11 @@ augroup rubywhitespace
   au BufWritePre Gemfile :%s/\s\+$//e
 augroup END
 
+augroup rubyquestionmark
+  autocmd!
+  autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
+augroup END
+
 if has("autocmd")
   autocmd FileType ruby set omnifunc=syntaxcomplete#Complete
   " autocmd FileType ruby set omnifunc=rubycomplete#Complete
