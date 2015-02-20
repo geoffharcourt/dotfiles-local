@@ -1,3 +1,3 @@
 set notimeout
-set ttimeout
-set ttimeoutlen=100
+" set ttimeout
+" set ttimeoutlen=100
