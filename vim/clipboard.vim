@@ -18,3 +18,5 @@ function! s:ReplaceVisualSelectionWithYankRegister()
 endfunction
 
 vmap <silent> <expr> p <sid>ReplaceVisualSelectionWithYankRegister()
+
+inoremap <C-v> <C-o>:r!pbpaste<CR>
