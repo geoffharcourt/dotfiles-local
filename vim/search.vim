@@ -28,11 +28,11 @@ function! EchoTags()
 endfunction
 
 function! OpenFuzzyFileSearcher()
-  if exists("$TMUX")
-    FZF
-  else
+  " if exists("$TMUX")
+    " FZF
+  " else
     CtrlP
-  endif
+  " endif
 endfunction
 
 let g:ctrlp_cmd = 'call OpenFuzzyFileSearcher()'

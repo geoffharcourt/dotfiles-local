@@ -32,7 +32,7 @@ nnoremap <Leader>i mmgg=G`m<CR>
 nnoremap <Leader>j :Dispatch spring teaspoon % <CR>
 nnoremap <Leader>J :Dispatch spring teaspoon <CR>
 
-nnoremap <Leader>k :call investigate#Investigate()<CR>
+" nnoremap <Leader>k :call investigate#Investigate()<CR>
 
 " http://robots.thoughtbot.com/faster-grepping-in-vim changed from the above blog post to use ag.vim hello
 nnoremap <Leader>o :call ToggleLocationList()<CR>
@@ -42,6 +42,7 @@ nnoremap <Leader>m :Move <C-r>%
 nnoremap <Leader>n :sp ~/Dropbox/notes/vim-notes.txt<CR>
 nnoremap <Leader>p :r!pbpaste<cr>
 nnoremap <Leader>q :call ToggleQuickfixList()<CR>
+nnoremap <Leader>R :source $MYVIMRC<CR>
 
 nnoremap <Leader>u :GundoToggle<CR>
 
