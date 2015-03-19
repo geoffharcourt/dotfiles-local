@@ -19,3 +19,7 @@ call s:SourceConfigFilesIn('')
 highlight Comment cterm=italic
 
 nnoremap Q :echoe "Disabled Ex mode"<CR>
+
+if has('nvim')
+  nmap <BS> <C-W>h
+endif

@@ -1,7 +1,7 @@
 # Aliases
 alias realias='source ~/.aliases'
 
-# alias v='nvim'
+alias v='nvim'
 alias vs='v'
 
 # Git
