@@ -6,6 +6,9 @@ set complete=.,b,u,],k
 set wildmenu
 set wildmode=longest:full,full
 
+" Autocomplete with spelling suggestions when spellcheck is on
+set complete+=kspell
+
 " Override thoughtbot tab wrapper to move through autocomplete list
 " in opposite direction
 function! InsertTabWrapper()
