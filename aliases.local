@@ -3,6 +3,7 @@ alias realias='source ~/.aliases'
 
 alias v='nvim'
 alias vs='v'
+alias xit="exit"
 
 # Git
 alias gaa='git aa'
