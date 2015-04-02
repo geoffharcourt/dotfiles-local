@@ -18,8 +18,9 @@ call s:SourceConfigFilesIn('')
 " This statement has to come late in order to work
 highlight Comment cterm=italic
 
-nnoremap Q :echoe "Disabled Ex mode"<CR>
-
+" Experiments
 if has('nvim')
   nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 endif
+
+autocmd BufRead,BufNewFile *.cjsx.erb setlocal filetype=coffee
