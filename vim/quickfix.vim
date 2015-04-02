@@ -1,3 +1,9 @@
+" Wrap lines in quickfix so test output is readable
+augroup WrapLineInQuickFix
+  autocmd!
+  autocmd FileType qf setlocal wrap
+augroup END
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Quickfix list management (modified from Gary Bernhardt's dotfiles)
 " https://github.com/garybernhardt/dotfiles/blob/master/.vimrc
