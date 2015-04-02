@@ -7,6 +7,22 @@ set ignorecase  " searches are case-insensitive
 set smartcase   " searches are case-sensitive if a capital is in term
 
 let g:eregex_default_enable = 0
+let g:indexed_search_mappings = 0
+let g:oblique#incsearch_highlight_all = 1
+
+function! GoBackThroughSearch()
+  execute "normal \<Plug>(Oblique-N)"
+  ShowSearchIndex
+endfunction
+
+function! AdvanceThroughSearch()
+  execute "normal \<Plug>(Oblique-n)"
+  ShowSearchIndex
+endfunction
+
+"""
+" See vim/after/plugins/zzzmappings.vim for post-plugin mappings
+"""
 
 " Default to smart-case searching. Can be disabled with -s
 let g:agprg="ag -S --column"
@@ -27,12 +43,12 @@ function! EchoTags()
   echo join(split(&tags, ","), "\n")
 endfunction
 
-function! OpenFuzzyFileSearcher()
-  " if exists("$TMUX")
-    " FZF
-  " else
-    CtrlP
-  " endif
-endfunction
-
-let g:ctrlp_cmd = 'call OpenFuzzyFileSearcher()'
+" function! OpenFuzzyFileSearcher()
+"   " if exists("$TMUX")
+"     " FZF
+"   " else
+"     CtrlP
+"   " endif
+" endfunction
+"
+" let g:ctrlp_cmd = 'call OpenFuzzyFileSearcher()'
