@@ -1,10 +1,10 @@
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Splits and tabs
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set winwidth=84
-set winheight=10
-set winminheight=10
-set winheight=999
+silent set winwidth=84
+silent set winheight=10
+silent set winminheight=10
+silent set winheight=999
 
 autocmd VimResized * :wincmd =
 nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
