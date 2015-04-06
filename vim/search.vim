@@ -11,17 +11,17 @@ let g:indexed_search_mappings = 0
 let g:oblique#incsearch_highlight_all = 1
 
 function! GoBackThroughSearch()
-  execute "normal \<Plug>(Oblique-N)"
+  execute "silent normal \<Plug>(Oblique-N)"
   ShowSearchIndex
 endfunction
 
 function! AdvanceThroughSearch()
-  execute "normal \<Plug>(Oblique-n)"
+  execute "silent normal \<Plug>(Oblique-n)"
   ShowSearchIndex
 endfunction
 
 """
-" See vim/after/plugins/zzzmappings.vim for post-plugin mappings
+" See ~/.vim/after/plugins/zzzmappings.vim for post-plugin mappings
 """
 
 " Default to smart-case searching. Can be disabled with -s
