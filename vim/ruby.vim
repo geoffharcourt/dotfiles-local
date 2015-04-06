@@ -20,6 +20,7 @@ augroup END
 augroup rubyquestionmark
   autocmd!
   autocmd FileType ruby,eruby,yaml setlocal iskeyword+=?
+  autocmd FileType ruby,eruby,yaml,coffee,javascript setlocal iskeyword-=.
 augroup END
 
 if has("autocmd")
