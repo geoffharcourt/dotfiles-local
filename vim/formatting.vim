@@ -2,6 +2,8 @@
 vnoremap < <gv
 vnoremap > >gv
 
+set gdefault
+
 set formatoptions-=r
 set formatoptions-=t
 
