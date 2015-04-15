@@ -1,6 +1,8 @@
 " Copy & Paste
 "------------------------
 
+set clipboard=unnamed
+
 function! ClipboardYank()
   call system('pbcopy', @@)
 endfunction
