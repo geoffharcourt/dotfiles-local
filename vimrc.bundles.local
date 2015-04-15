@@ -1,5 +1,5 @@
 " Colors
-Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'altercation/vim-colors-solarized'
 Plug 'nanotech/jellybeans.vim'
 
 " Tim Pope for the win
@@ -19,11 +19,13 @@ Plug 'ck3g/vim-change-hash-syntax'
 Plug 'derekprior/vim-leaders'
 Plug 'derekprior/vim-trimmer'
 Plug 'gorodinskiy/vim-coloresque'
+Plug 'henrik/vim-indexed-search'
 Plug 'itspriddle/vim-marked'
 Plug 'ivalkeen/vim-ctrlp-tjump'
 Plug 'jgdavey/vim-blockle'
-Plug 'junegunn/vim-pseudocl'
+Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-oblique'
+Plug 'junegunn/vim-pseudocl'
 Plug 'kana/vim-textobj-user' " needed for textobj-rubyblock
 Plug 'Keithbsmiley/rspec.vim'
 Plug 'kristijanhusak/vim-multiple-cursors'
@@ -35,10 +37,11 @@ Plug 'rizzatti/dash.vim'
 Plug 'rking/ag.vim'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim'
-Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'skwp/greplace.vim'
-Plug 'henrik/vim-indexed-search'
+Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'vim-scripts/closetag.vim'
 Plug 'vim-scripts/ctrlp-py-matcher'
 
 " Experiments
+Plug 'bling/vim-airline'
+Plug 'edkolev/tmuxline.vim'
