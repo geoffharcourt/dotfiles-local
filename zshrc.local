@@ -54,5 +54,5 @@ zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
 
 [ -f ~/.zprompt ] && source ~/.zprompt
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.fzf ] && source ~/.fzf
 source "$(brew --prefix)/etc/profile.d/z.sh"
