@@ -11,7 +11,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 
 " Other plugins
-Plug 'airblade/vim-gitgutter'
 Plug 'bogado/file-line'
 Plug 'christoomey/vim-conflicted'
 Plug 'christoomey/vim-tmux-navigator'
@@ -45,3 +44,4 @@ Plug 'vim-scripts/ctrlp-py-matcher'
 " Experiments
 Plug 'bling/vim-airline'
 Plug 'edkolev/tmuxline.vim'
+Plug 'mhinz/vim-signify'
