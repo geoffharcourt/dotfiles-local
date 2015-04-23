@@ -1,50 +1,50 @@
 let g:rails_projections = {
 \ "app/models/*.rb": {
-\   "related": "spec/factories/%p.rb",
+\   "related": "spec/factories/{plural}.rb",
 \ },
 \ "spec/factories/*.rb": {
 \   "command": "factory",
 \   "affinity": "collection",
-\   "alternate": "app/models/%i.rb",
-\   "related": "db/schema.rb#%s",
-\   "test": "test/models/%i_test.rb",
-\   "template": "FactoryGirl.define do\n  factory :%i do\n  end\nend",
+\   "alternate": "app/models/{singular}.rb",
+\   "related": "db/schema.rb#{}",
+\   "test": "test/models/{singular}_test.rb",
+\   "template": "FactoryGirl.define do\n  factory :{singular} do\n  end\nend",
 \   "keywords": "factory sequence"
 \ },
 \ "app/decorators/*_decorator.rb": {
 \   "affinity": "model",
 \   "command": "decorator",
-\   "template": "class %SDecorator < Draper::Decorator\nend",
+\   "template": "class {camelcase|capitalize|colons}Decorator < Draper::Decorator\nend",
 \   "test": [
-\     "spec/decorators/%s_decorator_spec.rb"
+\     "spec/decorators/{}_decorator_spec.rb"
 \   ]
 \ },
 \ "app/serializers/*.rb": {
 \   "command": "serializer",
-\   "template": "class %S\nend",
+\   "template": "class {camelcase|capitalize|colons}\nend",
 \   "test": [
-\     "spec/serializers/%s_spec.rb"
+\     "spec/serializers/{}_spec.rb"
 \   ]
 \ },
 \ "app/workers/*_worker.rb": {
 \   "command": "worker",
-\   "template": "class %SWorker\n  include Sidekiq::Worker\n\nend",
+\   "template": "class {camelcase|capitalize|colons}Worker\n  include Sidekiq::Worker\n\nend",
 \   "test": [
-\     "spec/workers/%s_worker_spec.rb"
+\     "spec/workers/{}_worker_spec.rb"
 \   ]
 \ },
 \ "spec/javascripts/*_spec.coffee": {
 \   "command": "jspec",
 \   "alternate": [
-\     "app/assets/javascripts/%s.coffee",
-\     "app/assets/javascripts/%s.js",
-\     "lib/assets/javascripts/%s.coffee",
-\     "lib/assets/javascripts/%s.js"
+\     "app/assets/javascripts/{}.coffee",
+\     "app/assets/javascripts/{}.js",
+\     "lib/assets/javascripts/{}.coffee",
+\     "lib/assets/javascripts/{}.js"
 \   ]
 \ },
 \ "spec/requests/*.rb": {
 \   "command": "request",
-\   "alternate": "app/controllers/%s_controller.rb"
+\   "alternate": "app/controllers/{}_controller.rb"
 \ },
 \ "config/application.rb": {"command": "application"},
 \ "Gemfile": {"command": "gemfile"},
