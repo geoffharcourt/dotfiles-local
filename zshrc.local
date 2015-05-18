@@ -17,14 +17,11 @@ export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=$HOME/go
 export GIT_PROMPT_EXECUTABLE="haskell"
 
-CDPATH=.:$HOME/cortex:$HOME/cortex-projects:$HOME:$HOME/clients:$HOME/github:$HOME/Dropbox:$HOME/Downloads:$HOME/github
+CDPATH=.:$HOME/cortex:$HOME/cortex-projects:$HOME:$HOME/github/geoffharcourt:$HOME/clients:$HOME/github:$HOME/Dropbox:$HOME/Downloads:$HOME/github
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-
-# PATH recommended by brew doctor
-export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 
 # Scripts from thoughtbot/dotfiles
 export PATH="$HOME/.bin:$PATH"
