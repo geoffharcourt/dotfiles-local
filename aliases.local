@@ -47,7 +47,7 @@ alias tailt='tlf log/test.log'
 alias rubo='rubocop'
 
 # Update
-alias goodmorning='brew update && brew upgrade && update-rubies && gem update --system && gem update && rcup'
+alias goodmorning='brew update && brew upgrade --all && update-rubies && gem update --system && gem update && rcup'
 
 # Folder navigation
 alias dotf='cd $HOME/dotfiles-local'
