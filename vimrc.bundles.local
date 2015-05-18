@@ -7,6 +7,8 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-haml'
 Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-projectionist'
+Plug 'tpope/vim-rake'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 
@@ -43,5 +45,5 @@ Plug 'vim-scripts/ctrlp-py-matcher'
 
 " Experiments
 Plug 'bling/vim-airline'
-Plug 'edkolev/tmuxline.vim'
+" Plug 'edkolev/tmuxline.vim'
 Plug 'mhinz/vim-signify'
