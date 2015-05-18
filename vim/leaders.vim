@@ -39,6 +39,7 @@ nnoremap <Leader>o :call ToggleLocationList()<CR>
 nnoremap <Leader>L :call PromoteToLet()<CR>
 nnoremap <Leader>M :Gmove <C-r>%
 nnoremap <Leader>m :Move <C-r>%
+nnoremap <Leader>M :call MergeTabs()<CR>
 nnoremap <Leader>n :sp ~/Dropbox/notes/vim-notes.txt<CR>
 nnoremap <Leader>p :r!pbpaste<cr>
 nnoremap <Leader>q :call ToggleQuickfixList()<CR>
@@ -46,10 +47,10 @@ nnoremap <Leader>R :source $MYVIMRC<CR>
 
 nnoremap <Leader>u :GundoToggle<CR>
 
-nnoremap <Leader>T :tabnext<CR>
+nnoremap <Leader>T :tabnew %<CR>
 
 " Easier linewise reselection of what you just pasted.
-nnoremap <Leader>V :vertical wincmd f<CR>
+nnoremap <Leader>V <C-w>v
 
 nnoremap <Leader>w :w<CR>
 vnoremap <Leader>y y:call ClipboardYank()<cr>
