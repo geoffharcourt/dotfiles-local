@@ -31,6 +31,12 @@ snippet exp
 	expect(${1:object}).to ${2:matcher}
 snippet expw
 	expect(${1:object}).to have_received(:${2:method}).with(${3:arguments})
+snippet feature
+	RSpec.feature "${1:featurename}" do
+	  scenario "${2:scenario}" do
+			pending
+		end
+	end
 snippet if
 	if ${1:condition}
 		${2}
@@ -61,11 +67,13 @@ snippet .pluck
 	.pluck(:${1:attribute})
 snippet prt
 	protected
-	
+
 snippet prv
 	private
-	
+
 snippet r
 	attr_reader :${1:attribute}
 snippet rsh
 	require "spec_helper"
+snippet rrh
+	require "rails_helper"
