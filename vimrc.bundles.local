@@ -40,10 +40,11 @@ Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim'
 Plug 'skwp/greplace.vim'
 Plug 'stefandtw/quickfix-reflector.vim'
-Plug 'vim-scripts/closetag.vim'
+Plug 'alvan/closetag.vim'
 Plug 'vim-scripts/ctrlp-py-matcher'
 
 " Experiments
 Plug 'bling/vim-airline'
 " Plug 'edkolev/tmuxline.vim'
 Plug 'mhinz/vim-signify'
+" Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
