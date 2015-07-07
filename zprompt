@@ -34,4 +34,3 @@ _basic()                  { echo "$(_user_name)$(_colored_path)" }
 _colored_path()           { echo "$(_grey "%.")" }
 
 PROMPT='$(git_prompt_short_sha)$(_bracket_wrap "$(_basic)$(_separate $(git_super_status))")'
-export RPROMPT='[$(_red $(ruby --version | cut -d " " -f 2 | cut -d "p" -f 1))%{$WHITE%}]'
