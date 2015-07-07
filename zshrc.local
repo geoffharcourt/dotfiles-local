@@ -49,4 +49,4 @@ zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
 
 [ -f ~/.zprompt ] && source ~/.zprompt
-[ -f ~/.fzf ] && source ~/.fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

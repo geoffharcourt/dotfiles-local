@@ -1,14 +1,13 @@
 " Colors
-Plug 'altercation/vim-colors-solarized'
 Plug 'nanotech/jellybeans.vim'
 
 " Tim Pope for the win
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-haml'
+Plug 'tpope/vim-haml',  { 'for': 'haml' }
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rake'
+Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 
@@ -16,26 +15,26 @@ Plug 'tpope/vim-unimpaired'
 Plug 'bogado/file-line'
 Plug 'christoomey/vim-conflicted'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ck3g/vim-change-hash-syntax'
+Plug 'ck3g/vim-change-hash-syntax', { 'for' : 'ruby' }
 Plug 'derekprior/vim-leaders'
 Plug 'derekprior/vim-trimmer'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'henrik/vim-indexed-search'
-Plug 'itspriddle/vim-marked'
+Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'ivalkeen/vim-ctrlp-tjump'
-Plug 'jgdavey/vim-blockle'
+Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-oblique'
 Plug 'junegunn/vim-pseudocl'
 Plug 'kana/vim-textobj-user' " needed for textobj-rubyblock
-Plug 'Keithbsmiley/rspec.vim'
+Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kristijanhusak/vim-multiple-cursors'
 Plug 'mtscout6/vim-cjsx'
-Plug 'mtth/scratch.vim'
-Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'othree/eregex.vim'
-Plug 'rizzatti/dash.vim'
-Plug 'rking/ag.vim'
+Plug 'rizzatti/dash.vim', { 'on': 'DashSearch' }
+Plug 'rking/ag.vim', { 'on': 'Ag' }
 Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim'
 Plug 'skwp/greplace.vim'
@@ -48,3 +47,4 @@ Plug 'bling/vim-airline'
 " Plug 'edkolev/tmuxline.vim'
 Plug 'mhinz/vim-signify'
 " Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'wellle/tmux-complete.vim'
