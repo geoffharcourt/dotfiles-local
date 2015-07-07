@@ -26,8 +26,6 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 # Scripts from thoughtbot/dotfiles
 export PATH="$HOME/.bin:$PATH"
 
-eval "$(hub alias -s)"
-
 # Use haskell-based git prompt code
 export GIT_PROMPT_EXECUTABLE="haskell"
 
@@ -52,4 +50,3 @@ bindkey '\C-x\C-e' edit-command-line
 
 [ -f ~/.zprompt ] && source ~/.zprompt
 [ -f ~/.fzf ] && source ~/.fzf
-source "$(brew --prefix)/etc/profile.d/z.sh"
