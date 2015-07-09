@@ -50,3 +50,7 @@ let g:ycm_collect_identifiers_from_tags_files=0
 let g:ycm_extra_conf_globlist = ['~/cortex-projects/*','!~/*']
 let g:ycm_min_num_of_chars_for_completion = 4
 let g:ycm_seed_identifiers_with_syntax=1
+let g:ycm_cache_omnifunc=0
+
+" include tmux pane completions in YouCompleteMe
+let g:tmuxcomplete#trigger = 'omnifunc'

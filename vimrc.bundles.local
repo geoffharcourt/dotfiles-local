@@ -34,7 +34,7 @@ Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'othree/eregex.vim'
 Plug 'rizzatti/dash.vim', { 'on': 'DashSearch' }
-Plug 'rking/ag.vim', { 'on': 'Ag' }
+Plug 'rking/ag.vim'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim'
 Plug 'skwp/greplace.vim'
@@ -46,5 +46,6 @@ Plug 'vim-scripts/ctrlp-py-matcher'
 Plug 'bling/vim-airline'
 " Plug 'edkolev/tmuxline.vim'
 Plug 'mhinz/vim-signify'
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'wellle/tmux-complete.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }

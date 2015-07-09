@@ -23,11 +23,14 @@ noremap <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 noremap <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 noremap <Leader>SP :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
+vnoremap <Leader>E :call ExtractVariable()<CR>
 " temporarily stop search highlighting after search
 nnoremap <Leader>h :nohlsearch<CR>
 
 " Fix indentation across file
 nnoremap <Leader>i mmgg=G`m<CR>
+
+vnoremap <Leader>I :call InlineVariable()<CR>
 
 nnoremap <Leader>j :Dispatch spring teaspoon % <CR>
 nnoremap <Leader>J :Dispatch spring teaspoon <CR>
