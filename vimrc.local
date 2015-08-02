@@ -19,8 +19,8 @@ call s:SourceConfigFilesIn('')
 highlight Comment cterm=italic
 
 " Experiments
+" This only remains until neovim figures out what the hell they are doing with
+" regard to <C-h>
 if has('nvim')
   nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 endif
-
-autocmd BufRead,BufNewFile *.cjsx.erb setlocal filetype=coffee
