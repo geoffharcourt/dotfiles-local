@@ -8,7 +8,8 @@ alias vs='v'
 alias xit="exit"
 
 # Git
-alias gaa='git aa'
+alias gaa='git add -p'
+alias gaall='git aa'
 alias gca='git ca'
 alias gcms='git commit -m'
 alias gcm='git commit -v'
