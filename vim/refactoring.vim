@@ -1,6 +1,8 @@
 " Refactoring configurations
 "------------------------
 
+let g:vimrubocop_rubocop_cmd = 'bundle exec rubocop'
+
 " Borrowed from Gary Bernhardt's vimrc
 function! ExtractVariable()
   echohl String | let name = input("Variable name: ") | echohl None
