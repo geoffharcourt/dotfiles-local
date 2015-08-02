@@ -12,6 +12,8 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 
 " Other plugins
+Plug 'alvan/closetag.vim'
+Plug 'bling/vim-airline'
 Plug 'bogado/file-line'
 Plug 'christoomey/vim-conflicted'
 Plug 'christoomey/vim-tmux-navigator'
@@ -29,6 +31,7 @@ Plug 'junegunn/vim-pseudocl'
 Plug 'kana/vim-textobj-user' " needed for textobj-rubyblock
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kristijanhusak/vim-multiple-cursors'
+Plug 'mhinz/vim-signify'
 Plug 'mtscout6/vim-cjsx'
 Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
@@ -39,15 +42,10 @@ Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim'
 Plug 'skwp/greplace.vim'
 Plug 'stefandtw/quickfix-reflector.vim'
-Plug 'alvan/closetag.vim'
 Plug 'vim-scripts/ctrlp-py-matcher'
 
 " Experiments
-Plug 'bling/vim-airline'
-" Plug 'edkolev/tmuxline.vim'
-Plug 'mhinz/vim-signify'
-" Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
-Plug 'wellle/tmux-complete.vim'
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'rainerborene/vim-reek'
 Plug 'ngmy/vim-rubocop'
+Plug 'rainerborene/vim-reek'
+Plug 'wellle/tmux-complete.vim'
