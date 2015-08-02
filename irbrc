@@ -62,7 +62,6 @@ if defined? Rails
     :RETURN   => "  => %s\n\n"
   }
   IRB.conf[:PROMPT_MODE] = :RAILS
-
 end
 
 class Object
