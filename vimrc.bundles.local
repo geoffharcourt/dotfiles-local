@@ -49,3 +49,4 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
 Plug 'ngmy/vim-rubocop'
 Plug 'rainerborene/vim-reek'
 Plug 'wellle/tmux-complete.vim'
+Plug 'geoffharcourt/one-dark.vim'

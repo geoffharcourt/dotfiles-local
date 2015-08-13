@@ -25,6 +25,8 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 # Scripts from thoughtbot/dotfiles
 export PATH="$HOME/.bin:$PATH"
 
+if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+
 # C-x C-e to edit command-line in EDITOR
 autoload -U edit-command-line
 zle -N edit-command-line
