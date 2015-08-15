@@ -7,13 +7,6 @@ modifications that build on top of the foundation.
 Requirements
 ------------
 
-These files probably won't work without the foundation dotfiles
-installed. In any event, you'll need zsh as your login shell.
-
-Set zsh as your login shell:
-
-    chsh -s $(which zsh)
-
 Install
 -------
 
@@ -50,7 +43,6 @@ What's in it?
 * vim-haml & vim-markdown for editing those file/template types
 * Other awesome @tpope plugins: vim-abolish, vim-dispatch, vim-repeat,
   vim-unimpaired.
-* dash.vim for searching Dash
 * vim-blockle for toggling between Ruby do-end and {} block styles
 * vim-textobj-rubyblock for getting Ruby method and class text objects (thanks
   to @nelstrom)
@@ -64,8 +56,8 @@ configuration:
 
 [git](http://git-scm.com/) configuration:
 
-* Use the Github shell command `gh` instead of `git` (backwards compatible with
-  `git`, go-based replacement for `hub`)
+* Use the Github shell command `hub` instead of `git` (backwards compatible with
+  `git`)
 * Pretty logging (courtesy of @croaky)
 
 Shell aliases and scripts:

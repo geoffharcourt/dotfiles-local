@@ -37,6 +37,7 @@ nnoremap K :set nois<CR> :Ag! "\b<C-R><C-W>\b"<CR> :set incsearch<CR>
 let g:ctrlp_extensions = ['tag', 'undo']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 let g:ctrlp_tjump_only_silent = 1
+
 nnoremap <C-]> :CtrlPtjump<CR>
 vnoremap <C-]> :CtrlPtjumpVisual<CR>
 
@@ -44,13 +45,3 @@ command! TagFiles :call EchoTags()
 function! EchoTags()
   echo join(split(&tags, ","), "\n")
 endfunction
-
-" function! OpenFuzzyFileSearcher()
-"   " if exists("$TMUX")
-"     " FZF
-"   " else
-"     CtrlP
-"   " endif
-" endfunction
-"
-" let g:ctrlp_cmd = 'call OpenFuzzyFileSearcher()'
