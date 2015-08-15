@@ -2,18 +2,6 @@
 
 brew install hub vim
 brew install zsh-completions zsh-syntax-highlighting
-brew install pow
 brew install rbenv-aliases rbenv-ctags rbenv-default-gems
 
-brew tap caskroom/cask
 brew tap homebrew/services
-
-brew install brew-cask
-
-brew cask install adium alfred
-brew cask install caffeine cloak
-brew cask install flux
-brew cask install github hazel iterm2 keyremap4macbook kindle
-brew cask install pckeyboardhack pgadmin3 noejectdelay
-brew cask install skype spotify
-brew cask install virtualbox
