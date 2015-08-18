@@ -22,6 +22,7 @@
   ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   lb = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   details = log -n1 -p --format=fuller
+  sh = "shalector"
 
   # stashes from Chris Arcand's DC RUG talk:
   # http://chrisarcand.com/talks/git-unleashed/
