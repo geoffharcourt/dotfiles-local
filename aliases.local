@@ -7,6 +7,8 @@ alias v='nvim'
 alias vs='v'
 alias xit="exit"
 
+alias gpg=gpg2
+
 # Git
 alias gaa='git add -p'
 alias gca='git ca'
