@@ -26,6 +26,7 @@ zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:
 export PATH="$HOME/.bin:$PATH"
 
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
+if which thefuck > /dev/null; then eval "$(thefuck --alias)"; fi
 
 # C-x C-e to edit command-line in EDITOR
 autoload -U edit-command-line
