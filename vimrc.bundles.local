@@ -8,11 +8,12 @@ Plug 'tpope/vim-haml',  { 'for': 'haml' }
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
+Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 
 " Other plugins
-Plug 'alvan/closetag.vim'
+" Plug 'alvan/closetag.vim'
 Plug 'bling/vim-airline'
 Plug 'bogado/file-line'
 Plug 'christoomey/vim-conflicted'
@@ -41,12 +42,8 @@ Plug 'rking/ag.vim'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim'
 Plug 'skwp/greplace.vim'
-Plug 'stefandtw/quickfix-reflector.vim'
 Plug 'vim-scripts/ctrlp-py-matcher'
 
-" Experiments
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-Plug 'ngmy/vim-rubocop'
-Plug 'rainerborene/vim-reek'
+" " Experiments
 Plug 'wellle/tmux-complete.vim'
 Plug 'geoffharcourt/one-dark.vim'
