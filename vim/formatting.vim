@@ -9,5 +9,7 @@ set formatoptions-=t
 
 command! -nargs=* Wrap set wrap linebreak nolist
 
+" paste current timestamp in insert mode, great for updating asset fingerprints
+inoremap <C-t> <C-r>=strftime("%Y%m%d%H%M%S")<C-m>
+
 let g:splitjoin_ruby_trailing_comma=0
-inoremap <C-t> <C-r>=substitute(system("date +%Y%m%d%H%M%S"), '\n$', '', '')<cr>
