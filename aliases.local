@@ -28,9 +28,9 @@ alias push-to-production='gp production'
 alias push-to-staging='gp staging $(git symbolic-ref --short -q HEAD):master --force'
 
 # Postgres
-alias pgstart='brew services postgresql start'
-alias pgstop='brew services postgresql stop'
-alias pgrestart='brew services postgresql restart'
+alias pgstart='brew services start postgresql'
+alias pgstop='brew services stop postgresql'
+alias pgrestart='brew services restart postgresql'
 
 # Ruby
 alias bex='nocorrect bundle exec'
@@ -47,6 +47,7 @@ alias tailt='tlf log/test.log'
 
 # Code Cleanup
 alias rubo='rubocop'
+alias release="RAILS_ENV=test rake release"
 
 # Update
 alias goodmorning='brew update && brew upgrade --all && update-rubies && gem update --system && gem update && rcup'
