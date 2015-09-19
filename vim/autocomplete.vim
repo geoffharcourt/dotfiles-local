@@ -20,6 +20,8 @@ function! InsertTabWrapper()
   endif
 endfunction
 
+inoremap <S-Tab> <C-p>
+
 function! SelectAutoCompleteOrCarriageReturn()
   if pumvisible()
     return "\<c-y>"
