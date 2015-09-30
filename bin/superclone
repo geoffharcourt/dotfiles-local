@@ -1,0 +1,84 @@
+#! /usr/bin/env zsh
+# set syntax=zsh
+
+# Clone a git URL and print out the name of the created directory.
+#
+# `superclone URL floo` will clone the URL into a directory named floo, just
+# like `git clone URL floo`.
+#
+# If there's a URL in the clipboard, `superclone` without arguments will use
+# that.
+#
+# You can even do `superclone git clone URL`, say if you copy-pasted some
+# instructions, and it will ignore the `git clone` and act like `superclone
+# URL`.
+#
+# It can handle the following `git clone` schemes (search `insteadOf` in [my
+# gitconfig] for
+# explanations of the weird ones):
+# * `git@github.com:thoughtbot/paperclip.git`
+# * `https://github.com/rails/rails.git`
+# * `wgh:thoughtbot/paperclip`
+# * `tb:paperclip`
+# * `gbw:paperclip`
+# * `gabebw/dotfiles` (clone GitHub repos by username/reponame)
+#
+# [my gitconfig]: https://github.com/gabebw/dotfiles/blob/master/gitconfig
+#
+# ## FAQ
+#
+# Q: Why doesn't superclone `cd` directly into the directory instead of printing
+#    out the name of the directory?
+#
+# A: `cd` doesn't work in shell scripts because each one runs in its own subshell.
+# If this script ran `cd`, the subshell would `cd` into the directory, then
+# exit, and the user's shell would be in the same unchanged directory.
+#
+# So `superclone` returns the name of the directory to `cd` into and another
+# function runs `cd` as a function in this shell. It's all very silly.
+# Example:
+#
+#     function git-superclone {
+#       local directory="$(superclone "$@")"
+#       cd "$directory"
+#     }
+
+# Stop if any command fails.
+set -e
+
+# We did `superclone git clone URL`, remove the `git clone`
+if [[ "$1" == "git" && "$2" == "clone" ]]; then
+  shift;
+  shift;
+fi
+
+# No arguments provided, assume the URL is in the clipboard.
+if (( $# == 0 )); then
+  superclone "$(pbpaste)"
+else
+  git_url="$1"
+
+  if [[ -e "$2" ]]; then
+    # We provided a directory just like `git clone URL DIR`. Use it.
+    directory="$2"
+  else
+    # We need to turn `git@github.com:gabebw/dotfiles.git` into `dotfiles`.  We
+    # also need to turn `gbw:dotfiles` into `dotfiles`.  `basename` works for
+    # the first case, but for the second case, we have to manually strip the
+    # prefix.
+    case "$git_url" in
+      tb:*)
+        directory="${git_url#tb:}"
+        ;;
+      gbw:*)
+        directory="${git_url#gbw:}"
+        ;;
+      *)
+        directory="${$(basename "$git_url")%.git}"
+    esac
+  fi
+
+  # At last, clone the git repo into a directory.
+  hub clone "$git_url" "$directory"
+  echo "$directory"
+fi
