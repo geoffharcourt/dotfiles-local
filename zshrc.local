@@ -16,7 +16,7 @@ ensure_tmux_is_running
 export PATH=$PATH:/usr/local/opt/go/libexec/bin
 export GOPATH=$HOME/go
 
-CDPATH=.:$HOME/cortex:$HOME/cortex-projects:$HOME:$HOME/github/geoffharcourt:$HOME/clients:$HOME/github:$HOME/Dropbox:$HOME/Downloads:$HOME/github
+CDPATH=.$HOME:$HOME/github:$HOME/github/geoffharcourt:$HOME/github/thoughtbot:$HOME/projects:$HOME/clients:$HOME/Downloads:$HOME/cortex
 
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fpath=(/usr/local/share/zsh-completions $fpath)
