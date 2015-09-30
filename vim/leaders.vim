@@ -32,8 +32,7 @@ nnoremap <Leader>i mmgg=G`m<CR>
 
 vnoremap <Leader>I :call InlineVariable()<CR>
 
-nnoremap <Leader>j :Dispatch spring teaspoon % <CR>
-nnoremap <Leader>J :Dispatch spring teaspoon <CR>
+nnoremap <Leader>j %!python -m json.tool<CR>
 
 " nnoremap <Leader>k :call investigate#Investigate()<CR>
 
@@ -41,7 +40,7 @@ nnoremap <Leader>J :Dispatch spring teaspoon <CR>
 nnoremap <Leader>o :call ToggleLocationList()<CR>
 nnoremap <Leader>L :call PromoteToLet()<CR>
 nnoremap <Leader>M :Gmove <C-r>%
-nnoremap <Leader>m :Move <C-r>%
+nnoremap <Leader>m :write<CR> :Move <C-r>%
 nnoremap <Leader>M :call MergeTabs()<CR>
 nnoremap <Leader>n :sp ~/Dropbox/notes/vim-notes.txt<CR>
 nnoremap <Leader>p :r!pbpaste<cr>
