@@ -38,8 +38,8 @@ let g:ctrlp_extensions = ['tag', 'undo']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 let g:ctrlp_tjump_only_silent = 1
 
-nnoremap <C-]> :CtrlPtjump<CR>
-vnoremap <C-]> :CtrlPtjumpVisual<CR>
+" nnoremap <C-]> :CtrlPtjump<CR>
+" vnoremap <C-]> :CtrlPtjumpVisual<CR>
 
 command! TagFiles :call EchoTags()
 function! EchoTags()

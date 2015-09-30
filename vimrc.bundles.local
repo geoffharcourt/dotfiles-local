@@ -24,7 +24,7 @@ Plug 'derekprior/vim-trimmer'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'henrik/vim-indexed-search'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
-Plug 'ivalkeen/vim-ctrlp-tjump'
+" Plug 'ivalkeen/vim-ctrlp-tjump'
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-oblique'
