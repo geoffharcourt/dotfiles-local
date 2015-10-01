@@ -15,3 +15,4 @@ Abolish timspan timespan
 Abolish porfolio portfolio
 Abolish delagate delegate
 Abolish inpsect inspect
+Abolish thuoghtbot thoughtbot
