@@ -13,7 +13,6 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 
 " Other plugins
-" Plug 'alvan/closetag.vim'
 Plug 'bling/vim-airline'
 Plug 'bogado/file-line'
 Plug 'christoomey/vim-conflicted'
@@ -38,13 +37,14 @@ Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'othree/eregex.vim'
 Plug 'rizzatti/dash.vim', { 'on': 'DashSearch' }
-Plug 'rking/ag.vim'
 Plug 'SirVer/ultisnips'
 Plug 'sjl/gundo.vim'
 Plug 'skwp/greplace.vim'
 Plug 'vim-scripts/ctrlp-py-matcher'
 
-" " Experiments
+" Experiments
 Plug 'wellle/tmux-complete.vim'
 Plug 'geoffharcourt/one-dark.vim'
 Plug 'wincent/ferret'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
+Plug 'junegunn/fzf.vim'

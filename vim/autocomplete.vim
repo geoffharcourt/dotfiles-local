@@ -9,6 +9,8 @@ set wildmode=longest:full,full
 " Autocomplete with spelling suggestions when spellcheck is on
 set complete+=kspell
 
+inoremap <expr> <c-x><c-k> fzf#complete('cat /usr/share/dict/words')
+
 " Override thoughtbot tab wrapper to move through autocomplete list
 " in opposite direction
 function! InsertTabWrapper()
