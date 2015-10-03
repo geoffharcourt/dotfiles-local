@@ -47,3 +47,4 @@ Plug 'vim-scripts/ctrlp-py-matcher'
 " " Experiments
 Plug 'wellle/tmux-complete.vim'
 Plug 'geoffharcourt/one-dark.vim'
+Plug 'wincent/ferret'
