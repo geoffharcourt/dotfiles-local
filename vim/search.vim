@@ -26,15 +26,13 @@ endfunction
 
 " Default to smart-case searching. Can be disabled with -s
 let g:agprg="ag -S --column"
-let g:FerretMap = 0
-let g:FerretHlsearch = 1
 
 " bind \ (backward slash) to grep shortcut
 command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
-nnoremap \ :Ack<SPACE>
+nnoremap \ :Ag<SPACE>
 " nnoremap K :Ag "\b<C-R><C-W>\b"<CR>:cw<CR>
 " Bind K to grep word under cursor
-nnoremap K :set nois<CR> :Ack <C-R><C-W><CR> :set incsearch<CR>
+nnoremap K :set nois<CR> :Ag! "\b<C-R><C-W>\b"<CR> :set incsearch<CR>
 
 let g:ctrlp_extensions = ['tag', 'undo']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
