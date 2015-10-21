@@ -24,3 +24,9 @@ highlight Comment cterm=italic
 if has('nvim')
   nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
 endif
+
+" Allow project-specific vimrc (check for `.git/safe`)
+if isdirectory(getcwd() . ".git/safe")
+  set secure
+  set exrc
+endif
