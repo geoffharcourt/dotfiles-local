@@ -40,7 +40,9 @@ endfunction
 function! ToggleLocationList()
   if BufferIsOpen("Location List")
     lclose
+  elseif !empty(getloclist(0))
+    lopen
   else
-    Errors
+    echo "no location list"
   endif
 endfunction
