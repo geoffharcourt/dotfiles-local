@@ -2,34 +2,22 @@
 " Appearance
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-colorscheme jellybeans
-" let g:airline_theme="jellybeans"
-
-" Show the current syntax block under the cursor
-nmap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-  \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-  \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-let g:netrw_liststyle= 4
-
-" Don't redraw the screen during macros
 set foldmethod=syntax
+" Don't redraw the screen during macros
 set lazyredraw
 set nofoldenable
 set nowrap
 set number relativenumber
 set scrolloff=5
-
 " Don't try to highlight lines longer than 250 characters.
 set synmaxcol=250
 
-" Highlight VCS conflict markers
-match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+let g:netrw_liststyle= 4
 
-augroup rainbow
-  autocmd BufRead,BufNewFile * RainbowParentheses
-augroup END
-
+let g:airline_powerline_fonts=1
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
 let g:rainbow#colors = {
 \   'dark': [
 \     ['yellow',  'orange1'     ],
@@ -55,8 +43,17 @@ let g:rainbow#colors = {
 \   ]
 \ }
 
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
+colorscheme jellybeans
+" let g:airline_theme="jellybeans"
 
-let g:airline_powerline_fonts=1
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+augroup rainbow
+  autocmd BufRead,BufNewFile * RainbowParentheses
+augroup END
+
+" Show the current syntax block under the cursor
+nmap <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+  \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+  \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>

@@ -95,4 +95,3 @@ function! DefaultFeatureTitle()
   let humanized = substitute(without_suffix, "_", " ", "g")
   return humanized
 endfunction
-

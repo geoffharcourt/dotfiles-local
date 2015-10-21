@@ -6,12 +6,6 @@ silent set winheight=10
 silent set winminheight=10
 silent set winheight=999
 
-autocmd VimResized * :wincmd =
-nnoremap <leader>- :wincmd _<cr>:wincmd \|<cr>
-nnoremap <leader>= :wincmd =<cr>
-
-nnoremap gv `[v`]
-
 " Merge a tab into a split in the previous window
 function! MergeTabs()
   if tabpagenr() == 1
@@ -27,3 +21,7 @@ function! MergeTabs()
   split
   execute "buffer " . bufferName
 endfunction
+
+autocmd VimResized * :wincmd =
+
+nnoremap gv `[v`]
