@@ -35,7 +35,7 @@ alias pgrestart='brew services restart postgresql'
 # Ruby
 alias bex='nocorrect bundle exec'
 alias bu='bundle update'
-alias fs='foreman start'
+alias fs='forego start'
 alias irb='irb --readline -r irb/completion'
 alias respring='spring stop && spring start'
 
