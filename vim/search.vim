@@ -14,7 +14,7 @@ set smartcase   " searches are case-sensitive if a capital is in term
 " Default to smart-case searching. Can be disabled with -s
 let g:FerretHlsearch = 1
 let g:FerretMap = 0
-let g:agprg="ag -S --column"
+let g:ag_prg="ag -S --column"
 let g:ctrlp_extensions = ['tag', 'undo']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 let g:ctrlp_tjump_only_silent = 1
