@@ -48,3 +48,4 @@ endif
 " Experiments
 Plug 'wellle/tmux-complete.vim'
 Plug 'geoffharcourt/one-dark.vim'
+Plug 'mustache/vim-mustache-handlebars'

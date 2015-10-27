@@ -41,6 +41,9 @@ alias rc='spring rails console'
 alias taild='tlf log/development.log'
 alias tailt='tlf log/test.log'
 
+# Ember
+alias et='ember test -s'
+
 # Code Cleanup
 alias rubo='rubocop'
 alias release="RAILS_ENV=test rake release"
