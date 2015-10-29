@@ -10,6 +10,13 @@ let g:rails_projections = {
 \     "spec/decorators/{}_decorator_spec.rb"
 \   ]
 \ },
+\ "app/services/*.rb": {
+\   "command": "service",
+\   "template": "class {camelcase|capitalize|colons}\nend",
+\   "test": [
+\     "spec/services/{}_spec.rb"
+\   ]
+\ },
 \ "app/serializers/*.rb": {
 \   "command": "serializer",
 \   "template": "class {camelcase|capitalize|colons}\nend",
