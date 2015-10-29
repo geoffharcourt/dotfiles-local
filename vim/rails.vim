@@ -2,15 +2,6 @@ let g:rails_projections = {
 \ "app/models/*.rb": {
 \   "related": "spec/factories/{plural}.rb",
 \ },
-\ "spec/factories/*.rb": {
-\   "command": "factory",
-\   "affinity": "collection",
-\   "alternate": "app/models/{singular}.rb",
-\   "related": "db/schema.rb#{}",
-\   "test": "test/models/{singular}_test.rb",
-\   "template": "FactoryGirl.define do\n  factory :{singular} do\n  end\nend",
-\   "keywords": "factory sequence"
-\ },
 \ "app/decorators/*_decorator.rb": {
 \   "affinity": "model",
 \   "command": "decorator",
@@ -53,5 +44,4 @@ let g:rails_projections = {
 \ "lib/clock.rb": {"command": "clock"},
 \ "spec/features/*_spec.rb": {"command": "feature"},
 \ "spec/support/*.rb": {"command": "support"},
-\ ".env": {"command": "secrets"},
 \ }

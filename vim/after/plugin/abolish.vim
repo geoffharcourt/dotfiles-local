@@ -17,3 +17,4 @@ Abolish delagate delegate
 Abolish inpsect inspect
 Abolish thuoghtbot thoughtbot
 Abolish anme name
+Abolish private_cosntant private_constant
