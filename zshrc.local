@@ -36,3 +36,7 @@ bindkey '\C-x\C-e' edit-command-line
 [ -f ~/.zprompt ] && source ~/.zprompt
 # This should be rewritten to just use the fzf installed by homebrew
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_COMPLETION_TRIGGER=''
+bindkey '^T' fzf-completion
+bindkey '^I' $fzf_default_completion
