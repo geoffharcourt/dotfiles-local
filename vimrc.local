@@ -5,7 +5,7 @@
 function! s:SourceConfigFilesIn(directory)
   let directory_splat = '~/.vim/' . a:directory . '/*'
   for config_file in split(glob(directory_splat), '\n')
-    if filereadable(config_file)
+    if filereadable(config_file) && empty(matchstr(config_file, '/init.vim$'))
       execute 'source' config_file
     endif
   endfor
@@ -23,10 +23,4 @@ highlight Comment cterm=italic
 " regard to <C-h>
 if has('nvim')
   nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-endif
-
-" Allow project-specific vimrc (check for `.git/safe`)
-if isdirectory(getcwd() . ".git/safe")
-  set secure
-  set exrc
 endif
