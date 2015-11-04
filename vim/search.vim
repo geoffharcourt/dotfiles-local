@@ -42,4 +42,4 @@ command! TagFiles :call EchoTags()
 
 nnoremap \ :Ag<SPACE>
 " Bind K to grep word under cursor
-nnoremap K :set nois<CR> :Ack <C-R><C-W><CR> :set incsearch<CR>
+nnoremap K :set nois<CR> :Ag <C-R><C-W><CR> :set incsearch<CR>
