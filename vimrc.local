@@ -17,10 +17,3 @@ call s:SourceConfigFilesIn('')
 
 " This statement has to come late in order to work
 highlight Comment cterm=italic
-
-" Experiments
-" This only remains until neovim figures out what the hell they are doing with
-" regard to <C-h>
-if has('nvim')
-  nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
-endif
