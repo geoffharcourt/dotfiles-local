@@ -26,8 +26,8 @@ alias push-to-staging='gp staging $(git symbolic-ref --short -q HEAD):master --f
 
 # Postgres
 alias pgstart='brew services start postgresql'
-alias pgstop='brew services stop postgresql'
-alias pgrestart='brew services restart postgresql'
+alias pgstop='brew services stop postgresql && rm -f /usr/local/var/postgres/postmaster.pid'
+alias pgrestart='pgstop && pgstart'
 
 # Ruby
 alias bex='nocorrect bundle exec'
