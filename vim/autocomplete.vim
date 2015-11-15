@@ -60,7 +60,7 @@ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
 inoremap <S-TAB> <C-p>
 " This is required because in some term setups Vim can't interpret the `^]]Z`
 " sequence as `<S-Tab>`
-inoremap <C-[>\[Z <C-p>
+" inoremap <C-[>\[Z <C-p>
 
 " Complete from open tmux panes (from @junegunn)
 inoremap <expr> <c-x><c-t> fzf#complete('tmuxwords.rb --all-but-current --scroll 499 --min 5')
