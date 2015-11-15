@@ -13,6 +13,14 @@ ensure_tmux_is_running() {
 
 ensure_tmux_is_running
 
+export FZF_DEFAULT_COMMAND='ag -g ""'
+export FZF_DEFAULT_OPTS='
+  --extended
+  --bind ctrl-f:page-down,ctrl-b:page-up
+  --color fg:109,bg:233,hl:187,fg+:110,bg+:234,hl+:181
+  --color info:108,prompt:179,spinner:108,pointer:131,marker:168
+'
+
 export GOPATH=$HOME/go
 
 CDPATH=.$HOME:$HOME/github:$HOME/github/geoffharcourt:$HOME/github/thoughtbot:$HOME/projects:$HOME/clients:$HOME/Downloads:$HOME/cortex
@@ -30,9 +38,7 @@ zle -N edit-command-line
 bindkey '\C-x\C-e' edit-command-line
 
 [ -f ~/.zprompt ] && source ~/.zprompt
-# This should be rewritten to just use the fzf installed by homebrew
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-export FZF_COMPLETION_TRIGGER=''
-bindkey '^T' fzf-completion
-bindkey '^I' $fzf_default_completion
+# This should be rewritten to just use the fzf installed by homebrew
+[ -f /usr/local/opt/fzf/shell/key-bindings.zsh ] && source /usr/local/opt/fzf/shell/key-bindings.zsh
+

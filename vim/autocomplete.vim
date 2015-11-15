@@ -24,6 +24,11 @@ let g:neocomplete#disable_auto_complete = 1
 " " include tmux pane completions in YouCompleteMe
 " let g:tmuxcomplete#trigger = 'omnifunc'
 
+function! s:check_back_space()
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~ '\s'
+endfunction
+
 function! SelectAutoCompleteOrCarriageReturn()
    return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
 endfunction
@@ -44,18 +49,6 @@ function! ToggleAutoComplete()
   endif
 endfunction
 
-inoremap <expr> <c-x><c-k> fzf#complete('cat /usr/share/dict/words')
-
-" Use escape to kill autocomplete without completion and stay in insert mode
-inoremap <silent> <Esc> <C-r>=CancelAutoCompleteOrInsertMode()<CR>
-
-" Enter selects the winner if autocompletion popup is open
-inoremap <silent> <CR> <C-r>=SelectAutoCompleteOrCarriageReturn()<CR>
-
-" Snippet Completion
-imap <C-j>     <Plug>(neosnippet_expand_or_jump)
-smap <C-j>     <Plug>(neosnippet_expand_or_jump)
-xmap <C-j>     <Plug>(neosnippet_expand_target)
 
 " <TAB>: completion.
 " <C-h>, <BS>: close popup and delete backword char.
@@ -69,7 +62,17 @@ inoremap <S-TAB> <C-p>
 " sequence as `<S-Tab>`
 inoremap <C-[>\[Z <C-p>
 
-function! s:check_back_space()
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~ '\s'
-endfunction
+" Complete from open tmux panes (from @junegunn)
+inoremap <expr> <c-x><c-t> fzf#complete('tmuxwords.rb --all-but-current --scroll 499 --min 5')
+inoremap <expr> <c-x><c-k> fzf#complete('cat /usr/share/dict/words')
+
+" Use escape to kill autocomplete without completion and stay in insert mode
+inoremap <silent> <Esc> <C-r>=CancelAutoCompleteOrInsertMode()<CR>
+
+" Enter selects the winner if autocompletion popup is open
+inoremap <silent> <CR> <C-r>=SelectAutoCompleteOrCarriageReturn()<CR>
+
+" Snippet Completion
+imap <C-j>     <Plug>(neosnippet_expand_or_jump)
+smap <C-j>     <Plug>(neosnippet_expand_or_jump)
+xmap <C-j>     <Plug>(neosnippet_expand_target)

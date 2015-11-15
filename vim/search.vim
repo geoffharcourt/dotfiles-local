@@ -15,6 +15,12 @@ set smartcase   " searches are case-sensitive if a capital is in term
 let g:FerretHlsearch = 1
 let g:FerretMap = 0
 let g:ag_prg="ag -S --column"
+nnoremap <C-p> :silent call fzf#vim#gitfiles({'down': '~50%'})<CR>
+
+nnoremap <C-s> :call PickFile()<CR>
+let g:fzf_layout = { 'down': '40%' }
+let g:ctrlp_map = '<c-t>'
+
 let g:ctrlp_extensions = ['tag', 'undo']
 let g:ctrlp_match_window = 'bottom,order:btt,min:1,max:10,results:10'
 let g:ctrlp_tjump_only_silent = 1

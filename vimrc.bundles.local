@@ -5,6 +5,7 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-haml',  { 'for': 'haml' }
+Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-speeddating'
@@ -46,13 +47,10 @@ Plug 'vim-scripts/ctrlp-py-matcher'
 " endif
 
 " Experiments
-Plug 'wellle/tmux-complete.vim'
 Plug 'geoffharcourt/one-dark.vim'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'Shougo/neocomplete.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '$HOME/.vim/bundle/fzf-vim', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
-Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
