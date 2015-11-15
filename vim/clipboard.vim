@@ -15,8 +15,6 @@ function! RestoreRegister()
   return ''
 endfunction
 
-inoremap <C-v> <C-o>:r!pbpaste<CR>
-
 " http://sheerun.net/2014/03/21/how-to-boost-your-vim-productivity/
 " vp doesn't replace paste buffer
 vmap <silent> <expr> p <sid>ReplaceVisualSelectionWithYankRegister()

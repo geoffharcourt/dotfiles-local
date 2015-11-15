@@ -42,11 +42,16 @@ Plug 'sjl/gundo.vim'
 Plug 'skwp/greplace.vim'
 Plug 'vim-scripts/ctrlp-py-matcher'
 
-if has("python") || has("python3")
-  Plug 'SirVer/ultisnips'
-endif
+" if has("python") || has("python3")
+  " Plug 'SirVer/ultisnips'
+" endif
 
 " Experiments
 Plug 'wellle/tmux-complete.vim'
 Plug 'geoffharcourt/one-dark.vim'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'Shougo/neocomplete.vim'
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
+Plug 'Shougo/neosnippet'
+Plug 'Shougo/neosnippet-snippets'

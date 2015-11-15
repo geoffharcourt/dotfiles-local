@@ -42,7 +42,8 @@ nnoremap <Leader>L :call PromoteToLet()<CR>
 nnoremap <Leader>M :Gmove <C-r>%
 nnoremap <Leader>m :write<CR> :Move <C-r>%
 nnoremap <Leader>M :call MergeTabs()<CR>
-nnoremap <Leader>n :sp ~/Dropbox/notes/vim-notes.txt<CR>
+nnoremap <Leader>N :sp ~/Dropbox/notes/vim-notes.txt<CR>
+nnoremap <Leader>n :call ToggleAutoComplete()<CR>
 nnoremap <Leader>p :r!pbpaste<cr>
 nnoremap <Leader>q :call ToggleQuickfixList()<CR>
 nnoremap <Leader>R :source $MYVIMRC<CR>
