@@ -6,6 +6,7 @@ set foldmethod=syntax
 " Don't redraw the screen during macros
 set lazyredraw
 set nofoldenable
+set noshowmode
 set nowrap
 set number relativenumber
 set scrolloff=5
@@ -13,6 +14,39 @@ set scrolloff=5
 set synmaxcol=250
 
 let g:netrw_liststyle= 4
+
+let g:lightline = {
+      \ 'colorscheme': 'jellybeans',
+      \ 'active': {
+      \   'left': [
+      \             ['mode', 'paste'],
+      \             ['fugitive', 'readonly', 'myfilename', 'modified']
+      \           ]
+      \ },
+      \ 'component': {
+      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
+      \   'readonly': '%{(&filetype!="help" && &readonly) ? emoji#for("lock") : ""}',
+      \ },
+      \ 'component_function': {
+      \   'myfilename': 'LightLineFilename',
+      \ },
+      \ 'component_visible_condition': {
+      \   'readonly': '(&filetype!="help"&& &readonly)',
+      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
+      \ }
+\ }
+
+function! LightLineFilename()
+  let git_root = fnamemodify(fugitive#extract_git_dir(expand("%:p")), ":h")
+
+  if expand("%:t") == ""
+    return "[No Name]"
+  elseif git_root != "" && git_root != "."
+    return substitute(expand("%:p"), git_root . "/", "", "")
+  else
+    return expand("%:p")
+  endif
+endfunction
 
 let g:airline_powerline_fonts=1
 if !exists('g:airline_symbols')
