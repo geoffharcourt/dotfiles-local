@@ -43,9 +43,10 @@ function! GoBackThroughSearch()
 endfunction
 
 " bind \ (backward slash) to grep shortcut
-command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+" command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
 command! TagFiles :call EchoTags()
 
 nnoremap \ :Ag<SPACE>
 " Bind K to grep word under cursor
-nnoremap K :set nois<CR> :Ag <C-R><C-W><CR> :set incsearch<CR>
+nnoremap K :set nois<CR> :Ag <C-R><C-W><CR>
+":set incsearch<CR>
