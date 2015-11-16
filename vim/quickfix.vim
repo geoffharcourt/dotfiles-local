@@ -2,6 +2,7 @@
 augroup WrapLineInQuickFix
   autocmd!
   autocmd FileType qf setlocal wrap
+  autocmd FileType qf setlocal norelativenumber
 augroup END
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
