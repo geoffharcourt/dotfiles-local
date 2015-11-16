@@ -15,6 +15,7 @@ if [[ -z "$MYVIMRC" ]]; then
   ensure_tmux_is_running
 fi
 
+export FZF_CTRL_T_COMMAND='ag -g ""'
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_DEFAULT_OPTS='
   --bind ctrl-f:page-down,ctrl-b:page-up
