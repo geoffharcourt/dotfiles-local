@@ -20,21 +20,22 @@ let g:lightline = {
       \ 'active': {
       \   'left': [
       \             ['mode', 'paste'],
-      \             ['fugitive', 'readonly', 'myfilename', 'modified']
+      \             ['fugitive', 'readonly', 'filename', 'modified']
       \           ]
       \ },
       \ 'component': {
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
-      \   'readonly': '%{(&filetype!="help" && &readonly) ? emoji#for("lock") : ""}',
+      \   'readonly': '%{&readonly?"⭤":""}',
       \ },
       \ 'component_function': {
-      \   'myfilename': 'LightLineFilename',
+      \   'modified': 'LightLineModified',
+      \   'fugitive': 'LightLineFugitive',
+      \   'filename': 'LightLineFilename',
+      \   'fileformat': 'LightLineFileformat',
+      \   'filetype': 'LightLineFiletype',
+      \   'fileencoding': 'LightLineFileencoding',
+      \   'mode': 'LightLineMode'
       \ },
-      \ 'component_visible_condition': {
-      \   'readonly': '(&filetype!="help"&& &readonly)',
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
-      \ }
-\ }
+  \}
 
 function! LightLineFilename()
   let git_root = fnamemodify(fugitive#extract_git_dir(expand("%:p")), ":h")
@@ -48,10 +49,47 @@ function! LightLineFilename()
   endif
 endfunction
 
+function! LightLineFugitive()
+  if exists("*fugitive#head")
+    let _ = fugitive#head()
+    return strlen(_) ? _ : ''
+  endif
+  return ''
+endfunction
+
+function! LightLineFileformat()
+  return winwidth(0) > 70 ? &fileformat : ''
+endfunction
+
+function! LightLineFiletype()
+  return winwidth(0) > 70 ? (strlen(&filetype) ? &filetype : 'no ft') : ''
+endfunction
+
+function! LightLineFileencoding()
+  return winwidth(0) > 70 ? (strlen(&fenc) ? &fenc : &enc) : ''
+endfunction
+
+function! LightLineMode()
+  return winwidth(0) > 60 ? lightline#mode() : ''
+endfunction
+
+function! LightLineModified()
+  if &filetype == "help"
+    return ""
+  elseif &modified
+    return "+"
+  elseif &modifiable
+    return ""
+  else
+    return ""
+  endif
+endfunction
+
 let g:airline_powerline_fonts=1
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
+
 let g:rainbow#colors = {
 \   'dark': [
 \     ['yellow',  'orange1'     ],
