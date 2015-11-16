@@ -35,7 +35,7 @@ endfunction
 
 function! CancelAutoCompleteOrInsertMode()
   if pumvisible()
-    return "\<c-e>"
+    return "\<c-y>"
   else
     return "\<Esc>"
   endif
