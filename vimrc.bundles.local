@@ -21,6 +21,7 @@ Plug 'christoomey/vim-tmux-navigator'
 Plug 'ck3g/vim-change-hash-syntax', { 'for' : 'ruby' }
 Plug 'derekprior/vim-leaders'
 Plug 'derekprior/vim-trimmer'
+Plug 'geoffharcourt/one-dark.vim'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'henrik/vim-indexed-search'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
@@ -28,6 +29,8 @@ Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-oblique'
 Plug 'junegunn/vim-pseudocl'
+Plug 'junegunn/fzf', { 'dir': '$HOME/.vim/bundle/fzf-vim', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-textobj-user' " needed for textobj-rubyblock
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kristijanhusak/vim-multiple-cursors'
@@ -43,10 +46,8 @@ Plug 'skwp/greplace.vim'
 Plug 'vim-scripts/ctrlp-py-matcher'
 
 " Experiments
-Plug 'geoffharcourt/one-dark.vim'
-Plug 'junegunn/fzf', { 'dir': '$HOME/.vim/bundle/fzf-vim', 'do': './install --all' }
-Plug 'junegunn/fzf.vim'
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
+Plug 'Shougo/vimproc.vim'
 Plug 'junegunn/vim-emoji'
