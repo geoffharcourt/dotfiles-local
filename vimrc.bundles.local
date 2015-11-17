@@ -13,7 +13,7 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 
 " Other plugins
-Plug 'itchyny/lightline.vim'
+Plug 'airblade/vim-gitgutter'
 Plug 'bogado/file-line'
 Plug 'christoomey/vim-conflicted'
 Plug 'christoomey/vim-rfactory'
@@ -24,30 +24,27 @@ Plug 'derekprior/vim-trimmer'
 Plug 'geoffharcourt/one-dark.vim'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'henrik/vim-indexed-search'
+Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
-Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/vim-oblique'
-Plug 'junegunn/vim-pseudocl'
 Plug 'junegunn/fzf', { 'dir': '$HOME/.vim/bundle/fzf-vim', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/vim-emoji'
+Plug 'junegunn/vim-oblique'
+Plug 'junegunn/vim-pseudocl'
 Plug 'kana/vim-textobj-user' " needed for textobj-rubyblock
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kristijanhusak/vim-multiple-cursors'
-Plug 'mhinz/vim-signify'
-Plug 'mtscout6/vim-cjsx'
-Plug 'mtth/scratch.vim', { 'on': 'Scratch' }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'othree/eregex.vim'
-Plug 'rizzatti/dash.vim', { 'on': 'DashSearch' }
+Plug 'rizzatti/dash.vim'
 Plug 'sjl/gundo.vim'
 Plug 'skwp/greplace.vim'
-Plug 'vim-scripts/ctrlp-py-matcher'
 
 " Experiments
 Plug 'Shougo/neocomplete.vim'
 Plug 'Shougo/neosnippet'
 Plug 'Shougo/neosnippet-snippets'
 Plug 'Shougo/vimproc.vim'
-Plug 'junegunn/vim-emoji'
