@@ -4,10 +4,10 @@ _not_inside_tmux() {
 
 ensure_tmux_is_running() {
   if _not_inside_tmux; then
-    tat
+    $HOME/.bin/tat
   fi
 }
 
-if [[ -z "$MYVIMRC" ]]; then
+if [[ -z "$MYVIMRC" ]] && command -v tmux >/dev/null; then
   ensure_tmux_is_running
 fi
