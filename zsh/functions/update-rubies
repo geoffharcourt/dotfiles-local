@@ -1,3 +1,0 @@
-update-rubies() {
-  git -C $(rbenv root)/plugins/ruby-build pull
-}
