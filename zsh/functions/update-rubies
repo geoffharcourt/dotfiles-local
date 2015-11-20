@@ -1,5 +1,3 @@
-function update-rubies() {
-  cd ~/.rbenv/plugins/ruby-build
-  git pull
-  popd
+update-rubies() {
+  git -C $(rbenv root)/plugins/ruby-build pull
 }
