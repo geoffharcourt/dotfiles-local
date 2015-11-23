@@ -8,7 +8,7 @@ nnoremap <Leader>a :call RunAllSpecs()<CR>
 " the collection appropriately.
 nnoremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
 
-nnoremap <Leader>ct :!./.git/hooks/ctags<CR>
+" nnoremap <Leader>ct :!./.git/hooks/ctags<CR>
 
 " Can't use nnoremap here, see docs:
 " http://vim-doc.herokuapp.com/view?https://raw.githubusercontent.com/rizzatti/dash.vim/master/doc/dash.txt
@@ -40,7 +40,7 @@ nnoremap <Leader>j %!python -m json.tool<CR>
 nnoremap <Leader>o :call ToggleLocationList()<CR>
 nnoremap <Leader>L :call PromoteToLet()<CR>
 nnoremap <Leader>M :Gmove <C-r>%
-nnoremap <Leader>m :write<CR> :Move <C-r>%
+nnoremap <Leader>m :Move <C-r>%
 nnoremap <Leader>M :call MergeTabs()<CR>
 nnoremap <Leader>N :sp ~/Dropbox/notes/vim-notes.txt<CR>
 nnoremap <Leader>n :call ToggleAutoComplete()<CR>
