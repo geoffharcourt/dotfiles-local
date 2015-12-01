@@ -44,7 +44,8 @@ Plug 'sjl/gundo.vim'
 Plug 'skwp/greplace.vim'
 
 " Experiments
-Plug 'Shougo/neocomplete.vim'
-Plug 'Shougo/neosnippet'
-Plug 'Shougo/neosnippet-snippets'
-Plug 'Shougo/vimproc.vim'
+" Plug 'Shougo/neocomplete.vim'
+" Plug 'Shougo/neosnippet'
+" Plug 'Shougo/neosnippet-snippets'
+" Plug 'Shougo/vimproc.vim'
+Plug 'junegunn/vader.vim'

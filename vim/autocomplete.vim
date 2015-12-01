@@ -49,15 +49,15 @@ function! ToggleAutoComplete()
   endif
 endfunction
 
-
 " <TAB>: completion.
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
-inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
-    \ <SID>check_back_space() ? "\<TAB>" :
-    \ neocomplete#start_manual_complete()
-inoremap <S-TAB> <C-p>
+" inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" inoremap <expr><TAB>  pumvisible() ? "\<C-n>" :
+"     \ <SID>check_back_space() ? "\<TAB>" :
+"     \ neocomplete#start_manual_complete()
+inoremap <Tab> <C-n>
+inoremap <S-Tab> <C-p>
 " This is required because in some term setups Vim can't interpret the `^]]Z`
 " sequence as `<S-Tab>`
 " inoremap <C-[>\[Z <C-p>
