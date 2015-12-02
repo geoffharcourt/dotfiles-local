@@ -12,10 +12,7 @@ set ignorecase  " searches are case-insensitive
 set smartcase   " searches are case-sensitive if a capital is in term
 
 " Default to smart-case searching. Can be disabled with -s
-let g:FerretHlsearch = 1
-let g:FerretMap = 0
-let g:ag_prg="ag -S --column"
-nnoremap <C-p> :silent call fzf#vim#gitfiles({'down': '~50%'})<CR>
+nnoremap <C-p> :Files<CR>
 
 let g:fzf_layout = { 'down': '40%' }
 " Don't load Ctrl-P
@@ -43,10 +40,10 @@ function! GoBackThroughSearch()
 endfunction
 
 " bind \ (backward slash) to grep shortcut
-" command! -nargs=+ -complete=file -bar Ag silent! grep! <args>|cwindow|redraw!
+command! -nargs=+ -complete=file -bar StaticAg silent! grep! <args>|cwindow|redraw!
 command! TagFiles :call EchoTags()
 
 nnoremap \ :Ag<SPACE>
+
 " Bind K to grep word under cursor
-nnoremap K :set nois<CR> :Ag <C-R><C-W><CR>
-":set incsearch<CR>
+nnoremap K :set nois<CR> :StaticAg <C-R><C-W><CR>

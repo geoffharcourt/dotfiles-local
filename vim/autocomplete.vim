@@ -2,7 +2,7 @@
 " Tab key bullshit
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Autocomplete config
-set complete=.,b,u,],kspell
+set complete=.,b,u,]
 set wildmenu
 set wildmode=longest:full,full
 

@@ -8,20 +8,16 @@ Plug 'tpope/vim-haml',  { 'for': 'haml' }
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
-Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 
 " " Other plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'kopischke/vim-fetch'
-Plug 'christoomey/vim-conflicted'
-Plug 'christoomey/vim-rfactory'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ck3g/vim-change-hash-syntax', { 'for' : 'ruby' }
 Plug 'derekprior/vim-leaders'
 Plug 'derekprior/vim-trimmer'
-Plug 'geoffharcourt/one-dark.vim'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'henrik/vim-indexed-search'
 Plug 'itchyny/lightline.vim'
@@ -30,22 +26,14 @@ Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 Plug 'junegunn/fzf', { 'dir': '$HOME/.vim/bundle/fzf-vim', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/vim-emoji'
 Plug 'junegunn/vim-oblique'
-Plug 'junegunn/vim-pseudocl'
+Plug 'junegunn/vim-pseudocl' " needed for vim-oblique
 Plug 'kana/vim-textobj-user' " needed for textobj-rubyblock
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kristijanhusak/vim-multiple-cursors'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
-Plug 'othree/eregex.vim'
-Plug 'rizzatti/dash.vim'
 Plug 'sjl/gundo.vim'
 Plug 'skwp/greplace.vim'
 
 " " Experiments
-" " Plug 'Shougo/neocomplete.vim'
-" " Plug 'Shougo/neosnippet'
-" " Plug 'Shougo/neosnippet-snippets'
-" " Plug 'Shougo/vimproc.vim'
-Plug 'junegunn/vader.vim'
