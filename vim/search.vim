@@ -47,3 +47,5 @@ nnoremap \ :Ag<SPACE>
 
 " Bind K to grep word under cursor
 nnoremap K :set nois<CR> :StaticAg <C-R><C-W><CR>
+
+nnoremap - :e .<CR>

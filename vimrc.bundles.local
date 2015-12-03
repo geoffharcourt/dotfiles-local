@@ -1,22 +1,20 @@
-" " Colors
+" Colors
 Plug 'nanotech/jellybeans.vim'
 
-" " Tim Pope for the win
+" Tim Pope for the win
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-haml',  { 'for': 'haml' }
 Plug 'tpope/vim-markdown'
 Plug 'tpope/vim-projectionist'
 Plug 'tpope/vim-rake', { 'for': 'ruby' }
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 
-" " Other plugins
+" Other plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'kopischke/vim-fetch'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ck3g/vim-change-hash-syntax', { 'for' : 'ruby' }
-Plug 'derekprior/vim-leaders'
 Plug 'derekprior/vim-trimmer'
 Plug 'gorodinskiy/vim-coloresque'
 Plug 'henrik/vim-indexed-search'
@@ -36,4 +34,5 @@ Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'sjl/gundo.vim'
 Plug 'skwp/greplace.vim'
 
-" " Experiments
+" Experiments
+Plug 'junegunn/vader.vim'
