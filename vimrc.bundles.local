@@ -37,3 +37,4 @@ Plug 'skwp/greplace.vim'
 
 " Experiments
 Plug 'junegunn/vader.vim'
+Plug 'joker1007/vim-ruby-heredoc-syntax'
