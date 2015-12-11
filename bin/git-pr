@@ -1,0 +1,5 @@
+#!/bin/sh
+
+set -e
+
+"$HOME"/dotfiles/bin/git-pr | pbcopy
