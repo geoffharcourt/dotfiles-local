@@ -1,0 +1,16 @@
+#!/bin/bash
+
+set -e
+
+shopt -s dotglob
+
+for dir in "$HOME"/.vim/*; do
+  if [ -d "$dir" ]; then
+    ln -sf "$dir" $HOME/.config/nvim/$(basename "$dir");
+  fi
+done
+
+if [ ! -d "$HOME"/.fzf ]; then
+  git clone --depth 1 https://github.com/junegunn/fzf.git "$HOME"/.fzf
+  "$HOME"/.fzf/install
+fi

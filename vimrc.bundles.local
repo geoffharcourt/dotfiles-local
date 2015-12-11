@@ -22,7 +22,7 @@ Plug 'henrik/vim-indexed-search'
 Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
-Plug 'junegunn/fzf', { 'dir': '$HOME/.vim/bundle/fzf-vim', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-oblique'
