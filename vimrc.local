@@ -1,19 +1,43 @@
-"
-" Awesome config file loading tricks from @christoomey
-"-----------------------------------------------------
-"
-function! s:SourceConfigFilesIn(directory)
-  let directory_splat = '~/.vim/' . a:directory . '/*'
-  for config_file in split(glob(directory_splat), '\n')
-    if filereadable(config_file) && empty(matchstr(config_file, '/init.vim$'))
-      execute 'source' config_file
-    endif
-  endfor
+set complete=.,b,u,]
+set foldmethod=syntax
+set gdefault      " Replace all matches on a line instead of just the first
+set hlsearch      " highlight search results
+set ignorecase    " searches are case-insensitive
+set lazyredraw    " Don't redraw the screen during macros
+set nofoldenable
+set noshowmode
+set nowrap
+set number relativenumber " The best of both worlds
+set scrolloff=5
+set synmaxcol=250 " Don't try to highlight lines longer than 250 characters.
+set smartcase     " searches are case-sensitive if a capital is in term
+set ttimeout      " Fast timeout
+set undodir=$HOME/.undodir
+set undofile
+set wildmenu
+set wildmode=longest:full,full
+set winwidth=84
+set winheight=10
+set winminheight=10
+set winheight=999
+
+" Override thoughtbot tab wrapper to move in opposite direction
+" <S-Tab> is remapped in mappings.vim
+function! InsertTabWrapper()
+  let col = col('.') - 1
+  if !col || getline('.')[col - 1] !~ '\k'
+    return "\<Tab>"
+  else
+    return "\<C-n>"
+  endif
 endfunction
 
-" Vim configs split accross multiple files, so loop over and source each
-"-----------------------------------------------------------------------
-call s:SourceConfigFilesIn('')
+" Run Ag, show results in quickfix
+command! -nargs=+ -complete=file -bar StaticAg \
+  silent! grep! <args>|cwindow|redraw!
 
 " This statement has to come late in order to work
 highlight Comment cterm=italic
+
+" Highlight VCS conflict markers
+match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'

@@ -32,7 +32,6 @@ Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kristijanhusak/vim-multiple-cursors'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
-Plug 'sjl/gundo.vim'
 Plug 'skwp/greplace.vim'
 
 " Experiments

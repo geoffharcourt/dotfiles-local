@@ -3,9 +3,7 @@
 "
 " shamelessly stolen from Chris Toomey
 
-au filetype help call HelpFileMode()
-
-function! HelpFileMode()
+function! help#HelpFileMode()
   wincmd _ " Maximze the help on open
   " Help File funtimes, <enter> to follow tag, delete for back
   nnoremap <tab> :call search('\|.\{-}\|', 'w')<cr>:noh<cr>2l

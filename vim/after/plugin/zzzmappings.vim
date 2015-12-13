@@ -1,2 +1,2 @@
-nnoremap <silent> n :call AdvanceThroughSearch()<CR>
-nnoremap <silent> N :call GoBackThroughSearch()<CR>
+nnoremap <silent> n :call search#AdvanceThroughResults()<CR>
+nnoremap <silent> N :call search#GoBackThroughResults()<CR>
