@@ -6,7 +6,11 @@ shopt -s dotglob
 
 for dir in "$HOME"/.vim/*; do
   if [ -d "$dir" ]; then
-    ln -sf "$dir" $HOME/.config/nvim/$(basename "$dir");
+    directory_name=$(basename "$dir")
+
+    if [ ! -e "$HOME"/.config/nvim/"$directory_name" ]; then
+      ln -sf "$dir" "$HOME"/.config/nvim/"$directory_name"
+    fi
   fi
 done
 

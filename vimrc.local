@@ -21,6 +21,8 @@ set winheight=10
 set winminheight=10
 set winheight=999
 
+colorscheme jellybeans
+
 " Override thoughtbot tab wrapper to move in opposite direction
 " <S-Tab> is remapped in mappings.vim
 function! InsertTabWrapper()
@@ -31,10 +33,6 @@ function! InsertTabWrapper()
     return "\<C-n>"
   endif
 endfunction
-
-" Run Ag, show results in quickfix
-command! -nargs=+ -complete=file -bar StaticAg \
-  silent! grep! <args>|cwindow|redraw!
 
 " This statement has to come late in order to work
 highlight Comment cterm=italic

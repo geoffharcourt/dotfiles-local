@@ -4,7 +4,7 @@ set-option -g default-command "reattach-to-user-namespace -l zsh"
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
 # Faster escape times
-set -s escape-time 0
+set -s escape-time 10
 
 # resize panes
 bind -r H resize-pane -L 5
