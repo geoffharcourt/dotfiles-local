@@ -78,6 +78,6 @@ nnoremap <Leader>l :call rspec#PromoteToLet()<CR>
 nnoremap <Leader>m :Move <C-r>%
 nnoremap <Leader>M :call tabs#MergeTabs()<CR>
 nnoremap <Leader>n :sp ~/Dropbox/notes/vim-notes.txt<CR>
-nnoremap <Leader>p :r!pbpaste<CR>
+nnoremap <Leader>p "+p
 nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
 vnoremap <Leader>y y:call yank#YankToOSXClipboard()<cr>
