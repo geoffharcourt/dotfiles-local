@@ -36,6 +36,9 @@ vnoremap gk k
 vnoremap j gj
 vnoremap k gk
 
+nmap gJ :SplitjoinJoin<CR>
+nmap gS :SplitjoinSplit<CR>
+
 " Bind K to grep word under cursor
 nnoremap K :set nois<CR> :StaticAg <C-R><C-W><CR>
 
@@ -54,12 +57,6 @@ nnoremap <Leader>/ :call eregex#toggle()<CR>
 
 " additional vim-rspec mapping
 nnoremap <Leader>a :call RunAllSpecs()<CR>
-
-" Note that <Leader>b is mapped to Blockle
-
-" Split long line with comma-separated terms into multiple lines, then indent
-" the collection appropriately.
-nnoremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
 
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
