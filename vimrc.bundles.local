@@ -24,13 +24,11 @@ Plug 'jgdavey/vim-blockle', { 'for': 'ruby' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/vim-oblique'
-Plug 'junegunn/vim-pseudocl' " needed for vim-oblique
-Plug 'kana/vim-textobj-user' " needed for textobj-rubyblock
+Plug 'junegunn/vim-pseudocl' | Plug 'junegunn/vim-oblique'
+Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kristijanhusak/vim-multiple-cursors'
 Plug 'mustache/vim-mustache-handlebars'
-Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'skwp/greplace.vim'
 
 " Experiments
