@@ -57,7 +57,7 @@ nnoremap <Leader>/ :call eregex#toggle()<CR>
 
 " additional vim-rspec mapping
 nnoremap <Leader>a :call RunAllSpecs()<CR>
-
+nnoremap <Leader>d Orequire 'pry'; binding.pry<Esc>:w<CR>
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
 noremap <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
