@@ -24,7 +24,7 @@ function! quickfix#BufferIsOpen(bufname)
 endfunction
 
 function! quickfix#ToggleQuickfixList()
-  if BufferIsOpen("Quickfix List")
+  if quickfix#BufferIsOpen("Quickfix List")
     cclose
   else
     copen
