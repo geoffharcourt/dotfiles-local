@@ -57,9 +57,6 @@ bind c new-window -c '#{pane_current_path}'
 # break a pane into a new window
 bind-key b break-pane -d
 
-# join a pane from another window
-bind-key j command-prompt -p "join pane from: "  "join-pane -h -s '%%'"
-
 # jump to another session
 bind C-j split-window -v "tmux list-sessions | sed -E 's/:.*$//' | grep -v \"^$(tmux display-message -p '#S')\$\" | fzf --reverse | xargs tmux switch-client -t"
 
