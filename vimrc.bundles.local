@@ -13,6 +13,7 @@ Plug 'tpope/vim-unimpaired'
 " Other plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'kopischke/vim-fetch'
+Plug 'christoomey/vim-quicklink' | Plug 'mattn/webapi-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ck3g/vim-change-hash-syntax', { 'for' : 'ruby' }
 Plug 'derekprior/vim-trimmer'
@@ -29,7 +30,3 @@ Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kristijanhusak/vim-multiple-cursors'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'skwp/greplace.vim'
-
-" Experiments
-Plug 'junegunn/vader.vim'
-Plug 'AndrewRadev/splitjoin.vim'
