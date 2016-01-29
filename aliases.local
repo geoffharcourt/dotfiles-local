@@ -1,6 +1,10 @@
 # Aliases
 alias realias='source ~/.aliases'
 
+# tmux fixes: https://github.com/junegunn/fzf/issues/201
+alias clear='clear; tmux clear-history'
+alias reset='reset; tmux clear-history'
+
 alias l='ls'
 alias tlf='tail -f'
 alias v='nvim'
