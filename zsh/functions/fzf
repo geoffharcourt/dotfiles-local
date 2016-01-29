@@ -4,7 +4,7 @@
 fe() {
   local file
   # file=$(fzf --query="$1" --select-1 --exit-0)
-  file=$(ag -g "$1" | fzf --select-1 --exit-0)
+  file=$(ag -g "$1" | fzf-tmux -d 40 --select-1 --exit-0)
   [ -n "$file" ] && ${EDITOR} "$file"
 }
 
@@ -28,7 +28,7 @@ fgit() {
 fbr() {
   local branches branch
   branches=$(git branch) &&
-  branch=$(echo "$branches" | fzf +s +m) &&
+  branch=$(echo "$branches" | fzf-tmux -d 15 +s +m) &&
   git checkout $(echo "$branch" | sed "s/.* //")
 }
 
