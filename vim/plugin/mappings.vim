@@ -47,6 +47,8 @@ nnoremap gv `[v`]
 vmap <silent> <expr> p paste#ReplaceVisualSelectionWithYankRegister()
 nnoremap Q :echoe "Disabled Ex mode"<CR>
 
+nnoremap U :echoe "Disabled lowercasing"<CR>
+
 " Yank to end of line, like C, D
 nnoremap Y y$
 
