@@ -4,6 +4,7 @@ set gdefault      " Replace all matches on a line instead of just the first
 set hlsearch      " highlight search results
 set ignorecase    " searches are case-insensitive
 set lazyredraw    " Don't redraw the screen during macros
+set matchtime=0   " Speed up escape after (){} chars
 set nofoldenable
 set noshowmode
 set nowrap
