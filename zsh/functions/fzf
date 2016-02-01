@@ -16,12 +16,10 @@ fd() {
   cd "$dir"
 }
 
-fgit() {
+fgh() {
   local dir
 
-  dir=$(find ${1:-*} -path '~/github/*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
+  dir=$(find ~/github/* -maxdepth 1 -type d -print 2> /dev/null | fzf +m) && cd "$dir"
 }
 
 # fbr - checkout git branch
