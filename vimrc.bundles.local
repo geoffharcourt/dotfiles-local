@@ -1,5 +1,6 @@
 " Colors
 Plug 'nanotech/jellybeans.vim'
+Plug 'geoffharcourt/one-dark.vim'
 
 " Tim Pope for the win
 Plug 'tpope/vim-abolish'
@@ -17,7 +18,8 @@ Plug 'christoomey/vim-quicklink' | Plug 'mattn/webapi-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ck3g/vim-change-hash-syntax', { 'for' : 'ruby' }
 Plug 'derekprior/vim-trimmer'
-Plug 'gorodinskiy/vim-coloresque'
+" Until https://github.com/gorodinskiy/vim-coloresque/pull/30 is merged...
+Plug 'geoffharcourt/vim-coloresque'
 Plug 'henrik/vim-indexed-search'
 Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
