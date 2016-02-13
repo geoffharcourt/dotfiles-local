@@ -35,6 +35,8 @@
   sdrop = "!f() { if [ -z "$1" ]; then git stash list | cat; printf \"Index to drop: \"; read choice; git stash drop stash@{$choice}; else git stash drop stash@{$1}; fi; }; f"
 
   wip = !git add -u && git commit -m "WIP"
+[core]
+	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
 [commit]
   template = ~/.gitmessage
 [init]
