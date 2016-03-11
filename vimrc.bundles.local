@@ -1,13 +1,16 @@
 " Colors
 Plug 'nanotech/jellybeans.vim'
 Plug 'geoffharcourt/one-dark.vim'
+Plug 'djjcast/mirodark'
+Plug 'nelstrom/vim-blackboard'
+Plug 'whatyouhide/vim-gotham'
+Plug 'mhartington/oceanic-next'
+Plug 'morhetz/gruvbox'
 
 " Tim Pope for the win
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-haml',  { 'for': 'haml' }
-Plug 'tpope/vim-projectionist'
-Plug 'tpope/vim-rake', { 'for': 'ruby' }
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 
@@ -18,7 +21,6 @@ Plug 'christoomey/vim-quicklink' | Plug 'mattn/webapi-vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ck3g/vim-change-hash-syntax', { 'for' : 'ruby' }
 Plug 'derekprior/vim-trimmer'
-" Until https://github.com/gorodinskiy/vim-coloresque/pull/30 is merged...
 Plug 'geoffharcourt/vim-coloresque'
 Plug 'henrik/vim-indexed-search'
 Plug 'itchyny/lightline.vim'
@@ -31,6 +33,7 @@ Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock', { 'for': '
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kristijanhusak/vim-multiple-cursors'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'nicholaides/words-to-avoid.vim'
 Plug 'skwp/greplace.vim'
 
 Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
