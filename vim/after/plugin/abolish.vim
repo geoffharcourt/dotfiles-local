@@ -21,3 +21,4 @@ Abolish private_cosntant private_constant
 Abolish obejct object
 Abolish peformance performance
 Abolish transction transaction
+Abolish udpate update
