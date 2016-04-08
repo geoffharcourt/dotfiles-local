@@ -1,10 +1,8 @@
-set-option -g default-command "reattach-to-user-namespace -l zsh"
+set -sg escape-time 0
 
+set-option -g default-command "reattach-to-user-namespace -l zsh"
 # Easy reloading of the tmux.conf configuration file
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
-
-# Faster escape times
-set -s escape-time 10
 
 # resize panes
 bind -r H resize-pane -L 5
@@ -25,9 +23,6 @@ bind C-l send-keys C-l
 
 set -g status-left  " #[fg=white,bold]#S "
 set -g status-utf8 on
-
-# Use 256 color mode, useful for Vim colorshemes
-set-option -g default-terminal "screen-256color-italic"
 
 # Use emacs / readline key-bindings in the tmux command prompt
 set-option -g status-keys "emacs"
