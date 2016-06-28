@@ -1,12 +1,6 @@
 bundler
-flog
-foreman
 gem-browse
 gem-ctags
 gem-shut-the-fuck-up
-pg
 rails
-rails_best_practices
 rake
-reek
-rubocop
