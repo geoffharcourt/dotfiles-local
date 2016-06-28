@@ -9,7 +9,7 @@ set nofoldenable
 set noshowmode
 set nowrap
 set number relativenumber " The best of both worlds
-set scrolloff=5
+set scrolloff=999
 set synmaxcol=250 " Don't try to highlight lines longer than 250 characters.
 set smartcase     " searches are case-sensitive if a capital is in term
 set ttimeout      " Fast timeout
@@ -22,7 +22,7 @@ set winheight=10
 set winminheight=10
 set winheight=999
 
-colorscheme jellybeans
+colorscheme Tomorrow-Night
 
 " Override thoughtbot tab wrapper to move in opposite direction
 " <S-Tab> is remapped in mappings.vim

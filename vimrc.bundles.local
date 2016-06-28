@@ -1,11 +1,7 @@
 " Colors
 Plug 'nanotech/jellybeans.vim'
 Plug 'geoffharcourt/one-dark.vim'
-Plug 'djjcast/mirodark'
-Plug 'nelstrom/vim-blackboard'
-Plug 'whatyouhide/vim-gotham'
-Plug 'mhartington/oceanic-next'
-Plug 'morhetz/gruvbox'
+Plug 'chriskempson/vim-tomorrow-theme'
 
 " Tim Pope for the win
 Plug 'tpope/vim-abolish'
@@ -16,8 +12,8 @@ Plug 'tpope/vim-unimpaired'
 
 " Other plugins
 Plug 'airblade/vim-gitgutter'
-Plug 'kopischke/vim-fetch'
 Plug 'christoomey/vim-quicklink' | Plug 'mattn/webapi-vim'
+Plug 'christoomey/vim-system-copy'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ck3g/vim-change-hash-syntax', { 'for' : 'ruby' }
 Plug 'derekprior/vim-trimmer'
@@ -28,12 +24,14 @@ Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
+Plug 'junegunn/vim-emoji'
 Plug 'junegunn/vim-pseudocl' | Plug 'junegunn/vim-oblique'
+Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
+Plug 'kopischke/vim-fetch'
 Plug 'kristijanhusak/vim-multiple-cursors'
 Plug 'mustache/vim-mustache-handlebars'
+Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
 Plug 'nicholaides/words-to-avoid.vim'
 Plug 'skwp/greplace.vim'
-
-Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
