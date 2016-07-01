@@ -1,6 +1,7 @@
 [user]
   name = Geoff Harcourt
   email = geoff.harcourt@gmail.com
+	signingkey = F13CB0EA
 [github]
 	user = geoffharcourt
 [hub]

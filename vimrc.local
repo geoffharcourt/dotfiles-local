@@ -1,3 +1,4 @@
+set background=dark
 set complete=.,b,u,]
 set foldmethod=syntax
 set gdefault      " Replace all matches on a line instead of just the first

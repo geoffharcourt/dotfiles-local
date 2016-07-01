@@ -3,13 +3,6 @@ Plug 'nanotech/jellybeans.vim'
 Plug 'geoffharcourt/one-dark.vim'
 Plug 'chriskempson/vim-tomorrow-theme'
 
-" Tim Pope for the win
-Plug 'tpope/vim-abolish'
-Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-haml',  { 'for': 'haml' }
-Plug 'tpope/vim-vinegar'
-Plug 'tpope/vim-unimpaired'
-
 " Other plugins
 Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-quicklink' | Plug 'mattn/webapi-vim'
@@ -17,7 +10,7 @@ Plug 'christoomey/vim-system-copy'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'ck3g/vim-change-hash-syntax', { 'for' : 'ruby' }
 Plug 'derekprior/vim-trimmer'
-Plug 'geoffharcourt/vim-coloresque'
+Plug 'elixir-lang/vim-elixir'
 Plug 'henrik/vim-indexed-search'
 Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
@@ -35,3 +28,9 @@ Plug 'mustache/vim-mustache-handlebars'
 Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
 Plug 'nicholaides/words-to-avoid.vim'
 Plug 'skwp/greplace.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-dispatch'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-vinegar'
+Plug 'tpope/vim-unimpaired'
