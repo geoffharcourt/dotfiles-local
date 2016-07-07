@@ -34,13 +34,11 @@ function! s:InsertCurrntVLCTime()
   execute 'normal! Aa'
 endfunction
 command! InsertCurrntVLCTime call <sid>InsertCurrntVLCTime()
-nnoremap <leader>vt :InsertCurrntVLCTime<cr>
 
 function! s:SeekTimeInVLC(time)
   call system("echo 'seek ". a:time ."' | nc localhost 1234")
 endfunction
 command! -nargs=1 SeekTimeInVLC call <sid>SeekTimeInVLC(<args>)
-nnoremap <leader>sk :silent call search('\d', 'c')<cr>:SeekTimeInVLC <C-r><C-w><cr>
 
 function! s:tmplt(template_string, replacements)
   let output_string = a:template_string
