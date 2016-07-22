@@ -1,49 +1,23 @@
-[user]
-  name = Geoff Harcourt
-  email = geoff.harcourt@gmail.com
-	signingkey = F13CB0EA
-[github]
-	user = geoffharcourt
-[hub]
-  protocol = ssh
-[pull]
-  rebase = true
-[pretty]
-  colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
-  coloredwithrefs = format:%Cred%h%Creset %Cblue%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
 [alias]
-  aliases = "!git config --list | grep 'alias\\.' | sed 's/alias\\.\\([^=]*\\)=\\(.*\\)/\\1\\\t => \\2/' | sort"
-  aa = "!git add --all && git status"
-  # show all files unmerged in a merge conflict
-  clear-local-branches = "!git branch | grep -v "master" | xargs git branch -D"
-  cnf = "!git ls-files -u | cut -f 2 | sort -u"
   cob = "checkout -b"
-  col = "!select choice in $(git branch | grep -v '*'); do echo checking out $choice; git checkout $choice; break; done"
-  l = log -n25 --color --graph --pretty=format:'%Cred%h%Creset - %Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  ll = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  lb = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
-  details = log -n1 -p --format=fuller
+  l = log -n15 --color --graph --pretty=format:'%Cred%h%Creset - %Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   sh = "shalector"
-
-  # stashes from Chris Arcand's DC RUG talk:
-  # http://chrisarcand.com/talks/git-unleashed/
-  sls = "!git stash list | cat"
-  ssave = stash save
-  sclear = "stash clear"
-  sshow = "!f() { if [ -z "$1" ]; then git stash list | cat; printf \"Index to show: \"; read choice; git stash show -p stash@{$choice}; else git stash show -p stash@{$1}; fi; }; f"
-  spop = "!f() { if [ -z "$1" ]; then git stash list | cat; printf \"Index to pop: \"; read choice; git stash pop stash@{$choice}; else git stash pop stash@{$1}; fi; }; f"
-  sapply = "!f() { if [ -z "$1" ]; then git stash list | cat; printf \"Index to apply: \"; read choice; git stash apply stash@{$choice}; else git stash apply stash@{$1}; fi; }; f"
-  sdrop = "!f() { if [ -z "$1" ]; then git stash list | cat; printf \"Index to drop: \"; read choice; git stash drop stash@{$choice}; else git stash drop stash@{$1}; fi; }; f"
-
-  wip = !git add -u && git commit -m "WIP"
 [core]
 	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
-[commit]
-  template = ~/.gitmessage
-[init]
-  templatedir = ~/.git_template
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
+[github]
+	user = geoffharcourt
 [help]
   autocorrect = 1
+[hub]
+  protocol = ssh
+[pretty]
+  colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
+  coloredwithrefs = format:%Cred%h%Creset %Cblue%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
+[pull]
+  rebase = true
+[user]
+  name = Geoff Harcourt
+  email = geoff.harcourt@gmail.com
