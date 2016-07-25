@@ -4,7 +4,6 @@
   sh = "shalector"
 [core]
 	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
-	editor = /usr/bin/vim
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
