@@ -1,4 +1,5 @@
 [alias]
+  c = "commit"
   cob = "checkout -b"
   l = log -n15 --color --graph --pretty=format:'%Cred%h%Creset - %Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   sh = "shalector"
