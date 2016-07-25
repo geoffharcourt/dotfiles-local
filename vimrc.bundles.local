@@ -12,6 +12,7 @@ Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'jgdavey/vim-blockle', { 'for' : 'ruby' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+Plug 'junegunn/gv.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-pseudocl' | Plug 'junegunn/vim-oblique'
 Plug 'kana/vim-textobj-entire'
