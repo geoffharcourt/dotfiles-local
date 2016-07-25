@@ -36,9 +36,6 @@ vnoremap gk k
 vnoremap j gj
 vnoremap k gk
 
-nmap gJ :SplitjoinJoin<CR>
-nmap gS :SplitjoinSplit<CR>
-
 " Bind K to grep word under cursor
 nnoremap K :set nois<CR> :StaticAg <C-R><C-W><CR>
 
@@ -55,11 +52,8 @@ nnoremap Y y$
 " Re-select prior selection in visual mode
 nnoremap <C-p> :Files<CR>
 
-nnoremap <Leader>/ :call eregex#toggle()<CR>
-
 " additional vim-rspec mapping
 nnoremap <Leader>a :call RunAllSpecs()<CR>
-nnoremap <Leader>d Orequire 'pry'; binding.pry<Esc>:w<CR>
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
 noremap <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
@@ -76,6 +70,6 @@ nnoremap <Leader>o :call quickfix#ToggleLocationList()<CR>
 nnoremap <Leader>m :Move <C-r>%
 nnoremap <Leader>M :call tabs#MergeTabs()<CR>
 nnoremap <Leader>n :sp ~/Dropbox/notes/vim-notes.txt<CR>
-nnoremap <Leader>p "+p
+nnoremap <Leader>p cv
 nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
 vnoremap <Leader>y y:call yank#YankToOSXClipboard()<cr>
