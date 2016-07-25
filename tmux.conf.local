@@ -56,6 +56,8 @@ bind-key C-b send-keys 'tat && exit' 'C-m'
 # show gitsh in side pane
 bind g split-window -c "#{pane_current_path}" -h -p 50 'gitsh'
 
+set -g status-left  " #[fg=white,bold]#S "
+
 # pane number display
 set-option -g display-panes-active-colour blue #blue
 set-option -g display-panes-colour brightred #orange
