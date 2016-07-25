@@ -1,14 +1,9 @@
 " Colors
-Plug 'nanotech/jellybeans.vim'
-Plug 'geoffharcourt/one-dark.vim'
 Plug 'chriskempson/vim-tomorrow-theme'
 
 " Other plugins
-Plug 'airblade/vim-gitgutter'
-Plug 'christoomey/vim-quicklink' | Plug 'mattn/webapi-vim'
 Plug 'christoomey/vim-system-copy'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'ck3g/vim-change-hash-syntax', { 'for' : 'ruby' }
 Plug 'derekprior/vim-trimmer'
 Plug 'elixir-lang/vim-elixir'
 Plug 'henrik/vim-indexed-search'
@@ -18,18 +13,13 @@ Plug 'jgdavey/vim-blockle', { 'for' : 'ruby' }
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/vim-emoji'
 Plug 'junegunn/vim-pseudocl' | Plug 'junegunn/vim-oblique'
 Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kopischke/vim-fetch'
-Plug 'kristijanhusak/vim-multiple-cursors'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'mxw/vim-jsx' | Plug 'pangloss/vim-javascript'
 Plug 'nicholaides/words-to-avoid.vim'
 Plug 'skwp/greplace.vim'
-Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-haml'

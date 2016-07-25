@@ -24,5 +24,5 @@ let g:rainbow#colors = {
 \ }
 
 augroup rainbow
-  " autocmd BufRead,BufNewFile * RainbowParentheses
+  autocmd BufRead,BufNewFile * RainbowParentheses
 augroup END
