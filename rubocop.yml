@@ -189,8 +189,11 @@ StringLiterals:
 VariableInterpolation:
   Enabled: false
 
-TrailingComma:
-  Enabled: false
+TrailingCommaInArguments:
+  Enabled: true
+
+TrailingCommaInLiteral:
+  Enabled: true
 
 TrivialAccessors:
   Enabled: false
