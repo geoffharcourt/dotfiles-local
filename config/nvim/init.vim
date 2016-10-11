@@ -1,3 +1,3 @@
 source ~/.vimrc
 
-" nnoremap <silent> <BS> :TmuxNavigateLeft<cr>
+nnoremap <silent> <BS> :TmuxNavigateLeft<cr>

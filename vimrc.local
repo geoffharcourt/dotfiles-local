@@ -41,3 +41,5 @@ highlight Comment cterm=italic
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
+
+set colorcolumn=100
