@@ -62,12 +62,6 @@ set -g status-left  " #[fg=white,bold]#S "
 set-option -g display-panes-active-colour blue #blue
 set-option -g display-panes-colour brightred #orange
 
-# clock
-set-window-option -g clock-mode-colour green #green
-
-# bell
-set-window-option -g window-status-bell-style fg=black,bg=red #base02, red
-
 ## set status bar
 set -g status-bg "#373b41"
 set -g status-fg "#c5c8c6"

@@ -6,7 +6,6 @@ alias clear='clear; tmux clear-history'
 alias reset='reset; tmux clear-history'
 
 alias l='ls'
-alias tlf='tail -f'
 alias v='nvim'
 alias xit="exit"
 
@@ -24,10 +23,8 @@ alias grc='command git rebase --continue'
 alias gsh='command git sh'
 
 # Heroku
-alias heroky='heroku'
 alias heroku='nocorrect heroku'
-alias push-to-production='gp production'
-alias push-to-staging='gp staging $(git symbolic-ref --short -q HEAD):master --force'
+alias heroky='heroku'
 
 # Postgres
 alias pgstart='brew services start postgresql'
@@ -37,24 +34,13 @@ alias pgrestart='pgstop && pgstart'
 # Ruby
 alias bex='nocorrect bundle exec'
 alias bu='bundle update'
-alias fs='forego start'
 alias irb='irb --readline -r irb/completion'
 alias respring='spring stop && spring start'
 
 # Rails
-alias rc='spring rails console'
-alias taild='tlf log/development.log'
-alias tailt='tlf log/test.log'
-
-# Ember
-alias et='ember test -s'
-
-# Code Cleanup
-alias rubo='rubocop'
-alias release="RAILS_ENV=test rake release"
-
-# Update
-alias goodmorning='brew update && brew upgrade --all && update-rubies && gem update --system && gem update && rcup'
+alias rc='rails console'
+alias taild='tail -f log/development.log'
+alias tailt='tail -f log/test.log'
 
 # Folder navigation
 alias dotf='cd $HOME/dotfiles-local'
