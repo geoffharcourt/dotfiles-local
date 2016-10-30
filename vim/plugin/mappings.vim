@@ -71,4 +71,4 @@ nnoremap <Leader>o :call quickfix#ToggleLocationList()<CR>
 nnoremap <Leader>m :w<CR>:Move <C-R>%
 nnoremap <Leader>p cv
 nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
-vnoremap <Leader>y y:call yank#YankToOSXClipboard()<CR>
+vnoremap <Leader>y cp
