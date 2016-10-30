@@ -1,1 +1,1 @@
-CDPATH=.:$HOME:$HOME/github:$HOME/github/geoffharcourt:$HOME/github/thoughtbot:$HOME/projects:$HOME/clients:$HOME/Downloads:$HOME/cortex
+CDPATH=.:$HOME:$HOME/github:$HOME/github/geoffharcourt:$HOME/github/thoughtbot:$HOME/projects:$HOME/clients:$HOME/Downloads
