@@ -19,10 +19,8 @@ Plug 'kana/vim-textobj-entire'
 Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kopischke/vim-fetch'
-Plug 'nicholaides/words-to-avoid.vim'
 Plug 'skwp/greplace.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-haml'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
