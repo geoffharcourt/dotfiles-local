@@ -19,7 +19,7 @@ set undofile
 set wildmenu
 set wildmode=longest:full,full
 set winwidth=84
-set winheight=5
+set winheight=10
 set winminheight=5
 
 colorscheme Tomorrow-Night

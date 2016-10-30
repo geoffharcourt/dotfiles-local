@@ -2,7 +2,7 @@ let g:lightline = {
       \ 'colorscheme': 'Tomorrow_Night',
       \ 'active': {
       \   'left': [
-      \             ['mode', 'paste'],
+      \     ['mode', 'paste'],
       \   ]
       \ },
       \ 'component_function': {

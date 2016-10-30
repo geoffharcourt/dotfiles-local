@@ -1,5 +1,5 @@
 let g:rainbow#colors = {
-\   'dark': [
+\ 'dark': [
 \     ['yellow',  'orange1'     ],
 \     ['green',   'yellow1'     ],
 \     ['cyan',    'greenyellow' ],
