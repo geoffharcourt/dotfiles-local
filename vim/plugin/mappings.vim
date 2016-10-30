@@ -68,8 +68,6 @@ nnoremap <Leader>i mmgg=G`m<CR>
 " http://robots.thoughtbot.com/faster-grepping-in-vim changed from the above blog post to use ag.vim hello
 nnoremap <Leader>o :call quickfix#ToggleLocationList()<CR>
 nnoremap <Leader>m :Move <C-r>%
-nnoremap <Leader>M :call tabs#MergeTabs()<CR>
-nnoremap <Leader>n :sp ~/Dropbox/notes/vim-notes.txt<CR>
 nnoremap <Leader>p cv
 nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
 vnoremap <Leader>y y:call yank#YankToOSXClipboard()<cr>
