@@ -3,17 +3,10 @@ let g:lightline = {
       \ 'active': {
       \   'left': [
       \             ['mode', 'paste'],
-      \             ['fugitive', 'readonly', 'myfilename', 'modified']
-      \           ]
-      \ },
-      \ 'component': {
-      \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}',
+      \   ]
       \ },
       \ 'component_function': {
       \   'myfilename': 'LightLineFilename',
-      \ },
-      \ 'component_visible_condition': {
-      \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
       \ }
 \ }
 
