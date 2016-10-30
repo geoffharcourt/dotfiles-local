@@ -14,9 +14,9 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc --
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
-Plug 'junegunn/vim-pseudocl' | Plug 'junegunn/vim-oblique'
+Plug 'junegunn/vim-oblique' | Plug 'junegunn/vim-pseudocl'
+Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'} | Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire'
-Plug 'kana/vim-textobj-user' | Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'}
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kopischke/vim-fetch'
 Plug 'skwp/greplace.vim'
