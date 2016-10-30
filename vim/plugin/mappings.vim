@@ -60,6 +60,9 @@ nnoremap <Leader>a :call RunAllSpecs()<CR>
 noremap <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 noremap <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
+" Split a string and move the portion after the next comma to the next line
+noremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
+
 " temporarily stop search highlighting after search
 nnoremap <Leader>h :nohlsearch<CR>
 
