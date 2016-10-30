@@ -24,20 +24,6 @@ set winminheight=5
 
 colorscheme Tomorrow-Night
 
-" Override thoughtbot tab wrapper to move in opposite direction
-" <S-Tab> is remapped in mappings.vim
-function! InsertTabWrapper()
-  let col = col('.') - 1
-  if !col || getline('.')[col - 1] !~ '\k'
-    return "\<Tab>"
-  else
-    return "\<C-n>"
-  endif
-endfunction
-
-" This statement has to come late in order to work
-highlight Comment cterm=italic
-
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
