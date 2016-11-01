@@ -56,9 +56,6 @@ CyclomaticComplexity:
 Delegate:
   Enabled: false
 
-DeprecatedHashMethods:
-  Enabled: false
-
 Documentation:
   Enabled: false
 
