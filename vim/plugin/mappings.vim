@@ -5,12 +5,6 @@ xnoremap . :normal.<CR>
 
 nnoremap \ :Ag<CR>
 
-" Use escape to kill autocomplete without completion and stay in insert mode
-inoremap <silent> <Esc> <C-R>=autocomplete#CancelAutoCompleteOrInsertMode()<CR>
-
-" Enter selects the winner if autocompletion popup is open
-inoremap <silent> <CR> <C-R>=autocomplete#SelectAutoCompleteOrCarriageReturn()<CR>
-
 " Override thoughtbot completion direction
 inoremap <S-Tab> <C-P>
 
@@ -19,7 +13,7 @@ nnoremap <C-\> :TComment<CR>
 vnoremap <C-\> :TComment<CR>
 
 " Complete from open tmux panes (from @junegunn)
-inoremap <expr> <C-X><C-T> fzf#complete('tmuxwords.rb --all-but-current --scroll 499 --min 5')
+inoremap <expr> <C-X><C-T> tmuxcomplete#trigger()
 inoremap <expr> <C-X><C-K> fzf#complete('cat /usr/share/dict/words')
 
 " Rehighlight after moving text in visual mode

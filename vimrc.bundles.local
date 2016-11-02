@@ -16,7 +16,7 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-oblique' | Plug 'junegunn/vim-pseudocl'
 Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'} | Plug 'kana/vim-textobj-user'
-Plug 'kana/vim-textobj-entire'
+Plug 'kana/vim-textobj-entire' | Plug 'kana/vim-textobj-user'
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kopischke/vim-fetch'
 Plug 'skwp/greplace.vim'
@@ -24,3 +24,11 @@ Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
+
+" Experiments
+Plug 'christoomey/vim-rfactory'
+Plug 'junegunn/vim-fnr'
+Plug 'junegunn/vim-halo'
+Plug 'wellle/tmux-complete.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'neomake/neomake'
