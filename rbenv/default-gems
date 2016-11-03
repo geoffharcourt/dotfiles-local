@@ -2,5 +2,6 @@ bundler
 gem-browse
 gem-ctags
 gem-shut-the-fuck-up
+neovim
 rails
 rake

@@ -31,4 +31,5 @@ Plug 'junegunn/vim-fnr'
 Plug 'junegunn/vim-halo'
 Plug 'wellle/tmux-complete.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'fishbullet/deoplete-ruby'
 Plug 'neomake/neomake'

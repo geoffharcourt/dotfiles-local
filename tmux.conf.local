@@ -1,4 +1,4 @@
-set -sg escape-time 0
+set -sg escape-time 10
 
 set-option -g default-command "reattach-to-user-namespace -l zsh"
 # Easy reloading of the tmux.conf configuration file
