@@ -1,5 +1,6 @@
 " Colors
 Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'rakr/vim-one'
 
 " Other plugins
 Plug 'christoomey/vim-system-copy'
@@ -19,17 +20,18 @@ Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'} | Plug 'kana/vim-textobj
 Plug 'kana/vim-textobj-entire' | Plug 'kana/vim-textobj-user'
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kopischke/vim-fetch'
+Plug 'neomake/neomake'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'skwp/greplace.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
+Plug 'wellle/tmux-complete.vim'
 
 " Experiments
+Plug 'Shougo/neco-vim'
 Plug 'christoomey/vim-rfactory'
-Plug 'junegunn/vim-fnr'
-Plug 'junegunn/vim-halo'
-Plug 'wellle/tmux-complete.vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'fishbullet/deoplete-ruby'
-Plug 'neomake/neomake'
+Plug 'junegunn/vim-fnr'
+Plug 'zchee/deoplete-zsh'
