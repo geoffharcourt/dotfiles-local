@@ -15,5 +15,5 @@ inoremap <expr><BS>
 
 function! s:check_back_space()
   let col = col('.') - 1
-  return !col || getline('.')[col - 1] !~ '\k'
+  return !col "|| getline('.')[col - 1] !~ '\k'
 endfunction
