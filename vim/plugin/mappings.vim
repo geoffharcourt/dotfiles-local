@@ -33,6 +33,7 @@ vnoremap k gk
 " Bind K to grep word under cursor
 nnoremap K :set nois<CR> :StaticAg <C-R><C-W><CR>
 
+" Re-select prior selection in visual mode
 nnoremap gv `[v`]
 
 vmap <silent> <expr> p paste#ReplaceVisualSelectionWithYankRegister()
@@ -44,7 +45,6 @@ vnoremap U :echoe "Disabled lowercasing"<CR>
 " Yank to end of line, like C, D
 nnoremap Y y$
 
-" Re-select prior selection in visual mode
 nnoremap <C-P> :Files<CR>
 
 " additional vim-rspec mapping
