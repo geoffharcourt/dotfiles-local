@@ -66,6 +66,6 @@ nnoremap <Leader>i mmgg=G`m<CR>
 " http://robots.thoughtbot.com/faster-grepping-in-vim changed from the above blog post to use ag.vim hello
 nnoremap <Leader>o :call quickfix#ToggleLocationList()<CR>
 nnoremap <Leader>m :w<CR>:Move <C-R>%
-nnoremap <Leader>p cv
+nnoremap <Leader>p "*p
 nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
 vnoremap <Leader>y "*y
