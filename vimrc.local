@@ -38,4 +38,7 @@ colorscheme one
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-set colorcolumn=100
+set colorcolumn=80
+
+highlight Pmenu ctermbg=75 guibg=#2c323c
+highlight PmenuSel ctermbg=17 guibg=#3c4452
