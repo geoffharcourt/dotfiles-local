@@ -1,3 +1,4 @@
+" Insert current file directory path (without file name)
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
 " Get dot command repeatability in visual mode
