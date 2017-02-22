@@ -4,7 +4,6 @@ Plug 'rakr/vim-one'
 " Other plugins
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'derekprior/vim-trimmer'
-Plug 'elixir-lang/vim-elixir'
 Plug 'henrik/vim-indexed-search'
 Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
