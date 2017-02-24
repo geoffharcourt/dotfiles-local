@@ -14,3 +14,5 @@ let g:fzf_colors =
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
+
+command! -bang -nargs=* Ag call fzf#vim#ag(<q-args>, <bang>0)
