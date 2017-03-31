@@ -4,6 +4,8 @@ if has("nvim")
   let g:deoplete#enable_at_startup = 1
 end
 
+let g:completor_auto_trigger = 0
+
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
   \ <SID>check_back_space() ? "\<TAB>" :
@@ -14,6 +16,8 @@ inoremap <expr><BS>
   \ "\<BS>"
 
 function! s:check_back_space()
-  let col = col('.') - 1
-  return !col "|| getline('.')[col - 1] !~ '\k'
+  let line = getline('.')                         " current line
+  let substr = strpart(line, -1, col('.')+1)      " from the start of the current
+  let substr = matchstr(substr, "[^ \t]*$")       " word till cursor
+  return strlen(substr) == 0
 endfunction

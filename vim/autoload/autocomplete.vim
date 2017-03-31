@@ -7,7 +7,7 @@ function! autocomplete#CancelAutoCompleteOrInsertMode()
 endfunction
 
 function! autocomplete#EngageAutocomplete()
-  if has("nvim")
+  if has("nvim") && g:loaded_deoplete
     return deoplete#mappings#manual_complete()
   else
     return "\<C-n>"
@@ -19,7 +19,7 @@ function! autocomplete#SelectAutoCompleteOrCarriageReturn()
 endfunction
 
 function! autocomplete#SmartClosePopup()
-  if has("nvim")
+  if has("nvim") && g:loaded_deoplete
     return deoplete#smart_close_popup()
   else
     return "\<C-y>"
