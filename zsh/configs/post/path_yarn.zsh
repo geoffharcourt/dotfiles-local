@@ -1,1 +1,3 @@
-export PATH="$PATH:`yarn global bin`"
+PATH="$PATH:`yarn global bin`"
+
+export -U PATH
