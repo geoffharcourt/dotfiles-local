@@ -22,3 +22,4 @@ Abolish obejct object
 Abolish peformance performance
 Abolish transction transaction
 Abolish udpate update
+Abolish destory destroy
