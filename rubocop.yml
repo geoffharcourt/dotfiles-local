@@ -83,6 +83,9 @@ FlipFlop:
 FormatString:
   Enabled: false
 
+FrozenStringLiteralComment:
+  Enabled: false
+
 GlobalVars:
   Enabled: false
 
@@ -112,12 +115,17 @@ LineLength:
   Max: 80
   Exclude:
     - db/migrate/*.rb
+    - spec/**/*.rb
 
 MethodLength:
   Enabled: false
 
 ModuleFunction:
   Enabled: false
+
+MultilineMethodCallIndentation:
+  Enabled: true
+  EnforcedStyle: "indented"
 
 NegatedIf:
   Enabled: false
