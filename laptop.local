@@ -3,6 +3,5 @@
 brew install hub vim
 brew install zsh-completions zsh-syntax-highlighting
 brew install rbenv-aliases rbenv-ctags rbenv-default-gems
-brew install forego
-
-brew tap homebrew/services
+brew install pyenv pyenv-virtualenv
+brew install diff-so-fancy
