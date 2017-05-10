@@ -23,3 +23,4 @@ Abolish peformance performance
 Abolish transction transaction
 Abolish udpate update
 Abolish destory destroy
+Abolish decsribe describe
