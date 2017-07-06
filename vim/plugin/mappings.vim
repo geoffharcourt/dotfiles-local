@@ -14,7 +14,6 @@ nnoremap <C-\> :TComment<CR>
 vnoremap <C-\> :TComment<CR>
 
 " Complete from open tmux panes (from @junegunn)
-inoremap <expr> <C-X><C-T> tmuxcomplete#trigger()
 inoremap <expr> <C-X><C-K> fzf#complete('cat /usr/share/dict/words')
 
 " Rehighlight after moving text in visual mode
