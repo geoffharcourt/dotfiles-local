@@ -19,7 +19,7 @@ Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'} | Plug 'kana/vim-textobj
 Plug 'kana/vim-textobj-entire' | Plug 'kana/vim-textobj-user'
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
 Plug 'kopischke/vim-fetch'
-Plug 'neomake/neomake'
+" Plug 'neomake/neomake'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neco-vim'
 Plug 'skwp/greplace.vim'
@@ -31,3 +31,6 @@ Plug 'wellle/tmux-complete.vim'
 Plug 'zchee/deoplete-zsh'
 
 " Experiments
+Plug 'isRuslan/vim-es6'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'jelera/vim-javascript-syntax'

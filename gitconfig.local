@@ -4,7 +4,7 @@
   l = log -n15 --color --graph --pretty=format:'%Cred%h%Creset - %Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   sh = "shalector"
 [core]
-	pager = diff-highlight | diff-so-fancy | less --tabs=1,5 -R
+	pager = diff-so-fancy | less --tabs=1,5 -R
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
