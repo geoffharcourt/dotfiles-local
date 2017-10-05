@@ -23,6 +23,14 @@ let g:rainbow#colors = {
 \   ]
 \ }
 
+function! ActivateRainbowParens()
+  if &ft =~ 'javascript'
+    return
+  endif
+
+  RainbowParentheses
+endfunction
+
 augroup rainbow
-  autocmd BufRead,BufNewFile * RainbowParentheses
+  autocmd BufRead,BufNewFile * call ActivateRainbowParens()
 augroup END
