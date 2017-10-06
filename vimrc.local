@@ -55,6 +55,7 @@ set colorcolumn=80
 highlight Pmenu ctermbg=75 guibg=#2c323c
 highlight PmenuSel ctermbg=17 guibg=#3c4452
 
+" See what's going
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
   \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
   \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
