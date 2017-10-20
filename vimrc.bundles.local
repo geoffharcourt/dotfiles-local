@@ -24,3 +24,5 @@ Plug 'tpope/vim-unimpaired'
 if has('nvim')
   Plug 'roxma/nvim-completion-manager'
 endif
+
+UnPlug 'ctrlp.vim'

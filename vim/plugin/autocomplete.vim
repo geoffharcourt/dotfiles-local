@@ -1,11 +1,3 @@
-" Avoid deoplete
-if has("nvim")
-  let g:deoplete#disable_auto_complete=1
-  let g:deoplete#enable_at_startup = 1
-end
-
-let g:completor_auto_trigger = 0
-
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
   \ <SID>check_back_space() ? "\<TAB>" :
