@@ -2,10 +2,8 @@
 Plug 'rakr/vim-one'
 
 " Other plugins
-Plug 'christoomey/vim-rfactory'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'derekprior/vim-trimmer'
-Plug 'fishbullet/deoplete-ruby'
 Plug 'henrik/vim-indexed-search'
 Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
@@ -15,22 +13,14 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-oblique' | Plug 'junegunn/vim-pseudocl'
-Plug 'nelstrom/vim-textobj-rubyblock', { 'for': 'ruby'} | Plug 'kana/vim-textobj-user'
 Plug 'kana/vim-textobj-entire' | Plug 'kana/vim-textobj-user'
 Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
-Plug 'kopischke/vim-fetch'
-" Plug 'neomake/neomake'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
-Plug 'Shougo/neco-vim'
-Plug 'skwp/greplace.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
-Plug 'wellle/tmux-complete.vim'
-Plug 'zchee/deoplete-zsh'
 
 " Experiments
-Plug 'isRuslan/vim-es6'
-Plug 'mustache/vim-mustache-handlebars'
-Plug 'jelera/vim-javascript-syntax'
+if has('nvim')
+  Plug 'roxma/nvim-completion-manager'
+endif
