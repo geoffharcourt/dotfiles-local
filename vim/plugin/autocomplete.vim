@@ -3,9 +3,9 @@ inoremap <silent><expr> <TAB>
   \ <SID>check_back_space() ? "\<TAB>" :
   \ autocomplete#EngageAutocomplete()
 
-inoremap <expr><BS>
-  \ pumvisible() ? autocomplete#SmartClosePopup() :
-  \ "\<BS>"
+" inoremap <expr><BS>
+"   \ pumvisible() ? autocomplete#SmartClosePopup() :
+"   \ "\<BS>"
 
 function! s:check_back_space()
   let line = getline('.')                    " current line

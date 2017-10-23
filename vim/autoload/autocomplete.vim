@@ -14,10 +14,6 @@ function! autocomplete#SelectAutoCompleteOrCarriageReturn()
   return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
 endfunction
 
-function! autocomplete#SmartClosePopup()
-  return "\<C-y>"
-endfunction
-
 " Override thoughtbot tab wrapper to move in opposite direction
 " <S-Tab> is remapped in mappings.vim
 function! InsertTabWrapper()
