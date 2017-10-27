@@ -1,11 +1,9 @@
+set shortmess+=c
+
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :
   \ <SID>check_back_space() ? "\<TAB>" :
-  \ autocomplete#EngageAutocomplete()
-
-" inoremap <expr><BS>
-"   \ pumvisible() ? autocomplete#SmartClosePopup() :
-"   \ "\<BS>"
+  \ "\<C-n>"
 
 function! s:check_back_space()
   let line = getline('.')                    " current line
