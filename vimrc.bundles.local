@@ -23,6 +23,8 @@ Plug 'tpope/vim-unimpaired'
 " Experiments
 if has('nvim')
   Plug 'roxma/nvim-completion-manager'
+  Plug 'roxma/ncm-rct-complete'
+  Plug 'roxma/nvim-cm-tern'
 endif
 
 UnPlug 'ctrlp.vim'
