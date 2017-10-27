@@ -145,9 +145,6 @@ NumericLiterals:
 OneLineConditional:
   Enabled: false
 
-OpMethod:
-  Enabled: false
-
 ParameterLists:
   Enabled: false
 
@@ -186,7 +183,7 @@ SignalException:
 SpecialGlobalVars:
   Enabled: false
 
-StringLiterals:
+Style/StringLiterals:
   EnforcedStyle: double_quotes
   Exclude:
     - db/migrate/*.rb
@@ -236,9 +233,6 @@ ElseLayout:
   Enabled: false
 
 HandleExceptions:
-  Enabled: false
-
-InvalidCharacterLiteral:
   Enabled: false
 
 LiteralInCondition:
