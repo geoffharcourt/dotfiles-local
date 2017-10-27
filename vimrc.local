@@ -31,9 +31,10 @@ if (has("termguicolors"))
   set termguicolors
 endif
 
+set background=dark
+
 colorscheme one
 
-set background=dark
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
