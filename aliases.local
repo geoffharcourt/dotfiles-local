@@ -48,3 +48,7 @@ alias dotu='cd $HOME/dotfiles'
 # Don't use shell's built-in 'time' command
 alias time='/usr/bin/time'
 alias timestamp='date +%Y%m%d%H%M%S'
+
+# Don't forward TERM to ssh
+# https://medium.com/@dubistkomisch/how-to-actually-get-italics-and-true-colour-to-work-in-iterm-tmux-vim-9ebe55ebc2be
+alias ssh='TERM=xterm-256color ssh'
