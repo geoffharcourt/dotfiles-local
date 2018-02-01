@@ -14,7 +14,7 @@ Plug 'junegunn/gv.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-oblique' | Plug 'junegunn/vim-pseudocl'
 Plug 'kana/vim-textobj-entire' | Plug 'kana/vim-textobj-user'
-Plug 'Keithbsmiley/rspec.vim', { 'for': 'ruby'}
+Plug 'Keithbsmiley/rspec.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-vinegar'
