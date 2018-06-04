@@ -1,4 +1,3 @@
-git fetch production
-git log production/master..master
-git diff --stat production/master
-
+sha=$(heroku config:get HEROKU_SLUG_COMMIT -r production)
+git log $sha..master
+git diff --stat $sha
