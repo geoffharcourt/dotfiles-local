@@ -5,7 +5,6 @@ alias realias='source ~/.aliases'
 alias clear='clear; tmux clear-history'
 
 alias l='ls'
-alias xit="exit"
 
 # Git
 alias gaa='git add -p'
