@@ -4,7 +4,6 @@ set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 set -g history-limit 25000
 set -sg escape-time 5
 
-set-option -g default-command "reattach-to-user-namespace -l zsh"
 # Easy reloading of the tmux.conf configuration file
 bind-key r source-file ~/.tmux.conf \; display-message "~/.tmux.conf reloaded"
 
