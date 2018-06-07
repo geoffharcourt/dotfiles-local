@@ -36,13 +36,13 @@ setw -g mode-keys vi
 
 # Setup 'v' to begin selection as in Vim
 bind-key -T copy-mode-vi 'v' send -X begin-selection
-bind-key -T copy-mode-vi 'y' send -X copy-pipe "reattach-to-user-namespace pbcopy"
+bind-key -T copy-mode-vi 'y' send -X copy-pipe "pbcopy"
 
 # Update default binding of `Enter` to also use copy-pipe
 unbind -T copy-mode-vi Enter
 unbind -T copy-mode-vi Escape
 bind-key -T copy-mode-vi Escape send -X cancel
-bind-key -T copy-mode-vi Enter send -X copy-pipe "reattach-to-user-namespace pbcopy"\; send -X cancel
+bind-key -T copy-mode-vi Enter send -X copy-pipe "pbcopy"\; send -X cancel
 
 # More intuitive pane splitting key-bindings, open all in current path
 bind-key - split-window -v  -c '#{pane_current_path}'
