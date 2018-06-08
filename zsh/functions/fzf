@@ -30,6 +30,14 @@ fbr() {
   git checkout $(echo "$branch" | sed "s/.* //")
 }
 
+# fbr - checkout remote branch
+fba() {
+  local branches branch
+  branches=$(git branch -a) &&
+  branch=$(echo "$branches" | fzf-tmux -d 15 +s +m) &&
+  git checkout $(echo "$branch" | sed "s/.* //" | sed "s/remotes\/origin\///")
+}
+
 # fco - checkout git commit
 fco() {
   local commits commit
