@@ -24,7 +24,6 @@ Plug 'tpope/vim-unimpaired'
 " Experiments
 Plug 'roxma/nvim-completion-manager', { 'do' : 'pip3 install psutil setproctitle' }
 Plug 'roxma/ncm-rct-complete'
-Plug 'roxma/nvim-cm-tern'
 
 " Requires vim8 with has('python') or has('python3')
 " Requires the installation of msgpack-python. (pip install msgpack-python)
