@@ -25,10 +25,5 @@ Plug 'tpope/vim-unimpaired'
 Plug 'roxma/nvim-completion-manager', { 'do' : 'pip3 install psutil setproctitle' }
 Plug 'roxma/ncm-rct-complete'
 
-" Requires vim8 with has('python') or has('python3')
-" Requires the installation of msgpack-python. (pip install msgpack-python)
-if !has('nvim')
-  Plug 'roxma/vim-hug-neovim-rpc', { 'do': 'pip3 install msgpack-python' }
-endif
-
 UnPlug 'ctrlp.vim'
+UnPlug 'vim-slim'
