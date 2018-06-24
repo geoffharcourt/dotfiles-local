@@ -22,8 +22,11 @@ Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
 
 " Experiments
-Plug 'roxma/nvim-completion-manager', { 'do' : 'pip3 install psutil setproctitle' }
-Plug 'roxma/ncm-rct-complete'
+if has('nvim')
+  Plug 'roxma/nvim-completion-manager', { 'do' : 'pip3 install psutil setproctitle' }
+  Plug 'roxma/ncm-rct-complete'
+  Plug 'MaxMEllon/vim-jsx-pretty'
+endif
 
 UnPlug 'ctrlp.vim'
 UnPlug 'vim-slim'
