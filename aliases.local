@@ -1,10 +1,10 @@
 # Aliases
 alias realias='source ~/.aliases'
 
+alias l='ls'
+alias cld='cd ~/commonlit/commonlit'
 # tmux fixes: https://github.com/junegunn/fzf/issues/201
 alias clear='clear; tmux clear-history'
-
-alias l='ls'
 
 # Git
 alias gaa='git add -p'
