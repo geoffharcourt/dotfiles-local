@@ -1,6 +1,7 @@
 " Colors
 Plug 'rakr/vim-one'
 Plug 'morhetz/gruvbox'
+Plug 'shinchu/lightline-gruvbox.vim'
 
 " Other plugins
 Plug 'christoomey/vim-tmux-navigator'

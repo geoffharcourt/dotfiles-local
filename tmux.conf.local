@@ -1,6 +1,3 @@
-set -g default-terminal 'tmux-256color'
-set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
-
 set -g history-limit 25000
 set -sg escape-time 5
 
@@ -63,6 +60,7 @@ bind g split-window -c "#{pane_current_path}" -h -p 50 'gitsh'
 
 set -g status-left  " #[fg=white,bold]#S "
 
+set -g clock-mode-style 24
 # pane number display
 set-option -g display-panes-active-colour blue #blue
 set-option -g display-panes-colour brightred #orange
@@ -86,7 +84,6 @@ set -g pane-border-bg default
 set -g pane-border-fg "#373b41"
 
 set -g clock-mode-colour "#81a2be"
-set -g clock-mode-style 24
 
 set -g message-bg "#8abeb7"
 set -g message-fg "#000000"
