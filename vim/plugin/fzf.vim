@@ -1,8 +1,8 @@
 let g:fzf_buffers_jump = 1
 let g:fzf_layout = { 'down': '40%' }
 let g:fzf_tags_command = './.git/hooks/tags'
-let g:fzf_colors =
-  \ { 'fg':      ['fg', 'Normal'],
+let g:fzf_colors = {
+  \ 'fg':      ['fg', 'Normal'],
   \ 'bg':      ['bg', 'Normal'],
   \ 'hl':      ['fg', 'Exception'],
   \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
