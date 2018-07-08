@@ -27,7 +27,9 @@ Plug 'tpope/vim-unimpaired'
 if has('nvim')
   Plug 'ncm2/ncm2' | Plug 'roxma/nvim-yarp'
   Plug 'MaxMEllon/vim-jsx-pretty'
+
   Plug 'ncm2/ncm2-tagprefix'
+  Plug 'ncm2/ncm2-github'
   Plug 'ncm2/ncm2-tmux'
   Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
   Plug 'ncm2/ncm2-bufword'
