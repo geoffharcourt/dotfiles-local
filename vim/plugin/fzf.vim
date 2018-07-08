@@ -1,5 +1,5 @@
 let g:fzf_buffers_jump = 1
-let g:fzf_layout = { 'down': '40%' }
+let g:fzf_layout = { 'down': '50%' }
 let g:fzf_tags_command = './.git/hooks/tags'
 let g:fzf_colors = {
   \ 'fg':      ['fg', 'Normal'],
@@ -14,9 +14,3 @@ let g:fzf_colors = {
   \ 'marker':  ['fg', 'Keyword'],
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
-
-command! -bang -nargs=* Ag
-  \ call fzf#vim#ag(<q-args>,
-  \                 <bang>0 ? fzf#vim#with_preview('up:60%')
-  \                         : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \                 <bang>0)

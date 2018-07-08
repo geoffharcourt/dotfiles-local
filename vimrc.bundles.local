@@ -4,6 +4,7 @@ Plug 'morhetz/gruvbox'
 Plug 'shinchu/lightline-gruvbox.vim'
 
 " Other plugins
+Plug 'airblade/vim-gitgutter'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'derekprior/vim-trimmer'
 Plug 'itchyny/lightline.vim'
@@ -20,8 +21,8 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'rizzatti/dash.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
-Plug 'tpope/vim-vinegar'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-vinegar'
 
 " Experiments
 if has('nvim')

@@ -31,7 +31,7 @@ vnoremap j gj
 vnoremap k gk
 
 " Bind K to grep word under cursor
-nnoremap K :set nois<CR> :StaticAg <C-R><C-W><CR>
+nnoremap K :set nois<CR> :Ag <C-R><C-W><CR>
 
 " Re-select prior selection in visual mode
 nnoremap gv `[v`]

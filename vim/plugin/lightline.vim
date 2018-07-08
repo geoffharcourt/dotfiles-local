@@ -8,6 +8,9 @@ let g:lightline = {
     \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
     \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
     \ },
+    \ 'component_function': {
+    \   'filename': 'LightlineFilename',
+    \ },
     \ 'component_visible_condition': {
     \   'readonly': '(&filetype!="help"&& &readonly)',
     \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
@@ -15,14 +18,6 @@ let g:lightline = {
     \ }
 \ }
 
-function! LightLineFilename()
-  let git_root = fnamemodify(fugitive#extract_git_dir(expand("%:p")), ":h")
-
-  if expand("%:t") == ""
-    return "[No Name]"
-  elseif git_root != "" && git_root != "."
-    return substitute(expand("%:p"), git_root . "/", "", "")
-  else
-    return expand("%:p")
-  endif
+function! LightlineFilename()
+  return expand('%:t') !=# '' ? expand('%') : '[No Name]'
 endfunction
