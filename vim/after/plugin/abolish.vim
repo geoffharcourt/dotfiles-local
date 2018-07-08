@@ -3,24 +3,24 @@ if !exists(':Abolish')
   finish
 endif
 
-Abolish peform perform
-Abolish comparision comparison
-Abolish fcuntion function
-Abolish redner render
-Abolish inlcude include
-Abolish a_hash_inlcuding a_hash_including
-Abolish sohuld should
 Abolish Heroky Heroku
-Abolish timspan timespan
-Abolish porfolio portfolio
-Abolish delagate delegate
-Abolish inpsect inspect
-Abolish thuoghtbot thoughtbot
+Abolish a_hash_inlcuding a_hash_including
 Abolish anme name
-Abolish private_cosntant private_constant
+Abolish comparision comparison
+Abolish decsribe describe
+Abolish delagate delegate
+Abolish destory destroy
+Abolish fcuntion function
+Abolish inlcude include
+Abolish inpsect inspect
 Abolish obejct object
+Abolish peform perform
 Abolish peformance performance
+Abolish porfolio portfolio
+Abolish private_cosntant private_constant
+Abolish redner render
+Abolish sohuld should
+Abolish thuoghtbot thoughtbot
+Abolish timspan timespan
 Abolish transction transaction
 Abolish udpate update
-Abolish destory destroy
-Abolish decsribe describe

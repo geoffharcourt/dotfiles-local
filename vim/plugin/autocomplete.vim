@@ -1,4 +1,13 @@
 set shortmess+=c
+set completeopt=noinsert,menuone,noselect
+
+autocmd BufEnter * call ncm2#enable_for_buffer()
+
+vmap <c-j> <Plug>snipMateNextOrTrigger
+vmap <c-k> <Plug>snipMateBack
+
+imap <expr> <c-k> pumvisible() ? "\<c-y>\<Plug>snipMateBack" : "\<Plug>snipMateBack"
+imap <expr> <c-j> pumvisible() ? "\<c-y>\<Plug>snipMateNextOrTrigger" : "\<Plug>snipMateNextOrTrigger"
 
 inoremap <silent><expr> <TAB>
   \ pumvisible() ? "\<C-n>" :

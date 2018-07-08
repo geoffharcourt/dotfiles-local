@@ -4,7 +4,7 @@ cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 " Get dot command repeatability in visual mode
 xnoremap . :normal.<CR>
 
-nnoremap \ :Ag<CR>
+nnoremap \ :Ag<Space>
 
 " Override thoughtbot completion direction
 inoremap <S-Tab> <C-P>
@@ -57,15 +57,13 @@ noremap <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 " Split a string and move the portion after the next comma to the next line
 noremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
 
-" temporarily stop search highlighting after search
-nnoremap <Leader>h :nohlsearch<CR>
-
 " Fix indentation across file
 nnoremap <Leader>i mmgg=G`m<CR>
 
-" http://robots.thoughtbot.com/faster-grepping-in-vim changed from the above blog post to use ag.vim hello
 nnoremap <Leader>o :call quickfix#ToggleLocationList()<CR>
 nnoremap <Leader>m :w<CR>:Move <C-R>%
 nnoremap <Leader>p "*p
 nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
+nnoremap <Leader>R :RunInInteractiveShell<Space>
+nnoremap <Leader>r :redraw!
 vnoremap <Leader>y "*y
