@@ -12,7 +12,8 @@ bind -r J resize-pane -D 5
 bind -r K resize-pane -U 5
 bind -r L resize-pane -R 5
 
-# Seamless aviation using vim-tmux-navigator (github christoomey/vim-tmux-navigator)
+# Seamless aviation using vim-tmux-navigator
+# https://github.com/christoomey/vim-tmux-navigator
 is_vim="ps -o state= -o comm= -t '#{pane_tty}' \
     | grep -iqE '^[^TXZ ]+ +(\\S+\\/)?g?(view|n?vim?x?)(diff)?$'"
 bind -n C-h if-shell "$is_vim" "send-keys C-h" "select-pane -L"
