@@ -14,11 +14,11 @@ function! InsertTabWrapper()
 endfunction
 
 function! CancelAutoCompleteOrInsertMode()
-  if pumvisible()
-    return "\<C-y>"
-  else
+  " if pumvisible()
+  "   return "\<C-y>"
+  " else
     return "\<Esc>"
-  endif
+  " endif
 endfunction
 
 function! CarriageReturnOrClearAndCarriageReturn()

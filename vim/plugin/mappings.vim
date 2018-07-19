@@ -65,5 +65,5 @@ nnoremap <Leader>m :w<CR>:Move <C-R>%
 nnoremap <Leader>p "*p
 nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
 nnoremap <Leader>R :RunInInteractiveShell<Space>
-nnoremap <Leader>r :redraw!
+nnoremap <Leader>r :redraw!<CR>
 vnoremap <Leader>y "*y
