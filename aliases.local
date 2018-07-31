@@ -2,7 +2,7 @@
 alias realias='source ~/.aliases'
 
 alias l='ls'
-alias cld='cd ~/commonlit/commonlit'
+alias cld='cd ~/commonlit/commonlit && tat'
 # tmux fixes: https://github.com/junegunn/fzf/issues/201
 alias clear='clear; tmux clear-history'
 
