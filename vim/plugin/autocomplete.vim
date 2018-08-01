@@ -42,7 +42,7 @@ vmap <c-k> <Plug>snipMateBack
 imap <expr> <c-k> pumvisible() ? "\<c-y>\<Plug>snipMateBack" : "\<Plug>snipMateBack"
 imap <expr> <c-j> pumvisible() ? "\<c-y>\<Plug>snipMateNextOrTrigger" : "\<Plug>snipMateNextOrTrigger"
 
-inoremap <Esc> <c-r>=CancelAutoCompleteOrInsertMode()<CR>
+inoremap <Esc> <c-r>=CancelAutoCompleteOrInsertMode()<CR><Space><r>
 inoremap <CR> <c-r>=CarriageReturnOrClearAndCarriageReturn()<CR>
 
 inoremap <silent><expr> <TAB>
