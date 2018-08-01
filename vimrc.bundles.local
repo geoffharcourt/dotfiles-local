@@ -26,7 +26,7 @@ Plug 'tpope/vim-vinegar'
 
 " Experiments
 if has('nvim')
-  Plug 'ncm2/ncm2', {'commit': 'bf1806e2ef256772a44c7c874250ef0b4a7dc04e'} | Plug 'roxma/nvim-yarp'
+  Plug 'ncm2/ncm2' | Plug 'roxma/nvim-yarp'
   Plug 'MaxMEllon/vim-jsx-pretty'
 
   Plug 'ncm2/ncm2-tagprefix'
