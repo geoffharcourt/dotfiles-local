@@ -194,9 +194,6 @@ VariableInterpolation:
 TrailingCommaInArguments:
   Enabled: true
 
-TrailingCommaInLiteral:
-  Enabled: true
-
 TrivialAccessors:
   Enabled: false
 

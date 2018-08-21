@@ -24,12 +24,12 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 
-" Experiments
 if has('nvim')
   Plug 'ncm2/ncm2' | Plug 'roxma/nvim-yarp'
   Plug 'MaxMEllon/vim-jsx-pretty'
 
-  Plug 'ncm2/ncm2-tagprefix'
+  " Plug 'ncm2/ncm2-tagprefix'
+  Plug 'ncm2/ncm2-neoinclude' | Plug 'Shougo/neoinclude.vim'
   Plug 'ncm2/ncm2-github'
   Plug 'ncm2/ncm2-tmux'
   Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
@@ -44,6 +44,8 @@ if has('nvim')
   Plug 'garbas/vim-snipmate'
 endif
 
+" Experiments
+Plug 'joker1007/vim-ruby-heredoc-syntax'
 
 UnPlug 'ctrlp.vim'
 UnPlug 'vim-slim'
