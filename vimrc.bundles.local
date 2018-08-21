@@ -34,6 +34,7 @@ if has('nvim')
   Plug 'ncm2/ncm2-tmux'
   Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
   Plug 'ncm2/ncm2-bufword'
+  Plug 'ncm2/ncm2-path'
 
   " based on snipmate
   Plug 'ncm2/ncm2-snipmate'
@@ -44,8 +45,10 @@ if has('nvim')
   Plug 'garbas/vim-snipmate'
 endif
 
+
 " Experiments
 Plug 'joker1007/vim-ruby-heredoc-syntax'
+Plug 'tweekmonster/startuptime.vim'
 
 UnPlug 'ctrlp.vim'
 UnPlug 'vim-slim'
