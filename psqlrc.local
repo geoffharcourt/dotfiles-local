@@ -1,3 +1,5 @@
 \pset null '(null)'
 \pset pager off
 \x auto
+
+\set PROMPT1 '%/ %x'
