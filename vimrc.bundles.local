@@ -1,7 +1,5 @@
 " Colors
 Plug 'rakr/vim-one'
-Plug 'morhetz/gruvbox'
-Plug 'shinchu/lightline-gruvbox.vim'
 
 " Other plugins
 Plug 'airblade/vim-gitgutter'
@@ -24,29 +22,16 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 
-if has('nvim')
-  Plug 'ncm2/ncm2' | Plug 'roxma/nvim-yarp'
-  Plug 'MaxMEllon/vim-jsx-pretty'
+Plug 'ncm2/ncm2' | Plug 'roxma/nvim-yarp'
+Plug 'MaxMEllon/vim-jsx-pretty'
 
-  " Plug 'ncm2/ncm2-tagprefix'
-  Plug 'ncm2/ncm2-neoinclude' | Plug 'Shougo/neoinclude.vim'
-  Plug 'ncm2/ncm2-tmux'
-  Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-  Plug 'ncm2/ncm2-bufword'
-
-  " based on snipmate
-  Plug 'ncm2/ncm2-snipmate'
-
-  " snipmate dependencies
-  Plug 'tomtom/tlib_vim'
-  Plug 'marcweber/vim-addon-mw-utils'
-  Plug 'garbas/vim-snipmate'
-endif
-
+" Plug 'ncm2/ncm2-tagprefix'
+Plug 'ncm2/ncm2-neoinclude' | Plug 'Shougo/neoinclude.vim'
+Plug 'ncm2/ncm2-tmux'
+Plug 'ncm2/ncm2-bufword'
 
 " Experiments
 Plug 'joker1007/vim-ruby-heredoc-syntax'
-Plug 'tweekmonster/startuptime.vim'
 
 UnPlug 'ctrlp.vim'
 UnPlug 'vim-slim'

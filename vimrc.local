@@ -23,7 +23,6 @@ set winheight=10
 set winminheight=5
 
 let g:one_allow_italics = 1
-let g:gruvbox_italic = 1
 
 " Make true colors work in neovim and vim 8
 let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
@@ -31,7 +30,7 @@ let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
 set termguicolors
 
 set background=dark
-colorscheme gruvbox
+colorscheme one
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
