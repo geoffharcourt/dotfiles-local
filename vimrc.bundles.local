@@ -25,10 +25,9 @@ Plug 'tpope/vim-vinegar'
 Plug 'ncm2/ncm2' | Plug 'roxma/nvim-yarp'
 Plug 'MaxMEllon/vim-jsx-pretty'
 
-" Plug 'ncm2/ncm2-tagprefix'
-Plug 'ncm2/ncm2-neoinclude' | Plug 'Shougo/neoinclude.vim'
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-bufword'
+Plug 'ncm2/ncm2-tagprefix'
 
 " Experiments
 Plug 'joker1007/vim-ruby-heredoc-syntax'
