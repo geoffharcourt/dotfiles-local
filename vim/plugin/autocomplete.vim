@@ -14,14 +14,6 @@ function! InsertTabWrapper()
   endif
 endfunction
 
-function! CancelAutoCompleteOrInsertMode()
-  " if pumvisible()
-  "   return "\<C-y>"
-  " else
-    return "\<Esc>"
-  " endif
-endfunction
-
 function! CarriageReturnOrClearAndCarriageReturn()
   if pumvisible()
     return "\<C-y>\<CR>"
@@ -37,13 +29,6 @@ function! s:check_back_space()
   return strlen(substr) == 0
 endfunction
 
-vmap <c-j> <Plug>snipMateNextOrTrigger
-vmap <c-k> <Plug>snipMateBack
-
-imap <expr> <c-k> pumvisible() ? "\<c-y>\<Plug>snipMateBack" : "\<Plug>snipMateBack"
-imap <expr> <c-j> pumvisible() ? "\<c-y>\<Plug>snipMateNextOrTrigger" : "\<Plug>snipMateNextOrTrigger"
-
-inoremap <Esc> <c-r>=CancelAutoCompleteOrInsertMode()<CR><Space><r>
 inoremap <CR> <c-r>=CarriageReturnOrClearAndCarriageReturn()<CR>
 
 inoremap <silent><expr> <TAB>
