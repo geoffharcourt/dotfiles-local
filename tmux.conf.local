@@ -1,5 +1,8 @@
-set -g default-terminal 'screen-256color'
-set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
+# set -g default-terminal 'screen-256color'
+# set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
+
+set -g default-terminal "xterm-256color-italic"
+set -ga terminal-overrides ",xterm-256color-italic:Tc"
 
 set -g history-limit 25000
 set -sg escape-time 5
@@ -62,38 +65,105 @@ bind-key C-b send-keys 'tat && exit' 'C-m'
 # show gitsh in side pane
 bind g split-window -c "#{pane_current_path}" -h -p 50 'gitsh'
 
-set -g status-left  " #[fg=white,bold]#S "
+set -g status-left  " #[fg=bold]#S "
 
 set -g clock-mode-style 24
-# pane number display
-set-option -g display-panes-active-colour blue #blue
-set-option -g display-panes-colour brightred #orange
+# # pane number display
+# set-option -g display-panes-active-colour blue #blue
+# set-option -g display-panes-colour brightred #orange
+#
+# ## set status bar
+# set -g status-bg "#373b41"
+# set -g status-fg "#c5c8c6"
+#
+# ## highlight active window
+# setw -g window-status-current-bg "#282a2e"
+# setw -g window-status-current-fg "#81a2be"
+#
+# ## highlight activity in status bar
+# setw -g window-status-activity-fg "#8abeb7"
+# setw -g window-status-activity-bg "#1d1f21"
+#
+# ## pane border and colors
+# set -g pane-active-border-bg default
+# set -g pane-active-border-fg "#373b41"
+# set -g pane-border-bg default
+# set -g pane-border-fg "#373b41"
+#
+# set -g clock-mode-colour "#81a2be"
+#
+# set -g message-bg "#8abeb7"
+# set -g message-fg "#000000"
+#
+# set -g message-command-bg "#8abeb7"
+# set -g message-command-fg "#000000"
+#
+# set -g mode-bg "#8abeb7"
+# set -g mode-fg "#000000"
 
-## set status bar
-set -g status-bg "#373b41"
-set -g status-fg "#c5c8c6"
+# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
+# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
 
-## highlight active window
-setw -g window-status-current-bg "#282a2e"
-setw -g window-status-current-fg "#81a2be"
+# Project:    Nord tmux
+# Repository: https://github.com/arcticicestudio/nord-tmux
+# License:    MIT
 
-## highlight activity in status bar
-setw -g window-status-activity-fg "#8abeb7"
-setw -g window-status-activity-bg "#1d1f21"
+#+----------------+
+#+ Plugin Support +
+#+----------------+
+#+--- tmux-prefix-highlight ---+
+set -g @prefix_highlight_fg black
+set -g @prefix_highlight_bg brightcyan
 
-## pane border and colors
-set -g pane-active-border-bg default
-set -g pane-active-border-fg "#373b41"
-set -g pane-border-bg default
-set -g pane-border-fg "#373b41"
+#+---------+
+#+ Options +
+#+---------+
+set -g status-interval 1
+set -g status on
 
-set -g clock-mode-colour "#81a2be"
+#+--------+
+#+ Status +
+#+--------+
+#+--- Layout ---+
+set -g status-justify left
 
-set -g message-bg "#8abeb7"
-set -g message-fg "#000000"
+#+--- Colors ---+
+set -g status-bg black
+set -g status-fg white
+set -g status-attr none
 
-set -g message-command-bg "#8abeb7"
-set -g message-command-fg "#000000"
+#+-------+
+#+ Panes +
+#+-------+
+set -g pane-border-bg black
+set -g pane-border-fg black
+set -g pane-active-border-bg black
+set -g pane-active-border-fg brightblack
+set -g display-panes-colour black
+set -g display-panes-active-colour brightblack
 
-set -g mode-bg "#8abeb7"
-set -g mode-fg "#000000"
+#+------------+
+#+ Clock Mode +
+#+------------+
+setw -g clock-mode-colour cyan
+
+#+----------+
+#+ Messages +
+#+---------+
+set -g message-fg cyan
+set -g message-bg brightblack
+set -g message-command-fg cyan
+set -g message-command-bg brightblack
+
+#+--------+
+#+ Status +
+#+--------+
+#+--- Bars ---+
+#set -g status-left "#[fg=black,bg=blue,bold] #S#[fg=blue,bg=black,nobold,noitalics,nounderscore]"
+set -g status-left "#[fg=black,bg=blue,bold] #S #[fg=blue,bg=black,nobold,noitalics,nounderscore]"
+set -g status-right "#{prefix_highlight}#[fg=brightblack,bg=black,nobold,noitalics,nounderscore]#[fg=white,bg=brightblack] %Y-%m-%d #[fg=white,bg=brightblack,nobold,noitalics,nounderscore]#[fg=white,bg=brightblack] %H:%M #[fg=cyan,bg=brightblack,nobold,noitalics,nounderscore]#[fg=black,bg=cyan,bold] #H "
+
+#+--- Windows ---+
+set -g window-status-format "#[fg=black,bg=brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=brightblack]#I #[fg=white,bg=brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=brightblack]#W #F #[fg=brightblack,bg=black,nobold,noitalics,nounderscore]"
+set -g window-status-current-format "#[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#I #[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#W #F #[fg=cyan,bg=black,nobold,noitalics,nounderscore]"
+set -g window-status-separator ""
