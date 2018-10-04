@@ -60,10 +60,12 @@ noremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
 " Fix indentation across file
 nnoremap <Leader>i mmgg=G`m<CR>
 
+nmap <silent> <leader>k <Plug>DashSearch
+nmap <silent> <leader>K <Plug>DashGlobalSearch
+
 nnoremap <Leader>o :call quickfix#ToggleLocationList()<CR>
 nnoremap <Leader>m :w<CR>:Move <C-R>%
 nnoremap <Leader>p "*p
 nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
-nnoremap <Leader>R :RunInInteractiveShell<Space>
 nnoremap <Leader>r :redraw!<CR>
 vnoremap <Leader>y "*y

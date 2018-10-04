@@ -13,6 +13,7 @@ set number relativenumber " The best of both worlds
 set scrolloff=999
 set synmaxcol=250 " Don't try to highlight lines longer than 250 characters.
 set smartcase     " searches are case-sensitive if a capital is in term
+set termguicolors " True color in neovim and vim 8
 set ttimeout      " Fast timeout
 set undodir=$HOME/.undodir
 set undofile
@@ -24,12 +25,6 @@ set winminheight=5
 
 let g:one_allow_italics = 1
 
-" Make true colors work in neovim and vim 8
-let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
-set termguicolors
-
-set background=dark
 colorscheme one
 
 " Highlight VCS conflict markers
