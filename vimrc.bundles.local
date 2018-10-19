@@ -1,5 +1,7 @@
 " Colors
 Plug 'rakr/vim-one'
+Plug 'arcticicestudio/nord-vim'
+Plug 'morhetz/gruvbox'
 
 " Other plugins
 Plug 'airblade/vim-gitgutter'
@@ -24,6 +26,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 
 Plug 'ncm2/ncm2' | Plug 'roxma/nvim-yarp'
+Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tagprefix'

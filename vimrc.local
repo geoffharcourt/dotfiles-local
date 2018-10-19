@@ -9,7 +9,7 @@ set nofoldenable
 set noshowmode
 set nowrap
 set number relativenumber " The best of both worlds
-" set redrawtime=1000 " Stop highlighting if it takes more than a second
+set redrawtime=1000 " Stop highlighting if it takes more than a second
 set scrolloff=999
 set synmaxcol=250 " Don't try to highlight lines longer than 250 characters.
 set smartcase     " searches are case-sensitive if a capital is in term
@@ -23,6 +23,9 @@ set winwidth=84
 set winheight=10
 set winminheight=5
 
+let g:gruvbox_italic = 1
+let g:nord_italic = 1
+let g:nord_italic_comments = 1
 let g:one_allow_italics = 1
 
 colorscheme one
@@ -32,6 +35,7 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 set colorcolumn=81
 
+" Experiment: test tag jumping when multiples exist
 nnoremap <C-]> <Esc>:exe "tjump " . expand("<cword>")<Esc>
 
 " See what's going
