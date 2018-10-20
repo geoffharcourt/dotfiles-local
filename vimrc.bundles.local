@@ -15,6 +15,7 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-slash'
+Plug 'joker1007/vim-ruby-heredoc-syntax'
 Plug 'kana/vim-textobj-entire' | Plug 'kana/vim-textobj-user'
 Plug 'Keithbsmiley/rspec.vim'
 Plug 'machakann/vim-highlightedyank'
@@ -32,7 +33,8 @@ Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tagprefix'
 
 " Experiments
-Plug 'joker1007/vim-ruby-heredoc-syntax'
+Plug 'christoomey/vim-conflicted'
 
+" Excludes
 UnPlug 'ctrlp.vim'
 UnPlug 'vim-slim'
