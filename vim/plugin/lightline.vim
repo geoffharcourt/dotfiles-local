@@ -2,22 +2,23 @@ let g:lightline = {
     \ 'colorscheme': 'one',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'fugitive', 'readonly', 'filename', 'modified' ] ]
+    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+    \   'right': [ [ 'percent', 'lineinfo' ] ,
+    \              [ 'filetype' ] ]
     \ },
     \ 'component': {
     \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-    \   'fugitive': '%{exists("*fugitive#head")?fugitive#head():""}'
     \ },
     \ 'component_function': {
     \   'filename': 'LightlineFilename',
+    \   'gitbranch': 'fugitive#head'
     \ },
     \ 'component_visible_condition': {
     \   'readonly': '(&filetype!="help"&& &readonly)',
     \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-    \   'fugitive': '(exists("*fugitive#head") && ""!=fugitive#head())'
     \ }
 \ }
 
 function! LightlineFilename()
-  return expand('%:t') !=# '' ? expand('%') : '[No Name]'
+  return expand('%:t') !=# '' ? pathshorten(expand('%')) : '[No Name]'
 endfunction
