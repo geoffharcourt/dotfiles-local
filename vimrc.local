@@ -35,9 +35,6 @@ match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 set colorcolumn=81
 
-" Experiment: test tag jumping when multiples exist
-nnoremap <C-]> <Esc>:exe "tjump " . expand("<cword>")<Esc>
-
 " See what's going
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
   \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
