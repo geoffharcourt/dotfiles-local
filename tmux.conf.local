@@ -1,8 +1,8 @@
 # set -g default-terminal 'screen-256color'
 # set -as terminal-overrides ',xterm*:Tc:sitm=\E[3m'
 
-set -g default-terminal "xterm-256color-italic"
-set -ga terminal-overrides ",xterm-256color-italic:Tc"
+set -g default-terminal "xterm-256color"
+set -ga terminal-overrides ",xterm-256color:Tc"
 
 set -g history-limit 25000
 set -sg escape-time 5
