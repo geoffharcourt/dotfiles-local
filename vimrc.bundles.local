@@ -5,6 +5,7 @@ Plug 'morhetz/gruvbox'
 
 " Other plugins
 Plug 'airblade/vim-gitgutter'
+Plug 'AndrewRadev/switch.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'derekprior/vim-trimmer'
 Plug 'itchyny/lightline.vim'
