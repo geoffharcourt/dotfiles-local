@@ -1,6 +1,6 @@
 # export FZF_CTRL_T_COMMAND='ag -g ""'
 # export FZF_DEFAULT_COMMAND='ag -g ""'
-export FZF_CTRL_T_COMMAND='rg --files --no-ignore-vcs --hidden'
+export FZF_CTRL_T_COMMAND='rg --files --hidden'
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore-vcs --hidden'
 export FZF_DEFAULT_OPTS=' --bind ctrl-f:page-down,ctrl-b:page-up '
 
