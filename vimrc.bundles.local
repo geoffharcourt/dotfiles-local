@@ -22,6 +22,7 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'mhinz/vim-signify'
 Plug 'rizzatti/dash.vim'
+Plug 'RRethy/vim-illuminate'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'
@@ -32,14 +33,16 @@ Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
 Plug 'ncm2/ncm2-tmux'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tagprefix'
+Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
+Plug 'fgrsnau/ncm2-otherbuf', { 'branch': 'ncm2' }
 
 " Experiments
 Plug 'christoomey/vim-conflicted'
-Plug 'fgrsnau/ncm2-otherbuf', { 'branch': 'ncm2' }
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+Plug 'kristijanhusak/vim-js-file-import'
 
 " Excludes
 UnPlug 'ctrlp.vim'

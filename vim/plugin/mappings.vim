@@ -57,11 +57,18 @@ noremap <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 " Split a string and move the portion after the next comma to the next line
 noremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
 
+nmap <silent> <leader>D <Plug>DashSearch
+
+" LSP features
+nnoremap <leader>d :ALEHover<CR>
+nnoremap <leader>k :ALEFindReferences<CR>
+nnoremap <leader>K :FindAll <C-R><C-W><CR>
+nnoremap <F5> :call LanguageClient_contextMenu()<CR>
+nnoremap <C-[> :call LanguageClient#textDocument_definition()<CR>
+nnoremap <leader>D :call LanguageClient#textDocument_definition({'gotoCmd': 'vs'})<CR>
+
 " Fix indentation across file
 nnoremap <Leader>i mmgg=G`m<CR>
-
-nmap <silent> <leader>k <Plug>DashSearch
-nmap <silent> <leader>K <Plug>DashGlobalSearch
 
 nnoremap <Leader>o :call quickfix#ToggleLocationList()<CR>
 nnoremap <Leader>m :w<CR>:Move <C-R>%
@@ -69,3 +76,4 @@ nnoremap <Leader>p "*p
 nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
 nnoremap <Leader>r :redraw!<CR>
 vnoremap <Leader>y "*y
+

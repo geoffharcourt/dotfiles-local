@@ -24,8 +24,8 @@ alias heroku='nocorrect heroku'
 alias heroky='heroku'
 
 # Postgres
-alias pgstart='brew services start postgresql'
-alias pgstop='brew services stop postgresql && rm -f /usr/local/var/postgres/postmaster.pid'
+alias pgstart='brew services start postgresql@10'
+alias pgstop='brew services stop postgresql@10 && rm -f /usr/local/var/postgres/postmaster.pid'
 alias pgrestart='pgstop && pgstart'
 
 # Ruby
