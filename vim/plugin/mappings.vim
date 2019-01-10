@@ -60,11 +60,11 @@ noremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
 nmap <silent> <leader>D <Plug>DashSearch
 
 " LSP features
-nnoremap <leader>d :ALEHover<CR>
-nnoremap <leader>k :ALEFindReferences<CR>
-nnoremap <leader>K :FindAll <C-R><C-W><CR>
+nnoremap <leader>k :ALEHover<CR>
+nnoremap <leader>K :ALEFindReferences<CR>
+" nnoremap <leader>K :FindAll <C-R><C-W><CR>
 nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-nnoremap <C-[> :call LanguageClient#textDocument_definition()<CR>
+nnoremap <leader>d :call LanguageClient#textDocument_definition()<CR>
 nnoremap <leader>D :call LanguageClient#textDocument_definition({'gotoCmd': 'vs'})<CR>
 
 " Fix indentation across file
