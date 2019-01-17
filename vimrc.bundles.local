@@ -26,11 +26,12 @@ Plug 'RRethy/vim-illuminate'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'
+Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-vinegar'
 
 Plug 'ncm2/ncm2' | Plug 'roxma/nvim-yarp'
 Plug 'ncm2/ncm2-tern',  {'do': 'npm install'}
-Plug 'ncm2/ncm2-tmux'
+Plug 'wellle/tmux-complete.vim'
 Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tagprefix'
 Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
