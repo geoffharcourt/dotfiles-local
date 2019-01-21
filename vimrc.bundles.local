@@ -36,13 +36,13 @@ Plug 'ncm2/ncm2-bufword'
 Plug 'ncm2/ncm2-tagprefix'
 Plug 'ncm2/ncm2-vim' | Plug 'Shougo/neco-vim'
 Plug 'fgrsnau/ncm2-otherbuf', { 'branch': 'ncm2' }
-
-" Experiments
-Plug 'christoomey/vim-conflicted'
 Plug 'autozimu/LanguageClient-neovim', {
     \ 'branch': 'next',
     \ 'do': 'bash install.sh',
     \ }
+
+" Experiments
+Plug 'christoomey/vim-conflicted'
 
 " Excludes
 UnPlug 'ctrlp.vim'
