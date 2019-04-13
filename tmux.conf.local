@@ -4,7 +4,7 @@
 set -g default-terminal "xterm-256color"
 set -ga terminal-overrides ",xterm-256color:Tc"
 
-set -g history-limit 25000
+set -g history-limit 500000
 set -sg escape-time 5
 
 # Easy reloading of the tmux.conf configuration file

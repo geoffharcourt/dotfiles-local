@@ -2,7 +2,7 @@ let g:lightline = {
     \ 'colorscheme': 'one',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+    \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ],
     \   'right': [ [ 'percent', 'lineinfo' ] ,
     \              [ 'filetype' ] ]
     \ },
@@ -10,6 +10,7 @@ let g:lightline = {
     \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
     \ },
     \ 'component_function': {
+    \   'cocstatus': 'coc#status',
     \   'filename': 'LightlineFilename',
     \   'gitbranch': 'fugitive#head'
     \ },

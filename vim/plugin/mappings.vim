@@ -57,15 +57,25 @@ noremap <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 " Split a string and move the portion after the next comma to the next line
 noremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
 
+nnoremap <silent> <leader>d :call <SID>show_documentation()<CR>
 nmap <silent> <leader>D <Plug>DashSearch
 
 " LSP features
 nnoremap <leader>k :ALEHover<CR>
-nnoremap <leader>K :ALEFindReferences<CR>
-" nnoremap <leader>K :FindAll <C-R><C-W><CR>
-nnoremap <F5> :call LanguageClient_contextMenu()<CR>
-nnoremap <leader>d :call LanguageClient#textDocument_definition()<CR>
-nnoremap <leader>D :call LanguageClient#textDocument_definition({'gotoCmd': 'vs'})<CR>
+nnoremap <leader>K :ALEGoToDefinition<CR>
+
+function! s:show_documentation()
+  if &filetype == 'vim'
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
 
 " Fix indentation across file
 nnoremap <Leader>i mmgg=G`m<CR>

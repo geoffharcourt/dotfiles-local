@@ -192,6 +192,7 @@ VariableInterpolation:
   Enabled: false
 
 TrailingCommaInArguments:
+  EnforcedStyleForMultiline: consistent_comma
   Enabled: true
 
 TrivialAccessors:
