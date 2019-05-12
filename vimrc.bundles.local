@@ -28,12 +28,13 @@ Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-vinegar'
+Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 
 " Experiments
 Plug 'christoomey/vim-conflicted'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 Plug 'leafgarland/typescript-vim'
-Plug 'MaxMellon/vim-jsx-pretty'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'skwp/greplace.vim'
 
 " Excludes
 UnPlug 'ctrlp.vim'
