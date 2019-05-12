@@ -1,10 +1,6 @@
 set shortmess+=c
 set completeopt=noinsert,menuone,noselect
 
-" autocmd BufEnter * call ncm2#enable_for_buffer()
-
-" autocmd TextChangedI * call ncm2#auto_trigger()
-" Override thoughtbot tab wrapper to move in opposite direction
 " <S-Tab> is remapped in mappings.vim
 function! InsertTabWrapper()
   if s:check_back_space()

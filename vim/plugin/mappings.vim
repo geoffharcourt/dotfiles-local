@@ -87,4 +87,3 @@ nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
 nnoremap <Leader>r :redraw!<CR>
 nnoremap <Leader>S :execute "Dispatch NO_HEADLESS=true rspec ". expand("%") .":". line(".")<CR>
 vnoremap <Leader>y "*y
-
