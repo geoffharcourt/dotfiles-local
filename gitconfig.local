@@ -1,6 +1,6 @@
 [alias]
   cob = "checkout -b"
-	conflicted = !nvim +Conflicted
+  conflicted = !nvim +Conflicted
   l = log -n15 --color --graph --pretty=format:'%Cred%h%Creset - %Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   pr = hub pull-request
   sh = "shalector"
