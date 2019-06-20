@@ -57,11 +57,19 @@ noremap <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 " Split a string and move the portion after the next comma to the next line
 noremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
 
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
 nnoremap <silent> <leader>d :call <SID>show_documentation()<CR>
 nmap <silent> <leader>D <Plug>DashSearch
 
 " LSP features
-nnoremap <leader>k :ALEHover<CR>
+nnoremap <leader>k :call <SID>show_documentation()<CR>
 nnoremap <leader>K :ALEGoToDefinition<CR>
 
 function! s:show_documentation()

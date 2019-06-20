@@ -2,7 +2,7 @@ let g:lightline = {
     \ 'colorscheme': 'one',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'cocstatus', 'readonly', 'filename', 'modified' ] ],
+    \             [ 'gitbranch', 'cocstatus', 'readonly', 'conflicted', 'filename', 'modified' ] ],
     \   'right': [ [ 'percent', 'lineinfo' ] ,
     \              [ 'filetype' ] ]
     \ },
@@ -11,6 +11,7 @@ let g:lightline = {
     \ },
     \ 'component_function': {
     \   'cocstatus': 'coc#status',
+    \   'conflicted': 'ConflictedVersion',
     \   'filename': 'LightlineFilename',
     \   'gitbranch': 'fugitive#head'
     \ },

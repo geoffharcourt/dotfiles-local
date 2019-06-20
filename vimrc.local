@@ -23,6 +23,9 @@ set winwidth=84
 set winheight=10
 set winminheight=5
 
+" Experiments
+set nospell
+
 let g:gruvbox_italic = 1
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
@@ -39,3 +42,6 @@ set colorcolumn=81
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
   \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
   \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
+imap <C-k>     <Plug>(neosnippet_expand_or_jump)
+smap <C-k>     <Plug>(neosnippet_expand_or_jump)
