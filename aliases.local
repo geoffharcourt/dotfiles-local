@@ -17,7 +17,6 @@ alias gp='hub push'
 alias gpu='git pull'
 alias gra='command git rebase --abort'
 alias grc='command git rebase --continue'
-alias gsh='command git sh'
 
 # Heroku
 alias heroku='nocorrect heroku'
