@@ -49,6 +49,7 @@ nnoremap <C-P> :Files<CR>
 
 " additional vim-rspec mapping
 nnoremap <Leader>a :TestSuite<CR>
+nnoremap <Leader>f :TestLast --only-failures<CR>
 " Edit another file in the same directory as the current file
 " uses expression to extract path from current file's path
 noremap <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
@@ -56,6 +57,8 @@ noremap <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
 " Split a string and move the portion after the next comma to the next line
 noremap <Leader>cs 0ma:s/,\s\=/,\r  /g<CR>mbg'a='b<CR>:nohlsearch<CR>
+
+nnoremap <Leader>g :SignifyToggle<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)

@@ -31,6 +31,8 @@ let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:one_allow_italics = 1
 
+let g:signify_disable_by_default = 1
+
 colorscheme one
 
 " Highlight VCS conflict markers
