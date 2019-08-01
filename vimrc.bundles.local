@@ -1,10 +1,9 @@
 " Colors
 Plug 'rakr/vim-one'
-" Plug 'arcticicestudio/nord-vim'
-" Plug 'morhetz/gruvbox'
+Plug 'arcticicestudio/nord-vim'
 
 " Other plugins
-Plug 'AndrewRadev/switch.vim'
+Plug 'christoomey/vim-conflicted'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'derekprior/vim-trimmer'
 Plug 'itchyny/lightline.vim'
@@ -22,20 +21,18 @@ Plug 'machakann/vim-highlightedyank'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'mhinz/vim-signify'
 Plug 'rizzatti/dash.vim'
-" Plug 'RRethy/vim-illuminate'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-vinegar'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-
-" Experiments
-Plug 'christoomey/vim-conflicted'
 Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'skwp/greplace.vim'
-" Plug 'kamykn/spelunker.vim'
+
+" Experiments
+Plug 'AndrewRadev/splitjoin.vim'
 
 " Excludes
 UnPlug 'ctrlp.vim'

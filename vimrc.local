@@ -1,9 +1,11 @@
 set background=dark
+set colorcolumn=81
 set complete=.,b,u,]
+set completeopt=noinsert,menuone,noselect
 set gdefault      " Replace all matches on a line instead of just the first
+set hidden        " needed for coc
 set hlsearch      " highlight search results
 set ignorecase    " searches are case-insensitive
-" set lazyredraw    " Don't redraw the screen during macros
 set matchtime=0   " Speed up escape after (){} chars
 set nofoldenable
 set noshowmode
@@ -11,6 +13,7 @@ set nowrap
 set number relativenumber " The best of both worlds
 set redrawtime=1000 " Stop highlighting if it takes more than a second
 set scrolloff=999
+set shortmess+=c
 set synmaxcol=250 " Don't try to highlight lines longer than 250 characters.
 set smartcase     " searches are case-sensitive if a capital is in term
 set termguicolors " True color in neovim and vim 8
@@ -23,27 +26,330 @@ set winwidth=84
 set winheight=10
 set winminheight=5
 
-" Experiments
-set nospell
+""
+" Commands
+""
 
+command QA qa
+command Qa qa
+command Q q
+command Wq wq
+command WQ wq
+command W w
+
+" vim-tmux-navigator overrides needed to allow Sublime Text-like <C-\> comments
+let g:tmux_navigator_no_mappings = 1
+let g:tmux_navigator_save_on_switch = 2
+
+" Redefine the 4/5 mappings we'll use
+nnoremap <silent> <C-h> :TmuxNavigateLeft<CR>
+nnoremap <silent> <C-j> :TmuxNavigateDown<CR>
+nnoremap <silent> <C-k> :TmuxNavigateUp<CR>
+nnoremap <silent> <C-l> :TmuxNavigateRight<CR>
+
+" Get dot command repeatability in visual mode
+xnoremap . :normal.<CR>
+
+
+" Up and down by visual lines, not literal lines
+nnoremap gj j
+nnoremap gk k
+nnoremap j gj
+nnoremap k gk
+vnoremap gj j
+vnoremap gk k
+vnoremap j gj
+vnoremap k gk
+
+nnoremap Q :echoe "Disabled Ex mode"<CR>
+
+nnoremap U :echoe "Disabled lowercasing"<CR>
+vnoremap U :echoe "Disabled lowercasing"<CR>
+
+""
+" Appearance
+""
+
+colorscheme nord
+
+" Palette-specific config
 let g:gruvbox_italic = 1
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:one_allow_italics = 1
 
+" Speed up signify: only display
 let g:signify_disable_by_default = 1
-
-colorscheme one
+let g:signify_vcs_list = ['git']
+nnoremap <Leader>g :SignifyToggle<CR>
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-set colorcolumn=81
+" Set colors for ALE virtual windows
+hi ALEVirtualTextInfo ctermfg=180 guifg=#e5c07b
+hi ALEVirtualTextError ctermfg=168 ctermbg=17 gui=bold guifg=#e06c75 guibg=#3e4452
+hi ALEVirtualTextStyleError ctermfg=168 ctermbg=17 gui=bold guifg=#e06c75 guibg=#3e4452
+hi ALEVirtualTextStyleWarning ctermfg=180 guifg=#e5c07b
+hi ALEVirtualTextWarning ctermfg=173 ctermbg=17 guifg=#d19a66 guibg=#3e4452
 
-" See what's going
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-  \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-  \ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+let g:ale_virtualtext_cursor=1
+let g:ale_virtualtext_delay=500
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'ruby': ['rubocop']
+\}
 
-imap <C-k>     <Plug>(neosnippet_expand_or_jump)
-smap <C-k>     <Plug>(neosnippet_expand_or_jump)
+let g:ale_linters_ignore = {
+\  'javascript': ['tsserver'],
+\  'ruby': ['reek']
+\}
+
+function! LightlineFilename()
+  return expand('%:t') !=# '' ? pathshorten(expand('%')) : '[No Name]'
+endfunction
+
+let g:lightline = {
+    \ 'colorscheme': 'one',
+    \ 'active': {
+    \   'left': [ [ 'mode', 'paste' ],
+    \             [ 'gitbranch', 'cocstatus', 'readonly', 'conflicted', 'filename', 'modified' ] ],
+    \   'right': [ [ 'percent', 'lineinfo' ] ,
+    \              [ 'filetype' ] ]
+    \ },
+    \ 'component': {
+    \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
+    \ },
+    \ 'component_function': {
+    \   'cocstatus': 'coc#status',
+    \   'conflicted': 'ConflictedVersion',
+    \   'filename': 'LightlineFilename',
+    \   'gitbranch': 'fugitive#head'
+    \ },
+    \ 'component_visible_condition': {
+    \   'readonly': '(&filetype!="help"&& &readonly)',
+    \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
+    \ }
+\ }
+
+autocmd VimEnter * RainbowParentheses .
+
+"""
+" Autocompletion
+"""
+
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+function! s:check_back_space()
+  let line = getline('.')                    " current line
+  let substr = strpart(line, -1, col('.')+1) " from the start of the current
+  let substr = matchstr(substr, "[^ \t]*$")  " word till cursor
+  return strlen(substr) == 0
+endfunction
+
+function! InsertTabWrapper()
+  if s:check_back_space()
+    return "\<Tab>"
+  else
+    return "\<C-n>"
+  endif
+endfunction
+
+" Override thoughtbot completion direction
+inoremap <S-Tab> <C-P>
+
+function! CarriageReturnOrClearAndCarriageReturn()
+  if pumvisible()
+    return "\<C-y>\<CR>"
+  else
+    return "\<CR>"
+  endif
+endfunction
+
+inoremap <CR> <c-r>=CarriageReturnOrClearAndCarriageReturn()<CR>
+
+inoremap <silent><expr> <TAB>
+  \ pumvisible() ? "\<C-n>" :
+  \ <SID>check_back_space() ? "\<TAB>" :
+  \ "\<C-n>"
+
+""
+" Code navigation, LSP, etc.
+""
+
+" Bind K to grep word under cursor
+nnoremap K :set nois<CR> :Find <C-R><C-W><CR>
+
+nnoremap \ :Find<Space>
+nnoremap <C-P> :Files<CR>
+
+" Jump to the first result if only one tag match,
+" otherwise show the candidates list
+nnoremap <C-]> <Esc>:exe "tjump " . expand("<cword>")<Esc>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
+
+nmap <silent> <leader>d <Plug>DashSearch
+
+" LSP features
+nnoremap <leader>k :call <SID>show_documentation()<CR>
+
+nnoremap <silent> gd :call CocAction('jumpDefinition')<CR>
+nnoremap <silent> gV :call CocAction('jumpDefinition', 'vsplit')<CR>
+nnoremap <silent> gy :call CocAction('jumpTypeDefinition')<CR>
+nnoremap <silent> gi :call CocAction('jumpImplementation')<CR>
+nnoremap <silent> gr :call CocAction('jumpReferences')<CR>
+
+let g:fzf_buffers_jump = 1
+let g:fzf_layout = { 'down': '50%' }
+let g:fzf_tags_command = './.git/hooks/tags'
+let g:fzf_colors = {
+  \ 'fg':      ['fg', 'Normal'],
+  \ 'bg':      ['bg', 'Normal'],
+  \ 'hl':      ['fg', 'Exception'],
+  \ 'fg+':     ['fg', 'CursorLine', 'CursorColumn', 'Normal'],
+  \ 'bg+':     ['bg', 'CursorLine', 'CursorColumn'],
+  \ 'hl+':     ['fg', 'Statement'],
+  \ 'info':    ['fg', 'PreProc'],
+  \ 'prompt':  ['fg', 'Conditional'],
+  \ 'pointer': ['fg', 'Exception'],
+  \ 'marker':  ['fg', 'Keyword'],
+  \ 'spinner': ['fg', 'Label'],
+  \ 'header':  ['fg', 'Comment'] }
+
+function! s:build_quickfix_list(lines)
+  call setqflist(map(copy(a:lines), '{ "filename": v:val }'))
+  copen
+  cc
+endfunction
+
+let g:fzf_action = {
+  \ 'ctrl-q': function('s:build_quickfix_list'),
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
+" --column: Show column number
+" --line-number: Show line number
+" --no-heading: Do not show file headings in results
+" --fixed-strings: Search term as a literal string
+" --ignore-case: Case insensitive search
+" --no-ignore: Do not respect .gitignore, etc...
+" --hidden: Search hidden files and folders
+" --follow: Follow symlinks
+" --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
+" --color: Search color options
+command! -bang -nargs=? -complete=dir Files
+      \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -bang -nargs=* FindAll call fzf#vim#grep('rg --column --line-number --no-ignore --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+""
+" Plugin settings
+""
+
+let g:splitjoin_trailing_comma=1
+let g:splitjoin_curly_brace_padding=1
+let splitjoin_ruby_hanging_args=0
+let splitjoin_ruby_curly_braces=0
+
+""
+" Testing
+""
+
+let test#ruby#minitest#executable = "bundle exec rake test"
+let test#strategy = "dispatch"
+let test#runner_commands = ['RSpec']
+
+nnoremap <Leader>a :TestSuite<CR>
+nnoremap <Leader>f :TestLast --only-failures<CR>
+" Force headless spec execution for Capybara
+nnoremap <Leader>S :execute "Dispatch NO_HEADLESS=true rspec ". expand("%") .":". line(".")<CR>
+
+""
+" Terminal
+""
+
+" === Neovim terminal mappings from @devinrm ===
+if has('nvim')
+  augroup TerminalNumbers
+    autocmd!
+    autocmd TermOpen * setlocal nonumber norelativenumber
+  augroup END
+
+  augroup TerminalExitStatus
+    autocmd!
+    autocmd TermClose * call feedkeys("\<CR>")
+  augroup END
+
+  augroup TerminalInsert
+    autocmd!
+    autocmd BufEnter * if &buftype == 'terminal' |:startinsert| endif
+  augroup END
+endif
+
+""
+" Yanking and pasting
+""
+
+" Re-select prior selection in visual mode
+nnoremap gv `[v`]
+
+" When pasting over/replacing a region in visual mode,
+" retain the pasted content rather than the replaced region.
+vmap <silent> <expr> p paste#ReplaceVisualSelectionWithYankRegister()
+
+" Paste system clipboard contents
+nnoremap <Leader>p "*p
+" Yank to system clipboard
+vnoremap <Leader>y "*y
+" Yank to end of line, like C, D
+nnoremap Y y$
+
+" Rehighlight after moving text in visual mode
+vnoremap < <gv
+vnoremap > >gv
+
+" Comment/un-comment like Sublime
+nnoremap <C-\> :TComment<CR>
+vnoremap <C-\> :TComment<CR>
+
+""
+" Splits and moving files
+""
+
+" Edit another file in the same directory as the current file
+" uses expression to extract path from current file's path
+noremap <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
+noremap <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
+
+nnoremap <Leader>o :call quickfix#ToggleLocationList()<CR>
+nnoremap <Leader>m :w<CR>:Move <C-R>%
+nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
+
+""
+" Miscellaneous
+""
+
+let g:marked_app = 'Markoff'
+
+""
+" Python
+""
+
+let g:python_host_prog = $HOME."/.asdf/shims/python2"
+let g:python3_host_prog = $HOME."/.asdf/shims/python3"
+
+""
+" Command line
+""
+
+" Insert current file directory path (without file name)
+cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
