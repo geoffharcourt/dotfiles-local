@@ -7,9 +7,11 @@ set hidden        " needed for coc
 set hlsearch      " highlight search results
 set ignorecase    " searches are case-insensitive
 set matchtime=0   " Speed up escape after (){} chars
+set nobackup      " Don't make a backup before overwriting a file
 set nofoldenable
 set noshowmode
 set nowrap
+set nowritebackup " Don't make a backup before overwriting a file.
 set number relativenumber " The best of both worlds
 set redrawtime=1000 " Stop highlighting if it takes more than a second
 set scrolloff=999
@@ -20,6 +22,8 @@ set termguicolors " True color in neovim and vim 8
 set ttimeout      " Fast timeout
 set undodir=$HOME/.undodir
 set undofile
+set undolevels=500
+set undoreload=500
 set wildmenu
 set wildmode=longest:full,full
 set winwidth=84
@@ -85,25 +89,6 @@ nnoremap <Leader>g :SignifyToggle<CR>
 
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
-
-" Set colors for ALE virtual windows
-hi ALEVirtualTextInfo ctermfg=180 guifg=#e5c07b
-hi ALEVirtualTextError ctermfg=168 ctermbg=17 gui=bold guifg=#e06c75 guibg=#3e4452
-hi ALEVirtualTextStyleError ctermfg=168 ctermbg=17 gui=bold guifg=#e06c75 guibg=#3e4452
-hi ALEVirtualTextStyleWarning ctermfg=180 guifg=#e5c07b
-hi ALEVirtualTextWarning ctermfg=173 ctermbg=17 guifg=#d19a66 guibg=#3e4452
-
-let g:ale_virtualtext_cursor=1
-let g:ale_virtualtext_delay=500
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'ruby': ['rubocop']
-\}
-
-let g:ale_linters_ignore = {
-\  'javascript': ['tsserver'],
-\  'ruby': ['reek']
-\}
 
 function! LightlineFilename()
   return expand('%:t') !=# '' ? pathshorten(expand('%')) : '[No Name]'
@@ -178,7 +163,17 @@ inoremap <silent><expr> <TAB>
 ""
 
 " Bind K to grep word under cursor
-nnoremap K :set nois<CR> :Find <C-R><C-W><CR>
+" grep word under cursor
+" command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
+"
+" function! s:GrepArgs(...)
+"   let list = ['-S', '-smartcase', '-i', '-ignorecase', '-w', '-word',
+"         \ '-e', '-regex', '-u', '-skip-vcs-ignores', '-t', '-extension']
+"   return join(list, "\n")
+" endfunction
+
+" Keymapping for grep word under cursor with auto-preview mode
+nnoremap <silent> K :CocList --auto-preview grep <C-R><C-W><CR>
 
 nnoremap \ :Find<Space>
 nnoremap <C-P> :Files<CR>
@@ -251,12 +246,42 @@ command! -bang -nargs=? -complete=dir Files
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 command! -bang -nargs=* FindAll call fzf#vim#grep('rg --column --line-number --no-ignore --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
+
+""
+" Linting
+""
+
+" Set colors for ALE virtual windows
+hi ALEVirtualTextInfo ctermfg=180 guifg=#e5c07b
+hi ALEVirtualTextError ctermfg=168 ctermbg=17 gui=bold guifg=#e06c75 guibg=#3e4452
+hi ALEVirtualTextStyleError ctermfg=168 ctermbg=17 gui=bold guifg=#e06c75 guibg=#3e4452
+hi ALEVirtualTextStyleWarning ctermfg=180 guifg=#e5c07b
+hi ALEVirtualTextWarning ctermfg=173 ctermbg=17 guifg=#d19a66 guibg=#3e4452
+
+let g:ale_virtualtext_cursor=1
+let g:ale_virtualtext_delay=500
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'ruby': ['rubocop']
+\}
+
+let g:ale_linters_ignore = {
+\  'javascript': ['tsserver'],
+\  'ruby': ['reek']
+\}
+
+let g:ale_disable_lsp = 1
+let g:ale_sign_warning = '•'
+let g:ale_sign_error = '•'
+
+
 ""
 " Plugin settings
 ""
 
 let g:splitjoin_trailing_comma=1
 let g:splitjoin_curly_brace_padding=1
+let g:splitjoin_ruby_options_as_arguments=1
 let splitjoin_ruby_hanging_args=0
 let splitjoin_ruby_curly_braces=0
 
@@ -339,6 +364,29 @@ nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
 ""
 
 let g:marked_app = 'Markoff'
+
+""
+" Rails
+""
+
+let g:rails_projections = {
+\ "app/models/*.rb": {
+\   "related": "spec/factories/{plural}.rb",
+\ },
+\ "app/controllers/*_controller.rb": {
+\   "related": "spec/requests/{basename}_spec.rb",
+\ },
+\ "config/application.rb": {"command": "application"},
+\ "Gemfile": {"command": "gemfile"},
+\ "config/routes.rb": {"command": "routes"},
+\ "spec/factories/*.rb": {
+\   "command": "factory",
+\   "related": "app/models/{singular}.rb",
+\ },
+\ "spec/requests/*_spec.rb": {
+\   "related": "app/controllers/{basename}_controller.rb",
+\ },
+\ }
 
 ""
 " Python
