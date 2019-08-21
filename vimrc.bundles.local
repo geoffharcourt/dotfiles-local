@@ -3,14 +3,13 @@ Plug 'rakr/vim-one'
 Plug 'arcticicestudio/nord-vim'
 
 " Other plugins
+Plug 'AndrewRadev/splitjoin.vim'
 Plug 'christoomey/vim-conflicted'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'derekprior/vim-trimmer'
 Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'jgdavey/vim-blockle', { 'for' : 'ruby' }
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all --no-update-rc --64' }
-Plug 'junegunn/fzf.vim'
 Plug 'junegunn/gv.vim'
 Plug 'junegunn/rainbow_parentheses.vim'
 Plug 'junegunn/vim-slash'
@@ -31,9 +30,3 @@ Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'skwp/greplace.vim'
 
-" Experiments
-Plug 'AndrewRadev/splitjoin.vim'
-
-" Excludes
-UnPlug 'ctrlp.vim'
-UnPlug 'vim-slim'
