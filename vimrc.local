@@ -176,6 +176,8 @@ nnoremap <silent> K :CocList --auto-preview grep <C-R><C-W><CR>
 nnoremap \ :Find<Space>
 nnoremap <C-P> :Files<CR>
 
+set tags^=./.git/tags;
+
 " Jump to the first result if only one tag match,
 " otherwise show the candidates list
 nnoremap <C-]> <Esc>:exe "tjump " . expand("<cword>")<Esc>
