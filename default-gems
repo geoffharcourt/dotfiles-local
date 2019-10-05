@@ -1,6 +1,6 @@
-gem-ctags
 bundler
 gem-browse
+gem-ripper-tags
 gem-shut-the-fuck-up
 neovim
 parity

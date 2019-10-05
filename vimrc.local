@@ -123,8 +123,6 @@ autocmd VimEnter * RainbowParentheses .
 " Autocompletion
 """
 
-autocmd CursorHold * silent call CocActionAsync('highlight')
-
 function! s:check_back_space()
   let line = getline('.')                    " current line
   let substr = strpart(line, -1, col('.')+1) " from the start of the current

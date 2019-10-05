@@ -30,3 +30,5 @@ Plug 'leafgarland/typescript-vim'
 Plug 'HerringtonDarkholme/yats.vim'
 Plug 'skwp/greplace.vim'
 
+" Experiments
+Plug 'bogado/file-line'
