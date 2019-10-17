@@ -1,1 +1,1 @@
-hub pr list -f "%au %H %U%n" | grep geoffharcourt | column -t
+hub pr list -f "%au %sC%I %H %U%n" | grep geoffharcourt | column -t
