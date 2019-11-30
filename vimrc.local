@@ -74,7 +74,7 @@ vnoremap U :echoe "Disabled lowercasing"<CR>
 " Appearance
 ""
 
-colorscheme nord
+colorscheme one
 
 " Palette-specific config
 let g:gruvbox_italic = 1
