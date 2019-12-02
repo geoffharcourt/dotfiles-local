@@ -1,4 +1,4 @@
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 # C-x C-e to edit command-line in EDITOR
 autoload -U edit-command-line
