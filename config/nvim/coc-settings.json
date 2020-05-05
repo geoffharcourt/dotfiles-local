@@ -1,8 +1,12 @@
-// "diagnostic.enable": false,
 {
-  "coc.preferences.diagnostic.displayByAle": true,
+  "diagnostic.errorSign": "•",
+  "diagnostic.warningSign": "•",
+  "diagnostic.infoSign": "•",
+  "diagnostic.hintSign": "•",
   "list.source.files.args": ["--hidden", "--files"],
   "signature.preferShownAbove": false,
   "solargraph.bundlerPath": "/Users/geoff/.asdf/shims/bundle",
-  "solargraph.useBundler": true
+  "solargraph.commandPath": "/Users/geoff/.asdf/shims/solargraph",
+  "solargraph.checkGemVersion": false,
+  "solargraph.useBundler": false
 }

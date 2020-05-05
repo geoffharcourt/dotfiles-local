@@ -35,8 +35,8 @@ alias respring='spring stop && spring start'
 
 # Rails
 alias rc='rails console'
-alias taild='tail -f log/development.log'
-alias tailt='tail -f log/test.log'
+alias taild='touch log/development.log && tail -f log/development.log'
+alias tailt='touch log/test.log && tail -f log/test.log'
 
 # Folder navigation
 alias dotf='cd $HOME/dotfiles-local'

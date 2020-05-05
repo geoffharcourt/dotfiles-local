@@ -156,7 +156,7 @@ PerlBackrefs:
   Enabled: false
 
 PredicateName:
-  NamePrefixBlacklist:
+  ForbiddenPrefixes:
     - is_
 
 Proc:
@@ -230,7 +230,7 @@ DeprecatedClassMethods:
 ElseLayout:
   Enabled: false
 
-HandleExceptions:
+Lint/SuppressedException:
   Enabled: false
 
 LiteralInInterpolation:
