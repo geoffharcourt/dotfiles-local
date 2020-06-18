@@ -8,5 +8,5 @@
   "solargraph.bundlerPath": "/Users/geoff/.asdf/shims/bundle",
   "solargraph.commandPath": "/Users/geoff/.asdf/shims/solargraph",
   "solargraph.checkGemVersion": false,
-  "solargraph.useBundler": false
+  "solargraph.useBundler": true
 }

@@ -2,10 +2,13 @@
   cob = "checkout -b"
   conflicted = !nvim +Conflicted
   l = log -n15 --color --graph --pretty=format:'%Cred%h%Creset - %Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  mru = for-each-ref --sort=-committerdate --count=10 refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
   pr = hub pull-request
+  set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
   sh = "shalector"
 [core]
-  pager = diff-so-fancy | less --tabs=1,5 -R
+  #  pager = diff-so-fancy | less --tabs=1,5 -R
+  pager = delta --theme='Nord'
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
@@ -23,3 +26,5 @@
 [user]
   name = Geoff Harcourt
   email = geoff.harcourt@gmail.com
+[interactive]
+  diffFilter = delta --color-only

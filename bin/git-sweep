@@ -1,11 +1,12 @@
 #!/bin/sh
 
-git checkout master
-git fetch
+base_branch="$(git symbolic-ref --short refs/remotes/origin/HEAD | sed 's@^origin/@@')"
+git checkout "$base_branch"
+git fetch origin
 git remote prune origin
-git branch --merged master | grep -v 'master$' | xargs git branch -d
+ggit branch --merged master | grep -v 'master$'it branch -r --merged "$base_branch" | grep -v "'$base_branch$'" | xargs git branch -d
 
-REMOVABLE=`git branch -r --merged master | sed 's/ *origin\///' | grep -v 'master$' | grep 'dp\-'`
+REMOVABLE=`git branch -r --merged "$base_branch" | sed 's/ *origin\///' | grep -v "'$base_branch$'" | grep 'dp\-'`
 
 if [[ -z "$REMOVABLE" ]]; then
   exit 0

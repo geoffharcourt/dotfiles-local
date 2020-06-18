@@ -8,6 +8,7 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'christoomey/vim-conflicted'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'derekprior/vim-trimmer'
+Plug 'HerringtonDarkholme/yats.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'jgdavey/vim-blockle', { 'for' : 'ruby' }
@@ -17,19 +18,20 @@ Plug 'junegunn/vim-slash'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
 Plug 'kana/vim-textobj-entire' | Plug 'kana/vim-textobj-user'
 Plug 'keith/rspec.vim'
+Plug 'leafgarland/typescript-vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'mhinz/vim-signify'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rizzatti/dash.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-vinegar'
-Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
-Plug 'leafgarland/typescript-vim'
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'skwp/greplace.vim'
 
 " Experiments
 Plug 'bogado/file-line'
+
+Plug 'b4b4r07/vim-sqlfmt'

@@ -2,4 +2,9 @@
 
 set -e
 
-git push --force && gh pr create --fill
+if [[ "$(git rev-list --count HEAD ^$(git symbolic-ref --short refs/remotes/origin/HEAD | sed 's@^origin/@@'))" == "1" ]]; then
+  git push --force && gh pr create --fill "$@"
+else
+  echo "Multiple commits..."
+  git push --force && gh pr create "$@"
+fi
