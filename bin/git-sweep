@@ -4,7 +4,7 @@ base_branch="$(git symbolic-ref --short refs/remotes/origin/HEAD | sed 's@^origi
 git checkout "$base_branch"
 git fetch origin
 git remote prune origin
-ggit branch --merged master | grep -v 'master$'it branch -r --merged "$base_branch" | grep -v "'$base_branch$'" | xargs git branch -d
+git branch --merged trunk | grep -v "$base_branch"$ | xargs git branch -d
 
 REMOVABLE=`git branch -r --merged "$base_branch" | sed 's/ *origin\///' | grep -v "'$base_branch$'" | grep 'dp\-'`
 
