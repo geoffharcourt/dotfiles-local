@@ -1,10 +1,10 @@
 " Colors
 Plug 'arcticicestudio/nord-vim'
-Plug 'chriskempson/vim-tomorrow-theme'
 Plug 'rakr/vim-one'
 
 " Other plugins
 Plug 'AndrewRadev/splitjoin.vim'
+Plug 'bogado/file-line'
 Plug 'christoomey/vim-conflicted'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'derekprior/vim-trimmer'
@@ -30,8 +30,3 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-vinegar'
 Plug 'skwp/greplace.vim'
-
-" Experiments
-Plug 'bogado/file-line'
-
-Plug 'b4b4r07/vim-sqlfmt'
