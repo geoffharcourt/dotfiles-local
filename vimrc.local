@@ -1,6 +1,6 @@
 set background=dark
 set colorcolumn=81
-set complete=.,b,u,]
+" set complete=.,b,u,]
 set completeopt=noinsert,menuone,noselect
 set gdefault      " Replace all matches on a line instead of just the first
 set hidden        " needed for coc
@@ -73,13 +73,13 @@ vnoremap U :echoe "Disabled lowercasing"<CR>
 " Appearance
 ""
 
-colorscheme one
-
 " Palette-specific config
 let g:gruvbox_italic = 1
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:one_allow_italics = 1
+
+colorscheme one
 
 " Speed up signify: only display
 let g:signify_disable_by_default = 1
@@ -159,6 +159,8 @@ inoremap <silent><expr> <TAB>
 " Code navigation, LSP, etc.
 ""
 
+let g:deoplete#enable_at_startup = 1
+
 " Bind K to grep word under cursor
 " grep word under cursor
 " command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
@@ -169,9 +171,7 @@ inoremap <silent><expr> <TAB>
 "   return join(list, "\n")
 " endfunction
 
-" Keymapping for grep word under cursor with auto-preview mode
-nnoremap <silent> K :CocList --auto-preview grep <C-R><C-W><CR>
-
+nnoremap <silent> K :Find <C-R><C-W><CR>
 nnoremap \ :Find<Space>
 nnoremap <C-P> :Files<CR>
 
@@ -180,25 +180,14 @@ set tags^=./.git/tags;
 " Jump to the first result if only one tag match,
 " otherwise show the candidates list
 nnoremap <C-]> <Esc>:exe "tjump " . expand("<cword>")<Esc>
-
-function! s:show_documentation()
-  if (index(['vim','help'], &filetype) >= 0)
-    execute 'h '.expand('<cword>')
-  else
-    call CocAction('doHover')
-  endif
-endfunction
+nnoremap <silent><c-]> <cmd>lua vim.lsp.buf.definition()<CR>
 
 nmap <silent> <leader>d <Plug>DashSearch
 
-" LSP features
-nnoremap <leader>k :call <SID>show_documentation()<CR>
-
-nnoremap <silent> gd :call CocAction('jumpDefinition')<CR>
-nnoremap <silent> gV :call CocAction('jumpDefinition', 'vsplit')<CR>
-nnoremap <silent> gy :call CocAction('jumpTypeDefinition')<CR>
-nnoremap <silent> gi :call CocAction('jumpImplementation')<CR>
-nnoremap <silent> gr :call CocAction('jumpReferences')<CR>
+" nnoremap gi <cmd>lua vim.lsp.buf.implementation()<CR>
+nnoremap gh <cmd>lua vim.lsp.buf.hover()<CR>
+nnoremap gr <cmd>lua vim.lsp.buf.references()<CR>
+nnoremap gn <cmd>lua vim.lsp.buf.rename()<CR>
 
 function! FloatingFZF(width, height, border_highlight)
   function! s:create_float(hl, opts)
@@ -284,6 +273,8 @@ hi ALEVirtualTextStyleError ctermfg=168 ctermbg=17 gui=bold guifg=#e06c75 guibg=
 hi ALEVirtualTextStyleWarning ctermfg=180 guifg=#e5c07b
 hi ALEVirtualTextWarning ctermfg=173 ctermbg=17 guifg=#d19a66 guibg=#3e4452
 
+let g:ale_disable_lsp = 1
+
 let g:ale_virtualtext_cursor=1
 let g:ale_virtualtext_delay=500
 let g:ale_fixers = {
@@ -296,14 +287,18 @@ let g:ale_linters_ignore = {
 \}
 
 let g:ale_linters = {
-\ 'javascript': [],
-\ 'javascriptreact': [],
+\ 'javascript': ['eslint'],
+\ 'javascriptreact': ['eslint'],
 \ 'ruby': ['rubocop'],
-\ 'typescript': [],
-\ 'typescriptreact': []
+\ 'typescript': ['eslint'],
+\ 'typescriptreact': ['eslint']
 \}
 
-let g:ale_disable_lsp = 1
+let g:ale_pattern_options = {
+\ '.*\.json$': {'ale_enabled': 0},
+\}
+
+" let g:ale_disable_lsp = 1
 let g:ale_sign_warning = '•'
 let g:ale_sign_error = '•'
 
@@ -400,13 +395,14 @@ nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
 " Miscellaneous
 ""
 
-let g:marked_app = 'Markoff'
+let g:marked_app = 'Mark Text'
 
 ""
 " Rails
 ""
 
 let g:rails_projections = {
+\ "app/admin/*.rb": { "command": "admin" },
 \ "app/models/*.rb": {
 \   "related": "spec/factories/{plural}.rb",
 \ },
@@ -414,8 +410,12 @@ let g:rails_projections = {
 \   "related": "spec/requests/{basename}_spec.rb",
 \ },
 \ "config/application.rb": {"command": "application"},
+\ "config/locales/*.json": { "command": "locale" },
 \ "Gemfile": {"command": "gemfile"},
 \ "config/routes.rb": {"command": "routes"},
+\ "lib/tasks/*.rake": {
+\   "alternate": "spec/tasks/{basename}_spec.rb",
+\ },
 \ "spec/factories/*.rb": {
 \   "command": "factory",
 \   "related": "app/models/{singular}.rb",
@@ -439,4 +439,6 @@ let g:python3_host_prog = $HOME."/.asdf/shims/python3"
 " Insert current file directory path (without file name)
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
 
-" let g:sqlfmt_command = "sqlfmt"
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>

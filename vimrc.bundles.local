@@ -1,3 +1,5 @@
+UnPlug 'vim-slim'
+
 " Colors
 Plug 'arcticicestudio/nord-vim'
 Plug 'rakr/vim-one'
@@ -22,7 +24,6 @@ Plug 'leafgarland/typescript-vim'
 Plug 'machakann/vim-highlightedyank'
 Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'mhinz/vim-signify'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'rizzatti/dash.vim'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch'
@@ -30,3 +31,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-vinegar'
 Plug 'skwp/greplace.vim'
+
+Plug 'neovim/nvim-lsp'
+Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}

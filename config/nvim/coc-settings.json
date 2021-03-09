@@ -1,12 +1,3 @@
 {
-  "diagnostic.errorSign": "•",
-  "diagnostic.warningSign": "•",
-  "diagnostic.infoSign": "•",
-  "diagnostic.hintSign": "•",
-  "list.source.files.args": ["--hidden", "--files"],
-  "signature.preferShownAbove": false,
-  "solargraph.bundlerPath": "/Users/geoff/.asdf/shims/bundle",
-  "solargraph.commandPath": "/Users/geoff/.asdf/shims/solargraph",
-  "solargraph.checkGemVersion": false,
-  "solargraph.useBundler": true
+  "list.source.files.args": ["--hidden", "--files"]
 }
