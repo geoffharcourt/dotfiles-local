@@ -1,1 +1,1 @@
-hub ci-status --verbose
+gh pr checks

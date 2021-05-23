@@ -1,4 +1,5 @@
 UnPlug 'vim-slim'
+UnPlug 'ale'
 
 " Colors
 Plug 'arcticicestudio/nord-vim'
@@ -10,7 +11,6 @@ Plug 'bogado/file-line'
 Plug 'christoomey/vim-conflicted'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'derekprior/vim-trimmer'
-Plug 'HerringtonDarkholme/yats.vim'
 Plug 'itchyny/lightline.vim'
 Plug 'itspriddle/vim-marked', { 'for': 'markdown' }
 Plug 'jgdavey/vim-blockle', { 'for' : 'ruby' }
@@ -20,9 +20,6 @@ Plug 'junegunn/vim-slash'
 Plug 'joker1007/vim-ruby-heredoc-syntax'
 Plug 'kana/vim-textobj-entire' | Plug 'kana/vim-textobj-user'
 Plug 'keith/rspec.vim'
-Plug 'leafgarland/typescript-vim'
-Plug 'machakann/vim-highlightedyank'
-Plug 'MaxMEllon/vim-jsx-pretty'
 Plug 'mhinz/vim-signify'
 Plug 'rizzatti/dash.vim'
 Plug 'tpope/vim-abolish'
@@ -32,6 +29,13 @@ Plug 'tpope/vim-rhubarb'
 Plug 'tpope/vim-vinegar'
 Plug 'skwp/greplace.vim'
 
-Plug 'neovim/nvim-lsp'
-Plug 'nvim-lua/completion-nvim'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'aliou/sql-heredoc.vim'
+
+Plug 'leafgarland/typescript-vim'
+Plug 'HerringtonDarkholme/yats.vim'
+Plug 'MaxMEllon/vim-jsx-pretty'
+
+Plug 'https://github.com/alexaandru/nvim-lspupdate'
+Plug 'https://github.com/glepnir/lspsaga.nvim'
+Plug 'https://github.com/neovim/nvim-lspconfig'
+Plug 'hrsh7th/nvim-compe'

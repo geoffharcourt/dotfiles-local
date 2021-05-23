@@ -97,7 +97,7 @@ let g:lightline = {
     \ 'colorscheme': 'one',
     \ 'active': {
     \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'cocstatus', 'readonly', 'conflicted', 'filename', 'modified' ] ],
+    \             [ 'gitbranch', 'readonly', 'conflicted', 'filename', 'modified' ] ],
     \   'right': [ [ 'percent', 'lineinfo' ] ,
     \              [ 'filetype' ] ]
     \ },
@@ -105,7 +105,6 @@ let g:lightline = {
     \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
     \ },
     \ 'component_function': {
-    \   'cocstatus': 'coc#status',
     \   'conflicted': 'ConflictedVersion',
     \   'filename': 'LightlineFilename',
     \   'gitbranch': 'fugitive#head'
@@ -261,52 +260,6 @@ let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 command! -bang -nargs=* FindAll call fzf#vim#grep('rg --column --line-number --no-ignore --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
-
-""
-" Linting
-""
-
-" Set colors for ALE virtual windows
-hi ALEVirtualTextInfo ctermfg=180 guifg=#e5c07b
-hi ALEVirtualTextError ctermfg=168 ctermbg=17 gui=bold guifg=#e06c75 guibg=#3e4452
-hi ALEVirtualTextStyleError ctermfg=168 ctermbg=17 gui=bold guifg=#e06c75 guibg=#3e4452
-hi ALEVirtualTextStyleWarning ctermfg=180 guifg=#e5c07b
-hi ALEVirtualTextWarning ctermfg=173 ctermbg=17 guifg=#d19a66 guibg=#3e4452
-
-let g:ale_disable_lsp = 1
-
-let g:ale_virtualtext_cursor=1
-let g:ale_virtualtext_delay=500
-let g:ale_fixers = {
-\   '*': ['remove_trailing_lines', 'trim_whitespace'],
-\   'ruby': ['rubocop']
-\}
-
-let g:ale_linters_ignore = {
-\  'ruby': ['reek']
-\}
-
-let g:ale_linters = {
-\ 'javascript': ['eslint'],
-\ 'javascriptreact': ['eslint'],
-\ 'ruby': ['rubocop'],
-\ 'typescript': ['eslint'],
-\ 'typescriptreact': ['eslint']
-\}
-
-let g:ale_pattern_options = {
-\ '.*\.json$': {'ale_enabled': 0},
-\}
-
-" let g:ale_disable_lsp = 1
-let g:ale_sign_warning = '•'
-let g:ale_sign_error = '•'
-
-augroup SyntaxSettings
-  autocmd!
-  autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
-augroup END
-
 ""
 " Plugin settings
 ""
@@ -322,6 +275,7 @@ let splitjoin_ruby_curly_braces=0
 ""
 
 let test#ruby#minitest#executable = "bundle exec rake test"
+let g:test#javascript#runner = 'jest'
 let test#strategy = "dispatch"
 let test#runner_commands = ['RSpec']
 
@@ -355,6 +309,10 @@ endif
 ""
 " Yanking and pasting
 ""
+augroup highlight_yank
+  autocmd!
+  au TextYankPost * lua vim.highlight.on_yank {higroup="IncSearch", timeout=1000, on_visual=false}
+augroup END
 
 " Re-select prior selection in visual mode
 nnoremap gv `[v`]
