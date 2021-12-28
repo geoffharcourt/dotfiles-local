@@ -116,6 +116,7 @@ let g:lightline = {
 \ }
 
 autocmd VimEnter * RainbowParentheses .
+autocmd VimEnter * TroubleRefresh
 
 """
 " Autocompletion
@@ -345,7 +346,7 @@ vnoremap <C-\> :TComment<CR>
 noremap <Leader>e :e <C-R>=expand("%:p:h") . '/'<CR>
 noremap <Leader>v :vnew <C-R>=expand("%:p:h") . '/'<CR>
 
-nnoremap <Leader>o :call quickfix#ToggleLocationList()<CR>
+nnoremap <Leader>o <cmd>TroubleToggle document_diagnostics<CR>
 nnoremap <Leader>m :w<CR>:Move <C-R>%
 nnoremap <Leader>q :call quickfix#ToggleQuickfixList()<CR>
 

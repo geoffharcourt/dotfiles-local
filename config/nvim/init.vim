@@ -165,6 +165,33 @@ lua << END
   }
 END
 
+lua << EOF
+  require("trouble").setup {
+    -- your configuration comes here
+    -- or leave it empty to use the default settings
+    -- refer to the configuration section below
+    icons = false,
+    fold_open = "v", -- icon used for open folds
+    fold_closed = ">", -- icon used for closed folds
+    indent_lines = false, -- add an indent guide below the fold icons
+    signs = {
+        -- icons / text used for a diagnostic
+        error = "E",
+        warning = "W",
+        hint = "H",
+        information = "I"
+    },
+    use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
+  }
+
+  require("lsp-colors").setup({
+    Error = "#db4b4b",
+    Warning = "#e0af68",
+    Information = "#0db9d7",
+    Hint = "#10B981"
+  })
+EOF
+
 nnoremap <silent><Leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
 
 lua << EOF
@@ -176,12 +203,6 @@ sign define LspDiagnosticsSignError text=E texthl=LspDiagnosticsSignError linehl
 sign define LspDiagnosticsSignWarning text=W texthl=LspDiagnosticsSignWarning linehl= numhl=
 sign define LspDiagnosticsSignInformation text=I texthl=LspDiagnosticsSignInformation linehl= numhl=
 sign define LspDiagnosticsSignHint text=H texthl=LspDiagnosticsSignHint linehl= numhl=
-
-augroup UPDATE_DIAGNOSTICS_LOCLIST
-	autocmd!
-	autocmd InsertLeave * lua vim.lsp.diagnostic.set_loclist({open_loclist = false})
-	autocmd User LspDiagnosticsChanged lua vim.lsp.diagnostic.set_loclist({open_loclist = false})
-augroup END
 
 " === nvim-compe ===
 lua << EOF
