@@ -74,7 +74,6 @@ vnoremap U :echoe "Disabled lowercasing"<CR>
 ""
 
 " Palette-specific config
-let g:gruvbox_italic = 1
 let g:nord_italic = 1
 let g:nord_italic_comments = 1
 let g:one_allow_italics = 1
@@ -89,88 +88,14 @@ nnoremap <Leader>g :SignifyToggle<CR>
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
-function! LightlineFilename()
-  return expand('%:t') !=# '' ? pathshorten(expand('%')) : '[No Name]'
-endfunction
-
-let g:lightline = {
-    \ 'colorscheme': 'one',
-    \ 'active': {
-    \   'left': [ [ 'mode', 'paste' ],
-    \             [ 'gitbranch', 'readonly', 'conflicted', 'filename', 'modified' ] ],
-    \   'right': [ [ 'percent', 'lineinfo' ] ,
-    \              [ 'filetype' ] ]
-    \ },
-    \ 'component': {
-    \   'modified': '%{&filetype=="help"?"":&modified?"+":&modifiable?"":"-"}',
-    \ },
-    \ 'component_function': {
-    \   'conflicted': 'ConflictedVersion',
-    \   'filename': 'LightlineFilename',
-    \   'gitbranch': 'fugitive#head'
-    \ },
-    \ 'component_visible_condition': {
-    \   'readonly': '(&filetype!="help"&& &readonly)',
-    \   'modified': '(&filetype!="help"&&(&modified||!&modifiable))',
-    \ }
-\ }
-
 autocmd VimEnter * RainbowParentheses .
 autocmd VimEnter * TroubleRefresh
-
-"""
-" Autocompletion
-"""
-
-function! s:check_back_space()
-  let line = getline('.')                    " current line
-  let substr = strpart(line, -1, col('.')+1) " from the start of the current
-  let substr = matchstr(substr, "[^ \t]*$")  " word till cursor
-  return strlen(substr) == 0
-endfunction
-
-function! InsertTabWrapper()
-  if s:check_back_space()
-    return "\<Tab>"
-  else
-    return "\<C-n>"
-  endif
-endfunction
-
-" Override thoughtbot completion direction
-inoremap <S-Tab> <C-P>
-
-function! CarriageReturnOrClearAndCarriageReturn()
-  if pumvisible()
-    return "\<C-y>\<CR>"
-  else
-    return "\<CR>"
-  endif
-endfunction
-
-inoremap <CR> <c-r>=CarriageReturnOrClearAndCarriageReturn()<CR>
-
-inoremap <silent><expr> <TAB>
-  \ pumvisible() ? "\<C-n>" :
-  \ <SID>check_back_space() ? "\<TAB>" :
-  \ "\<C-n>"
 
 ""
 " Code navigation, LSP, etc.
 ""
 
-let g:deoplete#enable_at_startup = 1
-
 " Bind K to grep word under cursor
-" grep word under cursor
-" command! -nargs=+ -complete=custom,s:GrepArgs Rg exe 'CocList grep '.<q-args>
-"
-" function! s:GrepArgs(...)
-"   let list = ['-S', '-smartcase', '-i', '-ignorecase', '-w', '-word',
-"         \ '-e', '-regex', '-u', '-skip-vcs-ignores', '-t', '-extension']
-"   return join(list, "\n")
-" endfunction
-
 nnoremap <silent> K :Find <C-R><C-W><CR>
 nnoremap \ :Find<Space>
 nnoremap <C-P> :Files<CR>
@@ -180,7 +105,7 @@ set tags^=./.git/tags;
 " Jump to the first result if only one tag match,
 " otherwise show the candidates list
 nnoremap <C-]> <Esc>:exe "tjump " . expand("<cword>")<Esc>
-nnoremap <silent><c-]> <cmd>lua vim.lsp.buf.definition()<CR>
+nnoremap <silent><C-]> <cmd>lua vim.lsp.buf.definition()<CR>
 
 nmap <silent> <leader>d <Plug>DashSearch
 
@@ -256,8 +181,6 @@ let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 " --follow: Follow symlinks
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
-" command! -bang -nargs=? -complete=dir Files
-"       \ call fzf#vim#files(<q-args>, fzf#vim#with_preview(), <bang>0)
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 command! -bang -nargs=* FindAll call fzf#vim#grep('rg --column --line-number --no-ignore --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
