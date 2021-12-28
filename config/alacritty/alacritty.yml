@@ -178,7 +178,7 @@ colors:
     white: '0xECEFF4'
 
 # Colors Nord
-
+#
 # colors:
 #   primary:
 #     background: '0x2E3440'
@@ -326,13 +326,6 @@ mouse:
   # or triple click.
   double_click: { threshold: 300 }
   triple_click: { threshold: 300 }
-
-  url:
-    # URL launcher
-    #
-    # This program is executed when clicking on a text which is recognized as a URL.
-    # The URL is always added to the command as the last parameter.
-    launcher: open
 
 selection:
   semantic_escape_chars: ",│`|:\"' ()[]{}<>"
