@@ -41,13 +41,3 @@ function! quickfix#ToggleQuickfixList()
     copen
   endif
 endfunction
-
-function! quickfix#ToggleLocationList()
-  if quickfix#BufferIsOpen("Location List")
-    lclose
-  elseif !empty(getloclist(0))
-    lopen
-  else
-    echo "no location list"
-  endif
-endfunction
