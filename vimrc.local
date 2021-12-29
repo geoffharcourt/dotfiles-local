@@ -41,6 +41,8 @@ command Wq wq
 command WQ wq
 command W w
 
+cabbrev Bundle Dispatch bundle install
+
 " vim-tmux-navigator overrides needed to allow Sublime Text-like <C-\> comments
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 2
