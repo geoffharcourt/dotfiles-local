@@ -174,18 +174,6 @@ lua << EOF
     -- your configuration comes here
     -- or leave it empty to use the default settings
     -- refer to the configuration section below
-    icons = false,
-    fold_open = "v", -- icon used for open folds
-    fold_closed = ">", -- icon used for closed folds
-    indent_lines = false, -- add an indent guide below the fold icons
-    signs = {
-        -- icons / text used for a diagnostic
-        error = "E",
-        warning = "W",
-        hint = "H",
-        information = "I"
-    },
-    use_diagnostic_signs = false -- enabling this will use the signs defined in your lsp client
   }
 
   require("lsp-colors").setup({
@@ -198,15 +186,10 @@ EOF
 
 nnoremap <silent><Leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
 
-" lua << EOF
-"   local saga = require 'lspsaga'
-"   saga.init_lsp_saga()
-" EOF
-
-sign define LspDiagnosticsSignError text=E texthl=LspDiagnosticsSignError linehl= numhl=
-sign define LspDiagnosticsSignWarning text=W texthl=LspDiagnosticsSignWarning linehl= numhl=
-sign define LspDiagnosticsSignInformation text=I texthl=LspDiagnosticsSignInformation linehl= numhl=
-sign define LspDiagnosticsSignHint text=H texthl=LspDiagnosticsSignHint linehl= numhl=
+sign define DiagnosticSignError text= texthl=DiagnosticSignError linehl= numhl=
+sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarning linehl= numhl=
+sign define DiagnosticSignInfo text= texthl=DiagnosticSignInformation linehl= numhl=
+sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=
 
 lua <<EOF
   -- Setup nvim-cmp.
@@ -216,8 +199,21 @@ lua <<EOF
   end
 
   local cmp = require'cmp'
+  local lspkind = require('lspkind')
 
   cmp.setup({
+    formatting = {
+      format = lspkind.cmp_format({
+        with_text = true,
+        menu = ({
+         buffer = "[Buffer]",
+         nvim_lsp = "[LSP]",
+         nvim_lua = "[Lua]",
+         tmux = "[tmux]",
+         path = "[path]",
+       })
+      })
+    },
     mapping = {
       ['<C-b>'] = cmp.mapping(cmp.mapping.scroll_docs(-4), { 'i', 'c' }),
       ['<C-f>'] = cmp.mapping(cmp.mapping.scroll_docs(4), { 'i', 'c' }),
@@ -249,8 +245,10 @@ lua <<EOF
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'path' },
+    }, {
       { name = 'buffer' },
+      { name = 'tmux' },
+      { name = 'path' }
     })
   })
 
@@ -273,3 +271,20 @@ EOF
 
 set completeopt-=i,t,preview
 set shortmess+=c
+
+" gray
+highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+" blue
+highlight! CmpItemAbbrMatch guibg=NONE guifg=#569CD6
+highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#569CD6
+" light blue
+highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
+highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
+highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
+" pink
+highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
+highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
+" front
+highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
+highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
+highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4

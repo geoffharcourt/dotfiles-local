@@ -80,11 +80,6 @@ let g:one_allow_italics = 1
 
 colorscheme one
 
-" Speed up signify: only display
-let g:signify_disable_by_default = 1
-let g:signify_vcs_list = ['git']
-nnoremap <Leader>g :SignifyToggle<CR>
-
 " Highlight VCS conflict markers
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
@@ -114,34 +109,6 @@ nnoremap gh <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap gn <cmd>lua vim.lsp.buf.rename()<CR>
 
-function! FloatingFZF(width, height, border_highlight)
-  function! s:create_float(hl, opts)
-    let buf = nvim_create_buf(v:false, v:true)
-    let opts = extend({'relative': 'editor', 'style': 'minimal'}, a:opts)
-    let win = nvim_open_win(buf, v:true, opts)
-    call setwinvar(win, '&winhighlight', 'NormalFloat:'.a:hl)
-    call setwinvar(win, '&colorcolumn', '')
-    return buf
-  endfunction
-  " Size and position
-  let width = float2nr(&columns * a:width)
-  let height = float2nr(&lines * a:height)
-  let row = float2nr((&lines - height) / 2)
-  let col = float2nr((&columns - width) / 2)
-  " Border
-  let top = '╭' . repeat('─', width - 2) . '╮'
-  let mid = '│' . repeat(' ', width - 2) . '│'
-  let bot = '╰' . repeat('─', width - 2) . '╯'
-  let border = [top] + repeat([mid], height - 2) + [bot]
-  " Draw frame
-  let s:frame = s:create_float(a:border_highlight, {'row': row, 'col': col, 'width': width, 'height': height})
-  call nvim_buf_set_lines(s:frame, 0, -1, v:true, border)
-  " Draw viewport
-  call s:create_float('Normal', {'row': row + 1, 'col': col + 2, 'width': width - 4, 'height': height - 2})
-  autocmd BufWipeout <buffer> execute 'bwipeout' s:frame
-endfunction
-
-let g:fzf_layout = { 'window': 'call FloatingFZF(0.9, 0.8, "Comment")' }
 let g:fzf_buffers_jump = 1
 let g:fzf_tags_command = './.git/hooks/tags'
 let g:fzf_colors = {
@@ -183,6 +150,9 @@ let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 " --color: Search color options
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 command! -bang -nargs=* FindAll call fzf#vim#grep('rg --column --line-number --no-ignore --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+nnoremap <Leader>g :BCommit<CR>
+vnoremap <Leader>g :BCommit<CR>
 
 ""
 " Plugin settings

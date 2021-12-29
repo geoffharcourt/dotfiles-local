@@ -73,19 +73,19 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: Space Mono
+    family: SpaceMono Nerd Font Mono
     # The `style` can be specified to pick a specific face.
     style: Regular
 
   # Italic font face
   bold:
-    family: Space Mono
+    family: SpaceMono Nerd Font Mono
     # The `style` can be specified to pick a specific face.
     style: Bold
 
   # Italic font face
   italic:
-    family: Space Mono
+    family: SpaceMono Nerd Font Mono
     # The `style` can be specified to pick a specific face.
     style: Italic
 
