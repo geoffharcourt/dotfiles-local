@@ -10,6 +10,14 @@ lua << END
 END
 
 lua << END
+  require('hlslens').setup({
+    calm_down = true,
+    nearest_only = true,
+    -- nearest_float_when = 'always'
+  })
+END
+
+lua << END
   local nvim_lsp = require('lspconfig')
 
   require'lspconfig'.tsserver.setup{}
