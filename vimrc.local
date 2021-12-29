@@ -1,6 +1,5 @@
 set background=dark
 set colorcolumn=81
-" set complete=.,b,u,]
 set completeopt=noinsert,menuone,noselect
 set gdefault      " Replace all matches on a line instead of just the first
 set hidden        " needed for coc
@@ -166,6 +165,17 @@ let g:splitjoin_ruby_options_as_arguments=1
 let splitjoin_ruby_hanging_args=0
 let splitjoin_ruby_curly_braces=0
 
+" hlslens
+noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
+            \<Cmd>lua require('hlslens').start()<CR>
+noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
+            \<Cmd>lua require('hlslens').start()<CR>
+noremap * *<Cmd>lua require('hlslens').start()<CR>
+noremap # #<Cmd>lua require('hlslens').start()<CR>
+noremap g* g*<Cmd>lua require('hlslens').start()<CR>
+noremap g# g#<Cmd>lua require('hlslens').start()<CR>
+
+
 ""
 " Testing
 ""
@@ -179,28 +189,6 @@ nnoremap <Leader>a :TestSuite<CR>
 nnoremap <Leader>f :TestLast --only-failures<CR>
 " Force headless spec execution for Capybara
 nnoremap <Leader>S :execute "Dispatch NO_HEADLESS=true rspec ". expand("%") .":". line(".")<CR>
-
-""
-" Terminal
-""
-
-" === Neovim terminal mappings from @devinrm ===
-if has('nvim')
-  augroup TerminalNumbers
-    autocmd!
-    autocmd TermOpen * setlocal nonumber norelativenumber
-  augroup END
-
-  augroup TerminalExitStatus
-    autocmd!
-    autocmd TermClose * call feedkeys("\<CR>")
-  augroup END
-
-  augroup TerminalInsert
-    autocmd!
-    autocmd BufEnter * if &buftype == 'terminal' |:startinsert| endif
-  augroup END
-endif
 
 ""
 " Yanking and pasting
@@ -292,16 +280,3 @@ let g:python3_host_prog = $HOME."/.asdf/shims/python3"
 
 " Insert current file directory path (without file name)
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
-
-map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
-\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
-\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
-
-noremap <silent> n <Cmd>execute('normal! ' . v:count1 . 'n')<CR>
-            \<Cmd>lua require('hlslens').start()<CR>
-noremap <silent> N <Cmd>execute('normal! ' . v:count1 . 'N')<CR>
-            \<Cmd>lua require('hlslens').start()<CR>
-noremap * *<Cmd>lua require('hlslens').start()<CR>
-noremap # #<Cmd>lua require('hlslens').start()<CR>
-noremap g* g*<Cmd>lua require('hlslens').start()<CR>
-noremap g# g#<Cmd>lua require('hlslens').start()<CR>
