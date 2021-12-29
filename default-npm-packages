@@ -1,0 +1,11 @@
+diagnostic-languageserver
+eslint
+eslint_d
+eslint-plugin-jsx-a11y
+neovim
+npm
+stylelint
+typescript
+typescript-language-server
+vscode-css-languageserver-bin
+vscode-html-languageserver-bin
