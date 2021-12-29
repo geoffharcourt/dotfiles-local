@@ -198,10 +198,10 @@ EOF
 
 nnoremap <silent><Leader>f <cmd>lua vim.lsp.buf.formatting()<CR>
 
-lua << EOF
-  local saga = require 'lspsaga'
-  saga.init_lsp_saga()
-EOF
+" lua << EOF
+"   local saga = require 'lspsaga'
+"   saga.init_lsp_saga()
+" EOF
 
 sign define LspDiagnosticsSignError text=E texthl=LspDiagnosticsSignError linehl= numhl=
 sign define LspDiagnosticsSignWarning text=W texthl=LspDiagnosticsSignWarning linehl= numhl=
