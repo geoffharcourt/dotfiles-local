@@ -1,1 +1,0 @@
-hub pr list -f "%au %sC%I %H %U%n" | grep geoffharcourt | column -t

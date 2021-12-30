@@ -1,3 +1,0 @@
-sha=$(heroku config:get HEROKU_SLUG_COMMIT -r production)
-git log $sha..master
-git diff --stat $sha
