@@ -1,10 +1,4 @@
-# Aliases
-alias realias='source ~/.aliases'
-
-alias l='ls'
 alias cld='cd ~/commonlit/commonlit && tat'
-# tmux fixes: https://github.com/junegunn/fzf/issues/201
-alias clear='clear; tmux clear-history'
 
 # Git
 alias gaa='git add -p'
@@ -31,7 +25,6 @@ alias pgrestart='pgstop && pgstart'
 alias bex='nocorrect bundle exec'
 alias bu='bundle update'
 alias irb='irb --readline -r irb/completion'
-alias respring='spring stop && spring start'
 
 # Rails
 alias rc='rails console'

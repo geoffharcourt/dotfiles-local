@@ -1,6 +1,0 @@
-:set core.editor /usr/bin/vim
-
-:echo
-status
-:echo
-log --oneline -n 1

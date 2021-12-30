@@ -1,2 +1,2 @@
-  setlocal norelativenumber
-  setlocal wrap
+setlocal norelativenumber
+setlocal wrap
