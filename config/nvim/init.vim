@@ -12,6 +12,24 @@ sign define DiagnosticSignWarn text= texthl=DiagnosticSignWarning linehl= num
 sign define DiagnosticSignInfo text= texthl=DiagnosticSignInformation linehl= numhl=
 sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=
 
+" Key bindings can be changed, see below
+call wilder#setup({'modes': [':']})
+call wilder#set_option('use_python_remote_plugin', 0)
+
+call wilder#set_option('renderer', wilder#popupmenu_renderer({
+      \ 'highlighter': [
+      \   wilder#lua_pcre2_highlighter(),
+      \   wilder#lua_fzy_highlighter(),
+      \ ],
+      \ 'highlights': {
+      \   'accent': wilder#make_hl('WilderAccent', 'Pmenu', [{}, {}, {'foreground': '#f4468f'}]),
+      \ },
+      \ 'left': [
+      \   ' ',
+      \   wilder#popupmenu_devicons(),
+      \ ],
+      \ }))
+
 lua << END
   require("hlslens").setup({
     calm_down = true,
@@ -248,20 +266,20 @@ lua << END
   })
 
   -- Use buffer source for `/` (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline("/", {
-    sources = {
-      { name = "buffer" }
-    }
-  })
+  -- cmp.setup.cmdline("/", {
+    -- sources = {
+      -- { name = "buffer" }
+    -- }
+  -- })
 
   -- Use cmdline & path source for ':' (if you enabled `native_menu`, this won't work anymore).
-  cmp.setup.cmdline(":", {
-    sources = cmp.config.sources({
-      { name = "path" }
-    }, {
-      { name = "cmdline" }
-    })
-  })
+  -- cmp.setup.cmdline(":", {
+    -- sources = cmp.config.sources({
+      -- { name = "path" }
+    -- }, {
+      -- { name = "cmdline" }
+    -- })
+  -- })
 END
 
 augroup TerminalNumbers
