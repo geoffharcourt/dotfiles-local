@@ -110,6 +110,21 @@ nnoremap gh <cmd>lua vim.lsp.buf.hover()<CR>
 nnoremap gr <cmd>lua vim.lsp.buf.references()<CR>
 nnoremap gn <cmd>lua vim.lsp.buf.rename()<CR>
 
+function! RipgrepFzf(query, fullscreen)
+  let command_fmt = 'rg --column --line-number --no-heading --color=always --smart-case -- %s || true'
+  let initial_command = printf(command_fmt, shellescape(a:query))
+  let reload_command = printf(command_fmt, '{q}')
+  let spec = {'options': ['--phony', '--query', a:query, '--bind', 'change:reload:'.reload_command]}
+  call fzf#vim#grep(initial_command, 1, fzf#vim#with_preview(spec), a:fullscreen)
+endfunction
+
+let g:fzf_layout = {
+  \ 'window': {
+  \ 'width': 0.9,
+  \ 'height': 0.9,
+  \ 'relative': v:true
+  \ } }
+
 let g:fzf_buffers_jump = 1
 let g:fzf_tags_command = './.git/hooks/tags'
 let g:fzf_colors = {
@@ -149,7 +164,8 @@ let $FZF_DEFAULT_OPTS = '--bind ctrl-a:select-all'
 " --follow: Follow symlinks
 " --glob: Additional conditions for search (in this case ignore everything in the .git/ folder)
 " --color: Search color options
-command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+command! -nargs=* -bang Find call RipgrepFzf(<q-args>, <bang>0)
+" command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 command! -bang -nargs=* FindAll call fzf#vim#grep('rg --column --line-number --no-ignore --no-heading --fixed-strings --ignore-case --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 nnoremap <Leader>g :BCommit<CR>

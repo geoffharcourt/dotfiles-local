@@ -13,13 +13,12 @@ sign define DiagnosticSignInfo text= texthl=DiagnosticSignInformation linehl=
 sign define DiagnosticSignHint text= texthl=DiagnosticSignHint linehl= numhl=
 
 lua << END
-  require("lualine").setup()
-
   require("hlslens").setup({
     calm_down = true,
     nearest_only = true,
-    -- nearest_float_when = 'always'
   })
+  require("lualine").setup()
+  require("trouble").setup{}
 
   require("lspconfig").tsserver.setup{}
   require("lspconfig").solargraph.setup{
@@ -177,9 +176,9 @@ lua << END
     }
   }
 
+  require("lspconfig").jsonls.setup{}
   require("lspconfig").vimls.setup{}
-
-  require("trouble").setup{}
+  require("lspconfig").sqls.setup{}
 
   require("lsp-colors").setup({
     Error = "#db4b4b",
