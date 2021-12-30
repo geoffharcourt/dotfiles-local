@@ -29,6 +29,8 @@ set winwidth=84
 set winheight=10
 set winminheight=5
 
+autocmd BufRead,BufNewFile Dockerfile* set filetype=dockerfile
+
 ""
 " Commands
 ""
