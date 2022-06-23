@@ -7,14 +7,10 @@ alias gcms='git commit -m'
 alias gcm='git commit -v'
 alias gd='git diff'
 alias gl='git l'
-alias gp='hub push'
+alias gp='git push'
 alias gpu='git pull'
 alias gra='command git rebase --abort'
 alias grc='command git rebase --continue'
-
-# Heroku
-alias heroku='nocorrect heroku'
-alias heroky='heroku'
 
 # Postgres
 alias pgstart='brew services start postgresql'
