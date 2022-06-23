@@ -3,12 +3,36 @@
   conflicted = !nvim +Conflicted
   l = log -n15 --color --graph --pretty=format:'%Cred%h%Creset - %Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
   mru = for-each-ref --sort=-committerdate --count=10 refs/heads/ --format='%(HEAD) %(color:yellow)%(refname:short)%(color:reset) - %(color:red)%(objectname:short)%(color:reset) - %(contents:subject) - %(authorname) (%(color:green)%(committerdate:relative)%(color:reset))'
-  pr = hub pull-request
   set-upstream = !git branch --set-upstream-to=origin/`git symbolic-ref --short HEAD`
   sh = "shalector"
 [core]
-  #  pager = diff-so-fancy | less --tabs=1,5 -R
-  pager = delta --theme='Nord'
+  pager = delta
+[delta]
+  navigate = true
+  features = villsau
+  side-by-side = true
+  dark = true
+  file-style = omit
+  hunk-header-decoration-style = omit
+  hunk-header-file-style = magenta
+  hunk-header-line-number-style = dim magenta
+  hunk-header-style = file line-number syntax
+  line-numbers = false
+  minus-emph-style = bold red 52
+  minus-empty-line-marker-style = normal "#3f0001"
+  minus-non-emph-style = dim red
+  minus-style = bold red
+  plus-emph-style = bold green 22
+  plus-empty-line-marker-style = normal "#002800"
+  plus-non-emph-style = dim green
+  plus-style = bold green
+  syntax-theme = OneHalfDark
+  whitespace-error-style = reverse red
+  zero-style = dim syntax
+[merge]
+  conflicstyle = diff3
+[diff]
+  colorMoved = default
 [filter "media"]
   clean = git-media-clean %f
   smudge = git-media-smudge %f
@@ -16,8 +40,6 @@
   user = geoffharcourt
 [help]
   autocorrect = 1
-[hub]
-  protocol = ssh
 [pretty]
   colored = format:%Cred%h%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
   coloredwithrefs = format:%Cred%h%Creset %Cblue%d%Creset %s %Cgreen(%cr) %C(bold blue)%an%Creset
