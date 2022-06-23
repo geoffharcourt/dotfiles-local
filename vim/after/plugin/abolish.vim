@@ -7,10 +7,12 @@ Abolish Heroky Heroku
 Abolish a_hash_inlcuding a_hash_including
 Abolish anme name
 Abolish comparision comparison
+Abolish craete create
 Abolish decsribe describe
 Abolish delagate delegate
 Abolish destory destroy
 Abolish fcuntion function
+Abolish fitler filter
 Abolish inlcude include
 Abolish inpsect inspect
 Abolish obejct object
