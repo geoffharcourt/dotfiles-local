@@ -46,3 +46,5 @@ Plug 'onsails/lspkind-nvim'
 Plug 'lighttiger2505/sqls'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'romgrk/fzy-lua-native'
+" Plug 'github/copilot.vim'
+Plug 'ekalinin/Dockerfile.vim'

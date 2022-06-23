@@ -292,9 +292,31 @@ let g:rails_projections = {
 let g:python_host_prog = $HOME."/.asdf/shims/python2"
 let g:python3_host_prog = $HOME."/.asdf/shims/python3"
 
+
+""
+" Copilot
+""
+
+imap <silent><script><expr> <C-J> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
 ""
 " Command line
 ""
 
 " Insert current file directory path (without file name)
 cnoremap <expr> %% getcmdtype() == ':' ? expand('%:h').'/' : '%%'
+
+" vint: -ProhibitAutocmdWithNoGroup
+
+" Dockerfile
+autocmd BufRead,BufNewFile [Dd]ockerfile set ft=Dockerfile
+autocmd BufRead,BufNewFile [Dd]ockerfile* setfiletype Dockerfile
+autocmd BufRead,BufNewFile *.[Dd]ockerfile set ft=Dockerfile
+autocmd BufRead,BufNewFile *.dock set ft=Dockerfile
+autocmd BufRead,BufNewFile [Dd]ockerfile.vim set ft=vim
+
+" Containerfile
+autocmd BufRead,BufNewFile [Cc]ontainerfile set ft=Dockerfile
+autocmd BufRead,BufNewFile [Cc]ontainerfile* set ft=Dockerfile
+autocmd BufRead,BufNewFile *.[Cc]ontainerfile set ft=Dockerfile
