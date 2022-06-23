@@ -7,5 +7,6 @@ npm
 stylelint
 typescript
 typescript-language-server
+vim-language-server
 vscode-css-languageserver-bin
 vscode-html-languageserver-bin
