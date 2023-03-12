@@ -4,6 +4,7 @@ UnPlug 'ale'
 " Colors
 Plug 'arcticicestudio/nord-vim'
 Plug 'rakr/vim-one'
+Plug 'rmehri01/onenord.nvim'
 
 " Other plugins
 Plug 'aliou/sql-heredoc.vim'
@@ -46,5 +47,4 @@ Plug 'onsails/lspkind-nvim'
 Plug 'lighttiger2505/sqls'
 Plug 'gelguy/wilder.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'romgrk/fzy-lua-native'
-" Plug 'github/copilot.vim'
 Plug 'ekalinin/Dockerfile.vim'
