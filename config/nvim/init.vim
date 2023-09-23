@@ -31,6 +31,27 @@ call wilder#set_option('renderer', wilder#popupmenu_renderer({
       \ }))
 
 lua << END
+  local lspconfig = require("lspconfig")
+
+  vim.diagnostic.config({
+    virtual_text = false,
+  })
+
+  vim.api.nvim_create_autocmd("CursorHold", {
+    buffer = bufnr,
+    callback = function()
+      local opts = {
+        focusable = false,
+        close_events = { "BufLeave", "CursorMoved", "InsertEnter", "FocusLost" },
+        border = 'rounded',
+        source = 'always',
+        prefix = ' ',
+        scope = 'cursor',
+      }
+      vim.diagnostic.open_float(nil, opts)
+    end
+  })
+
   require("hlslens").setup({
     calm_down = true,
     nearest_only = true,
@@ -40,12 +61,12 @@ lua << END
   })
   require("trouble").setup{}
 
-  require("lspconfig").tsserver.setup{}
-  require("lspconfig").solargraph.setup{
+  lspconfig.tsserver.setup{}
+  lspconfig.solargraph.setup{
     useBundler = true;
   }
-  require("lspconfig").cssls.setup{}
-  require("lspconfig").diagnosticls.setup{
+  lspconfig.cssls.setup{}
+  lspconfig.diagnosticls.setup{
     filetypes = {
       "ruby",
       "typescript",
@@ -196,9 +217,9 @@ lua << END
     }
   }
 
-  require("lspconfig").jsonls.setup{}
-  require("lspconfig").vimls.setup{}
-  require("lspconfig").sqls.setup{}
+  lspconfig.jsonls.setup{}
+  lspconfig.vimls.setup{}
+  lspconfig.sqlls.setup{}
 
   require("lsp-colors").setup({
     Error = "#db4b4b",
