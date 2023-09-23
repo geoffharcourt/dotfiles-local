@@ -72,6 +72,9 @@ nnoremap Q :echoe "Disabled Ex mode"<CR>
 nnoremap U :echoe "Disabled lowercasing"<CR>
 vnoremap U :echoe "Disabled lowercasing"<CR>
 
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+
 ""
 " Appearance
 ""
