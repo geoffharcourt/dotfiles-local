@@ -51,14 +51,41 @@ extend_console 'interactive_editor'
 # Awesome print for pretty colorful indented object printing
 extend_console 'awesome_print'
 
+def formatted_env
+  if ENV["COMMONLIT_NAMESPACE"].present?
+    "#{ENV['COMMONLIT_NAMESPACE'].upcase} - #{ENV['PORTER_POD_IMAGE_TAG']}"
+  elsif ENV["DEVELOPMENT_DATABASE_URL"].present?
+    "dev REMOTE DB"
+  else
+    Rails.env
+  end
+end
+
+def application_name
+  Rails.application.class.module_parent.name
+end
+
+def app_name
+  File.basename(Rails.root)
+end
+
+def db_endpoint
+  ApplicationRecord.connection_db_config.host.to_s.split(".").first || "unknown"
+end
+
+def rails_environment
+  Rails.env
+end
+
 # Just for Rails...
 if defined? Rails
-  rails_root = "#{File.basename(Dir.pwd)}-#{ENV['RAILS_ENV']}"
+  prompt = "[#{app_name}][#{formatted_env}][DB: #{db_endpoint}] %m:%i"
+
   IRB.conf[:PROMPT] ||= {}
-  IRB.conf[:PROMPT][:RAILS] = {
-    :PROMPT_I => "#{rails_root}> ",
-    :PROMPT_S => "#{rails_root}* ",
-    :PROMPT_C => "#{rails_root}? ",
+  IRB.conf[:PROMPT][:RAILS] ||= {
+    :PROMPT_I => "#{prompt}> ",
+    :PROMPT_S => "#{prompt}* ",
+    :PROMPT_C => "#{prompt}? ",
     :RETURN   => "  => %s\n\n"
   }
   IRB.conf[:PROMPT_MODE] = :RAILS
