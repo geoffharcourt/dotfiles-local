@@ -65,7 +65,7 @@ lua << END
   lspconfig.solargraph.setup{
     useBundler = true;
   }
-  lspconfig.cssls.setup{}
+  lspconfig.stylelint_lsp.setup{}
   lspconfig.diagnosticls.setup{
     filetypes = {
       "ruby",
