@@ -82,53 +82,6 @@ set -g status-left  " #[fg=bold]#S "
 
 set -g clock-mode-style 24
 
-# # pane number display
-# set-option -g display-panes-active-colour blue #blue
-# set-option -g display-panes-colour brightred #orange
-#
-# ## set status bar
-# set -g status-bg "#373b41"
-# set -g status-fg "#c5c8c6"
-#
-# ## highlight active window
-# setw -g window-status-current-bg "#282a2e"
-# setw -g window-status-current-fg "#81a2be"
-#
-# ## highlight activity in status bar
-# setw -g window-status-activity-fg "#8abeb7"
-# setw -g window-status-activity-bg "#1d1f21"
-#
-# ## pane border and colors
-# set -g pane-active-border-bg default
-# set -g pane-active-border-fg "#373b41"
-# set -g pane-border-bg default
-# set -g pane-border-fg "#373b41"
-#
-# set -g clock-mode-colour "#81a2be"
-#
-# set -g message-bg "#8abeb7"
-# set -g message-fg "#000000"
-#
-# set -g message-command-bg "#8abeb7"
-# set -g message-command-fg "#000000"
-#
-# set -g mode-bg "#8abeb7"
-# set -g mode-fg "#000000"
-
-# Copyright (c) 2017-present Arctic Ice Studio <development@arcticicestudio.com>
-# Copyright (c) 2017-present Sven Greb <code@svengreb.de>
-
-# Project:    Nord tmux
-# Repository: https://github.com/arcticicestudio/nord-tmux
-# License:    MIT
-
-#+----------------+
-#+ Plugin Support +
-#+----------------+
-#+--- tmux-prefix-highlight ---+
-set -g @prefix_highlight_fg black
-set -g @prefix_highlight_bg brightcyan
-
 #+---------+
 #+ Options +
 #+---------+
@@ -141,30 +94,27 @@ set -g status on
 #+--- Layout ---+
 set -g status-justify left
 
-#+--- Colors ---+
-set -g status-bg black
-set -g status-fg white
-
 #+-------+
 #+ Panes +
 #+-------+
-set -g display-panes-colour black
-set -g display-panes-active-colour brightblack
+set -g display-panes-colour "#282c34"
+set -g display-panes-active-colour "#282c34"
 
 #+------------+
 #+ Clock Mode +
 #+------------+
-setw -g clock-mode-colour cyan
+setw -g clock-mode-colour "#61afef"
 
 #+--------+
 #+ Status +
 #+--------+
 #+--- Bars ---+
 #set -g status-left "#[fg=black,bg=blue,bold] #S#[fg=blue,bg=black,nobold,noitalics,nounderscore]"
-set -g status-left "#[fg=black,bg=blue,bold] #S #[fg=blue,bg=black,nobold,noitalics,nounderscore]"
-set -g status-right "#[fg=cyan,bg=black,nobold,noitalics,nounderscore]#[fg=black,bg=cyan,bold] #h "
+set -g status-left "#[fg=#282c34,bg=blue,bold] #S #[fg=blue,bg=#282c34,nobold,noitalics,nounderscore]"
+set -g status-right "#[fg=#61afef,bg=#282c34,nobold,noitalics,nounderscore]#[fg=#282c34,bg=#61afef,bold] #h "
 
 #+--- Windows ---+
-set -g window-status-format "#[fg=black,bg=brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=brightblack]#I #[fg=white,bg=brightblack,nobold,noitalics,nounderscore] #[fg=white,bg=brightblack]#W #F #[fg=brightblack,bg=black,nobold,noitalics,nounderscore]"
-set -g window-status-current-format "#[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#I #[fg=black,bg=cyan,nobold,noitalics,nounderscore] #[fg=black,bg=cyan]#W #F #[fg=cyan,bg=black,nobold,noitalics,nounderscore]"
+set -g window-status-format "#[fg=#282c34,bg=#282c34,nobold,noitalics,nounderscore] #[fg=#aab2bf,bg=#282c34]#I #[fg=white,bg=#282c34,nobold,noitalics,nounderscore] #[fg=#aab2bf,bg=#282c34]#W #F #[fg=#282c34,bg=#282c34,nobold,noitalics,nounderscore]"
+set -g window-status-current-format "#[fg=#282c34,bg=blue,nobold,noitalics,nounderscore] #[fg=#282c34,bg=#61afef,bold]#I #[fg=black,bg=#61afef,nobold,noitalics,nounderscore] #[fg=#282c34,bg=#61afef,bold]#W #F #[fg=#61afef,bg=#282c34,nobold,noitalics,nounderscore]"
 set -g window-status-separator ""
+set -g status-bg "#282c34"
