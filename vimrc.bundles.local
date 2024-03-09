@@ -3,7 +3,7 @@ UnPlug 'ale'
 
 " Colors
 Plug 'arcticicestudio/nord-vim'
-Plug 'rakr/vim-one'
+Plug 'navarasu/onedark.nvim'
 Plug 'rmehri01/onenord.nvim'
 
 " Other plugins

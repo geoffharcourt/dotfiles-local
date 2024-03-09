@@ -7,15 +7,34 @@ duration = 0
 [colors]
 draw_bold_text_with_bright_colors = true
 
+# Colors (One Dark)
+
+# Default colors
+[colors.primary]
+background = '#282c34'
+foreground = '#abb2bf'
+
+# Normal colors
+[colors.normal]
+black   = '#1e2127'
+red     = '#e06c75'
+green   = '#98c379'
+yellow  = '#d19a66'
+blue    = '#61afef'
+magenta = '#c678dd'
+cyan    = '#56b6c2'
+white   = '#abb2bf'
+
+# Bright colors
 [colors.bright]
-black = "#4C566A"
-blue = "#81A1C1"
-cyan = "#8FBCBB"
-green = "#A3BE8C"
-magenta = "#B988B0"
-red = "#BF616A"
-white = "#ECEFF4"
-yellow = "#EBCB8B"
+black   = '#5c6370'
+red     = '#e06c75'
+green   = '#98c379'
+yellow  = '#d19a66'
+blue    = '#61afef'
+magenta = '#c678dd'
+cyan    = '#56b6c2'
+white   = '#ffffff'
 
 [colors.hints.end]
 background = "#4C566A"
@@ -24,20 +43,6 @@ foreground = "#81A1C1"
 [colors.hints.start]
 background = "#4C566A"
 foreground = "#B988B0"
-
-[colors.normal]
-black = "#3B4252"
-blue = "#81A1C1"
-cyan = "#88C0D0"
-green = "#A3BE8C"
-magenta = "#B988B0"
-red = "#BF616A"
-white = "#E5E9F0"
-yellow = "#EBCB8B"
-
-[colors.primary]
-background = "#2E3440"
-foreground = "#C8D0E0"
 
 [colors.search.focused_match]
 background = "#4C566A"
