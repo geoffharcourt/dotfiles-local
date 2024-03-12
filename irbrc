@@ -9,19 +9,19 @@ end
 
 # Stolen from Chris Toomey's dotfiles:
 # http://github.com/christoomey/dotfiles
-ANSI = {}
-ANSI[:RESET]     = "\e[0m"
-ANSI[:BOLD]      = "\e[1m"
-ANSI[:UNDERLINE] = "\e[4m"
-ANSI[:LGRAY]     = "\e[0;37m"
-ANSI[:GRAY]      = "\e[0;90m"
-ANSI[:RED]       = "\e[31m"
-ANSI[:GREEN]     = "\e[32m"
-ANSI[:YELLOW]    = "\e[33m"
-ANSI[:BLUE]      = "\e[34m"
-ANSI[:MAGENTA]   = "\e[35m"
-ANSI[:CYAN]      = "\e[36m"
-ANSI[:WHITE]     = "\e[37m"
+PERSONAL_ANSI = {}
+PERSONAL_ANSI[:RESET]     = "\e[0m"
+PERSONAL_ANSI[:BOLD]      = "\e[1m"
+PERSONAL_ANSI[:UNDERLINE] = "\e[4m"
+PERSONAL_ANSI[:LGRAY]     = "\e[0;37m"
+PERSONAL_ANSI[:GRAY]      = "\e[0;90m"
+PERSONAL_ANSI[:RED]       = "\e[31m"
+PERSONAL_ANSI[:GREEN]     = "\e[32m"
+PERSONAL_ANSI[:YELLOW]    = "\e[33m"
+PERSONAL_ANSI[:BLUE]      = "\e[34m"
+PERSONAL_ANSI[:MAGENTA]   = "\e[35m"
+PERSONAL_ANSI[:CYAN]      = "\e[36m"
+PERSONAL_ANSI[:WHITE]     = "\e[37m"
 
 # Loading extensions of the console. This is wrapped
 # because some might not be included in your Gemfile
@@ -30,12 +30,12 @@ def extend_console(name, care = true, required = true)
   if care
     require name if required
     yield if block_given?
-    $console_extensions << "#{ANSI[:GREEN]}#{name}#{ANSI[:RESET]}"
+    $console_extensions << "#{PERSONAL_ANSI[:GREEN]}#{name}#{PERSONAL_ANSI[:RESET]}"
   else
-    $console_extensions << "#{ANSI[:GRAY]}#{name}#{ANSI[:RESET]}"
+    $console_extensions << "#{PERSONAL_ANSI[:GRAY]}#{name}#{PERSONAL_ANSI[:RESET]}"
   end
   rescue LoadError
-  $console_extensions << "#{ANSI[:RED]}#{name}#{ANSI[:RESET]}"
+  $console_extensions << "#{PERSONAL_ANSI[:RED]}#{name}#{PERSONAL_ANSI[:RESET]}"
 end
 $console_extensions = []
 
