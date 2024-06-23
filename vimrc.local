@@ -92,7 +92,6 @@ colorscheme onedark
 match ErrorMsg '^\(<\|=\|>\)\{7\}\([^=].\+\)\?$'
 
 autocmd VimEnter * RainbowParentheses .
-autocmd VimEnter * TroubleRefresh
 
 ""
 " Code navigation, LSP, etc.
