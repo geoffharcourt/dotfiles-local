@@ -45,6 +45,8 @@ command W w
 cabbrev Bundle Dispatch bundle install
 
 " vim-tmux-navigator overrides needed to allow Sublime Text-like <C-\> comments
+nmap <C-\> gcc
+vmap <C-\> gcc
 let g:tmux_navigator_no_mappings = 1
 let g:tmux_navigator_save_on_switch = 2
 
@@ -236,10 +238,6 @@ nnoremap Y y$
 " Rehighlight after moving text in visual mode
 vnoremap < <gv
 vnoremap > >gv
-
-" Comment/un-comment like Sublime
-nnoremap <C-\> :TComment<CR>
-vnoremap <C-\> :TComment<CR>
 
 ""
 " Splits and moving files

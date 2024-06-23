@@ -1,5 +1,6 @@
 UnPlug 'vim-slim'
 UnPlug 'ale'
+UnPlug 'tComment'
 
 " Colors
 Plug 'arcticicestudio/nord-vim'
