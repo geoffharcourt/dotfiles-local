@@ -220,6 +220,7 @@ require("lazy").setup({
       },
       config = function()
         local telescope = require("telescope")
+        local actions = require("telescope.actions")
         local open_with_trouble = require("trouble.sources.telescope").open
         local lga_actions = require("telescope-live-grep-args.actions")
         telescope.load_extension("fzf")
@@ -234,6 +235,8 @@ require("lazy").setup({
                 ["<c-k>"] = lga_actions.quote_prompt(),
                 ["<c-t>"] = open_with_trouble,
                 ["<C-space>"] = lga_actions.to_fuzzy_refine,
+                ["<C-s>"] = actions.cycle_previewers_next,
+                ["<C-a>"] = actions.cycle_previewers_prev,
               },
               n = { ["<c-t>"] = open_with_trouble },
             }
