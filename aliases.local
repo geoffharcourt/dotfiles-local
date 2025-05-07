@@ -13,8 +13,8 @@ alias gra='command git rebase --abort'
 alias grc='command git rebase --continue'
 
 # Postgres
-alias pgstart='brew services start postgresql'
-alias pgstop='brew services stop postgresql && rm -f /usr/local/var/postgres/postmaster.pid'
+alias pgstart='brew services start postgresql@16'
+alias pgstop='brew services stop postgresql@16 && rm -f /opt/homebrew/var/postgresql@16/postmaster.pid'
 alias pgrestart='pgstop && pgstart'
 
 # Ruby
