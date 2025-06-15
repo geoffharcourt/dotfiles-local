@@ -32,6 +32,7 @@ vim.o.modeline = false --  inspect top/bottom lines of the file for a modeline
 vim.o.shiftround = true -- When at 3 spaces and I hit >>, go to 4, not 5.
 vim.o.colorcolumn = "+0" -- Set to the textwidth
 vim.o.showmode = false
+vim.o.winwidth = 85
 
 -- Don't ask me if I want to load changed files. The answer is always 'Yes'
 vim.o.autoread = true
@@ -107,7 +108,7 @@ vim.o.tabstop = 2
 vim.o.shiftwidth = 2
 vim.o.expandtab = true
 
-vim.o.winborder = 'rounded'
+vim.o.winborder = "rounded"
 
 -- no ex mode
 vim.keymap.set("", "Q", "<Nop>")
@@ -146,11 +147,32 @@ require("lazy").setup({
   spec = {
     { "nordtheme/vim" },
     { "lewis6991/fileline.nvim" },
-    { "lewis6991/gitsigns.nvim" },
-    { "lewis6991/spaceless.nvim" },
-    { "christoomey/vim-tmux-navigator" },
+    { "lewis6991/gitsigns.nvim", event = "VeryLazy" },
+    { "lewis6991/spaceless.nvim", event = "VeryLazy" },
+    {
+      "christoomey/vim-tmux-navigator",
+      event = "VeryLazy",
+      init = function()
+        vim.g["tmux_navigator_no_mappings"] = 1
+        vim.g["tmux_navigator_save_on_switch"] = 2
+      end,
+      cmd = {
+        "TmuxNavigateLeft",
+        "TmuxNavigateDown",
+        "TmuxNavigateUp",
+        "TmuxNavigateRight",
+        "TmuxNavigatorProcessList",
+      },
+      keys = {
+        { "<C-h>", "<cmd>TmuxNavigateLeft<CR>" },
+        { "<C-j>", "<cmd>TmuxNavigateDown<CR>" },
+        { "<C-k>", "<cmd>TmuxNavigateUp<CR>" },
+        { "<C-l>", "<cmd>TmuxNavigateRight<CR>" },
+      },
+    },
     {
       "christoomey/vim-run-interactive",
+      event = "VeryLazy",
       keys = {
         {
           "<Leader>r",
@@ -159,6 +181,7 @@ require("lazy").setup({
         }
       },
     },
+    { "grafana/vim-alloy" },
     {
       "tpope/vim-rails",
       init = function()
@@ -190,6 +213,10 @@ require("lazy").setup({
             command = "service",
             alternate = "spec/services/{}_spec.rb",
           },
+          ["app/integration_clients/*.rb"] = {
+            command = "integration_client",
+            alternate = "spec/integration_clients/{}_spec.rb",
+          },
           ["app/workers/*.rb"] = {
             command = "worker",
             template = "class {camelcase|capitalize|colons}\n  include Sidekiq::Worker\n\n  def perform\n  end\nend",
@@ -206,12 +233,14 @@ require("lazy").setup({
       init = function()
         vim.g["prettier#autoformat"] = 1
         vim.g["prettier#autoformat_require_pragma"] = 0
-      end
+        vim.g["prettier#config#config_precedence"] = 'prefer-file'
+      end,
+      build = "yarn install --frozen-lockfile --production"
     },
     -- Telescope is absolutely magic.
     {
       "nvim-telescope/telescope.nvim",
-      branch = "0.1.x",
+      branch = "master",
       dependencies = {
         "nvim-lua/plenary.nvim",
         "nvim-telescope/telescope-fzf-native.nvim",
@@ -232,13 +261,14 @@ require("lazy").setup({
           defaults = {
             mappings = {
               i = {
-                ["<c-k>"] = lga_actions.quote_prompt(),
-                ["<c-t>"] = open_with_trouble,
+                ["<C-k>"] = lga_actions.quote_prompt(),
+                ["<C-t>"] = open_with_trouble,
                 ["<C-space>"] = lga_actions.to_fuzzy_refine,
                 ["<C-s>"] = actions.cycle_previewers_next,
                 ["<C-a>"] = actions.cycle_previewers_prev,
+                ["<C-]>"] = actions.send_selected_to_qflist,
               },
-              n = { ["<c-t>"] = open_with_trouble },
+              n = { ["<C-t>"] = open_with_trouble },
             }
           }
         })
@@ -246,11 +276,11 @@ require("lazy").setup({
       keys = {
         -- This is like "<C-R>" in your terminal.
         { "\\", function() require("telescope.builtin").live_grep() end },
-        { "<Leader>k", function() require("telescope-live-grep-args.shortcuts").grep_word_under_cursor() end },
-        { "<Leader>k", function() require("telescope-live-grep-args.shortcuts").grep_visual_selection() end, mode = "v" },
+        { "K", function() require("telescope-live-grep-args.shortcuts").grep_word_under_cursor() end },
+        { "K", function() require("telescope-live-grep-args.shortcuts").grep_visual_selection() end, mode = "v" },
         { "<Leader>b", function() require("telescope.builtin").git_branches() end },
         { "<Leader>g", function() require("telescope.builtin").git_bcommits() end },
-        { "<Leader>g", function() require("telescope.builtin").git_bcommits_range() end, mode = "v" },
+        { "<Leader>g", function() require("telescope.builtin").git_bcommits_range() end, mode = "v", },
         { "<Leader>G", function() require("telescope.builtin").git_commits() end },
         { "<C-p>", function() require("telescope.builtin").find_files() end },
         { "<C-r>", function() require("telescope.builtin").commands() end, mode = "c" },
@@ -281,10 +311,11 @@ require("lazy").setup({
     },
     {
       "axkirillov/easypick.nvim",
+      event = "VeryLazy",
       dependencies = { "nvim-telescope/telescope.nvim" },
       config = function()
         local easypick = require("easypick")
-        local get_default_branch = "git remote show origin | grep 'HEAD branch' | cut -d' ' -f5"
+        local get_default_branch = "git symbolic-ref --short refs/remotes/origin/HEAD"
         local base_branch = vim.fn.system(get_default_branch) or "main"
 
         easypick.setup({
@@ -307,32 +338,33 @@ require("lazy").setup({
     },
     {
       "folke/trouble.nvim",
+      event = "VeryLazy",
       opts = {}, -- for default options, refer to the configuration section for custom setup.
       cmd = "Trouble",
       keys = {
         {
           "<Leader>d",
-          "<cmd>Trouble diagnostics toggle filter.buf=0<cr>",
+          "<cmd>Trouble diagnostics toggle filter.buf=0<CR>",
           desc = "Buffer Diagnostics (Trouble)",
         },
         {
           "<Leader>D",
-          "<cmd>Trouble diagnostics toggle<cr>",
+          "<cmd>Trouble diagnostics toggle<CR>",
           desc = "Diagnostics (Trouble)",
         },
         {
           "<Leader>cs",
-          "<cmd>Trouble symbols toggle focus=false<cr>",
+          "<cmd>Trouble symbols toggle focus=false<CR>",
           desc = "Symbols (Trouble)",
         },
         {
           "<Leader>o",
-          "<cmd>Trouble loclist toggle<cr>",
+          "<cmd>Trouble loclist toggle<CR>",
           desc = "Location List (Trouble)",
         },
         {
           "<Leader>q",
-          "<cmd>Trouble qflist toggle<cr>",
+          "<cmd>Trouble qflist toggle<CR>",
           desc = "Quickfix List (Trouble)",
         },
         {
@@ -349,6 +381,7 @@ require("lazy").setup({
     },
     {
       "AckslD/nvim-neoclip.lua",
+      event = "VeryLazy",
       dependencies = { "nvim-telescope/telescope.nvim" },
       config = function()
         require("neoclip").setup()
@@ -362,7 +395,7 @@ require("lazy").setup({
       "janko-m/vim-test",
       init = function()
         vim.g["test#ruby#minitest#executable"] = "bundle exec rake test"
-        vim.g["test#runner_commands"] = {'RSpec'}
+        vim.g["test#runner_commands"] = { "RSpec" }
         vim.g["test#strategy"] = "dispatch"
         vim.g["test#ruby#rspec#options"] = {
           nearest = "--format documentation",
@@ -375,17 +408,19 @@ require("lazy").setup({
         { "<Leader>s", ":w<CR>:TestNearest<CR>" },
         { "<Leader>t", ":w<CR>:TestFile<CR>" },
       },
+      event = "VeryLazy",
     },
-    { 'tpope/vim-dispatch'  },
-    { 'tpope/vim-surround' },
-    { 'tpope/vim-vinegar' },
-    { 'tpope/vim-eunuch' },
-    { 'tpope/vim-bundler' },
+    { "tpope/vim-dispatch", event = "VeryLazy"  },
+    { "tpope/vim-repeat", event = "VeryLazy"  },
+    { "tpope/vim-surround", event = "VeryLazy" },
+    { "tpope/vim-vinegar" },
+    { "tpope/vim-eunuch", event = "VeryLazy" },
+    { "tpope/vim-bundler", event = "VeryLazy" },
     { "nelstrom/vim-textobj-rubyblock", dependencies = { "kana/vim-textobj-user" } },
     { "tpope/vim-rake" },
     { "tpope/vim-projectionist" },
-    { 'vim-ruby/vim-ruby' },
-    { 'pbrisbin/vim-mkdir' },
+    { "vim-ruby/vim-ruby" },
+    { "pbrisbin/vim-mkdir" },
     { "tpope/vim-unimpaired" },
     { "junegunn/rainbow_parentheses.vim" },
     {
@@ -401,16 +436,17 @@ require("lazy").setup({
         vim.g["splitjoin_ruby_options_as_arguments"] = 1
         vim.g["splitjoin_ruby_hanging_args"] = 0
         vim.g["splitjoin_ruby_curly_braces"] = 0
-      end
+      end,
+      event = "VeryLazy",
     },
     -- LSP stuff
     { "pmizio/typescript-tools.nvim", dependencies = { "nvim-lua/plenary.nvim" }, opts = {} },
     {
-      'adam12/ruby-lsp.nvim',
-      dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+      "adam12/ruby-lsp.nvim",
+      dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
       config = true,
     },
-    { 'luals/lua-language-server' },
+    { "luals/lua-language-server" },
     { "neovim/nvim-lspconfig" },
     {
       "hrsh7th/nvim-cmp",
@@ -489,7 +525,7 @@ require("lazy").setup({
 
           formatting = {
             format = lspkind.cmp_format({
-              mode = 'symbol', -- show only symbol annotations
+              mode = "symbol", -- show only symbol annotations
               maxwidth = {
                 -- prevent the popup from showing more than provided characters (e.g 50 will not show more than 50 characters)
                 -- can also be a function to dynamically calculate max width such as
@@ -497,7 +533,7 @@ require("lazy").setup({
                 menu = 30, -- leading text (labelDetails)
                 abbr = 30, -- actual suggestion item
               },
-              ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
+              ellipsis_char = "...", -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
               show_labelDetails = true, -- show labelDetails in menu. Disabled by default
 
               -- The function below will be called before any actual modifications from lspkind
@@ -540,7 +576,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
       })
     end
 
-    local t = require "telescope.builtin"
+    local t = require("telescope.builtin")
 
     -- Jump to the definition of the word under your cursor.
     --  This is where a variable was first declared, or where a function is defined, etc.
@@ -620,7 +656,7 @@ vim.cmd [[
   colorscheme nord
 ]]
 
-vim.api.nvim_create_user_command('Bundle', 'Dispatch bundle install', {})
-vim.api.nvim_create_user_command('W', 'w', {})
-vim.api.nvim_create_user_command('Wq', 'wq', {})
-vim.api.nvim_create_user_command('Q', 'q', {})
+vim.api.nvim_create_user_command("Bundle", "Dispatch bundle install", {})
+vim.api.nvim_create_user_command("W", "w", {})
+vim.api.nvim_create_user_command("Wq", "wq", {})
+vim.api.nvim_create_user_command("Q", "q", {})
