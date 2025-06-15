@@ -1,6 +1,6 @@
+bundler-audit
 bundler
 gem-browse
 gem-shut-the-fuck-up
 neovim
-parity
-solargraph
+ruby-lsp
