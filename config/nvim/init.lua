@@ -145,6 +145,41 @@ require("lazy").setup({
   -- automatically check for plugin updates
   checker = { enabled = true },
   spec = {
+    {
+      "folke/snacks.nvim",
+      priority = 1000,
+      lazy = false,
+      ---@type snacks.Config
+      opts = {
+        -- your configuration comes here
+        -- or leave it empty to use the default settings
+        -- refer to the configuration section below
+        bigfile = { enabled = false },
+        dashboard = { enabled = false },
+        explorer = { enabled = false },
+        indent = {
+          enabled = true,
+          animate = {
+            enabled = false, -- vim.fn.has("nvim-0.10") == 1
+            style = "out",
+            easing = "linear",
+            duration = {
+              step = 20, -- ms per step
+              total = 500, -- maximum duration
+            },
+          },
+        },
+        input = { enabled = true },
+        picker = { enabled = false },
+        lazygit = { enabled = true },
+        notifier = { enabled = false },
+        quickfile = { enabled = true },
+        scope = { enabled = true },
+        scroll = { enabled = true },
+        statuscolumn = { enabled = false },
+        words = { enabled = false },
+      },
+    },
     { "nordtheme/vim" },
     { "lewis6991/fileline.nvim" },
     { "lewis6991/gitsigns.nvim", event = "VeryLazy" },
@@ -182,6 +217,7 @@ require("lazy").setup({
       },
     },
     { "grafana/vim-alloy" },
+    { "tpope/vim-abolish" },
     {
       "tpope/vim-rails",
       init = function()
@@ -192,11 +228,6 @@ require("lazy").setup({
             command = "admin",
             alternate = "spec/controllers/admin/{singular}_controller_spec.rb",
           },
-          ["app/models/*.rb"] = {
-            command = "model",
-            alternate = "spec/models/{}_spec.rb",
-            related = "spec/factories/{plural}.rb",
-          },
           ["spec/factories/*.rb"] = {
             command = "factory",
             related = "app/models/{singular}.rb",
@@ -204,6 +235,14 @@ require("lazy").setup({
           ["spec/requests/*_spec.rb"] = {
             command = "request",
             related = "app/controllers/{basename}_controller.rb",
+          },
+          ["app/queries/*.rb"] = {
+            command = "query",
+            related = "spec/queries/{}_spec.rb",
+          },
+          ["app/serializers/*.rb"] = {
+            command = "serializer",
+            related = "spec/serializers/{}_spec.rb",
           },
           ["config/locales/*.json"] = {
             command = "locale",
@@ -220,8 +259,20 @@ require("lazy").setup({
           ["app/workers/*.rb"] = {
             command = "worker",
             template = "class {camelcase|capitalize|colons}\n  include Sidekiq::Worker\n\n  def perform\n  end\nend",
-            test = { "spec/workers/{}_spec.rb" },
+            alternate = { "spec/workers/{}_spec.rb" },
           },
+          ["spec/*.rb"] = {
+            command = "spec",
+            alternate = "app/{}_spec.rb",
+          },
+          ["app/javascript/*.tsx"] = {
+            command = "spec",
+            alternate = "app/javascript/{}.test.tsx",
+          },
+          ["app/javascript/*.ts"] = {
+            command = "spec",
+            alternate = "app/javascript/{}.test.ts",
+          }
         }
       end,
     },
@@ -437,16 +488,10 @@ require("lazy").setup({
         vim.g["splitjoin_ruby_hanging_args"] = 0
         vim.g["splitjoin_ruby_curly_braces"] = 0
       end,
-      event = "VeryLazy",
     },
     -- LSP stuff
     { "pmizio/typescript-tools.nvim", dependencies = { "nvim-lua/plenary.nvim" }, opts = {} },
-    {
-      "adam12/ruby-lsp.nvim",
-      dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-      config = true,
-    },
-    { "luals/lua-language-server" },
+    -- { "luals/lua-language-server" },
     { "neovim/nvim-lspconfig" },
     {
       "hrsh7th/nvim-cmp",
@@ -581,7 +626,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     -- Jump to the definition of the word under your cursor.
     --  This is where a variable was first declared, or where a function is defined, etc.
     --  To jump back, press <C-t>.
-    map("<C-]", t.lsp_definitions, "[G]oto [D]efinition")
+    map("<C-]>", t.lsp_definitions, "[G]oto [D]efinition")
     map("gd", t.lsp_definitions, "[G]oto [D]efinition")
 
     -- Find references for the word under your cursor.
@@ -624,8 +669,13 @@ vim.lsp.config("ruby_lsp", {
   capabilities = require("cmp_nvim_lsp").default_capabilities(),
   cmd = { vim.fn.expand "~/.asdf/shims/ruby-lsp" },
   init_options = {
-    formatter = "rubocop",
-    linters = { "rubocop" },
+    formatter = "auto",
+    linters = { "auto" },
+    addonSettings = {
+      ["Ruby LSP Rails"] = {
+        enablePendingMigrationsPrompt = false,
+      },
+    },
   },
 })
 vim.lsp.enable("ruby_lsp")
@@ -660,3 +710,49 @@ vim.api.nvim_create_user_command("Bundle", "Dispatch bundle install", {})
 vim.api.nvim_create_user_command("W", "w", {})
 vim.api.nvim_create_user_command("Wq", "wq", {})
 vim.api.nvim_create_user_command("Q", "q", {})
+
+-- experiments
+--
+---@type table<number, {token:lsp.ProgressToken, msg:string, done:boolean}[]>
+local progress = vim.defaulttable()
+vim.api.nvim_create_autocmd("LspProgress", {
+  ---@param ev {data: {client_id: integer, params: lsp.ProgressParams}}
+  callback = function(ev)
+    local client = vim.lsp.get_client_by_id(ev.data.client_id)
+    local value = ev.data.params.value --[[@as {percentage?: number, title?: string, message?: string, kind: "begin" | "report" | "end"}]]
+    if not client or type(value) ~= "table" then
+      return
+    end
+    local p = progress[client.id]
+
+    for i = 1, #p + 1 do
+      if i == #p + 1 or p[i].token == ev.data.params.token then
+        p[i] = {
+          token = ev.data.params.token,
+          msg = ("[%3d%%] %s%s"):format(
+            value.kind == "end" and 100 or value.percentage or 100,
+            value.title or "",
+            value.message and (" **%s**"):format(value.message) or ""
+          ),
+          done = value.kind == "end",
+        }
+        break
+      end
+    end
+
+    local msg = {} ---@type string[]
+    progress[client.id] = vim.tbl_filter(function(v)
+      return table.insert(msg, v.msg) or not v.done
+    end, p)
+
+    local spinner = { "⠋", "⠙", "⠹", "⠸", "⠼", "⠴", "⠦", "⠧", "⠇", "⠏" }
+    vim.notify(table.concat(msg, "\n"), "info", {
+      id = "lsp_progress",
+      title = client.name,
+      opts = function(notif)
+        notif.icon = #progress[client.id] == 0 and " "
+          or spinner[math.floor(vim.uv.hrtime() / (1e6 * 80)) % #spinner + 1]
+      end,
+    })
+  end,
+})
