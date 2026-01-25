@@ -1,9 +1,12 @@
+@anthropic-ai/claude-code
+@northflank/cli
 diagnostic-languageserver
 eslint
 eslint_d
 eslint-plugin-jsx-a11y
 neovim
 npm
+pnpm
 stylelint
 typescript
 typescript-language-server
