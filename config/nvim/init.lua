@@ -667,7 +667,7 @@ vim.diagnostic.config({
 require("typescript-tools").setup({})
 vim.lsp.config("ruby_lsp", {
   capabilities = require("cmp_nvim_lsp").default_capabilities(),
-  cmd = { vim.fn.expand "~/.asdf/shims/ruby-lsp" },
+  cmd = { vim.fn.expand "ruby-lsp" },
   init_options = {
     formatter = "auto",
     linters = { "auto" },

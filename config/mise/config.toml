@@ -1,0 +1,13 @@
+[tools]
+node = "24.13.0"
+ruby = "4.0.1"
+rust = "latest"
+
+[settings]
+env_shell_expand = false
+idiomatic_version_file_enable_tools = ["ruby", "node"]
+experimental = true
+ruby.compile = false
+fetch_remote_versions_cache = "7d"
+http_timeout = "5s"
+fetch_remote_versions_timeout = "5s"
