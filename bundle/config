@@ -1,5 +1,5 @@
 ---
-BUNDLE_JOBS: "8"
+BUNDLE_JOBS: "12"
 BUNDLE_GEM__COC: "true"
 BUNDLE_GEM__MIT: "true"
 BUNDLE_GEM__TEST: "rspec"
