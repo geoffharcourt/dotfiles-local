@@ -50,3 +50,5 @@
   email = geoff.harcourt@gmail.com
 [interactive]
   diffFilter = delta --color-only
+[include]
+  path = ~/.gitconfig.local.signing
