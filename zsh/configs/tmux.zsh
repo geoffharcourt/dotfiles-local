@@ -15,12 +15,16 @@ tmux-smart-pane() {
   eval "tmux split-window $orient $@"
 }
 
+_not_inside_herdr() {
+  [[ -z "$HERDR_ENV" ]]
+}
+
 _not_inside_tmux() {
   [[ -z "$TMUX" ]]
 }
 
-ensure_tmux_is_running() {
-  if _not_inside_tmux; then
-    tat
+ensure_herdr_is_running() {
+  if _not_inside_herdr; then
+    herdr
   fi
 }

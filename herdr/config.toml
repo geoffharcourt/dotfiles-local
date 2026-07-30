@@ -1,0 +1,115 @@
+onboarding = false
+[ui]
+agent_panel_sort = "spaces"
+
+[ui.toast]
+delivery = "herdr"
+
+[theme]
+auto_switch = true
+dark_name = "tokyo-night"
+light_name = "tokyo-night"
+
+[keys]
+prefix = "ctrl+s"
+split_horizontal = "prefix+-"
+split_vertical = "prefix+\\"
+rename_pane = "prefix+shift+p"
+rename_tab = "prefix+,"
+
+# tmux-style direct pane navigation, alongside the prefix defaults
+[[keys.command]]
+key = "ctrl+h"
+type = "plugin_action"
+command = "vim-herdr-navigation.left"
+description = "navigate left (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+j"
+type = "plugin_action"
+command = "vim-herdr-navigation.down"
+description = "navigate down (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+k"
+type = "plugin_action"
+command = "vim-herdr-navigation.up"
+description = "navigate up (vim/herdr)"
+
+[[keys.command]]
+key = "ctrl+l"
+type = "plugin_action"
+command = "vim-herdr-navigation.right"
+description = "navigate right (vim/herdr)"
+
+# Override herdr's built-in "new worktree" key (prefix+shift+g) with worktrunk's
+# default-branch switch/create picker:
+[[keys.command]]
+key = "prefix+shift+g"
+type = "plugin_action"
+command = "worktrunk.open"
+description = "Worktree: switch / create from default branch"
+
+# Optional: bind current-branch creation separately.
+[[keys.command]]
+key = "prefix+shift+c"
+type = "plugin_action"
+command = "worktrunk.open-current"
+description = "Worktree: switch / create from current branch"
+
+[[keys.command]]
+key = "prefix+shift+d"
+type = "plugin_action"
+command = "worktrunk.remove"
+description = "Worktree: remove"
+
+[ui.sidebar.agents]
+rows = [
+  ["state_icon", "$title"],
+  [{ token = "$flag", fg = "#f1fa8c", bold = true }, "agent", "workspace", { token = "$age", dim = true }],
+]
+
+[ui.sidebar.spaces]
+rows = [
+  ["state_icon", "workspace", "$agents", { token = "$busy", dim = true }],
+  ["branch", "git_status"],
+]
+
+[[keys.command]]
+key = "prefix+m"
+type = "shell"
+description = "settle agent (slides to bottom of inbox)"
+command = "herdr plugin action invoke settle --plugin herdr-agent-inbox"
+
+[[keys.command]]
+key = "prefix+shift+m"
+type = "shell"
+description = "mark agent unread (back to attention tier)"
+command = "herdr plugin action invoke unread --plugin herdr-agent-inbox"
+
+[[keys.command]]
+key = "prefix+alt+m"
+type = "shell"
+description = "settle all finished agents in workspace"
+command = "herdr plugin action invoke settle-workspace --plugin herdr-agent-inbox"
+
+[[keys.command]]
+key = "prefix+i"
+type = "shell"
+description = "open agent inbox popup"
+command = "herdr plugin pane open --plugin herdr-agent-inbox --entrypoint inbox"
+
+# Break the current pane out into its own tab. Overrides herdr's built-in
+# toggle_sidebar (prefix+b).
+[[keys.command]]
+key = "prefix+b"
+type = "shell"
+description = "break pane out to a new tab"
+command = "herdr pane move \"$HERDR_ACTIVE_PANE_ID\" --new-tab --focus"
+
+# Same, but break all the way out into its own workspace.
+[[keys.command]]
+key = "prefix+shift+b"
+type = "shell"
+description = "break pane out to a new workspace"
+command = "herdr pane move \"$HERDR_ACTIVE_PANE_ID\" --new-workspace --focus"

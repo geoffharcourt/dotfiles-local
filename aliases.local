@@ -1,4 +1,9 @@
-alias cld='cd ~/commonlit/commonlit && tat'
+# Skip herdr when we're already inside a Herdr session
+cld() {
+  cd ~/commonlit/commonlit || return
+  [[ -n $HERDR_ENV ]] && return
+  herdr
+}
 
 # Git
 alias gaa='git add -p'
@@ -21,6 +26,7 @@ alias pgrestart='pgstop && pgstart'
 alias bex='nocorrect bundle exec'
 alias bu='bundle update'
 alias irb='irb --readline -r irb/completion'
+alias s='NO_HEADLESS=true rspec'
 
 # Rails
 alias rc='rails console'
