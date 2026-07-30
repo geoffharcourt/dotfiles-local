@@ -180,31 +180,25 @@ require("lazy").setup({
         words = { enabled = false },
       },
     },
+    { "catppuccin/nvim" },
     { "nordtheme/vim" },
+    {
+      "f-person/auto-dark-mode.nvim",
+      opts = {
+        update_interval = 1000, -- Check every second
+        set_dark_mode = function()
+          vim.o.background = "dark"
+          vim.cmd("colorscheme nord") -- Your dark theme
+        end,
+        set_light_mode = function()
+          vim.o.background = "light"
+          vim.cmd("colorscheme nord") -- Your light theme
+        end,
+      },
+    },
     { "lewis6991/fileline.nvim" },
     { "lewis6991/gitsigns.nvim", event = "VeryLazy" },
     { "lewis6991/spaceless.nvim", event = "VeryLazy" },
-    {
-      "christoomey/vim-tmux-navigator",
-      event = "VeryLazy",
-      init = function()
-        vim.g["tmux_navigator_no_mappings"] = 1
-        vim.g["tmux_navigator_save_on_switch"] = 2
-      end,
-      cmd = {
-        "TmuxNavigateLeft",
-        "TmuxNavigateDown",
-        "TmuxNavigateUp",
-        "TmuxNavigateRight",
-        "TmuxNavigatorProcessList",
-      },
-      keys = {
-        { "<C-h>", "<cmd>TmuxNavigateLeft<CR>" },
-        { "<C-j>", "<cmd>TmuxNavigateDown<CR>" },
-        { "<C-k>", "<cmd>TmuxNavigateUp<CR>" },
-        { "<C-l>", "<cmd>TmuxNavigateRight<CR>" },
-      },
-    },
     {
       "christoomey/vim-run-interactive",
       event = "VeryLazy",
@@ -294,7 +288,7 @@ require("lazy").setup({
         vim.g["prettier#autoformat_require_pragma"] = 0
         vim.g["prettier#config#config_precedence"] = 'prefer-file'
       end,
-      build = "yarn install --frozen-lockfile --production"
+      build = "pnpm install --production"
     },
     -- Telescope is absolutely magic.
     {
@@ -601,6 +595,30 @@ require("lazy").setup({
         })
       end,
     },
+    {
+      "christoomey/vim-tmux-navigator",
+      lazy = false,
+      init = function()
+        vim.g["tmux_navigator_no_mappings"] = 1
+        vim.g["tmux_navigator_save_on_switch"] = 2
+      end,
+      -- cmd = {
+      --   "TmuxNavigateLeft",
+      --   "TmuxNavigateDown",
+      --   "TmuxNavigateUp",
+      --   "TmuxNavigateRight",
+      --   "TmuxNavigatorProcessList",
+      -- },
+      -- keys = {
+      --   { "<C-h>", "<cmd>TmuxNavigateLeft<CR>" },
+      --   { "<C-j>", "<cmd>TmuxNavigateDown<CR>" },
+      --   { "<C-k>", "<cmd>TmuxNavigateUp<CR>" },
+      --   { "<C-l>", "<cmd>TmuxNavigateRight<CR>" },
+      -- },
+      config = function()
+        dofile(vim.fn.expand("~/.config/herdr/vim-herdr-navigation/editor/nvim.lua"))
+      end,
+    },
   },
 })
 
@@ -673,6 +691,7 @@ vim.diagnostic.config({
 })
 
 require("typescript-tools").setup({})
+vim.lsp.enable('oxlint');
 vim.lsp.config("ruby_lsp", {
   capabilities = require("cmp_nvim_lsp").default_capabilities(),
   cmd = { vim.fn.expand "ruby-lsp" },
@@ -711,7 +730,6 @@ vim.cmd [[
   runtime macros/matchit.vim
   filetype plugin indent on
   syntax enable
-  colorscheme nord
 ]]
 
 vim.api.nvim_create_user_command("Bundle", "Dispatch bundle install", {})
