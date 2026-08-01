@@ -4,7 +4,7 @@
 fe() {
   local file
   # file=$(fzf --query="$1" --select-1 --exit-0)
-  file=$(ag -g "$1" | fzf-tmux -d 40 --select-1 --exit-0)
+  file=$(ag -g "$1" | fzf --height 40 --select-1 --exit-0)
   [ -n "$file" ] && ${EDITOR} "$file"
 }
 
@@ -26,7 +26,7 @@ fgh() {
 fbr() {
   local branches branch
   branches=$(git branch) &&
-  branch=$(echo "$branches" | fzf-tmux -d 15 +s +m) &&
+  branch=$(echo "$branches" | fzf --height 15 +s +m) &&
   git checkout $(echo "$branch" | sed "s/.* //")
 }
 
@@ -34,7 +34,7 @@ fbr() {
 fba() {
   local branches branch
   branches=$(git branch -a) &&
-  branch=$(echo "$branches" | fzf-tmux -d 15 +s +m) &&
+  branch=$(echo "$branches" | fzf --height 15 +s +m) &&
   git checkout $(echo "$branch" | sed "s/.* //" | sed "s/remotes\/origin\///")
 }
 
