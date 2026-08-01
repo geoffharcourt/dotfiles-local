@@ -488,7 +488,6 @@ require("lazy").setup({
         "hrsh7th/cmp-buffer",
         -- Autocomplete filesystem paths as you type them. Neat!
         "hrsh7th/cmp-path",
-        "andersevenrud/cmp-tmux",
         "onsails/lspkind-nvim",
       },
       config = function()
@@ -543,7 +542,6 @@ require("lazy").setup({
                 end,
               },
             },
-            { name = "tmux" },
           }),
 
           sorting = {
@@ -580,32 +578,12 @@ require("lazy").setup({
         })
       end,
     },
-    {
-      "christoomey/vim-tmux-navigator",
-      lazy = false,
-      init = function()
-        vim.g["tmux_navigator_no_mappings"] = 1
-        vim.g["tmux_navigator_save_on_switch"] = 2
-      end,
-      -- cmd = {
-      --   "TmuxNavigateLeft",
-      --   "TmuxNavigateDown",
-      --   "TmuxNavigateUp",
-      --   "TmuxNavigateRight",
-      --   "TmuxNavigatorProcessList",
-      -- },
-      -- keys = {
-      --   { "<C-h>", "<cmd>TmuxNavigateLeft<CR>" },
-      --   { "<C-j>", "<cmd>TmuxNavigateDown<CR>" },
-      --   { "<C-k>", "<cmd>TmuxNavigateUp<CR>" },
-      --   { "<C-l>", "<cmd>TmuxNavigateRight<CR>" },
-      -- },
-      config = function()
-        dofile(vim.fn.expand("~/.config/herdr/vim-herdr-navigation/editor/nvim.lua"))
-      end,
-    },
   },
 })
+
+-- Seamless <C-h/j/k/l> movement between neovim splits and herdr panes. Loaded
+-- after lazy so it wins over any plugin mappings on those keys.
+dofile(vim.fn.expand("~/.config/herdr/vim-herdr-navigation/editor/nvim.lua"))
 
 vim.api.nvim_create_autocmd("BufEnter", {
   callback = function() vim.cmd(":RainbowParentheses") end,
