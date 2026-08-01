@@ -141,7 +141,7 @@ vim.keymap.set("n", "<Leader><Leader>", "<C-^>")
 require("lazy").setup({
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "nord" } },
+  -- install = { colorscheme = { "nord" } },
   -- automatically check for plugin updates
   checker = { enabled = true },
   spec = {
@@ -180,22 +180,7 @@ require("lazy").setup({
         words = { enabled = false },
       },
     },
-    { "catppuccin/nvim" },
     { "nordtheme/vim" },
-    {
-      "f-person/auto-dark-mode.nvim",
-      opts = {
-        update_interval = 1000, -- Check every second
-        set_dark_mode = function()
-          vim.o.background = "dark"
-          vim.cmd("colorscheme nord") -- Your dark theme
-        end,
-        set_light_mode = function()
-          vim.o.background = "light"
-          vim.cmd("colorscheme nord") -- Your light theme
-        end,
-      },
-    },
     { "lewis6991/fileline.nvim" },
     { "lewis6991/gitsigns.nvim", event = "VeryLazy" },
     { "lewis6991/spaceless.nvim", event = "VeryLazy" },
@@ -730,6 +715,7 @@ vim.cmd [[
   runtime macros/matchit.vim
   filetype plugin indent on
   syntax enable
+  colorscheme nord
 ]]
 
 vim.api.nvim_create_user_command("Bundle", "Dispatch bundle install", {})
