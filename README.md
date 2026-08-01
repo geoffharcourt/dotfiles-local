@@ -48,12 +48,6 @@ What's in it?
   to @nelstrom)
 * vim-scratch for top-down visor-like scratchpad
 
-[tmux](http://robots.thoughtbot.com/a-tmux-crash-course)
-configuration:
-
-* @christoomey's vim-tmux-navigator to streamline jumps between vim and tmux
-  splits using the same commands at all times
-
 [git](http://git-scm.com/) configuration:
 
 * Use the Github shell command `hub` instead of `git` (backwards compatible with
