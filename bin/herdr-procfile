@@ -1,0 +1,164 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+usage() {
+  cat <<'EOF'
+Usage: herdr-procfile [options] [procfile]
+
+Start each process in a Procfile in its own Herdr tab, labelled with the
+process name. Process names that already have a tab are left alone, so
+rerunning starts only what is missing.
+
+With --stop, interrupt and close every tab in the session labelled with one
+of the Procfile's process names instead.
+
+Options:
+  -s, --stop            Stop the processes and close their tabs
+  -w, --workspace ID    Workspace to create tabs in (default: current)
+  -l, --processes LIST  Comma-separated process names to act on (default: all)
+  -e, --env-file PATH   Env file to load into each tab (default: .env if present)
+  -n, --dry-run         Print what would happen, then exit
+  -h, --help            Show this message
+EOF
+}
+
+die() {
+  echo "herdr-procfile: $1" >&2
+  exit 1
+}
+
+need_value() {
+  [ "$1" -ge 2 ] || die "$2 requires a value"
+}
+
+shell_in_foreground() {
+  herdr pane process-info --pane "$1" |
+    jq -e '.result.process_info | .shell_pid == .foreground_process_group_id' >/dev/null 2>&1
+}
+
+procfile=""
+workspace="${HERDR_WORKSPACE_ID:-}"
+only=""
+env_file=""
+env_file_given=0
+dry_run=0
+stop=0
+
+while [ $# -gt 0 ]; do
+  case "$1" in
+    -s|--stop) stop=1; shift ;;
+    -w|--workspace) need_value $# "$1"; workspace="$2"; shift 2 ;;
+    -l|--processes) need_value $# "$1"; only="$2"; shift 2 ;;
+    -e|--env-file) need_value $# "$1"; env_file="$2"; env_file_given=1; shift 2 ;;
+    -n|--dry-run) dry_run=1; shift ;;
+    -h|--help) usage; exit 0 ;;
+    -*) usage >&2; exit 2 ;;
+    *) procfile="$1"; shift ;;
+  esac
+done
+
+[ "${HERDR_ENV:-}" = "1" ] || die "not running inside Herdr"
+command -v herdr >/dev/null 2>&1 || die "herdr is not on PATH"
+command -v jq >/dev/null 2>&1 || die "jq is required"
+[ -n "$workspace" ] || die "could not determine the workspace; pass --workspace"
+
+[ -n "$procfile" ] || procfile="Procfile"
+[ -f "$procfile" ] || die "no such Procfile: $procfile"
+root="$(cd "$(dirname "$procfile")" && pwd)"
+
+names=()
+commands=()
+while IFS= read -r line || [ -n "$line" ]; do
+  [[ "$line" =~ ^[[:space:]]*([A-Za-z0-9_-]+):[[:space:]]*([^[:space:]].*)$ ]] || continue
+  name="${BASH_REMATCH[1]}"
+  process_command="${BASH_REMATCH[2]}"
+  if [ -n "$only" ] && ! printf '%s' ",$only," | grep -qF ",$name,"; then
+    continue
+  fi
+  names=(${names[@]+"${names[@]}"} "$name")
+  commands=(${commands[@]+"${commands[@]}"} "$process_command")
+done < "$procfile"
+
+[ "${#names[@]}" -gt 0 ] || die "no matching processes in $procfile"
+
+if [ "$stop" -eq 1 ]; then
+  for candidate in $(herdr workspace list | jq -r '.result.workspaces[].workspace_id'); do
+    while IFS=$'\t' read -r tab_id label; do
+      [ "$tab_id" = "${HERDR_TAB_ID:-}" ] && continue
+      printf '%s\n' "${names[@]}" | grep -qxF "$label" || continue
+
+      if [ "$dry_run" -eq 1 ]; then
+        echo "would stop $label ($tab_id)"
+        continue
+      fi
+
+      panes="$(herdr pane list --workspace "$candidate" |
+        jq -r --arg tab "$tab_id" '.result.panes[] | select(.tab_id == $tab) | .pane_id')"
+      for pane in $panes; do
+        herdr pane send-keys "$pane" ctrl+c >/dev/null
+      done
+
+      for _ in $(seq 25); do
+        settled=1
+        for pane in $panes; do
+          shell_in_foreground "$pane" || settled=0
+        done
+        [ "$settled" -eq 1 ] && break
+        sleep 0.2
+      done
+
+      herdr tab close "$tab_id" >/dev/null
+      echo "stopped $label ($tab_id)"
+    done < <(herdr tab list --workspace "$candidate" |
+      jq -r '.result.tabs[] | [.tab_id, .label // ""] | @tsv')
+  done
+  exit 0
+fi
+
+if [ "$env_file_given" -eq 0 ] && [ -f "$root/.env" ]; then
+  env_file="$root/.env"
+fi
+[ -z "$env_file" ] || [ -f "$env_file" ] || die "no such env file: $env_file"
+
+env_args=()
+if [ -n "$env_file" ]; then
+  while IFS= read -r line || [ -n "$line" ]; do
+    [[ "$line" =~ ^[[:space:]]*(export[[:space:]]+)?([A-Za-z_][A-Za-z0-9_]*)=(.*)$ ]] || continue
+    key="${BASH_REMATCH[2]}"
+    value="${BASH_REMATCH[3]}"
+    case "$value" in
+      \"*\") value="${value#\"}"; value="${value%\"}" ;;
+      \'*\') value="${value#\'}"; value="${value%\'}" ;;
+    esac
+    env_args=(${env_args[@]+"${env_args[@]}"} --env "$key=$value")
+  done < "$env_file"
+fi
+
+open_labels="$(herdr tab list --workspace "$workspace" | jq -r '.result.tabs[].label // empty')"
+
+index=0
+while [ "$index" -lt "${#names[@]}" ]; do
+  name="${names[$index]}"
+  process_command="${commands[$index]}"
+  index=$((index + 1))
+
+  if printf '%s\n' "$open_labels" | grep -qxF "$name"; then
+    echo "skipped $name (tab already open)"
+    continue
+  fi
+
+  if [ "$dry_run" -eq 1 ]; then
+    echo "would start $name: $process_command"
+    continue
+  fi
+
+  pane="$(herdr tab create \
+    --workspace "$workspace" \
+    --cwd "$root" \
+    --label "$name" \
+    --no-focus \
+    ${env_args[@]+"${env_args[@]}"} | jq -r '.result.root_pane.pane_id')"
+  herdr pane run "$pane" "$process_command" >/dev/null
+  echo "started $name in $pane"
+done
