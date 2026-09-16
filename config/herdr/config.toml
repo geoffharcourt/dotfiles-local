@@ -114,3 +114,15 @@ key = "prefix+shift+b"
 type = "shell"
 description = "break pane out to a new workspace"
 command = "herdr pane move \"$HERDR_ACTIVE_PANE_ID\" --new-workspace --focus"
+
+[[keys.command]]
+key = "prefix+e"
+type = "plugin_action"
+command = "chmarax.herdr-nvim.toggle"
+description = "nvim sidebar"
+
+[[keys.command]]
+key = "prefix+o"
+type = "plugin_action"
+command = "chmarax.herdr-nvim.pick-file"
+description = "open file from agent output"

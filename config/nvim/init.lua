@@ -579,6 +579,7 @@ require("lazy").setup({
       end,
     },
   },
+  { "ChmaraX/herdr-nvim", opts = {} },
 })
 
 -- Seamless <C-h/j/k/l> movement between neovim splits and herdr panes. Loaded
