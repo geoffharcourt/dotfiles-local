@@ -1,11 +1,14 @@
+@activecampaign/postmark-mcp
 @northflank/cli
+alfred-npms
 diagnostic-languageserver
 eslint
-eslint_d
 eslint-plugin-jsx-a11y
+eslint_d
 neovim
-npm
-pnpm
+postmark-cli
+sfw
+socket
 stylelint
 typescript
 typescript-language-server

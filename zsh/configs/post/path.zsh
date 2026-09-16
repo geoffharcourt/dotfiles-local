@@ -2,7 +2,7 @@
 PATH="$HOME/.bin:/usr/local/sbin:$HOME/.local/bin:$PATH"
 
 # mkdir .git/safe in the root of repositories you trust
-PATH=".git/safe/../../bin:$HOME/Library/pnpm:$PATH"
+PATH=".git/safe/../../bin:$PNPM_HOME/bin:$PATH"
 
 export -U PATH
 
