@@ -1,6 +1,7 @@
 [tools]
 aube = "latest"
 node = "latest"
+pnpm = "latest"
 ruby = {
   version = "latest",
   postinstall = "gem install bundler-audit gem-shut-the-fuck-up neovim ruby-lsp",
@@ -17,7 +18,72 @@ http_timeout = "5s"
 idiomatic_version_file_enable_tools = ["ruby", "node"]
 ruby.compile = false
 
-[hooks]
-# Enabling corepack will install the `pnpm` package manager specified in your package.json
-# alternatively, you can also install `pnpm` with mise
-postinstall = 'npx corepack enable'
+[tasks.pnpm-globals]
+description = "Install global JS tools with pnpm from ~/.default-pnpm-packages"
+run = """
+export PNPM_HOME="${PNPM_HOME:-$HOME/Library/pnpm}"
+export PATH="$PNPM_HOME/bin:$PATH"
+sed -e '/^#/d' -e '/^$/d' ~/.default-pnpm-packages | xargs pnpm add --global
+"""
+
+[bootstrap.brew.taps]
+"anomalyco/tap" = "https://github.com/anomalyco/homebrew-tap.git"
+"buildkite/buildkite" = "https://github.com/buildkite/homebrew-buildkite.git"
+"claui/public" = "https://github.com/claui/homebrew-public.git"
+"dopplerhq/cli" = "https://github.com/dopplerhq/homebrew-cli.git"
+
+[bootstrap.packages]
+"brew:agent-browser" = "latest"
+"brew:ast-grep" = "latest"
+"brew:claui/public/aws-credential-1password" = "latest"
+"brew:aws-vault" = "latest"
+"brew:awscli" = "latest"
+"brew:buildkite/buildkite/bk@3" = "latest"
+"brew:cairo" = "latest"
+"brew:cmake" = "latest"
+"brew:coreutils" = "latest"
+"brew:curl" = "latest"
+"brew:docker" = "latest"
+"brew:dopplerhq/cli/doppler" = "latest"
+"brew:fd" = "latest"
+"brew:fzf" = "latest"
+"brew:gh" = "latest"
+"brew:giflib" = "latest"
+"brew:git" = "latest"
+"brew:git-delta" = "latest"
+"brew:gitleaks" = "latest"
+"brew:herdr" = "latest"
+"brew:hivemind" = "latest"
+"brew:imagemagick" = "latest"
+"brew:jpeg" = "latest"
+"brew:jq" = "latest"
+"brew:libpng" = "latest"
+"brew:librsvg" = "latest"
+"brew:libyaml" = "latest"
+"brew:make" = "latest"
+"brew:mise" = "latest"
+"brew:neovim" = "latest"
+"brew:anomalyco/tap/opencode" = "latest"
+"brew:opensearch" = "latest"
+"brew:openssl@3" = "latest"
+"brew:overmind" = "latest"
+"brew:pango" = "latest"
+"brew:pkgconf" = "latest"
+"brew:poppler" = "latest"
+"brew:postgresql@18" = "latest"
+"brew:pure" = "latest"
+"brew:rcm" = "latest"
+"brew:ripgrep" = "latest"
+"brew:sentry-cli" = "latest"
+"brew:shellcheck" = "latest"
+"brew:tailscale" = "latest"
+"brew:the_silver_searcher" = "latest"
+"brew:tree-sitter-cli" = "latest"
+"brew:valkey" = "latest"
+"brew:vim" = "latest"
+"brew:vips" = "latest"
+"brew:worktrunk" = "latest"
+"brew:yarn" = "latest"
+"brew:ykman" = "latest"
+"brew:yq" = "latest"
+"brew:zsh" = "latest"
