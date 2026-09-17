@@ -600,7 +600,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     end
 
     local client = vim.lsp.get_client_by_id(event.data.client_id)
-    if client and client.supports_method "textDocument/formatting" then
+    if client and client:supports_method("textDocument/formatting") then
       local augroup = vim.api.nvim_create_augroup("autoformat", { clear = true })
       vim.api.nvim_create_autocmd("BufWritePre", {
         pattern = { "*.py", "*.rb" },
