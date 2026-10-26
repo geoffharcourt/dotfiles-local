@@ -4,7 +4,7 @@
 fe() {
   local file
   # file=$(fzf --query="$1" --select-1 --exit-0)
-  file=$(ag -g "$1" | fzf --height 40 --select-1 --exit-0)
+  file=$(rg --files | rg "$1" | fzf --height 40 --select-1 --exit-0)
   [ -n "$file" ] && ${EDITOR} "$file"
 }
 
@@ -22,12 +22,27 @@ fgh() {
   dir=$(find ~/github/* -maxdepth 1 -type d -print 2> /dev/null | fzf +m) && cd "$dir"
 }
 
-# fbr - checkout git branch
+# fbr - switch to a local or remote branch's worktree with worktrunk
+#   - Branches are listed most recently committed first
+#   - If nothing matches, the typed query becomes a new branch
 fbr() {
-  local branches branch
-  branches=$(git branch) &&
-  branch=$(echo "$branches" | fzf --height 15 +s +m) &&
-  git checkout $(echo "$branch" | sed "s/.* //")
+  local branches out query branch
+  branches=$(
+    git for-each-ref --sort=-committerdate --format='%(refname:short)' refs/heads refs/remotes |
+      grep -v -e '^origin$' -e '/HEAD$' |
+      sed 's#^origin/##' |
+      awk '!seen[$0]++'
+  ) || return
+  out=$(echo "$branches" | fzf --height 15 +s +m --print-query --query="$1")
+  [ $? -eq 130 ] && return
+  query=$(sed -n 1p <<< "$out")
+  branch=$(sed -n 2p <<< "$out")
+
+  if [ -n "$branch" ]; then
+    wt switch "$branch"
+  elif [ -n "$query" ]; then
+    wt switch --create "$query"
+  fi
 }
 
 # fbr - checkout remote branch
@@ -52,7 +67,7 @@ fh() {
 }
 
 fcont() {
-   ag -l "${1:-term}" | fzf
+   rg -l "${1:-term}" | fzf
 }
 
 # fkill - kill process
